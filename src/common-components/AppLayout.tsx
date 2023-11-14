@@ -1,12 +1,13 @@
 import { Box, BoxProps } from "@mui/material";
 
+import AppHeader from "./AppHeader";
 import Layout from "./Layout";
 import { Outlet } from "react-router-dom";
 
 export default function AppLayout({ children, ...props }: BoxProps) {
   return (
     <Layout {...props}>
-      {/* <AppHeader setActiveTab={handleSelectMenu} activeTab={activeTab} /> */}
+      <AppHeader />
       <Box display="flex" flexDirection="column" width="100%" flexGrow={1}>
         <Box display="flex" flexDirection="column" flexGrow={1}>
           <Box
