@@ -26,7 +26,12 @@ export default function AppHeader() {
   return (
     <Stack
       bgcolor={scrolling ? "#fadd75" : "transparent"}
-      sx={{ transition: "background-color 0.3s", position: "sticky", top: 0 }}
+      sx={{
+        transition: "background-color 0.3s",
+        position: "sticky",
+        top: 0,
+        zIndex: 1000,
+      }}
     >
       <Box textAlign={"center"}>
         <Box
