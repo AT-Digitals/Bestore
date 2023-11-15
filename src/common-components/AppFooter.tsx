@@ -17,12 +17,11 @@ export default function AppFooter() {
     >
       <Stack
         paddingTop={"100px"}
-        // direction={"row"}
         direction={{ xs: "column", sm: "column", md: "row" }}
         spacing={6}
         margin={"0 auto"}
       >
-        <Stack direction={"column"} spacing={4} maxWidth={260}>
+        <Stack direction={"column"} spacing={3} maxWidth={260}>
           <Typography fontSize={"24px"}>
             Lorem ipsium dolor sam etomnia
           </Typography>
