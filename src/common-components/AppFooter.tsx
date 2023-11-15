@@ -102,7 +102,7 @@ export default function AppFooter() {
             </Box>
           </Stack>
         </Box>
-        <Stack spacing={2} maxWidth={260}>
+        <Stack spacing={2} maxWidth={300}>
           <Typography fontSize={"16px"} fontWeight={"bold"}>
             Our mission
           </Typography>
@@ -110,7 +110,7 @@ export default function AppFooter() {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </CustomLabel>
-          <a href="" style={{ color: "#ec4979", textDecoration: "none" }}>
+          <a href="/" style={{ color: "#ec4979", textDecoration: "none" }}>
             Read more
           </a>
         </Stack>

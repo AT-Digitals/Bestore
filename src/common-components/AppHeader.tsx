@@ -37,6 +37,7 @@ export default function AppHeader() {
         <Box
           position={scrolling ? undefined : "absolute"}
           width={"98%"}
+          marginTop={scrolling ? undefined : "18px"}
           top={scrolling ? "10px" : undefined}
           justifyContent={"space-between"}
           display={"flex"}
