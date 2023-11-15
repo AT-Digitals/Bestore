@@ -1,5 +1,6 @@
 import { Box, BoxProps } from "@mui/material";
 
+import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
 import Layout from "./Layout";
 import { Outlet } from "react-router-dom";
@@ -20,6 +21,7 @@ export default function AppLayout({ children, ...props }: BoxProps) {
           >
             <Outlet />
           </Box>
+          <AppFooter />
           {/* <AppFooter activeTab={activeTab} setActiveTab={handleSelectMenu} /> */}
         </Box>
       </Box>
