@@ -4,7 +4,7 @@ import Banner from "../../assets/BeStore-banner.jpg";
 import Card1 from "../../assets/Card1.jpg";
 import Card2 from "../../assets/Card2.jpg";
 import Card3 from "../../assets/Card3.jpg";
-import SignUpNewsLetter from "../Sign-Up/SignUp";
+import SignUpNewsLetter from "./Sign-Up/SignUpwithLetter";
 
 export default function Homepage() {
   return (

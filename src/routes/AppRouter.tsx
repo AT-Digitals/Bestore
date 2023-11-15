@@ -6,8 +6,8 @@ import Blogpage from "../pages/Blog/Blogpage";
 import ContactPage from "../pages/Contact/Contactpage";
 import Homepage from "../pages/Home/Homepage";
 import ProductsPage from "../pages/Products/Productspage";
+import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import routes from "./routes";
-import SignUp from "../pages/Sign-Up/SignUp";
 
 export default function AppRouter() {
   return (
@@ -19,7 +19,7 @@ export default function AppRouter() {
           <Route path={routes.ABOUT} element={<AboutPage />} />
           <Route path={routes.CONTACT} element={<ContactPage />} />
           <Route path={routes.BLOG} element={<Blogpage />} />
-          <Route path={routes.SIGN_UP} element={<SignUp />} />
+          <Route path={routes.SIGN_UP} element={<SignUpNewsLetter />} />
         </Route>
       </Routes>
     </Router>
