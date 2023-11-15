@@ -33,7 +33,12 @@ export default function HeaderTabs() {
         {CustomTabs.map((item, index) => (
           <Tab
             key={index}
-            style={{ fontSize: "15px", fontWeight: "bold", color: "black" }}
+            style={{
+              fontSize: "15px",
+              fontWeight: "bold",
+              color: "black",
+              padding: "20px",
+            }}
             label={item.name}
             component={Link}
             to={item.link}
