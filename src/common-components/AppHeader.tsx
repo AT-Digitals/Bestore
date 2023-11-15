@@ -30,7 +30,9 @@ export default function AppHeader() {
     >
       <Box textAlign={"center"}>
         <Box
+          position={scrolling ? undefined : "absolute"}
           width={"98%"}
+          top={scrolling ? "10px" : undefined}
           justifyContent={"space-between"}
           display={"flex"}
           flexDirection={"row"}
