@@ -2,6 +2,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 
 import Banner from "../../assets/BeStore-banner.jpg";
 import BannerCircule from "../../assets/banner-circule.png";
+import BestoreReviews from "../../common-components/BestoreReviews";
 import Card1 from "../../assets/Card1.jpg";
 import Card2 from "../../assets/Card2.jpg";
 import Card3 from "../../assets/Card3.jpg";
@@ -97,7 +98,9 @@ export default function Homepage() {
       <Box paddingTop={"80px"} paddingBottom={"70px"} textAlign={"center"}>
         <Typography fontSize={"37px"}>Products on sale</Typography>
       </Box>
-      <Box style={{ width: "100%" }}>
+      <BestoreReviews />
+
+      <Box style={{ width: "100%", marginTop: "7rem" }}>
         <Box style={{ margin: "auto", maxWidth: 350, marginBottom: "-4px" }}>
           <img
             style={{
