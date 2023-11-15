@@ -1,52 +1,74 @@
 import { Box, Button, IconButton, Stack } from "@mui/material";
+import { useEffect, useState } from "react";
 
 import HeaderTabs from "./HeaderTabs";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import logo from "../assets/store2-logo.png";
 
 export default function AppHeader() {
-  return (
-    <Box textAlign={"center"} bgcolor={"#fadd75"}>
-      <Box
-        width={"96%"}
-        // maxWidth={1300}
-        justifyContent={"space-between"}
-        pt={1}
-        display={"flex"}
-        flexDirection={"row"}
-        flexWrap={"wrap"}
-      >
-        <Box pl={"35px"} pt={1} textAlign={"center"}>
-          <img
-            src={logo}
-            alt="app-logo"
-            style={{
-              maxWidth: 210,
-              width: "100%",
-            }}
-          />
-        </Box>
-        <Stack spacing={2} direction={"row"}>
-          <HeaderTabs />
+  const [scrolling, setScrolling] = useState(false);
 
-          <Box display={"flex"} gap={"1rem"}>
-            <IconButton>
-              <ShoppingBagIcon />
-            </IconButton>
-            <Button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  return (
+    <Stack
+      bgcolor={scrolling ? "#fadd75" : "transparent"}
+      sx={{ transition: "background-color 0.3s", position: "sticky", top: 0 }}
+    >
+      <Box textAlign={"center"}>
+        <Box
+          width={"98%"}
+          justifyContent={"space-between"}
+          display={"flex"}
+          flexDirection={"row"}
+          flexWrap={"wrap"}
+        >
+          <Box pl={"35px"} pt={2} textAlign={"center"}>
+            <img
+              src={logo}
+              alt="app-logo"
               style={{
-                textTransform: "capitalize",
-                borderRadius: "40px",
-                color: "white",
-                background: "black",
-                width: "120px",
+                maxWidth: 210,
+                width: "100%",
               }}
-            >
-              Buy now
-            </Button>
+            />
           </Box>
-        </Stack>
+          <Stack spacing={2} direction={"row"}>
+            <HeaderTabs />
+
+            <Box alignItems={"center"} display={"flex"} gap={"1rem"}>
+              <IconButton>
+                <ShoppingBagIcon />
+              </IconButton>
+              <Button
+                style={{
+                  textTransform: "capitalize",
+                  borderRadius: "40px",
+                  color: "white",
+                  background: "black",
+                  width: "90px",
+                  height: "38px",
+                }}
+              >
+                Buy now
+              </Button>
+            </Box>
+          </Stack>
+        </Box>
       </Box>
-    </Box>
+    </Stack>
   );
 }
