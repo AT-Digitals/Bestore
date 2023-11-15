@@ -102,7 +102,6 @@ export default function SignUpNewsLetter() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           paddingBottom: "50px",
-          marginTop: "50px",
         }}
       >
         <Typography
