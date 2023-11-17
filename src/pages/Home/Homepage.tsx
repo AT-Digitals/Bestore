@@ -67,32 +67,35 @@ export default function Homepage() {
         display={"flex"}
         flexDirection={"column"}
         gap={"3rem"}
-        top={"13rem"}
-        left={{ xs: 0, sm: 0, md: "12rem" }}
+        top={{ xs: "8rem", sm: "8rem", md: "13rem" }}
+        left={{ xs: "1rem", sm: "3rem", md: "12rem" }}
         position={"absolute"}
         maxWidth={500}
       >
         <Typography
           fontFamily={`"Lato", Helvetica, Arial, sans-serif`}
-          fontSize={{ xs: "40px", sm: "40px", md: "90px" }}
+          fontSize={{ xs: "44px", sm: "82px", md: "90px" }}
           lineHeight={1}
           fontWeight={"bold"}
         >
           Shoping as <br /> you love
         </Typography>
-        <Typography>
+        <Typography
+          display={{ xs: "none", sm: "none", md: "block", lg: "block" }}
+        >
           Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit sed do
           eius
         </Typography>
         <Link to={routes.PRODUCTS}>
           <Button
-            style={{
+            sx={{
               borderRadius: "30px",
               backgroundColor: "#EB3C70",
               color: "white",
-              maxWidth: 224,
+              maxWidth: { xs: "120px", sm: "244px", md: 224 },
               width: "100%",
-              height: 52,
+              fontSize: { xs: "10px", sm: "20px", md: "20px" },
+              height: { xs: 30, sm: 50, md: 52 },
               textTransform: "capitalize",
               fontWeight: "bold",
             }}
