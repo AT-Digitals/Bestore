@@ -20,9 +20,10 @@ export default function AppFooter() {
         direction={{ xs: "column", sm: "column", md: "row" }}
         spacing={6}
         margin={"0 auto"}
+        marginBottom={"5rem"}
       >
         <Stack direction={"column"} spacing={3} maxWidth={260}>
-          <Typography fontSize={"24px"}>
+          <Typography fontWeight={"bold"} fontSize={"24px"}>
             Lorem ipsium dolor sam etomnia
           </Typography>
           <Button
