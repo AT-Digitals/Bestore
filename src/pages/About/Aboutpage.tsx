@@ -2,9 +2,9 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 
 import AboutBanner from "../../assets/AboutBanner.jpg";
 import BestoreReviews from "../../common-components/BestoreReviews";
+import CartImage from "../../common-components/CartImage";
 import SignUpNewsLetter from "../Home/Sign-Up/SignUpwithLetter";
 import SliderImages from "../../common-components/SliderImages";
-import bags from "../../assets/store2-home-bags.png";
 import logo from "../../assets/store2-about-brands.png";
 
 export default function AboutPage() {
@@ -145,8 +145,8 @@ export default function AboutPage() {
       <Stack marginTop={"90px"} alignItems={"center"}>
         <img width={"900px"} src={logo} alt="logo" />
       </Stack>
-      <Stack alignItems={"center"} marginTop={"90px"}>
-        <img width={"400px"} src={bags} alt="bags" />
+      <Stack alignItems={"center"}>
+        <CartImage />
         <SignUpNewsLetter />
       </Stack>
       <SliderImages />
