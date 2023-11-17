@@ -25,6 +25,7 @@ export default function AppHeader() {
   }, []);
   return (
     <Stack
+      display={{ xs: "none", xl: "flex" }}
       bgcolor={scrolling ? "#fadd75" : "transparent"}
       sx={{
         transition: "background-color 0.3s",

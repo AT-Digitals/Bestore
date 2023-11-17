@@ -6,8 +6,8 @@ export default function ContactPage() {
   return (
     <>
     <Box marginTop={"150px"}>
-     <Typography  lineHeight={"1"} textAlign={"center"} color={"black"} fontWeight={"400"} fontSize={"70px"} fontFamily={"sans-serif"}>Lorem ipsum dolor mit</Typography>
-     <Typography  lineHeight={"1"} textAlign={"center"} color={"black"} fontWeight={"400"} fontSize={"70px"} fontFamily={"sans-serif"}>samet et omnia</Typography>
+    <Typography  lineHeight={"1"} textAlign={"center"} color={"black"} fontWeight={"400"} fontSize={"70px"} fontFamily={"sans-serif"}>Lorem ipsum dolor mit</Typography>
+    <Typography  lineHeight={"1"} textAlign={"center"} color={"black"} fontWeight={"400"} fontSize={"70px"} fontFamily={"sans-serif"}>samet et omnia</Typography>
     </Box>
     <Box display={"flex"} justifyContent={"center"}>
     <Box width={"900px"} height={"150px"} border={"1px solid lightgray"} marginTop={"90px"} display={"flex"}>
