@@ -7,9 +7,11 @@ import BestoreReviews from "../../common-components/BestoreReviews";
 import Card1 from "../../assets/Card1.jpg";
 import Card2 from "../../assets/Card2.jpg";
 import Card3 from "../../assets/Card3.jpg";
-import HomeCart from "../../assets/home-cart.png";
+import CartImage from "../../common-components/CartImage";
+import { Link } from "react-router-dom";
 import SignUpNewsLetter from "./Sign-Up/SignUpwithLetter";
 import SliderImages from "../../common-components/SliderImages";
+import routes from "../../routes/routes";
 
 const HoverImageText = [
   {
@@ -82,20 +84,22 @@ export default function Homepage() {
           Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit sed do
           eius
         </Typography>
-        <Button
-          style={{
-            borderRadius: "30px",
-            backgroundColor: "#EB3C70",
-            color: "white",
-            maxWidth: 224,
-            width: "100%",
-            height: 52,
-            textTransform: "capitalize",
-            fontWeight: "bold",
-          }}
-        >
-          See whats's on sale
-        </Button>
+        <Link to={routes.PRODUCTS}>
+          <Button
+            style={{
+              borderRadius: "30px",
+              backgroundColor: "#EB3C70",
+              color: "white",
+              maxWidth: 224,
+              width: "100%",
+              height: 52,
+              textTransform: "capitalize",
+              fontWeight: "bold",
+            }}
+          >
+            See whats's on sale
+          </Button>
+        </Link>
       </Box>
       <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
         {HoverImageText.map((item, index) => (
@@ -195,63 +199,29 @@ export default function Homepage() {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </Typography>
-          <Button
-            style={{
-              color: "black",
-              background: "#F6F6F6",
-              maxWidth: 160,
-              width: "100%",
-              borderRadius: "30px",
-              textTransform: "none",
-              fontWeight: "bold",
-            }}
-          >
-            About us
-          </Button>
+          <Link to={routes.ABOUT}>
+            <Button
+              style={{
+                color: "black",
+                background: "#F6F6F6",
+                maxWidth: 160,
+                width: "100%",
+                borderRadius: "30px",
+                textTransform: "none",
+                fontWeight: "bold",
+              }}
+            >
+              About us
+            </Button>
+          </Link>
         </Stack>
       </Box>
       <BestoreReviews />
 
-      <Box style={{ width: "100%", marginTop: "7rem" }}>
-        <Box style={{ margin: "auto", maxWidth: 350, marginBottom: "-4px" }}>
-          <img
-            style={{
-              width: "100%",
-              height: "auto",
-            }}
-            src={HomeCart}
-            alt="HomeCart"
-          />
-        </Box>
-      </Box>
+      <CartImage />
 
       <SignUpNewsLetter />
-      {/* <Stack
-        maxWidth={1519}
-        width={"100%"}
-        direction={{ xs: "column", sm: "row", md: "row" }}
-      >
-        {SlideImage.map((image, index) => (
-          <Box width={"100%"} key={index} overflow={"hidden"}>
-            <img
-              style={
-                {
-                  width: "100%",
-                  transition: "transform 0.5s ease",
-                } as any
-              }
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-              src={image.image}
-              alt="slide"
-            />
-          </Box>
-        ))}
-      </Stack> */}
+
       <SliderImages />
     </Box>
   );

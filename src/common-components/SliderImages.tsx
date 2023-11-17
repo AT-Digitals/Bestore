@@ -37,12 +37,10 @@ export default function SliderImages() {
       {SlideImage.map((image, index) => (
         <Box width={"100%"} key={index} overflow={"hidden"}>
           <img
-            style={
-              {
-                width: "100%",
-                transition: "transform 0.5s ease",
-              } as any
-            }
+            style={{
+              width: "100%",
+              transition: "transform 0.5s ease",
+            }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.1)";
             }}
