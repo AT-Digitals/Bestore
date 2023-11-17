@@ -9,6 +9,7 @@ import Card2 from "../../assets/Card2.jpg";
 import Card3 from "../../assets/Card3.jpg";
 import CartImage from "../../common-components/CartImage";
 import { Link } from "react-router-dom";
+import ProductsCard from "../Products/ProductsCard";
 import SignUpNewsLetter from "./Sign-Up/SignUpwithLetter";
 import SliderImages from "../../common-components/SliderImages";
 import routes from "../../routes/routes";
@@ -166,6 +167,7 @@ export default function Homepage() {
       </Stack>
       <Box paddingTop={"80px"} paddingBottom={"70px"} textAlign={"center"}>
         <Typography fontSize={"37px"}>Products on sale</Typography>
+        <ProductsCard />
       </Box>
 
       <Box
