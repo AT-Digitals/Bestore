@@ -9,9 +9,14 @@ import image5 from "../assets/store2-home-icon-4.png";
 export default function BestoreReviews() {
   return (
     <Stack
-      direction={"row"}
-      justifyContent={"space-evenly"}
+      padding={{ xs: 0, sm: "0 40px" }}
+      direction={{ xs: "column", sm: "row", md: "row", lg: "row" }}
+      justifyContent={"space-around"}
+      alignItems={"center"}
+      spacing={3}
+      margin={"0 auto"}
       marginTop={"140px"}
+      maxWidth={1140}
     >
       <Box>
         <img src={image1} alt="icon 1" />

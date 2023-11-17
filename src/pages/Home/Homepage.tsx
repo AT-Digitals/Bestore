@@ -1,5 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
+import About from "../../assets/about.png";
 import Banner from "../../assets/BeStore-banner.jpg";
 import BannerCircule from "../../assets/banner-circule.png";
 import BestoreReviews from "../../common-components/BestoreReviews";
@@ -8,6 +9,22 @@ import Card2 from "../../assets/Card2.jpg";
 import Card3 from "../../assets/Card3.jpg";
 import HomeCart from "../../assets/home-cart.png";
 import SignUpNewsLetter from "./Sign-Up/SignUpwithLetter";
+import SliderImages from "../../common-components/SliderImages";
+
+const HoverImageText = [
+  {
+    label: "Clothing",
+    image: Card1,
+  },
+  {
+    label: "Jewelry",
+    image: Card2,
+  },
+  {
+    label: "Cosmetics",
+    image: Card3,
+  },
+];
 
 export default function Homepage() {
   return (
@@ -19,7 +36,7 @@ export default function Homepage() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           height: "100%",
-          minHeight: 900,
+          minHeight: { xs: 400, sm: 690, md: 900 },
           width: "100%",
         }}
       ></Box>
@@ -29,6 +46,18 @@ export default function Homepage() {
           height={196}
           src={BannerCircule}
           alt="banner circule"
+          style={
+            {
+              width: "100%",
+              transition: "transform 0.5s ease",
+            } as any
+          }
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "scale(1.1)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+          }}
         />
       </Box>
 
@@ -61,42 +90,125 @@ export default function Homepage() {
             maxWidth: 224,
             width: "100%",
             height: 52,
+            textTransform: "capitalize",
+            fontWeight: "bold",
           }}
         >
           See whats's on sale
         </Button>
       </Box>
-      <Stack direction={{ xs: "column", sm: "column", md: "row" }}>
-        <img
-          style={{
-            maxWidth: 507,
-            height: 560,
-            width: "100%",
-          }}
-          src={Card1}
-          alt=""
-        />
-        <img
-          style={{
-            maxWidth: 507,
-            height: 560,
-            width: "100%",
-          }}
-          src={Card2}
-          alt=""
-        />
-        <img
-          style={{
-            maxWidth: 507,
-            height: 560,
-            width: "100%",
-          }}
-          src={Card3}
-          alt=""
-        />
+      <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
+        {HoverImageText.map((item, index) => (
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              overflow: "hidden",
+
+              "&:hover::before": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+                zIndex: 1,
+                transition: ".5s ease",
+              },
+              "&:hover .overlay": {
+                opacity: 1,
+                color: "#EB3C70",
+              },
+            }}
+          >
+            <img
+              style={{
+                opacity: 1,
+                maxWidth: "100%",
+                height: "auto",
+                transition: ".5s ease",
+                backfaceVisibility: "hidden",
+              }}
+              src={item.image}
+              alt=""
+            />
+            <Box
+              className="overlay"
+              sx={{
+                transition: ".5s ease",
+                opacity: 0,
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%,-50%)",
+                textAlign: "center",
+              }}
+            >
+              <Typography
+                padding={"16px"}
+                fontSize={"54px"}
+                color={"black"}
+                fontWeight={"bold"}
+              >
+                {item.label}
+              </Typography>
+            </Box>
+          </Box>
+        ))}
       </Stack>
       <Box paddingTop={"80px"} paddingBottom={"70px"} textAlign={"center"}>
         <Typography fontSize={"37px"}>Products on sale</Typography>
+      </Box>
+
+      <Box
+        flexDirection={{ xs: "column", sm: "row" }}
+        maxWidth={1140}
+        margin={"0 auto"}
+        display={"flex"}
+        justifyContent={"space-between"}
+        padding={{ xs: 0, sm: "0 40px" }}
+        gap={"3rem"}
+      >
+        <Box margin={"0 auto"}>
+          <img
+            src={About}
+            style={{
+              maxWidth: 515,
+              width: "100%",
+            }}
+            alt="about"
+          />
+        </Box>
+        <Stack spacing={8} margin={"auto"} width={"100%"} maxWidth={490}>
+          <Typography
+            paddingTop={"2rem"}
+            lineHeight={1}
+            fontWeight={600}
+            fontSize={"37px"}
+          >
+            We provide the newest trends in fashion
+          </Typography>
+          <Typography fontSize={"15px"}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </Typography>
+          <Button
+            style={{
+              color: "black",
+              background: "#F6F6F6",
+              maxWidth: 160,
+              width: "100%",
+              borderRadius: "30px",
+              textTransform: "none",
+              fontWeight: "bold",
+            }}
+          >
+            About us
+          </Button>
+        </Stack>
       </Box>
       <BestoreReviews />
 
@@ -112,7 +224,35 @@ export default function Homepage() {
           />
         </Box>
       </Box>
+
       <SignUpNewsLetter />
+      {/* <Stack
+        maxWidth={1519}
+        width={"100%"}
+        direction={{ xs: "column", sm: "row", md: "row" }}
+      >
+        {SlideImage.map((image, index) => (
+          <Box width={"100%"} key={index} overflow={"hidden"}>
+            <img
+              style={
+                {
+                  width: "100%",
+                  transition: "transform 0.5s ease",
+                } as any
+              }
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+              src={image.image}
+              alt="slide"
+            />
+          </Box>
+        ))}
+      </Stack> */}
+      <SliderImages />
     </Box>
   );
 }

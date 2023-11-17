@@ -14,7 +14,9 @@ export default function AppRouter() {
     <Router>
       <Routes>
         <Route path={routes.ROOT} element={<AppLayout />}>
+          <Route path={routes.ROOT} element={<Homepage />} />
           <Route path={routes.HOME} element={<Homepage />} />
+
           <Route path={routes.PRODUCTS} element={<ProductsPage />} />
           <Route path={routes.ABOUT} element={<AboutPage />} />
           <Route path={routes.CONTACT} element={<ContactPage />} />

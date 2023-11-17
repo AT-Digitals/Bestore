@@ -2,6 +2,8 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 
 import AboutBanner from "../../assets/AboutBanner.jpg";
 import BestoreReviews from "../../common-components/BestoreReviews";
+import SignUpNewsLetter from "../Home/Sign-Up/SignUpwithLetter";
+import SliderImages from "../../common-components/SliderImages";
 import bags from "../../assets/store2-home-bags.png";
 import logo from "../../assets/store2-about-brands.png";
 
@@ -16,11 +18,11 @@ export default function AboutPage() {
         <Box
           sx={{
             backgroundImage: `url(${AboutBanner})`,
-            backgroundSize: "cover",
+            backgroundSize: { xs: "contain", sm: "contain", md: "cover" },
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            height: "100%",
-            minHeight: 900,
+            height: "auto",
+            minHeight: { xs: 400, sm: 690, md: 900 },
           }}
         ></Box>
         <Box display={"flex"} justifyContent={"center"}>
@@ -145,7 +147,9 @@ export default function AboutPage() {
       </Stack>
       <Stack alignItems={"center"} marginTop={"90px"}>
         <img width={"400px"} src={bags} alt="bags" />
+        <SignUpNewsLetter />
       </Stack>
+      <SliderImages />
     </Box>
   );
 }
