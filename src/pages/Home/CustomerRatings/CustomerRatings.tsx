@@ -43,9 +43,10 @@ export default function CustomerTarings() {
         <Stack
           maxWidth={1140}
           margin={"0 auto"}
-          width={"70%"}
           justifyContent={"space-between"}
-          direction={"row"}
+          alignItems={"center"}
+          padding={"0 70px"}
+          direction={{ xs: "column", sm: "column", md: "row" }}
         >
           <Box textAlign={"center"}>
             <Typography fontSize={"69px"} fontWeight={"bold"}>

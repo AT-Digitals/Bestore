@@ -1,8 +1,9 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
-import About from "../../assets/about.png";
+import AboutConainer from "./AboutContainer/AboutContainer";
 import Banner from "../../assets/BeStore-banner.jpg";
 import BannerCircule from "../../assets/banner-circule.png";
+import BestSellingProducts from "./HomepageProducts/BestSellingProducts";
 import BestoreReviews from "../../common-components/BestoreReviews";
 import Card1 from "../../assets/Card1.jpg";
 import Card2 from "../../assets/Card2.jpg";
@@ -10,7 +11,7 @@ import Card3 from "../../assets/Card3.jpg";
 import CartImage from "../../common-components/CartImage";
 import CustomerTarings from "./CustomerRatings/CustomerRatings";
 import { Link } from "react-router-dom";
-import ProductsCard from "../Products/ProductsCard";
+import ProductsCard from "./HomepageProducts/ProductsCard";
 import SignUpNewsLetter from "./Sign-Up/SignUpwithLetter";
 import SliderImages from "../../common-components/SliderImages";
 import routes from "../../routes/routes";
@@ -96,7 +97,7 @@ export default function Homepage() {
               color: "white",
               maxWidth: { xs: "120px", sm: "244px", md: 224 },
               width: "100%",
-              fontSize: { xs: "10px", sm: "20px", md: "20px" },
+              fontSize: { xs: "10px", sm: "20px", md: "15px" },
               height: { xs: 30, sm: 50, md: 52 },
               textTransform: "capitalize",
               fontWeight: "bold",
@@ -166,63 +167,43 @@ export default function Homepage() {
           </Box>
         ))}
       </Stack>
-      <Box paddingTop={"80px"} paddingBottom={"70px"} textAlign={"center"}>
-        <Typography fontSize={"37px"}>Products on sale</Typography>
-        <ProductsCard />
-      </Box>
-
-      <CustomerTarings />
       <Box
-        flexDirection={{ xs: "column", sm: "row" }}
-        maxWidth={1140}
-        margin={"0 auto"}
-        display={"flex"}
-        justifyContent={"space-between"}
-        padding={{ xs: 0, sm: "0 40px" }}
         gap={"3rem"}
+        display={"flex"}
+        flexDirection={"column"}
+        paddingTop={"80px"}
+        paddingBottom={"70px"}
+        textAlign={"center"}
       >
-        <Box margin={"0 auto"}>
-          <img
-            src={About}
-            style={{
-              maxWidth: 515,
-              width: "100%",
-            }}
-            alt="about"
-          />
-        </Box>
-        <Stack spacing={8} margin={"auto"} width={"100%"} maxWidth={490}>
-          <Typography
-            paddingTop={"2rem"}
-            lineHeight={1}
-            fontWeight={600}
-            fontSize={"37px"}
-          >
-            We provide the newest trends in fashion
-          </Typography>
-          <Typography fontSize={"15px"}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Typography>
-          <Link to={routes.ABOUT}>
+        <Typography fontSize={{ xs: "22px", md: "37px" }} fontWeight={600}>
+          Products on sale
+        </Typography>
+        <ProductsCard />
+        <Typography fontWeight={600} fontSize={{ xs: "22px", md: "37px" }}>
+          Best selling products
+        </Typography>
+        <BestSellingProducts />
+        <Box>
+          <Link to={routes.PRODUCTS}>
             <Button
               style={{
-                color: "black",
-                background: "#F6F6F6",
-                maxWidth: 160,
-                width: "100%",
-                borderRadius: "30px",
+                background: "#7F7F7F",
+                color: "white",
+                padding: "15px 50px",
+                borderRadius: "20px",
                 textTransform: "none",
                 fontWeight: "bold",
               }}
             >
-              About us
+              More products
             </Button>
           </Link>
-        </Stack>
+        </Box>
       </Box>
+
+      <CustomerTarings />
+
+      <AboutConainer />
       <BestoreReviews />
 
       <CartImage />
