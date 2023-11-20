@@ -45,9 +45,9 @@ export default function CustomerTarings() {
           margin={"0 auto"}
           justifyContent={"space-between"}
           alignItems={"center"}
-          width={"55%"}
+          width={{ sm: "80%", md: "80%", lg: "55%" }}
           padding={"0 70px"}
-          direction={{ xs: "column", sm: "column", md: "row" }}
+          direction={{ xs: "column", sm: "row", md: "row" }}
         >
           <Box textAlign={"center"}>
             <Typography fontSize={"69px"} fontWeight={"bold"}>

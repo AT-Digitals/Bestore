@@ -1,7 +1,7 @@
 import { Box, Tab, Tabs } from "@mui/material";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 
-import { Link } from "react-router-dom";
-import React from "react";
 import routes from "../routes/routes";
 import { useState } from "react";
 
@@ -15,10 +15,21 @@ const CustomTabs = [
 
 export default function HeaderTabs() {
   const [value, setValue] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
+    navigate(CustomTabs[newValue].link);
   };
+
+  useEffect(() => {
+    // Update the active tab based on the current route
+    const activeTab = CustomTabs.findIndex(
+      (tab) => tab.link === location.pathname
+    );
+    setValue(activeTab !== -1 ? activeTab : 0);
+  }, [location.pathname]);
 
   return (
     <Box>
