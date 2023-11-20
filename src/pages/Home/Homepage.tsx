@@ -8,6 +8,7 @@ import Card1 from "../../assets/Card1.jpg";
 import Card2 from "../../assets/Card2.jpg";
 import Card3 from "../../assets/Card3.jpg";
 import CartImage from "../../common-components/CartImage";
+import CustomerTarings from "./CustomerRatings/CustomerRatings";
 import { Link } from "react-router-dom";
 import ProductsCard from "../Products/ProductsCard";
 import SignUpNewsLetter from "./Sign-Up/SignUpwithLetter";
@@ -170,6 +171,7 @@ export default function Homepage() {
         <ProductsCard />
       </Box>
 
+      <CustomerTarings />
       <Box
         flexDirection={{ xs: "column", sm: "row" }}
         maxWidth={1140}
