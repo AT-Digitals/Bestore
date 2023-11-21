@@ -194,13 +194,15 @@ export default function ProductsPage() {
                           >
                             {item.name}
                           </a>
-                          <hr
+                          <div
                             style={{
-                              width: "70%",
+                              marginTop: "5px",
+                              width: "49%",
                               position: "relative",
                               right: "32%",
+                              borderBottom: "1px solid rgba(255,255,255,.2)",
                             }}
-                          />
+                          ></div>
                         </div>
                       </li>
                     </ul>
