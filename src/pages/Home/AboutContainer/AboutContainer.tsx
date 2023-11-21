@@ -29,8 +29,8 @@ export default function AboutConainer() {
         <Typography
           paddingTop={"2rem"}
           lineHeight={1}
-          fontWeight={600}
-          fontSize={"37px"}
+          fontWeight={{ xs: "none", md: 600 }}
+          fontSize={{ xs: "22px", md: "37px" }}
         >
           We provide the newest trends in fashion
         </Typography>

@@ -68,17 +68,30 @@ export default function ProductsPage() {
                       >
                         {item.name}
                       </Typography>
-                      <Box display={"flex"}>
-                        {item.price ? (
-                          <CurrencyPoundIcon style={{ color: "#EB3C70" }} />
+                      <Box display={"flex"} gap={"0.5rem"}>
+                        {item.offerprice ? (
+                          <Typography
+                            fontSize={"18px"}
+                            color={"#EB3C70"}
+                            style={{
+                              opacity: 0.5,
+                              textDecoration: "line-through",
+                            }}
+                          >
+                            {" "}
+                            £{item.offerprice}
+                          </Typography>
                         ) : null}
-
                         <Typography
+                          style={{
+                            textDecoration: item.offerprice
+                              ? "underline"
+                              : undefined,
+                          }}
                           fontSize={"18px"}
-                          fontWeight={"bold"}
                           color={"#EB3C70"}
                         >
-                          {item.price}.00
+                          {item.price ? "£" : undefined} {item.price}
                         </Typography>
                       </Box>
                     </Box>

@@ -105,15 +105,23 @@ export default function SignUpNewsLetter() {
         }}
       >
         <Typography
+          pl={{ xs: "33px" }}
+          pr={{ xs: "33px" }}
           textAlign={"center"}
           paddingTop={"55px"}
-          fontSize={"35px"}
+          fontSize={{ xs: "22px", md: "35px" }}
           fontWeight={"700"}
           fontFamily={"sans-serif"}
         >
           Sign up for a newsletter
         </Typography>
-        <Typography paddingTop={"30px"} textAlign={"center"} fontSize={"14px"}>
+        <Typography
+          pl={{ xs: "33px" }}
+          pr={{ xs: "33px" }}
+          paddingTop={"30px"}
+          textAlign={"center"}
+          fontSize={"14px"}
+        >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore{" "}
           <Typography textAlign={"center"} fontSize={"14px"}>
@@ -123,6 +131,8 @@ export default function SignUpNewsLetter() {
         </Typography>
         <form onSubmit={handleSubmit}>
           <Stack
+            pl={{ xs: "33px" }}
+            pr={{ xs: "33px" }}
             paddingTop={"70px"}
             justifyContent={"center"}
             flexDirection={"row"}
