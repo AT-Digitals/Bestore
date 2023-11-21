@@ -17,6 +17,7 @@ export default function Blogpage() {
       </Box>{" "}
       <Stack marginTop={"30px"} spacing={3} direction={"row"} justifyContent={"center"}>
       <Box margin={"30px"} overflow={"hidden"}>
+        <Link href="/blog-about">
       <img style={{
          transition: "transform 0.5s ease",
         }}
@@ -27,6 +28,7 @@ export default function Blogpage() {
           e.currentTarget.style.transform = "scale(1)";
         }}
        width={"500px"} src={image} alt="image" />
+       </Link>
       <Box sx={{
         boxSizing: "border-box",
         top: "-60px",
@@ -63,6 +65,7 @@ export default function Blogpage() {
       </Box>
       </Box>
       <Box margin={"30px"} overflow={"hidden"}>
+      <Link href="/blog-about">
       <img style={{
          transition: "transform 0.5s ease",
         }}
@@ -73,6 +76,7 @@ export default function Blogpage() {
           e.currentTarget.style.transform = "scale(1)";
         }}
        width={"500px"} src={image1} alt="image1" />
+       </Link>
       <Box sx={{
         boxSizing: "border-box",
         top: "-60px",
@@ -93,7 +97,7 @@ export default function Blogpage() {
         fontSize: "25px" ,
         color: "lightgrey"
       }} />
-      <Link href="#" underline="hover" sx={{
+     <Link href="#" underline="hover" sx={{
         ":hover": {
           color: "#eb3c70"
         }
