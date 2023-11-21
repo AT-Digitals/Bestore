@@ -121,6 +121,7 @@ export default function SignUpNewsLetter() {
           paddingTop={"30px"}
           textAlign={"center"}
           fontSize={"14px"}
+          width={{ sm: "66%", margin: "0 auto" }}
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore{" "}
@@ -138,6 +139,7 @@ export default function SignUpNewsLetter() {
             flexDirection={"row"}
             alignItems={"baseline"}
             gap={"16px"}
+            width={{ sm: "66%", margin: "0 auto" }}
           >
             <Box width={"100%"} maxWidth={"350px"}>
               <TextField

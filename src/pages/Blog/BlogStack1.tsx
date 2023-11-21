@@ -13,7 +13,7 @@ export default function BlogStack1() {
         marginBottom={"40px"}
         marginTop={"30px"}
         spacing={3}
-        direction={"row"}
+        direction={{ xs: "column", sm: "row", md: "row" }}
         justifyContent={"center"}
       >
         <Box margin={"30px"} overflow={"hidden"}>
