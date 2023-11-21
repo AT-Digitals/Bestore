@@ -22,9 +22,10 @@ export default function ProductsHeader({ totalItems }: ProductsHeaderProps) {
   return (
     <Box
       display={"flex"}
-      flexDirection={"row"}
+      flexDirection={{ xs: "column", md: "row" }}
       justifyContent={"space-between"}
       marginBottom={"20px"}
+      alignItems={"center"}
       sx={{
         backgroundImage: `url(${HeaderBg})`,
         padding: "15px",
