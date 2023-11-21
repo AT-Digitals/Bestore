@@ -143,6 +143,7 @@ export default function ProductsPage() {
                           <a
                             style={{
                               color: "white",
+                              textDecoration: "none",
                             }}
                             href={item.link}
                           >

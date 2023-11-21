@@ -9,6 +9,7 @@ import ProductsPage from "../pages/Products/Productspage";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import routes from "./routes";
 import BlogAbout from "../pages/Blog/BlogAbout";
+import ProductBag from "../pages/Products/ProductBag";
 
 export default function AppRouter() {
   return (
@@ -24,6 +25,7 @@ export default function AppRouter() {
           <Route path={routes.BLOG} element={<Blogpage />} />
           <Route path={routes.SIGN_UP} element={<SignUpNewsLetter />} />
           <Route path={routes.BLOG_ABOUT} element={<BlogAbout />} />
+          <Route path={routes.PRODUCT_BAG} element={<ProductBag />} />
         </Route>
       </Routes>
     </Router>
