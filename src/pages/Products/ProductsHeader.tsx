@@ -8,16 +8,20 @@ import {
 } from "@mui/material";
 
 import HeaderBg from "../../assets/ProductsImage/stripes_5_b.png";
-import { useState } from "react";
 
 interface ProductsHeaderProps {
-  totalItems: any;
+  totalItems: number;
+  onSortChange: (sortingOption: string) => void;
+  sort: any;
 }
-export default function ProductsHeader({ totalItems }: ProductsHeaderProps) {
-  const [sort, setSort] = useState("Default sorting");
-
+export default function ProductsHeader({
+  totalItems,
+  onSortChange,
+  sort,
+}: ProductsHeaderProps) {
   const handleChange = (event: SelectChangeEvent) => {
-    setSort(event.target.value);
+    // Call the onSortChange prop when the sorting option changes
+    onSortChange(event.target.value as string);
   };
   return (
     <Box

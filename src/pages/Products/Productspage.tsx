@@ -1,4 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 import BadgeStyle from "../Home/HomepageProducts/BadgeStyle";
 import ProductsHeader from "./ProductsHeader";
@@ -16,6 +17,47 @@ const ProductsNavigatoinItems = [
 
 export default function ProductsPage() {
   const TotalItems = ProductsImage.length;
+  const [sortedProducts, setSortedProducts] = useState([...ProductsImage]);
+  const [sort, setSort] = useState("Default sorting");
+
+  const handleSortChange = (sortingOption: any) => {
+    setSort(sortingOption);
+
+    switch (sortingOption) {
+      case "Sort by popularity":
+        setSortedProducts(
+          [...ProductsImage].sort(
+            (a, b) => parseFloat(b.price) - parseFloat(a.price)
+          )
+        );
+        break;
+      case "Sort by average rating":
+        break;
+      case "Sort by latest":
+        break;
+      case "Sort by price: low to high":
+        setSortedProducts(
+          [...ProductsImage].sort(
+            (a, b) => parseFloat(a.price) - parseFloat(b.price)
+          )
+        );
+        break;
+      case "Sort by price: high to low":
+        setSortedProducts(
+          [...ProductsImage].sort(
+            (a, b) => parseFloat(b.price) - parseFloat(a.price)
+          )
+        );
+        break;
+      default:
+        setSortedProducts([...ProductsImage]);
+        break;
+    }
+  };
+
+  useEffect(() => {
+    handleSortChange("Default sorting");
+  }, []);
 
   return (
     <Box>
@@ -29,11 +71,15 @@ export default function ProductsPage() {
         <Box margin={"0 auto"} maxWidth={1160} pt={"30px"}>
           <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
             <Box width={{ md: "80%" }} borderRight={"1px solid lightgray"}>
-              <ProductsHeader totalItems={TotalItems} />
+              <ProductsHeader
+                totalItems={TotalItems}
+                onSortChange={handleSortChange}
+                sort={sort}
+              />
 
               <Box mb={15} padding={"0 40px"}>
                 <Grid container>
-                  {ProductsImage.map((item, index) => (
+                  {sortedProducts.map((item, index) => (
                     <Grid
                       columnSpacing={"2rem"}
                       rowGap={"4rem"}
