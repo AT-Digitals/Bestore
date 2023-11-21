@@ -22,7 +22,7 @@ export default function AboutPage() {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             height: "auto",
-            minHeight: { xs: 400, sm: 690, md: 900 },
+            minHeight: { xs: 400, md: 900 },
           }}
         ></Box>
         <Box display={"flex"} justifyContent={"center"}>
@@ -42,7 +42,12 @@ export default function AboutPage() {
         </Box>
 
         <BestoreReviews />
-        <Box marginTop={"95px"} display={"flex"} justifyContent={"center"}>
+        <Box
+          padding={"0 50px"}
+          marginTop={"95px"}
+          display={"flex"}
+          justifyContent={"center"}
+        >
           <Typography
             paddingBottom={"100px"}
             textAlign={"center"}
@@ -58,7 +63,7 @@ export default function AboutPage() {
           </Typography>
         </Box>
       </Box>
-      <Stack direction={"row"}>
+      <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
         <Box
           sx={{
             backgroundSize: "cover",
@@ -67,9 +72,13 @@ export default function AboutPage() {
             height: "501px",
             backgroundImage: `url('https://themes.muffingroup.com/be/store2/wp-content/uploads/2020/07/store2-about-bg1.jpg')`,
           }}
-          width={"50%"}
+          width={{ sm: "100%", md: "50%" }}
         ></Box>
-        <Stack direction={"column"} margin={"120px 70px"}>
+        <Stack
+          direction={"column"}
+          padding={"0 20px"}
+          margin={{ sm: "70px 70px", md: "120px 70px" }}
+        >
           <Typography fontSize={"30px"} fontWeight={"600"} color={"black"}>
             Lorem ipsum quam pertroni
           </Typography>
@@ -99,7 +108,7 @@ export default function AboutPage() {
           </Button>
         </Stack>
       </Stack>
-      <Stack direction={"row-reverse"}>
+      <Stack direction={{ xs: "column", sm: "row-reverse", md: "row-reverse" }}>
         <Box
           sx={{
             backgroundSize: "cover",
@@ -109,9 +118,13 @@ export default function AboutPage() {
             float: "left",
             backgroundImage: `url('	https://themes.muffingroup.com/be/store2/wp-content/uploads/2020/07/store2-about-bg2.jpg')`,
           }}
-          width={"50%"}
+          width={{ sm: "100%", md: "50%" }}
         ></Box>
-        <Stack direction={"column"} margin={"120px 50px"}>
+        <Stack
+          padding={"0 20px"}
+          direction={"column"}
+          margin={{ sm: "70px 70px", md: "120px 70px" }}
+        >
           <Typography fontSize={"30px"} fontWeight={"600"} color={"black"}>
             Lorem ipsum quam pertroni
           </Typography>
@@ -142,8 +155,15 @@ export default function AboutPage() {
           </Button>
         </Stack>
       </Stack>
-      <Stack marginTop={"90px"} alignItems={"center"}>
-        <img width={"900px"} src={logo} alt="logo" />
+      <Stack padding={"0 50px"} marginTop={"90px"} alignItems={"center"}>
+        <img
+          width={"100%"}
+          style={{
+            maxWidth: "900px",
+          }}
+          src={logo}
+          alt="logo"
+        />
       </Stack>
       <Stack alignItems={"center"}>
         <CartImage />

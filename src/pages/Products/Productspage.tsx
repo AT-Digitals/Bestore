@@ -5,6 +5,15 @@ import ProductsHeader from "./ProductsHeader";
 import ProductsImage from "./ProductsItems";
 import Productsignup from "../../assets/ProductsImage/products-signup-image.jpg";
 
+const ProductsNavigatoinItems = [
+  { name: "Accessories", link: "" },
+  { name: "Bags", link: "" },
+  { name: "Clothing", link: "" },
+  { name: "Cosmatics", link: "" },
+  { name: "Jewelary", link: "" },
+  { name: "Shoes", link: "" },
+];
+
 export default function ProductsPage() {
   const TotalItems = ProductsImage.length;
 
@@ -112,26 +121,44 @@ export default function ProductsPage() {
               <Typography mb={2}>Products categories</Typography>
 
               <Stack spacing={2} maxWidth={{ sm: 160, md: 250 }} gap={"3rem"}>
-                <Box padding={"10px"} bgcolor={"#eb3c70"} width={226}>
-                  <ul
-                    style={{
-                      color: "white",
-                      width: 226,
-                    }}
-                  >
-                    <li
+                <Box bgcolor={"#eb3c70"} width={226}>
+                  {ProductsNavigatoinItems.map((item, index) => (
+                    <ul
                       style={{
-                        borderBottom: "1px sold red",
+                        color: "white",
+                        width: 226,
                       }}
                     >
-                      Accessories
-                    </li>
-                    <li>Bags</li>
-                    <li>Clothing</li>
-                    <li>Cosmetics</li>
-                    <li>Jewelry</li>
-                    <li>Shoes</li>
-                  </ul>
+                      <li
+                        style={{
+                          borderBottom: "1px sold red",
+                        }}
+                      >
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                          }}
+                        >
+                          <a
+                            style={{
+                              color: "white",
+                            }}
+                            href={item.link}
+                          >
+                            {item.name}
+                          </a>
+                          <hr
+                            style={{
+                              width: "70%",
+                              position: "relative",
+                              right: "32%",
+                            }}
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  ))}
                 </Box>
                 <img
                   style={

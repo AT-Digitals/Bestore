@@ -20,7 +20,7 @@ export default function Blogpage() {
         padding={"0 50px"}
         marginTop={"30px"}
         spacing={3}
-        direction={"row"}
+        direction={{ xs: "column", sm: "row", md: "row" }}
         justifyContent={"center"}
       >
         <Box margin={"30px"} overflow={"hidden"}>
