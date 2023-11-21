@@ -25,8 +25,16 @@ export default function ProductsPage() {
               <Box mb={15} padding={"0 40px"}>
                 <Grid container>
                   {ProductsImage.map((item, index) => (
-                    <Grid columnSpacing={"2rem"} item xs={12} sm={6} md={4}>
+                    <Grid
+                      columnSpacing={"2rem"}
+                      rowGap={"4rem"}
+                      item
+                      xs={12}
+                      sm={6}
+                      md={4}
+                    >
                       <Box
+                        mb={2}
                         mt={2}
                         maxWidth={260}
                         width={"100%"}
@@ -103,16 +111,12 @@ export default function ProductsPage() {
             <Box p={"0 20px"}>
               <Typography mb={2}>Products categories</Typography>
 
-              <Stack
-                spacing={2}
-                maxWidth={{ sm: 160, md: 250 }}
-                width={"100%"}
-                gap={"3rem"}
-              >
-                <Box padding={"10px"} bgcolor={"#eb3c70"} minHeight={256}>
+              <Stack spacing={2} maxWidth={{ sm: 160, md: 250 }} gap={"3rem"}>
+                <Box padding={"10px"} bgcolor={"#eb3c70"} width={226}>
                   <ul
                     style={{
                       color: "white",
+                      width: 226,
                     }}
                   >
                     <li
@@ -120,7 +124,7 @@ export default function ProductsPage() {
                         borderBottom: "1px sold red",
                       }}
                     >
-                      <a href="#"> Accessories</a>
+                      Accessories
                     </li>
                     <li>Bags</li>
                     <li>Clothing</li>
