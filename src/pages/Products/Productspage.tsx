@@ -121,7 +121,7 @@ export default function ProductsPage() {
               <Typography mb={2}>Products categories</Typography>
 
               <Stack spacing={2} maxWidth={{ sm: 160, md: 250 }} gap={"3rem"}>
-                <Box bgcolor={"#eb3c70"} width={226}>
+                <Box bgcolor={"#eb3c70"} maxWidth={{ sm: 122, md: 226 }}>
                   {ProductsNavigatoinItems.map((item, index) => (
                     <ul
                       style={{
