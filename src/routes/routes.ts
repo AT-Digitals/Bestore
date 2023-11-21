@@ -7,6 +7,7 @@ const BLOG = "/blog-page";
 const SIGN_UP = "/sign-up";
 const BLOG_ABOUT = "/blog-about";
 const PRODUCT_BAG = "/product-bag";
+const PRODUCT_SHOE = "/product-shoe";
 const routes = {
   ROOT,
   HOME,
@@ -17,5 +18,6 @@ const routes = {
   SIGN_UP,
   BLOG_ABOUT,
   PRODUCT_BAG,
+  PRODUCT_SHOE,
 };
 export default routes;
