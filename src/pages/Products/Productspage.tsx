@@ -7,18 +7,20 @@ import ProductsImage from "./ProductsItems";
 import Productsignup from "../../assets/ProductsImage/products-signup-image.jpg";
 
 const ProductsNavigatoinItems = [
-  { name: "Accessories", link: "" },
-  { name: "Bags", link: "" },
   { name: "Clothing", link: "" },
-  { name: "Cosmatics", link: "" },
-  { name: "Jewelary", link: "" },
-  { name: "Shoes", link: "" },
+  { name: "Home decoration", link: "" },
+  { name: "Facbarics", link: "" },
 ];
 
 export default function ProductsPage() {
   const TotalItems = ProductsImage.length;
   const [sortedProducts, setSortedProducts] = useState([...ProductsImage]);
   const [sort, setSort] = useState("Default sorting");
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleCategoryClick = (categoryName: any) => {
+    setSelectedCategory(categoryName);
+  };
 
   const handleSortChange = (sortingOption: any) => {
     setSort(sortingOption);
@@ -64,7 +66,7 @@ export default function ProductsPage() {
       <Box padding={"185px 0 60px"} textAlign={"center"} bgcolor={"#F6F6F6"}>
         <Typography fontSize={"75px"} fontWeight={"bold"}>
           {" "}
-          Products
+          {selectedCategory ? selectedCategory : "Products"}
         </Typography>
       </Box>
       <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>
@@ -192,6 +194,7 @@ export default function ProductsPage() {
                               textDecoration: "none",
                             }}
                             href={item.link}
+                            onClick={() => handleCategoryClick(item.name)}
                           >
                             {item.name}
                           </a>

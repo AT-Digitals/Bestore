@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import HeaderTabs from "./HeaderTabs";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import logo from "../assets/store2-logo.png";
+import logo from "./Akka creartions horizontal 2-03-03.png";
 
 export default function AppHeader() {
   const [scrolling, setScrolling] = useState(false);
@@ -50,7 +50,7 @@ export default function AppHeader() {
               src={logo}
               alt="app-logo"
               style={{
-                maxWidth: 210,
+                maxWidth: 160,
                 width: "100%",
               }}
             />
