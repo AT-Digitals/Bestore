@@ -41,10 +41,12 @@ interface AppDrawerProps {
 export default function AppDrawer({ open, onClose }: AppDrawerProps) {
   const services = [
     { linkname: "HOME", url: routes.HOME },
-    { linkname: "PRODUCTS", url: routes.PRODUCTS },
     { linkname: "ABOUT", url: routes.ABOUT },
+
+    { linkname: "PRODUCTS", url: routes.PRODUCTS },
+    { linkname: "CONTACT US", url: routes.CONTACT },
+
     { linkname: "BLOG", url: routes.BLOG },
-    { linkname: "CONTACT", url: routes.CONTACT },
   ];
 
   return (

@@ -7,10 +7,12 @@ import { useState } from "react";
 
 const CustomTabs = [
   { name: "HOME", link: routes.HOME },
-  { name: "PRODUCTS", link: routes.PRODUCTS },
   { name: "ABOUT", link: routes.ABOUT },
+
+  { name: "PRODUCTS", link: routes.PRODUCTS },
+  { name: "CONTACT US", link: routes.CONTACT },
+
   { name: "BLOG", link: routes.BLOG },
-  { name: "CONTACT", link: routes.CONTACT },
 ];
 
 export default function HeaderTabs() {
