@@ -2,15 +2,16 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import AboutPage from "../pages/About/Aboutpage";
 import AppLayout from "../common-components/AppLayout";
+import BlogAbout from "../pages/Blog/BlogAbout";
 import Blogpage from "../pages/Blog/Blogpage";
+import ClothingCategories from "../pages/Products/ProductsCategories/ClothingProducts";
 import ContactPage from "../pages/Contact/Contactpage";
 import Homepage from "../pages/Home/Homepage";
+import ProductBag from "../pages/Products/ProductBag";
+import ProductShoe from "../pages/Products/ProductShoe";
 import ProductsPage from "../pages/Products/Productspage";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import routes from "./routes";
-import BlogAbout from "../pages/Blog/BlogAbout";
-import ProductBag from "../pages/Products/ProductBag";
-import ProductShoe from "../pages/Products/ProductShoe";
 
 export default function AppRouter() {
   return (
@@ -28,6 +29,10 @@ export default function AppRouter() {
           <Route path={routes.BLOG_ABOUT} element={<BlogAbout />} />
           <Route path={routes.PRODUCT_BAG} element={<ProductBag />} />
           <Route path={routes.PRODUCT_SHOE} element={<ProductShoe />} />
+          <Route
+            path={routes.CLOTHING_PRODUCT}
+            element={<ClothingCategories />}
+          />
         </Route>
       </Routes>
     </Router>
