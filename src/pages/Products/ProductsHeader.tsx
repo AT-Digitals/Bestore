@@ -20,19 +20,18 @@ export default function ProductsHeader({
   sort,
 }: ProductsHeaderProps) {
   const handleChange = (event: SelectChangeEvent) => {
-    // Call the onSortChange prop when the sorting option changes
     onSortChange(event.target.value as string);
   };
   return (
     <Box
       display={"flex"}
-      flexDirection={{ xs: "column", md: "row" }}
+      flexDirection={{ xs: "column", sm: "row", md: "row" }}
       justifyContent={"space-between"}
       marginBottom={"20px"}
       alignItems={"center"}
       sx={{
         backgroundImage: `url(${HeaderBg})`,
-        padding: "15px",
+        padding: "0 30px",
       }}
     >
       <Typography color={"#A8A8A8"}>
