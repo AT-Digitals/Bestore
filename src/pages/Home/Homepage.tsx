@@ -2,7 +2,6 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 
 import AboutConainer from "./AboutContainer/AboutContainer";
 import Banner from "./homepage-banner.jpg";
-import Banner1 from "./homepage-banner1.jpg";
 import BannerCircule from "../../assets/banner-circule.png";
 import BestSellingProducts from "./HomepageProducts/BestSellingProducts";
 import Card1 from "./home-image1.png";

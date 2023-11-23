@@ -17,7 +17,7 @@ const StyledDrawer = styled(Drawer)({
   "& .MuiDrawer-paper": {
     width: "300px",
     boxSizing: "border-box",
-    backgroundColor: "#fadd75",
+    backgroundColor: "white",
     padding: "20px",
     "& .MuiListItemButton-root:hover": {
       backgroundColor: "white",

@@ -21,7 +21,7 @@ export default function MoblieHeader() {
         display={{ lg: "flex", xl: "none" }}
         justifyContent={"space-between"}
         width="100%"
-        bgcolor={"#fadd75"}
+        bgcolor={"white"}
       >
         <Stack
           direction="row"
