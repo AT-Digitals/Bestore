@@ -1,11 +1,4 @@
-import {
-  Button,
-  Divider,
-  Drawer,
-  List,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Divider, Drawer, List, Typography, styled } from "@mui/material";
 
 import routes from "../../routes/routes";
 
@@ -45,8 +38,6 @@ export default function AppDrawer({ open, onClose }: AppDrawerProps) {
 
     { linkname: "PRODUCTS", url: routes.PRODUCTS },
     { linkname: "CONTACT US", url: routes.CONTACT },
-
-    { linkname: "BLOG", url: routes.BLOG },
   ];
 
   return (
@@ -57,21 +48,7 @@ export default function AppDrawer({ open, onClose }: AppDrawerProps) {
       onClose={onClose}
     >
       <Divider />
-      <Button
-        fullWidth
-        style={{
-          background: "black",
-          color: "white",
-          borderRadius: "10px",
-          fontSize: "18px",
-          textTransform: "none",
-          maxWidth: "230px",
-          width: "100%",
-          padding: "10px",
-        }}
-      >
-        Buy now
-      </Button>
+
       <List>
         {services.map((service, index) => (
           <HeaderLink

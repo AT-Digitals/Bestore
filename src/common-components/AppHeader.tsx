@@ -1,8 +1,7 @@
-import { Box, Button, IconButton, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import HeaderTabs from "./HeaderTabs";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import logo from "./Akka creartions horizontal 2-03-03.png";
 
 export default function AppHeader() {
@@ -26,7 +25,7 @@ export default function AppHeader() {
   return (
     <Stack
       display={{ xs: "none", xl: "flex" }}
-      bgcolor={scrolling ? "#fadd75" : "transparent"}
+      bgcolor={scrolling ? "white" : "transparent"}
       sx={{
         transition: "background-color 0.3s",
         position: "sticky",
@@ -58,7 +57,7 @@ export default function AppHeader() {
           <Stack spacing={2} direction={"row"}>
             <HeaderTabs />
 
-            <Box alignItems={"center"} display={"flex"} gap={"1rem"}>
+            {/* <Box alignItems={"center"} display={"flex"} gap={"1rem"}>
               <IconButton>
                 <ShoppingBagIcon />
               </IconButton>
@@ -74,7 +73,7 @@ export default function AppHeader() {
               >
                 Buy now
               </Button>
-            </Box>
+            </Box> */}
           </Stack>
         </Box>
       </Box>
