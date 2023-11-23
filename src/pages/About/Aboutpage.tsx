@@ -1,20 +1,13 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
 import AboutBanner from "../../assets/AboutBanner.jpg";
-import BestoreReviews from "../../common-components/BestoreReviews";
 import CartImage from "../../common-components/CartImage";
-import SignUpNewsLetter from "../Home/Sign-Up/SignUpwithLetter";
-import SliderImages from "../../common-components/SliderImages";
 import logo from "../../assets/store2-about-brands.png";
 
 export default function AboutPage() {
   return (
     <Box>
-      <Box
-        sx={{
-          backgroundColor: "#f4f4f4",
-        }}
-      >
+      <Box>
         <Box
           sx={{
             backgroundImage: `url(${AboutBanner})`,
@@ -25,7 +18,17 @@ export default function AboutPage() {
             minHeight: { xs: 400, md: 900 },
           }}
         ></Box>
-        <Box display={"flex"} justifyContent={"center"}>
+        <Stack padding={"0 50px"} marginTop={"90px"} alignItems={"center"}>
+          <img
+            width={"100%"}
+            style={{
+              maxWidth: "900px",
+            }}
+            src={logo}
+            alt="logo"
+          />
+        </Stack>
+        {/* <Box display={"flex"} justifyContent={"center"}>
           <Typography
             paddingTop={"80px"}
             textAlign={"center"}
@@ -39,10 +42,10 @@ export default function AboutPage() {
             dolor sit amet, consectetur adipisicing elit, sed do dolore magna
             aliqua. Ut enim ad minim veni sit amet
           </Typography>
-        </Box>
+        </Box> */}
 
-        <BestoreReviews />
-        <Box
+        {/* <BestoreReviews /> */}
+        {/* <Box
           padding={"0 50px"}
           marginTop={"95px"}
           display={"flex"}
@@ -61,7 +64,7 @@ export default function AboutPage() {
             dolor sit amet, consectetur adipisicing elit, sed do dolore magna
             aliqua. Ut enim ad minim veni sit amet
           </Typography>
-        </Box>
+        </Box> */}
       </Box>
       <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
         <Box
@@ -155,21 +158,12 @@ export default function AboutPage() {
           </Button>
         </Stack>
       </Stack>
-      <Stack padding={"0 50px"} marginTop={"90px"} alignItems={"center"}>
-        <img
-          width={"100%"}
-          style={{
-            maxWidth: "900px",
-          }}
-          src={logo}
-          alt="logo"
-        />
-      </Stack>
+
       <Stack alignItems={"center"}>
         <CartImage />
-        <SignUpNewsLetter />
+        {/* <SignUpNewsLetter /> */}
       </Stack>
-      <SliderImages />
+      {/* <SliderImages /> */}
     </Box>
   );
 }

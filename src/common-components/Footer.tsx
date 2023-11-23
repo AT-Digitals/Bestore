@@ -1,7 +1,5 @@
-import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, Stack, useMediaQuery } from "@mui/material";
 
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import logo from "./Akka creartions horizontal 2-03-03.png";
 import routes from "../routes/routes";
@@ -25,8 +23,6 @@ const FooterItems = [
 
   { name: "Products", link: routes.PRODUCTS },
   { name: "Contact us", link: routes.CONTACT },
-
-  { name: "Blog", link: routes.BLOG },
 ];
 export default function AppFooter1() {
   const isSmScreen = useMediaQuery("(max-width:950px)");

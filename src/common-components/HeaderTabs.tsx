@@ -11,8 +11,6 @@ const CustomTabs = [
 
   { name: "PRODUCTS", link: routes.PRODUCTS },
   { name: "CONTACT US", link: routes.CONTACT },
-
-  { name: "BLOG", link: routes.BLOG },
 ];
 
 export default function HeaderTabs() {

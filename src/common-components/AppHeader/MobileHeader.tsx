@@ -5,7 +5,6 @@ import AppDrawer from "./AppDrwaer";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import logo from "../Akka creartions horizontal 2-03-03.png";
 import routes from "../../routes/routes";
 
@@ -35,9 +34,6 @@ export default function MoblieHeader() {
             <img width={170} src={logo} alt="be-store" height={30} />
           </Link>
           <Box>
-            <IconButton>
-              <ShoppingBagIcon />
-            </IconButton>
             <IconButton size="large" onClick={handleDrawerOpen}>
               <DragHandleIcon style={{ fontSize: 40, color: "black" }} />
             </IconButton>

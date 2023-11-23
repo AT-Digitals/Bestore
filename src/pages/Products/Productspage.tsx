@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import BadgeStyle from "../Home/HomepageProducts/BadgeStyle";
 import ClothingCategories from "./ProductsCategories/ClothingProducts";
+import ProductBanner from "./Products-banner.jpg";
 import ProductsHeader from "./ProductsHeader";
 import ProductsImage from "./ProductsItems";
 import Productsignup from "../../assets/ProductsImage/products-signup-image.jpg";
@@ -64,14 +65,26 @@ export default function ProductsPage() {
 
   return (
     <Box>
-      <Box padding={"185px 0 60px"} textAlign={"center"} bgcolor={"#F6F6F6"}>
-        <Typography fontSize={"75px"} fontWeight={"bold"}>
+      <Box
+        style={{
+          backgroundImage: `url(${ProductBanner})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+        width={"100%"}
+        height={{ sm: undefined, md: 200 }}
+        padding={{ sm: "40px 0 60px", md: "140px 0 60px" }}
+        textAlign={"center"}
+        bgcolor={"#F6F6F6"}
+      >
+        <Typography color={"white"} fontSize={"75px"} fontWeight={"bold"}>
           {" "}
           {selectedCategory ? selectedCategory : "Products"}
         </Typography>
       </Box>
       <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>
-        <Box margin={"0 auto"} maxWidth={1160} pt={"30px"}>
+        <Box p={"30px"}>
           <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
             <Box width={{ md: "80%" }} borderRight={"1px solid lightgray"}>
               <ProductsHeader
