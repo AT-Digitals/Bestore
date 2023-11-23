@@ -7,6 +7,7 @@ import ProductBanner from "./Products-banner.jpg";
 import ProductsHeader from "./ProductsHeader";
 import ProductsImage from "./ProductsItems";
 import Productsignup from "../../assets/ProductsImage/products-signup-image.jpg";
+import WishtList from "../Home/HomepageProducts/WishitList";
 
 const ProductsNavigatoinItems = [
   { name: "Clothing", link: "" },
@@ -145,6 +146,7 @@ export default function ProductsPage() {
                             alt="products"
                           />
                           {item.type === "Best selling" && <BadgeStyle />}
+                          <WishtList right={"15px"} />
                           <Box
                             display={"flex"}
                             flexDirection={"column"}

@@ -7,6 +7,7 @@ import ProductsImage1 from "../../../assets/ProductsImage/bag.jpg";
 import ProductsImage3 from "../../../assets/ProductsImage/dress.jpg";
 import ProductsImage4 from "../../../assets/ProductsImage/cream.jpg";
 import ProductsImage5 from "../../../assets/ProductsImage/dress1.jpg";
+import WishtList from "./WishitList";
 
 const ProductsImage = [
   {
@@ -87,6 +88,7 @@ export default function ProductsCard() {
                   alt="products"
                 />
                 {item.type === "Best selling" && <BadgeStyle />}
+                <WishtList right={0} />
                 <Typography fontSize={"21px"} fontWeight={"bold"} mt={1}>
                   {item.name}
                 </Typography>
