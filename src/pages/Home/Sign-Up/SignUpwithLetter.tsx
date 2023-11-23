@@ -101,7 +101,6 @@ export default function SignUpNewsLetter() {
           backgroundImage: `url('https://themes.muffingroup.com/be/store2/wp-content/uploads/2020/07/store2-home-bg.png')`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          paddingBottom: "50px",
         }}
       >
         <Typography
@@ -188,7 +187,7 @@ export default function SignUpNewsLetter() {
               />
             </Box>
           </Stack>
-          <Box marginBottom={"20px"} textAlign={"center"} padding={"35px 20px"}>
+          <Box textAlign={"center"} padding={"35px 20px"}>
             <Button
               style={{
                 color: "#fff",

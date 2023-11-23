@@ -68,7 +68,7 @@ export default function SliderImages() {
         >
           <img
             style={{
-              width: "100%",
+              width: "150%",
               transition: "transform 0.5s ease",
               height: "100%",
             }}
