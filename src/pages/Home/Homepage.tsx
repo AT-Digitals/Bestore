@@ -2,9 +2,8 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 
 import AboutConainer from "./AboutContainer/AboutContainer";
 import Banner from "./homepage-banner.jpg";
-import BannerCircule from "../../assets/banner-circule.png";
 import BestSellingProducts from "./HomepageProducts/BestSellingProducts";
-import Card1 from "./home-image1.png";
+import Card1 from "./home-card1.jpg";
 import Card2 from "./home-image3.png";
 import Card3 from "./home-image2.png";
 import CartImage from "../../common-components/CartImage";
@@ -43,26 +42,6 @@ export default function Homepage() {
           width: "100%",
         }}
       ></Box>
-      <Box position={"absolute"} right={"7%"} top={"44.5rem"}>
-        <img
-          width={195}
-          height={196}
-          src={BannerCircule}
-          alt="banner circule"
-          style={
-            {
-              width: "100%",
-              transition: "transform 0.5s ease",
-            } as any
-          }
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "scale(1.1)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-          }}
-        />
-      </Box>
 
       <Box
         display={"flex"}
@@ -134,13 +113,16 @@ export default function Homepage() {
             }}
           >
             <img
-              style={{
-                opacity: 1,
-                maxWidth: "100%",
-                height: "520px",
-                transition: ".5s ease",
-                backfaceVisibility: "hidden",
-              }}
+              style={
+                {
+                  opacity: 1,
+                  width: "100%",
+                  transition: ".5s ease",
+                  backfaceVisibility: "hidden",
+                  minHeight: { sm: 300, md: 520 },
+                  height: "100%",
+                } as any
+              }
               src={item.image}
               alt=""
             />
@@ -158,7 +140,7 @@ export default function Homepage() {
             >
               <Typography
                 padding={"16px"}
-                fontSize={"54px"}
+                fontSize={{ xs: "54px", sm: "30px", md: "54px" }}
                 color={"white"}
                 fontWeight={"bold"}
                 whiteSpace={"nowrap"}
