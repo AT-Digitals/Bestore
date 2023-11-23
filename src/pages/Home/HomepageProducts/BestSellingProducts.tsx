@@ -7,6 +7,7 @@ import Creame from "../../../assets/ProductsImage/cream.jpg";
 import Jacket from "../../../assets/ProductsImage/Products.-best2.jpg";
 import { Link } from "react-router-dom";
 import Pants from "../../../assets/ProductsImage/Products.-bestjpg.jpg";
+import WishtList from "./WishitList";
 
 const ProductsImage = [
   {
@@ -96,6 +97,7 @@ export default function BestSellingProducts() {
                   alt="products"
                 />
                 {item.type === "Best selling" && <BadgeStyle />}
+                <WishtList right={0} />
                 <Typography fontSize={"21px"} fontWeight={"bold"} mt={1}>
                   {item.name}
                 </Typography>
