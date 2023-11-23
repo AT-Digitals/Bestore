@@ -58,11 +58,7 @@ export default function SliderImages() {
     );
   };
   return (
-    <Stack
-      maxWidth={1519}
-      width={"100%"}
-      direction={{ xs: "column", sm: "row", md: "row" }}
-    >
+    <Stack width={"100%"} direction={{ xs: "column", sm: "row", md: "row" }}>
       {SlideImage.map((image, index) => (
         <Box
           onClick={() => openModal(index)}
@@ -74,6 +70,7 @@ export default function SliderImages() {
             style={{
               width: "100%",
               transition: "transform 0.5s ease",
+              height: "100%",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.1)";
