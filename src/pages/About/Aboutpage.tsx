@@ -23,6 +23,7 @@ export default function AboutPage() {
             width={"100%"}
             style={{
               maxWidth: "900px",
+              marginBottom: '90px',
             }}
             src={logo}
             alt="logo"
