@@ -50,7 +50,7 @@ const ProductsImage = [
 export default function BestSellingProducts() {
   return (
     <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
-      <Grid container spacing={2}>
+      <Grid padding={"0 20px"} ml={0} container spacing={2}>
         {ProductsImage.map((item, index) => (
           <Grid item xs={12} sm={6} md={2.4} key={index}>
             <Link
@@ -62,10 +62,22 @@ export default function BestSellingProducts() {
               to={""}
             >
               <Box
+                mb={1}
                 key={index}
-                margin={"0 auto"}
                 position="relative"
-                style={{ overflow: "hidden", cursor: "pointer" }}
+                maxWidth={{ xs: 300, sm: 330, md: 280 }}
+                style={{
+                  overflow: "hidden",
+                  cursor: "pointer",
+                  transition: "transform 0.5s ease",
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
               >
                 <img
                   style={{
@@ -87,7 +99,12 @@ export default function BestSellingProducts() {
                 <Typography fontSize={"21px"} fontWeight={"bold"} mt={1}>
                   {item.name}
                 </Typography>
-                <Box display={"flex"} gap={"0.5rem"} justifyContent={"center"}>
+                <Box
+                  mb={2}
+                  display={"flex"}
+                  gap={"0.5rem"}
+                  justifyContent={"center"}
+                >
                   {item.offerprice ? (
                     <Typography
                       fontSize={"18px"}
