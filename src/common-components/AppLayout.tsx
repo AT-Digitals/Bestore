@@ -1,7 +1,6 @@
 import { Box, BoxProps } from "@mui/material";
 
 import AppFooter from "./AppFooter";
-import AppFooter1 from "./Footer";
 import Header from "./Header/Header";
 import Layout from "./Layout";
 import { Outlet } from "react-router-dom";
@@ -23,7 +22,7 @@ export default function AppLayout({ children, ...props }: BoxProps) {
             <Outlet />
           </Box>
           {/* <AppFooter /> */}
-          <AppFooter1 />
+          <AppFooter />
         </Box>
       </Box>
     </Layout>

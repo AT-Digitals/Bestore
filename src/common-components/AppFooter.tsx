@@ -1,9 +1,19 @@
-import { Box, Button, Stack, Typography, styled } from "@mui/material";
+import {
+  Box,
+  InputAdornment,
+  Stack,
+  TextField,
+  Typography,
+  styled,
+} from "@mui/material";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import logo from "./Akka creartions horizontal 2-03-03.png";
+import routes from "../routes/routes";
 
 const CustomLabel = styled(Typography)({
   color: "#6F6F6F",
@@ -11,111 +21,132 @@ const CustomLabel = styled(Typography)({
 });
 export default function AppFooter() {
   return (
-    <Stack
+    <Box
       bgcolor={"#f6f6f6"}
-      direction={{ xs: "column", sm: "column", md: "row" }}
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
     >
       <Stack
-        paddingTop={"100px"}
-        direction={{ xs: "column", sm: "column", md: "row" }}
-        spacing={6}
-        margin={"0 auto"}
-        marginBottom={"5rem"}
+        direction={{ xs: "column", sm: "row", md: "row" }}
+        justifyContent={"center"}
+        maxWidth={1500}
       >
-        <Stack direction={"column"} spacing={3} maxWidth={260}>
-          <Typography fontWeight={"bold"} fontSize={"24px"}>
-            Lorem ipsium dolor sam etomnia
-          </Typography>
-          <Button
-            style={{
-              background: "#7f7f7f",
-              color: "white",
-              maxWidth: 160,
-              width: "100%",
-              borderRadius: "20px",
-              textTransform: "none",
-            }}
-          >
-            More details
-          </Button>
-          <Box borderBottom={"1px solid gray"}></Box>
-          <Stack direction={"row"}>
-            <FacebookIcon style={{ color: "#ec4979" }} />
-            <TwitterIcon style={{ color: "#ec4979" }} />
-            <LinkedInIcon style={{ color: "#ec4979" }} />
+        <Stack
+          width={"100%"}
+          paddingTop={"90px"}
+          direction={{ xs: "column", sm: "row", md: "row" }}
+          spacing={10}
+          marginBottom={"5rem"}
+        >
+          <Stack direction={"column"} spacing={3} maxWidth={260}>
+            <Stack direction={"column"} spacing={3}>
+              <a href={routes.HOME}>
+                <img
+                  src={logo}
+                  alt="alterknit logo"
+                  loading="lazy"
+                  width={200}
+                  height={40}
+                />
+              </a>
+
+              <Typography>
+                The customer is at the heart of our unique business model, which
+                includes design
+              </Typography>
+              <Box border={"1px solid black"}></Box>
+              <Stack spacing={1} direction={"row"}>
+                <FacebookIcon
+                  style={{
+                    color: "gray",
+                  }}
+                />
+                <TwitterIcon
+                  style={{
+                    color: "gray",
+                  }}
+                />
+                <LinkedInIcon
+                  style={{
+                    color: "gray",
+                  }}
+                />
+              </Stack>
+            </Stack>
           </Stack>
-        </Stack>
-        <Box gap={"3rem"}>
-          <Typography
-            fontSize={"16px"}
-            fontFamily={'"Lato", Helvetica, Arial, sans-serif'}
-            fontWeight={"bold"}
-          >
-            Useful links
-          </Typography>
-          <br />
-          <Stack spacing={1}>
+
+          <Stack direction={"column"} spacing={1}>
+            <br />
+
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> P-3400 ipsum </CustomLabel>
+              <CustomLabel>Clothing </CustomLabel>
             </Box>
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> AD Conser poretel venture </CustomLabel>
-            </Box>{" "}
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> Elisted-34 eiusmod</CustomLabel>
-            </Box>{" "}
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> Atlabore-33</CustomLabel>
+              <CustomLabel> Home decor </CustomLabel>
             </Box>
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> Tempor-Z incididunt</CustomLabel>
-            </Box>
-          </Stack>
-        </Box>
-        <Box maxWidth={260}>
-          <br />
-          <br />
-          <Stack spacing={0.5}>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Lorem ipsum</CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Consectetur adipisicing</CustomLabel>
-            </Box>{" "}
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> Elitsed do eiusmund</CustomLabel>
-            </Box>{" "}
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Tempor incididunt</CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Altabore</CustomLabel>
+              <CustomLabel>Fabaric </CustomLabel>
             </Box>
           </Stack>
-        </Box>
-        <Stack spacing={2} maxWidth={300}>
-          <Typography fontSize={"16px"} fontWeight={"bold"}>
-            Our mission
-          </Typography>
-          <CustomLabel fontSize={"15px"}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </CustomLabel>
-          <a href="/" style={{ color: "#ec4979", textDecoration: "none" }}>
-            Read more
-          </a>
+          <Stack direction={"column"} spacing={1}>
+            <br />
+
+            <Box p={1} display={"flex"}>
+              <ChevronRightIcon style={{ color: "#ec4979" }} />
+              <CustomLabel>Home </CustomLabel>
+            </Box>
+            <Box p={1} display={"flex"}>
+              <ChevronRightIcon style={{ color: "#ec4979" }} />
+              <CustomLabel> About </CustomLabel>
+            </Box>
+            <Box p={1} display={"flex"}>
+              <ChevronRightIcon style={{ color: "#ec4979" }} />
+              <CustomLabel>Products </CustomLabel>
+            </Box>
+            <Box p={1} display={"flex"}>
+              <ChevronRightIcon style={{ color: "#ec4979" }} />
+              <CustomLabel>Contact us </CustomLabel>
+            </Box>
+          </Stack>
+
+          <Stack spacing={2} maxWidth={300}>
+            <br />
+            <Typography fontSize={"16px"} fontWeight={"bold"}>
+              NEWSLETTER{" "}
+            </Typography>
+            <CustomLabel fontSize={"15px"}>
+              Join now for exclusive deals, special promos, and a better
+              shopping experience
+            </CustomLabel>
+            <TextField
+              variant="standard"
+              placeholder="Your email"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <EmailIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />{" "}
+          </Stack>
         </Stack>
       </Stack>
-    </Stack>
+      <Box
+        display={"flex"}
+        justifyContent={"center"}
+        width={"80%"}
+        borderTop={"1px solid black"}
+        margin={"0 auto"}
+      >
+        <Box mt={3} mb={2}>
+          <Typography>copyright@2023 | All rights reserved</Typography>
+        </Box>
+      </Box>
+    </Box>
   );
 }

@@ -1,12 +1,13 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
-import About from "../../../assets/about.png";
+import About from "../about-home.avif";
 import { Link } from "react-router-dom";
 import routes from "../../../routes/routes";
 
 export default function AboutConainer() {
   return (
     <Box
+      boxShadow="5px 5px 8px 5px rgba(0, 0, 0, 0.1)"
       flexDirection={{ xs: "column", sm: "row" }}
       maxWidth={1140}
       margin={"0 auto"}
@@ -35,10 +36,9 @@ export default function AboutConainer() {
           We provide the newest trends in fashion
         </Typography>
         <Typography fontSize={"15px"}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Elevate your wardrobe with our versatile denim jeans, transform your
+          living room with our geometric patterned rugs, and indulge in cozy
+          evenings with our plush fleece blankets.
         </Typography>
         <Link to={routes.ABOUT}>
           <Button

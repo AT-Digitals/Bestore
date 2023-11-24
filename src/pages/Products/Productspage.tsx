@@ -1,12 +1,12 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
-import BadgeStyle from "../Home/HomepageProducts/BadgeStyle";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ClothingCategories from "./ProductsCategories/ClothingProducts";
+import { Link } from "react-router-dom";
 import ProductBanner from "./Products-banner.jpg";
 import ProductsHeader from "./ProductsHeader";
 import ProductsImage from "./ProductsItems";
-import Productsignup from "../../assets/ProductsImage/products-signup-image.jpg";
 import WishtList from "../Home/HomepageProducts/WishitList";
 
 const ProductsNavigatoinItems = [
@@ -20,10 +20,6 @@ export default function ProductsPage() {
   const [sortedProducts, setSortedProducts] = useState([...ProductsImage]);
   const [sort, setSort] = useState("Default sorting");
   const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleCategoryClick = (categoryName: any) => {
-    setSelectedCategory(categoryName);
-  };
 
   const handleSortChange = (sortingOption: any) => {
     setSort(sortingOption);
@@ -63,6 +59,16 @@ export default function ProductsPage() {
   useEffect(() => {
     handleSortChange("Default sorting");
   }, []);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleToggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleCategoryClick = (category: any) => {
+    setSelectedCategory(category);
+    console.log(`Clicked on category: ${category}`);
+  };
 
   return (
     <Box>
@@ -86,14 +92,59 @@ export default function ProductsPage() {
       </Box>
       <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>
         <Box p={"30px"}>
+          <ProductsHeader
+            totalItems={TotalItems}
+            onSortChange={handleSortChange}
+            sort={sort}
+          />
           <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
-            <Box width={{ md: "80%" }} borderRight={"1px solid lightgray"}>
-              <ProductsHeader
-                totalItems={TotalItems}
-                onSortChange={handleSortChange}
-                sort={sort}
-              />
+            <Box width="20%" p="0 20px">
+              <Stack
+                mt={2}
+                spacing={2}
+                maxWidth={{ sm: 160, md: 280 }}
+                gap="1rem"
+              >
+                <div>
+                  <Box
+                    padding={2}
+                    // boxShadow="5px 5px 8px 5px rgba(0, 0, 0, 0.1)"
+                    style={{ cursor: "pointer" }}
+                    onClick={handleToggleDropdown}
+                    display="flex"
+                    justifyContent="space-between"
+                  >
+                    <Typography fontSize={"16px"} fontWeight={"bold"}>
+                      CATEGORIES
+                    </Typography>
+                    <ArrowDropDownIcon />
+                  </Box>
 
+                  {isDropdownOpen && (
+                    <>
+                      <Box padding={"0 20px"}>
+                        {ProductsNavigatoinItems.map((name) => (
+                          <Typography
+                            color={"gray"}
+                            key={name.name}
+                            onClick={() => handleCategoryClick(name.name)}
+                          >
+                            {name.name}
+                          </Typography>
+                        ))}
+                      </Box>
+                      <Box
+                        pt={2}
+                        margin={"0 auto"}
+                        width={"90%"}
+                        borderBottom={"1px solid gray"}
+                      ></Box>
+                    </>
+                  )}
+                </div>
+              </Stack>
+            </Box>
+            <Box width={{ md: "80%" }}>
               <Box mb={15}>
                 {selectedCategory === "Clothing" ? (
                   <ClothingCategories />
@@ -113,149 +164,98 @@ export default function ProductsPage() {
                         md={4}
                         style={{ display: "flex" }}
                       >
-                        <Box
-                          mb={2}
-                          mt={2}
-                          maxWidth={{ xs: 330, sm: 240, md: 330 }}
-                          width={"100%"}
-                          gap={"2rem"}
-                          key={index}
-                          position="relative"
+                        <Link
+                          to={`/products/${item.id}`}
                           style={{
-                            overflow: "hidden",
-                            cursor: "pointer",
-                            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                            transition: "transform 0.5s ease",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "scale(1.1)";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
+                            textDecoration: "none",
+                            color: "black",
                           }}
                         >
-                          <img
-                            style={
-                              {
-                                height: { xs: 210, sm: 240, md: 260 },
-                                maxWidth: { xs: 210, sm: 240, md: 260 },
-                                width: "100%",
-                              } as any
-                            }
-                            src={item.Image}
-                            alt="products"
-                          />
-                          {item.type === "Best selling" && <BadgeStyle />}
-                          <WishtList right={"15px"} />
                           <Box
-                            display={"flex"}
-                            flexDirection={"column"}
-                            justifyContent={"flex-start"}
+                            mb={2}
+                            mt={2}
+                            maxWidth={{ xs: 330, sm: 240, md: 330 }}
+                            width={"100%"}
+                            gap={"2rem"}
+                            key={index}
+                            position="relative"
+                            style={{
+                              overflow: "hidden",
+                              cursor: "pointer",
+                              boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                              transition: "transform 0.5s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = "scale(1.1)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = "scale(1)";
+                            }}
                           >
-                            <Typography
-                              textAlign={"center"}
-                              fontSize={"21px"}
-                              fontWeight={"bold"}
-                              mt={1}
-                            >
-                              {item.name}
-                            </Typography>
+                            <img
+                              style={
+                                {
+                                  height: { xs: 210, sm: 240, md: 260 },
+                                  maxWidth: { xs: 210, sm: 240, md: 260 },
+                                  width: "100%",
+                                } as any
+                              }
+                              src={item.Image}
+                              alt="products"
+                            />
+                            <WishtList right={"15px"} />
                             <Box
-                              mb={1}
-                              justifyContent={"center"}
                               display={"flex"}
-                              gap={"0.5rem"}
+                              flexDirection={"column"}
+                              justifyContent={"flex-start"}
                             >
-                              {item.offerprice ? (
+                              <Typography
+                                textAlign={"center"}
+                                fontSize={"21px"}
+                                fontWeight={"bold"}
+                                mt={1}
+                              >
+                                {item.name}
+                              </Typography>
+                              <Box
+                                mb={1}
+                                justifyContent={"center"}
+                                display={"flex"}
+                                gap={"0.5rem"}
+                              >
+                                {item.offerprice ? (
+                                  <Typography
+                                    fontSize={"18px"}
+                                    color={"#EB3C70"}
+                                    style={{
+                                      opacity: 0.5,
+                                      textDecoration: "line-through",
+                                    }}
+                                  >
+                                    {" "}
+                                    £{item.offerprice}
+                                  </Typography>
+                                ) : null}
                                 <Typography
+                                  style={{
+                                    textDecoration: item.offerprice
+                                      ? "underline"
+                                      : undefined,
+                                  }}
                                   fontSize={"18px"}
                                   color={"#EB3C70"}
-                                  style={{
-                                    opacity: 0.5,
-                                    textDecoration: "line-through",
-                                  }}
                                 >
-                                  {" "}
-                                  £{item.offerprice}
+                                  {item.price ? "£" : undefined} {item.price}
                                 </Typography>
-                              ) : null}
-                              <Typography
-                                style={{
-                                  textDecoration: item.offerprice
-                                    ? "underline"
-                                    : undefined,
-                                }}
-                                fontSize={"18px"}
-                                color={"#EB3C70"}
-                              >
-                                {item.price ? "£" : undefined} {item.price}
-                              </Typography>
+                              </Box>
                             </Box>
                           </Box>
-                        </Box>
+                        </Link>
                       </Grid>
                     ))}
                   </Grid>
                 )}
               </Box>
-            </Box>
-            <Box p={"0 20px"}>
-              <Typography mb={2}>Products categories</Typography>
-
-              <Stack spacing={2} maxWidth={{ sm: 160, md: 250 }} gap={"3rem"}>
-                <Box bgcolor={"#eb3c70"} maxWidth={{ sm: 122, md: 226 }}>
-                  {ProductsNavigatoinItems.map((item, index) => (
-                    <ul
-                      style={{
-                        color: "white",
-                      }}
-                    >
-                      <li
-                        style={{
-                          borderBottom: "1px sold red",
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            flexDirection: "column",
-                          }}
-                        >
-                          <p
-                            style={{
-                              color: "white",
-                              textDecoration: "none",
-                            }}
-                            // href={item.link}
-                            onClick={() => handleCategoryClick(item.name)}
-                          >
-                            {item.name}
-                          </p>
-                          <div
-                            style={{
-                              marginTop: "5px",
-                              width: "49%",
-                              position: "relative",
-                              right: "32%",
-                              borderBottom: "1px solid rgba(255,255,255,.2)",
-                            }}
-                          ></div>
-                        </div>
-                      </li>
-                    </ul>
-                  ))}
-                </Box>
-                <img
-                  style={
-                    {
-                      maxWidth: { sm: 122, md: 226 },
-                      width: "100%",
-                    } as any
-                  }
-                  src={Productsignup}
-                  alt=""
-                />
-              </Stack>
             </Box>
           </Stack>
         </Box>

@@ -26,6 +26,7 @@ const ProductsImage = [
     price: "156.00",
     type: "not-best selling",
     offerprice: "",
+    id: "1",
   },
   {
     name: "Beige shoes",
@@ -33,6 +34,7 @@ const ProductsImage = [
     price: "189.00",
     type: "Best selling",
     offerprice: "199.00",
+    id: "2",
   },
   {
     name: "Coat",
@@ -40,6 +42,7 @@ const ProductsImage = [
     price: "600.00",
     type: "Best selling",
     offerprice: "799.00",
+    id: "3",
   },
   {
     name: "Creame",
@@ -47,6 +50,7 @@ const ProductsImage = [
     price: "8.00",
     type: "Best selling",
     offerprice: "12.00",
+    id: "4",
   },
   {
     name: "Dress",
@@ -54,6 +58,7 @@ const ProductsImage = [
     price: " 99.00",
     type: "Best selling",
     offerprice: "139.00",
+    id: "5",
   },
   {
     name: "Face Balm",
@@ -61,6 +66,7 @@ const ProductsImage = [
     price: "9.00",
     type: "Best selling",
     offerprice: "12.00",
+    id: "6",
   },
   {
     name: "Flip flops",
@@ -68,6 +74,7 @@ const ProductsImage = [
     price: "",
     type: "not-Best selling",
     offerprice: "",
+    id: "7",
   },
   {
     name: "Glasses",
@@ -75,6 +82,7 @@ const ProductsImage = [
     price: " 99.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "8",
   },
   {
     name: "Gold chain",
@@ -82,6 +90,7 @@ const ProductsImage = [
     price: "899.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "9",
   },
   {
     name: "Jacket",
@@ -89,6 +98,7 @@ const ProductsImage = [
     price: " 299.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "10",
   },
   {
     name: "Lipsstick",
@@ -96,6 +106,7 @@ const ProductsImage = [
     price: "19.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "11",
   },
   {
     name: "Necklace",
@@ -103,6 +114,7 @@ const ProductsImage = [
     price: "199.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "12",
   },
   {
     name: "Pants",
@@ -110,6 +122,7 @@ const ProductsImage = [
     price: "55.00",
     type: "Best selling",
     offerprice: "65.00",
+    id: "13",
   },
   {
     name: "Red shoes",
@@ -117,6 +130,7 @@ const ProductsImage = [
     price: " 89.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "14",
   },
   {
     name: "Shades",
@@ -124,6 +138,7 @@ const ProductsImage = [
     price: "59.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "15",
   },
   {
     name: "Shirts",
@@ -131,6 +146,7 @@ const ProductsImage = [
     price: " 79.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "16",
   },
   {
     name: "Soap",
@@ -138,6 +154,7 @@ const ProductsImage = [
     price: "5.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "17",
   },
   {
     name: "Sweater",
@@ -145,6 +162,7 @@ const ProductsImage = [
     price: " 79.00",
     type: "Best selling",
     offerprice: "89.00",
+    id: "18",
   },
   {
     name: "Swimsuit",
@@ -152,6 +170,7 @@ const ProductsImage = [
     price: "49.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "19",
   },
   {
     name: "Watch",
@@ -159,6 +178,7 @@ const ProductsImage = [
     price: "499.00",
     type: "not-Best selling",
     offerprice: "",
+    id: "20",
   },
 ];
 export default ProductsImage;
