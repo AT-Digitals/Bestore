@@ -8,7 +8,6 @@ import Card3 from "./home-image2.png";
 import CartImage from "../../common-components/CartImage";
 import { Link } from "react-router-dom";
 import ProductsCard from "./HomepageProducts/ProductsCard";
-import SignUpNewsLetter from "./Sign-Up/SignUpwithLetter";
 import SliderImages from "../../common-components/SliderImages";
 import routes from "../../routes/routes";
 
@@ -188,7 +187,7 @@ export default function Homepage() {
 
       <CartImage />
 
-      <SignUpNewsLetter />
+      {/* <SignUpNewsLetter /> */}
 
       <SliderImages />
     </Box>

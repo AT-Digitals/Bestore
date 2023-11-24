@@ -44,12 +44,20 @@ export default function AboutConainer() {
           <Button
             style={{
               color: "black",
-              background: "#F6F6F6",
+              background: "#ef9e1e",
               maxWidth: 160,
               width: "100%",
               borderRadius: "30px",
               textTransform: "none",
               fontWeight: "bold",
+              boxShadow: "1px 2px 6px 2px",
+              transition: "transform 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             About us
