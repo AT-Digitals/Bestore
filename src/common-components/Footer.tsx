@@ -1,4 +1,4 @@
-import { Box, Stack, useMediaQuery } from "@mui/material";
+import { Box, Stack, TextField, useMediaQuery } from "@mui/material";
 
 import { Link } from "react-router-dom";
 import logo from "./Akka creartions horizontal 2-03-03.png";
@@ -38,15 +38,19 @@ export default function AppFooter1() {
             justifyContent={{ sm: "space-between", md: "space-between" }}
             alignItems="center"
           >
-            <a href={routes.HOME}>
-              <img
-                src={logo}
-                alt="alterknit logo"
-                loading="lazy"
-                width={200}
-                height={40}
-              />
-            </a>
+            <Stack>
+              <a href={routes.HOME}>
+                <img
+                  src={logo}
+                  alt="alterknit logo"
+                  loading="lazy"
+                  width={200}
+                  height={40}
+                />
+              </a>
+              <TextField label="Enter your email" variant="standard" />
+            </Stack>
+
             <Stack
               maxWidth={500}
               spacing={5}

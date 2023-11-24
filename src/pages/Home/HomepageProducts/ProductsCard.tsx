@@ -1,6 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 
-import BadgeStyle from "./BadgeStyle";
 import { Link } from "react-router-dom";
 import ProductsImag2 from "../../../assets/ProductsImage/shoe.jpg";
 import ProductsImage1 from "../../../assets/ProductsImage/bag.jpg";
@@ -87,7 +86,6 @@ export default function ProductsCard() {
                   src={item.Image}
                   alt="products"
                 />
-                {item.type === "Best selling" && <BadgeStyle />}
                 <WishtList right={0} />
                 <Typography fontSize={"21px"} fontWeight={"bold"} mt={1}>
                   {item.name}

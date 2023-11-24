@@ -1,8 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
 import AboutConainer from "./AboutContainer/AboutContainer";
-import Banner from "./homepage-banner.jpg";
-import BestSellingProducts from "./HomepageProducts/BestSellingProducts";
+import Banner from "./homepage-ba.jpg";
 import Card1 from "./home-card1.jpg";
 import Card2 from "./home-image3.png";
 import Card3 from "./home-image2.png";
@@ -38,7 +37,7 @@ export default function Homepage() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           height: "90%",
-          minHeight: { xs: 400, sm: 690, md: 550 },
+          minHeight: { xs: 400, sm: 350, md: 610 },
           width: "100%",
         }}
       ></Box>
@@ -47,22 +46,22 @@ export default function Homepage() {
         display={"flex"}
         flexDirection={"column"}
         gap={"3rem"}
-        top={{ xs: "8rem", sm: "8rem", md: "8rem" }}
-        left={{ xs: "1rem", sm: "3rem", md: "5rem" }}
+        top={{ xs: "8rem", sm: "8rem", md: "10rem" }}
+        left={{ xs: "1rem", sm: "3rem", md: "13rem" }}
         position={"absolute"}
         maxWidth={440}
       >
         <Typography
           fontFamily={`"Lato", Helvetica, Arial, sans-serif`}
-          fontSize={{ xs: "44px", sm: "82px", md: "60px" }}
+          fontSize={{ xs: "44px", sm: "50px", md: "60px" }}
           lineHeight={1}
           fontWeight={"bold"}
-          color={"white"}
+          color={"black"}
         >
           Shoping as <br /> you love
         </Typography>
         <Typography
-          color={"white"}
+          color={"black"}
           display={{ xs: "none", sm: "none", md: "block", lg: "block" }}
           maxWidth={350}
         >
@@ -163,10 +162,7 @@ export default function Homepage() {
           Products on sale
         </Typography>
         <ProductsCard />
-        <Typography fontWeight={600} fontSize={{ xs: "22px", md: "37px" }}>
-          Best selling products
-        </Typography>
-        <BestSellingProducts />
+
         <Box>
           <Link to={routes.PRODUCTS}>
             <Button

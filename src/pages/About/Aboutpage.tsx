@@ -2,7 +2,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 
 import AboutBanner from "../../assets/AboutBanner.jpg";
 import CartImage from "../../common-components/CartImage";
-import logo from "../../assets/store2-about-brands.png";
+import logo from "./akkacreationlogo.png";
 
 export default function AboutPage() {
   return (
@@ -19,11 +19,17 @@ export default function AboutPage() {
           }}
         ></Box>
         <Stack padding={"0 50px"} marginTop={"90px"} alignItems={"center"}>
+          <Typography>
+            <Typography textAlign={"center"} color={"red"}>
+              PARTNER
+            </Typography>
+            <Typography fontSize={"30px"}> Happy Clients</Typography>
+          </Typography>
           <img
             width={"100%"}
             style={{
-              maxWidth: "900px",
-              marginBottom: '90px',
+              maxWidth: "500px",
+              marginBottom: "90px",
             }}
             src={logo}
             alt="logo"
@@ -84,7 +90,7 @@ export default function AboutPage() {
           margin={{ sm: "70px 70px", md: "120px 70px" }}
         >
           <Typography fontSize={"30px"} fontWeight={"600"} color={"black"}>
-            Lorem ipsum quam pertroni
+            Our vission
           </Typography>
           <Typography
             maxWidth={"570px"}
@@ -130,7 +136,7 @@ export default function AboutPage() {
           margin={{ sm: "70px 70px", md: "120px 70px" }}
         >
           <Typography fontSize={"30px"} fontWeight={"600"} color={"black"}>
-            Lorem ipsum quam pertroni
+            Our vission
           </Typography>
           <Typography
             maxWidth={"570px"}
