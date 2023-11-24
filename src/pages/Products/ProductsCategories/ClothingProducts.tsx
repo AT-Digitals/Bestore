@@ -1,6 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
 
-import BadgeStyle from "../../Home/HomepageProducts/BadgeStyle";
 import ProductsImage from "../ProductsItems";
 
 export default function ClothingCategories() {
@@ -19,12 +18,23 @@ export default function ClothingCategories() {
             <Box
               mb={2}
               mt={2}
-              maxWidth={260}
+              maxWidth={{ xs: 330, sm: 240, md: 330 }}
               width={"100%"}
               gap={"2rem"}
               key={index}
               position="relative"
-              style={{ overflow: "hidden", cursor: "pointer" }}
+              style={{
+                overflow: "hidden",
+                cursor: "pointer",
+                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                transition: "transform 0.5s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
             >
               <img
                 style={
@@ -44,43 +54,55 @@ export default function ClothingCategories() {
                 src={item.Image}
                 alt="products"
               />
-              {item.type === "Best selling" && <BadgeStyle />}
               <Box
                 display={"flex"}
                 flexDirection={"column"}
                 justifyContent={"flex-start"}
               >
-                <Typography
-                  textAlign={"left"}
-                  fontSize={"21px"}
-                  fontWeight={"bold"}
-                  mt={1}
+                <Box
+                  display={"flex"}
+                  flexDirection={"column"}
+                  justifyContent={"flex-start"}
                 >
-                  {item.name}
-                </Typography>
-                <Box display={"flex"} gap={"0.5rem"}>
-                  {item.offerprice ? (
+                  <Typography
+                    textAlign={"center"}
+                    fontSize={"21px"}
+                    fontWeight={"bold"}
+                    mt={1}
+                  >
+                    {item.name}
+                  </Typography>
+                  <Box
+                    mb={1}
+                    justifyContent={"center"}
+                    display={"flex"}
+                    gap={"0.5rem"}
+                  >
+                    {item.offerprice ? (
+                      <Typography
+                        fontSize={"18px"}
+                        color={"#EB3C70"}
+                        style={{
+                          opacity: 0.5,
+                          textDecoration: "line-through",
+                        }}
+                      >
+                        {" "}
+                        ₹{item.offerprice}
+                      </Typography>
+                    ) : null}
                     <Typography
+                      style={{
+                        textDecoration: item.offerprice
+                          ? "underline"
+                          : undefined,
+                      }}
                       fontSize={"18px"}
                       color={"#EB3C70"}
-                      style={{
-                        opacity: 0.5,
-                        textDecoration: "line-through",
-                      }}
                     >
-                      {" "}
-                      £{item.offerprice}
+                      {item.price ? "₹" : undefined} {item.price}
                     </Typography>
-                  ) : null}
-                  <Typography
-                    style={{
-                      textDecoration: item.offerprice ? "underline" : undefined,
-                    }}
-                    fontSize={"18px"}
-                    color={"#EB3C70"}
-                  >
-                    {item.price ? "£" : undefined} {item.price}
-                  </Typography>
+                  </Box>
                 </Box>
               </Box>
             </Box>

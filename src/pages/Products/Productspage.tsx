@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Pagination, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -12,10 +12,13 @@ import WishtList from "../Home/HomepageProducts/WishitList";
 const ProductsNavigatoinItems = [
   { name: "Clothing", link: "" },
   { name: "Home decoration", link: "" },
-  { name: "Facbarics", link: "" },
+  { name: "Fabarics", link: "" },
 ];
 
 export default function ProductsPage() {
+  const itemsPerPage = 10;
+  const [currentPage, setCurrentPage] = useState(1);
+
   const TotalItems = ProductsImage.length;
   const [sortedProducts, setSortedProducts] = useState([...ProductsImage]);
   const [sort, setSort] = useState("Default sorting");
@@ -67,8 +70,13 @@ export default function ProductsPage() {
 
   const handleCategoryClick = (category: any) => {
     setSelectedCategory(category);
+    setCurrentPage(1);
     console.log(`Clicked on category: ${category}`);
   };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = sortedProducts.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <Box>
@@ -108,7 +116,6 @@ export default function ProductsPage() {
                 <div>
                   <Box
                     padding={2}
-                    // boxShadow="5px 5px 8px 5px rgba(0, 0, 0, 0.1)"
                     style={{ cursor: "pointer" }}
                     onClick={handleToggleDropdown}
                     display="flex"
@@ -128,6 +135,14 @@ export default function ProductsPage() {
                             color={"gray"}
                             key={name.name}
                             onClick={() => handleCategoryClick(name.name)}
+                            sx={{
+                              marginBottom: 2,
+                              color: "gray",
+                              cursor: "pointer",
+                              "&:hover": {
+                                color: "black", // Change this to the desired hover color
+                              },
+                            }}
                           >
                             {name.name}
                           </Typography>
@@ -154,7 +169,7 @@ export default function ProductsPage() {
                   <h1>fabaric</h1>
                 ) : (
                   <Grid container>
-                    {sortedProducts.map((item, index) => (
+                    {currentItems.map((item, index) => (
                       <Grid
                         columnSpacing={"2rem"}
                         rowGap={"4rem"}
@@ -233,7 +248,7 @@ export default function ProductsPage() {
                                     }}
                                   >
                                     {" "}
-                                    £{item.offerprice}
+                                    ₹{item.offerprice}
                                   </Typography>
                                 ) : null}
                                 <Typography
@@ -245,7 +260,7 @@ export default function ProductsPage() {
                                   fontSize={"18px"}
                                   color={"#EB3C70"}
                                 >
-                                  {item.price ? "£" : undefined} {item.price}
+                                  {item.price ? "₹" : undefined} {item.price}
                                 </Typography>
                               </Box>
                             </Box>
@@ -258,6 +273,14 @@ export default function ProductsPage() {
               </Box>
             </Box>
           </Stack>
+          <Box mt={3} display="flex" justifyContent="center">
+            <Pagination
+              count={Math.ceil(TotalItems / itemsPerPage)}
+              page={currentPage}
+              onChange={(event, value) => setCurrentPage(value)}
+              color="primary"
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

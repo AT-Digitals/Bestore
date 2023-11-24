@@ -106,7 +106,7 @@ export default function ProductsCard() {
                       }}
                     >
                       {" "}
-                      £{item.offerprice}
+                      ₹{item.offerprice}
                     </Typography>
                   ) : null}
                   <Typography
@@ -117,7 +117,7 @@ export default function ProductsCard() {
                       textDecoration: item.offerprice ? "underline" : undefined,
                     }}
                   >
-                    £{item.price}
+                    ₹{item.price}
                   </Typography>
                 </Box>
               </Box>
