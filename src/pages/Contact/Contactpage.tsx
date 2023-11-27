@@ -131,6 +131,7 @@ export default function ContactPage() {
             </Typography>
           </Box>
           <ContactForm />
+
         </Box>
       </Stack>
     </>
