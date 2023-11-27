@@ -150,7 +150,7 @@ export default function AboutPage() {
                   padding: "10px 20px",
                   width: "175px",
                   marginTop: "30px",
-                  boxShadow: "0px 0px px 0px",
+                  boxShadow: "0px 0px 5px 0px",
                   fontFamily: "Nunito Sans, sans-serif",
                 }}
               >
