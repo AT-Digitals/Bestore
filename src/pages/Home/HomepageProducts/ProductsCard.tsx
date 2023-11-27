@@ -1,48 +1,48 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 
 import { Link } from "react-router-dom";
-import ProductsImag2 from "../../../assets/ProductsImage/shoe.jpg";
-import ProductsImage1 from "../../../assets/ProductsImage/bag.jpg";
-import ProductsImage3 from "../../../assets/ProductsImage/dress.jpg";
-import ProductsImage4 from "../../../assets/ProductsImage/cream.jpg";
-import ProductsImage5 from "../../../assets/ProductsImage/dress1.jpg";
+import ProductsImag2 from "../../../assets/ProductsImage/ak-p-2.webp";
+import ProductsImage1 from "../../../assets/ProductsImage/ak-p1.avif";
+import ProductsImage3 from "../../../assets/ProductsImage/fab1.jpg";
+import ProductsImage4 from "../../../assets/ProductsImage/fab2.jpg";
+import ProductsImage5 from "../../../assets/ProductsImage/home-decor1.webp";
 import WishtList from "./WishitList";
 
 const ProductsImage = [
   {
-    name: "Bag",
+    name: "Reversible multicolored Kimono jacket with large collar and one size animal design",
     Image: ProductsImage1,
-    price: "156.00",
+    price: "2116.00",
     type: "not-best selling",
     offerprice: "",
   },
   {
-    name: "Beige shoes",
+    name: "SHORT fleece JACKET Women's jacket in green and MULTICOLOR cotton patchwork Lined jacket buttoned on the front Women's mid-season jacket",
     Image: ProductsImag2,
-    price: "189.00",
+    price: "2343.00",
     type: "Best selling",
-    offerprice: "199.00",
+    offerprice: "",
   },
   {
-    name: "Coat",
+    name: "Handmade brown and multicolor printed cotton PATCHWORK sold by the meter in 100 cm wide",
     Image: ProductsImage3,
-    price: "600.00",
+    price: "1700.00",
     type: "Best selling",
-    offerprice: "799.00",
+    offerprice: "",
   },
   {
-    name: "Creame",
+    name: "Handmade blue and multicolor printed cotton PATCHWORK sold by the meter in 100 cm wide",
     Image: ProductsImage4,
-    price: "8.00",
+    price: "1700.00",
     type: "Best selling",
-    offerprice: "12.00",
+    offerprice: "",
   },
   {
-    name: "Dress",
+    name: "PATCHWORK CURTAIN black and multicolored custom curtain cotton curtain with solid color lining matching the patchwork",
     Image: ProductsImage5,
-    price: "99.00",
+    price: "1209.00",
     type: "Best selling",
-    offerprice: "139.00",
+    offerprice: "",
   },
 ];
 export default function ProductsCard() {
@@ -60,6 +60,7 @@ export default function ProductsCard() {
               to={""}
             >
               <Box
+                height={"100%"}
                 mb={2}
                 key={index}
                 position="relative"
@@ -87,15 +88,15 @@ export default function ProductsCard() {
                   alt="products"
                 />
                 <WishtList right={0} />
-                <Typography fontSize={"21px"} fontWeight={"bold"} mt={1}>
+                <Typography
+                  fontSize={"10px"}
+                  padding={"5px"}
+                  fontWeight={"bold"}
+                  mt={1}
+                >
                   {item.name}
                 </Typography>
-                <Box
-                  mb={2}
-                  display={"flex"}
-                  gap={"0.5rem"}
-                  justifyContent={"center"}
-                >
+                <Box display={"flex"} gap={"0.5rem"} justifyContent={"center"}>
                   {item.offerprice ? (
                     <Typography
                       fontSize={"18px"}

@@ -2,14 +2,14 @@ import { Box, Grid, Typography } from "@mui/material";
 
 import ProductsImage from "../ProductsItems";
 
-export default function ClothingCategories() {
-  const clothingProducts = ProductsImage.filter(
-    (item) => item.producttype === "Clothing"
+export default function FabricProducts() {
+  const fabricProducts = ProductsImage.filter(
+    (item) => item.producttype === "Fabaric"
   );
   return (
     <Box mb={15} padding={"0 40px"}>
       <Grid container>
-        {clothingProducts.map((item, index) => (
+        {fabricProducts.map((item, index) => (
           <Grid
             columnSpacing={"2rem"}
             rowGap={"4rem"}
@@ -48,6 +48,7 @@ export default function ClothingCategories() {
                   minHeight: 250,
                   objectFit: "cover",
                   height: "70%",
+                  // Ensure the image covers the container without stretching
                 }}
                 src={item.Image}
                 alt="products"
