@@ -1,4 +1,4 @@
-import { Button, IconButton, Stack } from "@mui/material";
+import { Button, Grid, IconButton, Stack } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -26,6 +26,10 @@ export default function ProductDetailPage() {
       </Box>
     );
   }
+  const relatedProducts = ProductsImage.filter(
+    (item) => item.producttype === product.producttype && item.id !== id
+  );
+  const limitedRelatedProducts = relatedProducts.slice(0, 3);
 
   return (
     <Box
@@ -104,6 +108,85 @@ export default function ProductDetailPage() {
             >
               Buy Now
             </Button>
+          </Stack>
+        </Stack>
+
+        <Stack margin={"0 auto"}>
+          <Typography textAlign={"center"} fontSize={"30px"}>
+            Related Products
+          </Typography>
+          <Stack mt={10} spacing={5} direction={"row"} width={"100%"}>
+            {limitedRelatedProducts.map((relatedProduct, index) => (
+              <Link
+                to={`/products/${relatedProduct.id}`}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  width: "100%", // Ensure the link takes the full width of the Grid item
+                }}
+              >
+                <Box
+                  height={350} // Set a fixed height for the box
+                  width={330} // Set a fixed width for the box
+                  mb={2}
+                  mt={2}
+                  maxWidth={{ xs: 330, sm: 240, md: 330 }}
+                  gap={"2rem"}
+                  key={index}
+                  position="relative"
+                  style={{
+                    overflow: "hidden",
+                    cursor: "pointer",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                    transition: "transform 0.5s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                  padding={"10px"}
+                >
+                  <img
+                    style={{
+                      maxWidth: 330,
+                      width: "100%",
+                      minHeight: 250,
+                      objectFit: "cover",
+                      height: "70%",
+                    }}
+                    src={relatedProduct.Image}
+                    alt="products"
+                  />
+
+                  <Box
+                    display={"flex"}
+                    flexDirection={"column"}
+                    justifyContent={"flex-start"}
+                  >
+                    <Typography
+                      fontSize={"10px"}
+                      padding={"5px"}
+                      textAlign={"center"}
+                      fontWeight={"bold"}
+                      mt={1}
+                    >
+                      {relatedProduct.name}
+                    </Typography>
+                    <Box
+                      justifyContent={"center"}
+                      display={"flex"}
+                      gap={"0.5rem"}
+                    >
+                      <Typography fontSize={"18px"} color={"#EB3C70"}>
+                        {relatedProduct.price}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+              </Link>
+            ))}
           </Stack>
         </Stack>
       </Stack>
