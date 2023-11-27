@@ -54,7 +54,7 @@ export default function Homepage() {
         maxWidth={440}
       >
         <Typography
-          fontFamily={`"Lato", Helvetica, Arial, sans-serif`}
+          fontFamily={"Nunito Sans, sans-serif"}
           fontSize={{ xs: "44px", sm: "50px", md: "60px" }}
           lineHeight={1}
           fontWeight={"bold"}
@@ -66,6 +66,7 @@ export default function Homepage() {
           color={"black"}
           display={{ xs: "none", sm: "none", md: "block", lg: "block" }}
           maxWidth={350}
+          fontFamily={"Nunito Sans, sans-serif"}
         >
           Shop in style, savings guaranteed. Unleash fashion-forward finds.
           Explore now!{" "}
@@ -82,6 +83,7 @@ export default function Homepage() {
               height: { xs: 30, sm: 50, md: 52 },
               textTransform: "capitalize",
               fontWeight: "bold",
+              fontFamily: "Nunito Sans, sans-serif",
             }}
           >
             See whats's on sale
@@ -145,6 +147,7 @@ export default function Homepage() {
                 color={"white"}
                 fontWeight={"bold"}
                 whiteSpace={"nowrap"}
+                fontFamily={"Nunito Sans, sans-serif"}
               >
                 {item.label}
               </Typography>
@@ -160,7 +163,7 @@ export default function Homepage() {
         paddingBottom={"70px"}
         textAlign={"center"}
       >
-        <Typography fontSize={{ xs: "22px", md: "37px" }} fontWeight={600}>
+        <Typography fontSize={{ xs: "22px", md: "37px" }} fontWeight={600}  fontFamily={"Nunito Sans, sans-serif"}>
           Products on sale
         </Typography>
         <ProductsCard />
@@ -175,6 +178,7 @@ export default function Homepage() {
                 borderRadius: "20px",
                 textTransform: "none",
                 fontWeight: "bold",
+                fontFamily: "Nunito Sans, sans-serif",
               }}
             >
               More products

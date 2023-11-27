@@ -32,10 +32,11 @@ export default function AboutConainer() {
           lineHeight={1}
           fontWeight={{ xs: "none", md: 600 }}
           fontSize={{ xs: "22px", md: "37px" }}
+          fontFamily={"Nunito Sans, sans-serif"}
         >
           We provide the newest trends in fashion
         </Typography>
-        <Typography fontSize={"15px"}>
+        <Typography fontSize={"15px"}  fontFamily={"Nunito Sans, sans-serif"}>
           Elevate your wardrobe with our versatile denim jeans, transform your
           living room with our geometric patterned rugs, and indulge in cozy
           evenings with our plush fleece blankets.
@@ -52,6 +53,7 @@ export default function AboutConainer() {
               fontWeight: "bold",
               boxShadow: "0px 0px 15px 0px",
               transition: "transform 0.3s ease",
+              fontFamily: "Nunito Sans, sans-serif",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.1)";

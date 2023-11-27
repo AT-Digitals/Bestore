@@ -5,18 +5,20 @@ import Dress4 from "../../assets/ProductsImage/dress4.jpg";
 import Dress5 from "../../assets/ProductsImage/dress5.jpg";
 import Dress6 from "../../assets/ProductsImage/dress6.jpg";
 import Dress7 from "../../assets/ProductsImage/dress7.jpg";
+import Dress8 from "../../assets/ProductsImage/il_794xN.4306523229_ori8.webp";
+import Dress9 from "../../assets/ProductsImage/il_794xN.3920746144_f52x.jpg";
 import Fabaric1 from "../../assets/ProductsImage/fab1.jpg";
 import Fabaric2 from "../../assets/ProductsImage/fab2.jpg";
 import Fabaric3 from "../../assets/ProductsImage/fab3.avif";
 import Fabaric4 from "../../assets/ProductsImage/fab4.avif";
+import Fabaric5 from "../../assets/ProductsImage/il_794xN.5136959656_m9or.jpg";
+import Fabaric6 from "../../assets/ProductsImage/il_794xN.5185197427_16jr.avif";
 import Homedecor1 from "../../assets/ProductsImage/home-decor1.webp";
 import Homedecor2 from "../../assets/ProductsImage/home-decor2.webp";
 import Homedecor3 from "../../assets/ProductsImage/home-decor3.webp";
 import Homedecor4 from "../../assets/ProductsImage/home-decor4.webp";
-import Lipsstick from "../../assets/ProductsImage/lipsstick.jpg";
-import Redshoes from "../../assets/ProductsImage/red shoes.jpg";
-import Shades from "../../assets/ProductsImage/shades.jpg";
-import Watch from "../../assets/ProductsImage/watch.jpg";
+import Homedecor5 from "../../assets/ProductsImage/il_794xN.1131388500_qp84.avif";
+import Homedecor6 from "../../assets/ProductsImage/il_794xN.5204058218_10nu.webp";
 
 const ProductsImage = [
   {
@@ -100,10 +102,18 @@ const ProductsImage = [
     id: "10",
   },
   {
-    name: "Lipsstick",
-    Image: Lipsstick,
-    price: "19.00",
-    type: "not-Best selling",
+    name: "Affiche numérique - Art at the top of the door or window in multicolored with deco multicolor decoration items",
+    Image: Homedecor5,
+    price: " 350.00",
+    producttype: "Homedecor",
+    offerprice: "",
+    id: "11",
+  },
+  {
+    name: "Asymmetrical Mirror, Irregular Mirror, Wavy Mirror, Mirror Wall Decor on Tempered Glass, Entryway Hallway Mirror, Mirror for Bathroom",
+    Image: Homedecor6,
+    price: " 11350.00",
+    producttype: "Homedecor",
     offerprice: "",
     id: "11",
   },
@@ -123,22 +133,6 @@ const ProductsImage = [
     offerprice: "65.00",
     id: "13",
   },
-  {
-    name: "Red shoes",
-    Image: Redshoes,
-    price: " 89.00",
-    type: "not-Best selling",
-    offerprice: "",
-    id: "14",
-  },
-  {
-    name: "Shades",
-    Image: Shades,
-    price: "59.00",
-    type: "not-Best selling",
-    offerprice: "",
-    id: "15",
-  },
   // {
   //   name: "Shirts",
   //   Image: shirts,
@@ -148,12 +142,20 @@ const ProductsImage = [
   //   id: "16",
   // },
   {
-    name: "Plain Fabric with soft cotton plain light red colored    ",
-    Image: Fabaric4,
+    name: "Handmade Dress Material for women batik printed clothing items for women",
+    Image: Fabaric6,
     price: "5.00",
     producttype: "Fabaric",
     offerprice: "",
     id: "17",
+  },
+  {
+    name: "Dress Material Handworked Fabric with solid color lining matching the patchwork ",
+    Image: Fabaric5,
+    price: "355.00",
+    producttype: "Fabaric",
+    offerprice: "",
+    id: "18",
   },
   // {
   //   name: "Sweater",
@@ -172,14 +174,6 @@ const ProductsImage = [
     id: "19",
   },
   {
-    name: "Watch",
-    Image: Watch,
-    price: "499.00",
-    type: "not-Best selling",
-    offerprice: "",
-    id: "20",
-  },
-  {
     name: "SHORT fleece JACKET Women's jacket in green and MULTICOLOR cotton patchwork Lined jacket buttoned on the front Women's mid-season jacket",
     Image: Dress4,
     price: "2343.00",
@@ -194,6 +188,22 @@ const ProductsImage = [
     producttype: "Clothing",
     offerprice: "",
     id: "22",
+  },
+  {
+    name: "Summer dress with or in pink cotton printed paisley and flowers flared cut with matching scarf",
+    Image: Dress8,
+    price: "3663.00",
+    producttype: "Clothing",
+    offerprice: "",
+    id: "23",
+  },
+  {
+    name: "KIMONO JACKET cotton hand block print print for men or women short kimono robe",
+    Image: Dress9,
+    price: "2663.00",
+    producttype: "Clothing",
+    offerprice: "",
+    id: "24",
   },
 ];
 export default ProductsImage;

@@ -59,7 +59,7 @@ export default function AppDrawer({ open, onClose }: AppDrawerProps) {
           >
             <Typography
               fontSize="22px"
-              fontFamily={`"ProximaNovaMedium", sans-serif`}
+              fontFamily={"Nunito Sans, sans-serif"}
               fontWeight={500}
               padding={2}
               color={"black"}

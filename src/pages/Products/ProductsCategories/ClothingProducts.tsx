@@ -63,6 +63,7 @@ export default function ClothingCategories() {
                   padding={"5px"}
                   textAlign={"center"}
                   fontWeight={"bold"}
+                  fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}
                 >
                   {item.name}
@@ -72,6 +73,7 @@ export default function ClothingCategories() {
                     <Typography
                       fontSize={"18px"}
                       color={"#EB3C70"}
+                      fontFamily={"Nunito Sans, sans-serif"}
                       style={{
                         opacity: 0.5,
                         textDecoration: "line-through",
@@ -87,6 +89,7 @@ export default function ClothingCategories() {
                     }}
                     fontSize={"18px"}
                     color={"#EB3C70"}
+                    fontFamily={"Nunito Sans, sans-serif"}
                   >
                     {item.price ? "₹" : undefined} {item.price}
                   </Typography>

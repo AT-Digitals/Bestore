@@ -21,7 +21,7 @@ export default function BestoreReviews() {
       <Box>
         <img src={image1} alt="icon 1" />
         <Typography
-          fontFamily={"sans-serif"}
+          fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           paddingTop={"20px"}
           fontSize={"15px"}
@@ -31,7 +31,7 @@ export default function BestoreReviews() {
           30 days
         </Typography>
         <Typography
-          fontFamily={"sans-serif"}
+          fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           fontSize={"15px"}
           color={"black"}
@@ -43,7 +43,7 @@ export default function BestoreReviews() {
       <Box>
         <img src={image2} alt="icon 2" />
         <Typography
-          fontFamily={"sans-serif"}
+         fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           paddingTop={"20px"}
           fontSize={"15px"}
@@ -53,7 +53,7 @@ export default function BestoreReviews() {
           5 ways
         </Typography>
         <Typography
-          fontFamily={"sans-serif"}
+           fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           fontSize={"15px"}
           color={"black"}
@@ -65,7 +65,7 @@ export default function BestoreReviews() {
       <Box>
         <img src={image3} alt="icon 3" />
         <Typography
-          fontFamily={"sans-serif"}
+          fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           paddingTop={"20px"}
           fontSize={"15px"}
@@ -75,7 +75,7 @@ export default function BestoreReviews() {
           Excellent
         </Typography>
         <Typography
-          fontFamily={"sans-serif"}
+           fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           fontSize={"15px"}
           color={"black"}
@@ -87,7 +87,7 @@ export default function BestoreReviews() {
       <Box>
         <img src={image4} alt="icon 4" />
         <Typography
-          fontFamily={"sans-serif"}
+           fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           paddingTop={"20px"}
           fontSize={"15px"}
@@ -97,7 +97,7 @@ export default function BestoreReviews() {
           Satisfaction
         </Typography>
         <Typography
-          fontFamily={"sans-serif"}
+           fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           fontSize={"15px"}
           color={"black"}
@@ -109,7 +109,7 @@ export default function BestoreReviews() {
       <Box>
         <img src={image5} alt="icon 5" />
         <Typography
-          fontFamily={"sans-serif"}
+           fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           paddingTop={"20px"}
           fontSize={"15px"}
@@ -119,7 +119,7 @@ export default function BestoreReviews() {
           Super fast
         </Typography>
         <Typography
-          fontFamily={"sans-serif"}
+           fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"600"}
           fontSize={"15px"}
           color={"black"}

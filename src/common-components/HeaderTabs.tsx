@@ -49,6 +49,7 @@ export default function HeaderTabs() {
               fontWeight: "bold",
               color: "black",
               padding: "20px",
+              fontFamily: "Nunito Sans, sans-serif",
             }}
             label={item.name}
             component={Link}
