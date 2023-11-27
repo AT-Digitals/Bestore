@@ -51,10 +51,10 @@ export default function AppFooter() {
                 />
               </a>
 
-              <Typography>
+              <CustomLabel>
                 The customer is at the heart of our unique business model, which
                 includes design
-              </Typography>
+              </CustomLabel>
               <Box border={"1px solid black"}></Box>
               <Stack spacing={1} direction={"row"}>
                 <FacebookIcon
