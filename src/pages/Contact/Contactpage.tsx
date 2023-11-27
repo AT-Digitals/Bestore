@@ -28,7 +28,7 @@ export default function ContactPage() {
             fontWeight={"600"}
             fontSize={"px"}
             color={"#e53637"}
-            fontFamily={"sans-serif"}
+            fontFamily={`'Nunito Sans', sans-serif`}
           >
             INFORMATION
           </Typography>
@@ -37,7 +37,7 @@ export default function ContactPage() {
             fontWeight={"600"}
             fontSize={"50px"}
             color={"black"}
-            fontFamily={"sans-serif"}
+           fontFamily={`'Nunito Sans', sans-serif`}
           >
             Contact Us
           </Typography>
@@ -45,7 +45,7 @@ export default function ContactPage() {
             fontWeight={"500"}
             fontSize={"17px"}
             color={"black"}
-            fontFamily={"sans-serif"}>
+            fontFamily={`'Nunito Sans', sans-serif`}>
               As you might expect of a company that began as a high-end interiors contractor, we pay strict attention.
             </Typography>
             <Typography paddingTop={"25px"} textAlign={"start"} fontWeight={"600"} fontSize={"24px"} color={"black"}fontFamily={"sans-serif"}>America</Typography>
