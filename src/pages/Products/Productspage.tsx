@@ -94,8 +94,12 @@ export default function ProductsPage() {
         textAlign={"center"}
         bgcolor={"#F6F6F6"}
       >
-
-        <Typography color={"white"} fontSize={"75px"} fontWeight={"bold"}  fontFamily={"Nunito Sans, sans-serif"}>
+        <Typography
+          color={"white"}
+          fontSize={"75px"}
+          fontWeight={"bold"}
+          fontFamily={"Nunito Sans, sans-serif"}
+        >
           {" "}
           {selectedCategory ? selectedCategory : "Products"}
         </Typography>
@@ -123,8 +127,11 @@ export default function ProductsPage() {
                     display="flex"
                     justifyContent="space-between"
                   >
-
-                    <Typography fontSize={"16px"} fontWeight={"bold"}  fontFamily={"Nunito Sans, sans-serif"}>
+                    <Typography
+                      fontSize={"16px"}
+                      fontWeight={"bold"}
+                      fontFamily={"Nunito Sans, sans-serif"}
+                    >
                       CATEGORIES
                     </Typography>
                     <ArrowDropDownIcon />
@@ -139,7 +146,6 @@ export default function ProductsPage() {
                             fontFamily={"Nunito Sans, sans-serif"}
                             key={name.name}
                             onClick={() => handleCategoryClick(name.name)}
-                            fontFamily={"Nunito Sans, sans-serif"}
                             sx={{
                               marginBottom: 2,
                               color: "gray",
@@ -244,9 +250,12 @@ export default function ProductsPage() {
                                 justifyContent={"center"}
                                 display={"flex"}
                                 gap={"0.5rem"}
-                             >
-
-                                <Typography fontSize={"18px"} color={"#EB3C70"}  fontFamily={"Nunito Sans, sans-serif"}>
+                              >
+                                <Typography
+                                  fontSize={"18px"}
+                                  color={"#EB3C70"}
+                                  fontFamily={"Nunito Sans, sans-serif"}
+                                >
                                   {item.price}
                                 </Typography>
                               </Box>
