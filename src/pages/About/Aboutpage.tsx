@@ -73,7 +73,9 @@ export default function AboutPage() {
           </Typography>
         </Box> */}
       </Box>
-      <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
+      <Stack style={{
+        backgroundColor: "#f3f2ee",
+      }} direction={{ xs: "column", sm: "row", md: "row" }}>
         <Box
           sx={{
             backgroundSize: "cover",
@@ -87,9 +89,10 @@ export default function AboutPage() {
         <Stack
           direction={"column"}
           padding={"0 20px"}
-          margin={{ sm: "70px 70px", md: "120px 70px" }}
+          margin={{ sm: "70px 70px", md: "50px 70px" }}
         >
-          <Typography fontSize={"30px"} fontWeight={"600"} color={"black"}>
+          <Typography fontSize={"80px"} color={"#e53637"} textAlign={"center"}>,,</Typography>
+          <Typography textAlign={"center"} fontSize={"30px"} fontWeight={"600"} color={"black"}>
             Our vission
           </Typography>
           <Typography
@@ -97,15 +100,18 @@ export default function AboutPage() {
             paddingTop={"25px"}
             fontSize={"16px"}
             color={"black"}
+            textAlign={"center"}
+            fontStyle={"italic"}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </Typography>
+          <Box display={"flex"} justifyContent={"center"}>
           <Button
             style={{
-              backgroundColor: "#F6F6F6",
+              backgroundColor: "rgb(229 224 224)",
               color: "black",
               textTransform: "none",
               borderRadius: "20px",
@@ -116,9 +122,12 @@ export default function AboutPage() {
           >
             Contact us
           </Button>
+          </Box>
         </Stack>
       </Stack>
-      <Stack direction={{ xs: "column", sm: "row-reverse", md: "row-reverse" }}>
+      <Stack style={{
+         backgroundColor: "#f3f2ee",
+      }} direction={{ xs: "column", sm: "row-reverse", md: "row-reverse" }}>
         <Box
           sx={{
             backgroundSize: "cover",
@@ -133,9 +142,10 @@ export default function AboutPage() {
         <Stack
           padding={"0 20px"}
           direction={"column"}
-          margin={{ sm: "70px 70px", md: "120px 70px" }}
+          margin={{ sm: "70px 70px", md: "50px 70px" }}
         >
-          <Typography fontSize={"30px"} fontWeight={"600"} color={"black"}>
+          <Typography fontSize={"80px"} color={"#e53637"} textAlign={"center"}>,,</Typography>
+          <Typography textAlign={"center"} fontSize={"30px"} fontWeight={"600"} color={"black"}>
             Our vission
           </Typography>
           <Typography
@@ -144,15 +154,18 @@ export default function AboutPage() {
             fontSize={"16px"}
             lineHeight={"1.7"}
             color={"black"}
+            textAlign={"center"}
+            fontStyle={"italic"}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </Typography>
+          <Box display={"flex"} justifyContent={"center"}>
           <Button
             style={{
-              backgroundColor: "#F6F6F6",
+              backgroundColor: "rgb(229 224 224)",
               color: "black",
               textTransform: "none",
               borderRadius: "20px",
@@ -163,6 +176,7 @@ export default function AboutPage() {
           >
             Contact us
           </Button>
+          </Box>
         </Stack>
       </Stack>
 

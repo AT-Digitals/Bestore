@@ -3,12 +3,12 @@ import { Box, IconButton, Stack } from "@mui/material";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import CloseIcon from "@mui/icons-material/Close";
-import Slide1 from "../assets/SlideImage/slideImage1.jpg";
-import Slide2 from "../assets/SlideImage/slideImage2.jpg";
-import Slide3 from "../assets/SlideImage/slideImage3.jpg";
-import Slide4 from "../assets/SlideImage/slideImage4.jpg";
-import Slide5 from "../assets/SlideImage/slideImage5.jpg";
-import Slide6 from "../assets/SlideImage/slideImage6.jpg";
+import Slide1 from "../assets/SlideImage/il_794xN.4374480045_9aqm.avif";
+import Slide2 from "../assets/SlideImage/il_794xN.3664512244_9pkp.webp";
+import Slide3 from "../assets/SlideImage/il_794xN.4487385691_blk9.webp";
+import Slide4 from "../assets/SlideImage/il_794xN.4445830523_h89z.webp";
+import Slide5 from "../assets/SlideImage/il_794xN.5458415738_evj9.jpg";
+import Slide6 from "../assets/SlideImage/il_794xN.2852836687_dm0j.webp";
 import { useState } from "react";
 
 const SlideImage = [
@@ -63,12 +63,13 @@ export default function SliderImages() {
         <Box
           onClick={() => openModal(index)}
           width={"100%"}
+          height={"320px"}
           key={index}
           overflow={"hidden"}
         >
           <img
             style={{
-              width: "150%",
+              width: "100%",
               transition: "transform 0.5s ease",
               height: "100%",
             }}

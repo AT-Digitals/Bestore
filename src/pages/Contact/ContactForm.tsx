@@ -28,7 +28,8 @@ export default function ContactForm() {
         >
           Send us a message
         </Typography>
-        <Stack marginBottom={"185px"}>
+        <Stack marginBottom={"25px"}>
+          <Stack direction={"row"} spacing={4}>
           <Box
             paddingTop={"50px"}
             margin={"auto"}
@@ -38,9 +39,8 @@ export default function ContactForm() {
             <TextField
               sx={{
                 width: "100%",
-                maxWidth: "720px",
+                maxWidth: "300px",
                 "& input::placeholder": {
-                  opacity: "1",
                   paddingLeft: "8px",
                 },
                 ".MuiFormHelperText-root": {
@@ -63,9 +63,8 @@ export default function ContactForm() {
             <TextField
               sx={{
                 width: "100%",
-                maxWidth: "720px",
+                maxWidth: "300px",
                 "& input::placeholder": {
-                  opacity: "1",
                   paddingLeft: "8px",
                 },
                 ".MuiFormHelperText-root": {
@@ -79,7 +78,7 @@ export default function ContactForm() {
               name="name"
             />
           </Box>
-
+          </Stack>
           <Box
             paddingTop={"30px"}
             margin={"auto"}
@@ -91,12 +90,14 @@ export default function ContactForm() {
                 width: "100%",
                 maxWidth: "720px",
                 "& input::placeholder": {
-                  opacity: "1",
                   paddingLeft: "8px",
                 },
                 ".MuiFormHelperText-root": {
                   color: "#d32f2f",
                 },
+                ".MuiInputBase-root": {
+                  paddingBottom: "116px",
+                }
               }}
               required
               multiline
@@ -108,7 +109,7 @@ export default function ContactForm() {
           </Box>
         </Stack>
 
-        <Box display={"flex"} justifyContent={"center"}>
+        <Box marginBottom={"190px"}>
           <Button
             style={{
               color: "#fff",
