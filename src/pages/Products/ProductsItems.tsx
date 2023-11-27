@@ -3,21 +3,20 @@ import Dress2 from "../../assets/ProductsImage/ak-p-2.webp";
 import Dress3 from "../../assets/ProductsImage/dress3.jpg";
 import Dress4 from "../../assets/ProductsImage/dress4.jpg";
 import Dress5 from "../../assets/ProductsImage/dress5.jpg";
+import Dress6 from "../../assets/ProductsImage/dress6.jpg";
+import Dress7 from "../../assets/ProductsImage/dress7.jpg";
 import Fabaric1 from "../../assets/ProductsImage/fab1.jpg";
 import Fabaric2 from "../../assets/ProductsImage/fab2.jpg";
 import Fabaric3 from "../../assets/ProductsImage/fab3.avif";
+import Fabaric4 from "../../assets/ProductsImage/fab4.avif";
 import Homedecor1 from "../../assets/ProductsImage/home-decor1.webp";
 import Homedecor2 from "../../assets/ProductsImage/home-decor2.webp";
 import Homedecor3 from "../../assets/ProductsImage/home-decor3.webp";
 import Homedecor4 from "../../assets/ProductsImage/home-decor4.webp";
 import Lipsstick from "../../assets/ProductsImage/lipsstick.jpg";
-import Necklace from "../../assets/ProductsImage/Necklace.jpg";
-import Pants from "../../assets/ProductsImage/Products.-bestjpg.jpg";
 import Redshoes from "../../assets/ProductsImage/red shoes.jpg";
 import Shades from "../../assets/ProductsImage/shades.jpg";
-import Soap from "../../assets/ProductsImage/soap.jpg";
 import Sweater from "../../assets/ProductsImage/sweater.jpg";
-import Swimsuit from "../../assets/ProductsImage/swimsuit.jpg";
 import Watch from "../../assets/ProductsImage/watch.jpg";
 import shirts from "../../assets/ProductsImage/shirts.jpg";
 
@@ -111,17 +110,17 @@ const ProductsImage = [
     id: "11",
   },
   {
-    name: "Necklace",
-    Image: Necklace,
-    price: "199.00",
-    type: "not-Best selling",
+    name: "Plain Fabric with soft cotton plain light red colored    ",
+    Image: Fabaric4,
+    price: "850.00",
+    producttype: "Fabaric",
     offerprice: "",
     id: "12",
   },
   {
-    name: "Pants",
-    Image: Pants,
-    price: "55.00",
+    name: "Long summer dress with or without sleeves in white cotton printed in floral and bird design size in request    ",
+    Image: Dress6,
+    price: "1662.00",
     producttype: "Clothing",
     offerprice: "65.00",
     id: "13",
@@ -142,34 +141,34 @@ const ProductsImage = [
     offerprice: "",
     id: "15",
   },
+  // {
+  //   name: "Shirts",
+  //   Image: shirts,
+  //   price: " 79.00",
+  //   producttype: "Clothing",
+  //   offerprice: "",
+  //   id: "16",
+  // },
   {
-    name: "Shirts",
-    Image: shirts,
-    price: " 79.00",
-    producttype: "Clothing",
-    offerprice: "",
-    id: "16",
-  },
-  {
-    name: "Soap",
-    Image: Soap,
+    name: "Plain Fabric with soft cotton plain light red colored    ",
+    Image: Fabaric4,
     price: "5.00",
-    type: "not-Best selling",
+    producttype: "Fabaric",
     offerprice: "",
     id: "17",
   },
+  // {
+  //   name: "Sweater",
+  //   Image: Sweater,
+  //   price: " 79.00",
+  //   producttype: "Clothing",
+  //   offerprice: "89.00",
+  //   id: "18",
+  // },
   {
-    name: "Sweater",
-    Image: Sweater,
-    price: " 79.00",
-    producttype: "Clothing",
-    offerprice: "89.00",
-    id: "18",
-  },
-  {
-    name: "Swimsuit",
-    Image: Swimsuit,
-    price: "49.00",
+    name: "Long summer dress with or without sleeves in pink cotton printed paisley and flowers flared cut with matching scarf",
+    Image: Dress7,
+    price: "2078.00",
     producttype: "Clothing",
     offerprice: "",
     id: "19",

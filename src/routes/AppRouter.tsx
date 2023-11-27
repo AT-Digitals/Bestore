@@ -6,6 +6,8 @@ import BlogAbout from "../pages/Blog/BlogAbout";
 import Blogpage from "../pages/Blog/Blogpage";
 import ClothingCategories from "../pages/Products/ProductsCategories/ClothingProducts";
 import ContactPage from "../pages/Contact/Contactpage";
+import FabricProducts from "../pages/Products/ProductsCategories/FabricProducts";
+import HomeDecorProducts from "../pages/Products/ProductsCategories/HomeDecorProducts";
 import Homepage from "../pages/Home/Homepage";
 import ProductBag from "../pages/Products/ProductBag";
 import ProductDetailPage from "../pages/Products/ProductDetailPage/ProductDetails";
@@ -36,6 +38,11 @@ export default function AppRouter() {
             path={routes.CLOTHING_PRODUCT}
             element={<ClothingCategories />}
           />
+          <Route
+            path={routes.HOME_DECOR_PRODUCT}
+            element={<HomeDecorProducts />}
+          />
+          <Route path={routes.FABRIC_PRODUCT} element={<FabricProducts />} />
         </Route>
       </Routes>
     </Router>
