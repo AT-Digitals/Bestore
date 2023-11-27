@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ClothingCategories from "./ProductsCategories/ClothingProducts";
+import FabricProducts from "./ProductsCategories/FabricProducts";
+import HomeDecorProducts from "./ProductsCategories/HomeDecorProducts";
 import { Link } from "react-router-dom";
 import ProductBanner from "./Products-banner.jpg";
 import ProductsHeader from "./ProductsHeader";
 import ProductsImage from "./ProductsItems";
-import WishtList from "../Home/HomepageProducts/WishitList";
 
 const ProductsNavigatoinItems = [
   { name: "Clothing", link: "" },
@@ -140,7 +141,7 @@ export default function ProductsPage() {
                               color: "gray",
                               cursor: "pointer",
                               "&:hover": {
-                                color: "black", // Change this to the desired hover color
+                                color: "black",
                               },
                             }}
                           >
@@ -164,9 +165,9 @@ export default function ProductsPage() {
                 {selectedCategory === "Clothing" ? (
                   <ClothingCategories />
                 ) : selectedCategory === "Home decoration" ? (
-                  <h1>Home decoration</h1>
-                ) : selectedCategory === "Facbarics" ? (
-                  <h1>fabaric</h1>
+                  <HomeDecorProducts />
+                ) : selectedCategory === "Fabarics" ? (
+                  <FabricProducts />
                 ) : (
                   <Grid container>
                     {currentItems.map((item, index) => (
@@ -184,13 +185,16 @@ export default function ProductsPage() {
                           style={{
                             textDecoration: "none",
                             color: "black",
+                            width: "100%", // Ensure the link takes the full width of the Grid item
                           }}
                         >
                           <Box
+                            padding={"10px"}
+                            height={360} // Set a fixed height for all boxes
                             mb={2}
                             mt={2}
                             maxWidth={{ xs: 330, sm: 240, md: 330 }}
-                            width={"100%"}
+                            width={330} // Set a fixed width for all boxes
                             gap={"2rem"}
                             key={index}
                             position="relative"
@@ -208,17 +212,15 @@ export default function ProductsPage() {
                             }}
                           >
                             <img
-                              style={
-                                {
-                                  height: { xs: 210, sm: 240, md: 260 },
-                                  maxWidth: { xs: 210, sm: 240, md: 260 },
-                                  width: "100%",
-                                } as any
-                              }
+                              style={{
+                                height: "70%",
+                                maxWidth: "100%",
+                                width: "100%",
+                                objectFit: "cover",
+                              }}
                               src={item.Image}
                               alt="products"
                             />
-                            <WishtList right={"15px"} />
                             <Box
                               display={"flex"}
                               flexDirection={"column"}
@@ -226,7 +228,7 @@ export default function ProductsPage() {
                             >
                               <Typography
                                 textAlign={"center"}
-                                fontSize={"21px"}
+                                fontSize={"10px"}
                                 fontWeight={"bold"}
                                 mt={1}
                               >
@@ -238,29 +240,8 @@ export default function ProductsPage() {
                                 display={"flex"}
                                 gap={"0.5rem"}
                               >
-                                {item.offerprice ? (
-                                  <Typography
-                                    fontSize={"18px"}
-                                    color={"#EB3C70"}
-                                    style={{
-                                      opacity: 0.5,
-                                      textDecoration: "line-through",
-                                    }}
-                                  >
-                                    {" "}
-                                    ₹{item.offerprice}
-                                  </Typography>
-                                ) : null}
-                                <Typography
-                                  style={{
-                                    textDecoration: item.offerprice
-                                      ? "underline"
-                                      : undefined,
-                                  }}
-                                  fontSize={"18px"}
-                                  color={"#EB3C70"}
-                                >
-                                  {item.price ? "₹" : undefined} {item.price}
+                                <Typography fontSize={"18px"} color={"#EB3C70"}>
+                                  {item.price}
                                 </Typography>
                               </Box>
                             </Box>

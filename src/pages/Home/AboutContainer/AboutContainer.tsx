@@ -50,7 +50,7 @@ export default function AboutConainer() {
               borderRadius: "30px",
               textTransform: "none",
               fontWeight: "bold",
-              boxShadow: "1px 2px 6px 2px",
+              boxShadow: "0px 0px 15px 0px",
               transition: "transform 0.3s ease",
             }}
             onMouseEnter={(e) => {
