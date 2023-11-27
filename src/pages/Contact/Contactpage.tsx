@@ -29,7 +29,6 @@ export default function ContactPage() {
           width={"85%"}
           padding={"0px 10px"}
           margin={"0 auto"}
-          boxShadow={"0px 1px 10px 2px"}
           display={"flex"}
           marginBottom={"40px"}
           marginTop={"40px"}
@@ -48,7 +47,7 @@ export default function ContactPage() {
               fontWeight={"600"}
               fontSize={"px"}
               color={"#e53637"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               INFORMATION
             </Typography>
@@ -57,7 +56,7 @@ export default function ContactPage() {
               fontWeight={"600"}
               fontSize={"50px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               Contact Us
             </Typography>
@@ -66,7 +65,7 @@ export default function ContactPage() {
               fontWeight={"500"}
               fontSize={"17px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               As you might expect of a company that began as a high-end
               interiors contractor, we pay strict attention.
@@ -77,7 +76,7 @@ export default function ContactPage() {
               fontWeight={"600"}
               fontSize={"24px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               America
             </Typography>
@@ -87,7 +86,7 @@ export default function ContactPage() {
               fontWeight={"500"}
               fontSize={"17px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               195 E Parker Square Dr, Parker, CO 801
             </Typography>
@@ -96,7 +95,7 @@ export default function ContactPage() {
               fontWeight={"500"}
               fontSize={"17px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               +43 982-314-0958
             </Typography>
@@ -106,7 +105,7 @@ export default function ContactPage() {
               fontWeight={"600"}
               fontSize={"24px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               France
             </Typography>
@@ -116,7 +115,7 @@ export default function ContactPage() {
               fontWeight={"500"}
               fontSize={"17px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               109 Avenue Léon, 63 Clermont-Ferrand
             </Typography>
@@ -125,13 +124,12 @@ export default function ContactPage() {
               fontWeight={"500"}
               fontSize={"17px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               +12 345-423-9893
             </Typography>
           </Box>
           <ContactForm />
-
         </Box>
       </Stack>
     </>
