@@ -1,5 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 
+import { Link } from "react-router-dom";
 import ProductsImage from "../ProductsItems";
 
 export default function FabricProducts() {
@@ -7,7 +8,7 @@ export default function FabricProducts() {
     (item) => item.producttype === "Fabaric"
   );
   return (
-    <Box mb={15} padding={"0 40px"}>
+    <Box mb={15}>
       <Grid container>
         {fabricProducts.map((item, index) => (
           <Grid
@@ -18,85 +19,73 @@ export default function FabricProducts() {
             sm={6}
             md={4}
           >
-            <Box
-              height={"90%"}
-              mb={2}
-              mt={2}
-              maxWidth={{ xs: 330, sm: 240, md: 330 }}
-              width={"80%"}
-              gap={"2rem"}
-              key={index}
-              position="relative"
+            <Link
+              to={`/products/${item.id}`}
               style={{
-                overflow: "hidden",
-                cursor: "pointer",
-                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                transition: "transform 0.5s ease",
+                textDecoration: "none",
+                color: "black",
+                width: "100%",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-              padding={"10px"}
             >
-              <img
-                style={{
-                  maxWidth: 330,
-                  width: "100%",
-                  minHeight: 250,
-                  objectFit: "cover",
-                  height: "70%",
-                  // Ensure the image covers the container without stretching
-                }}
-                src={item.Image}
-                alt="products"
-              />
-
               <Box
-                display={"flex"}
-                flexDirection={"column"}
-                justifyContent={"flex-start"}
+                padding={"10px"}
+                height={360}
+                mb={2}
+                mt={2}
+                maxWidth={{ xs: 330, sm: 240, md: 330 }}
+                width={330}
+                gap={"2rem"}
+                key={index}
+                position="relative"
+                style={{
+                  overflow: "hidden",
+                  cursor: "pointer",
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                  transition: "transform 0.5s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
               >
-                <Typography
-                  fontSize={"10px"}
-                  padding={"5px"}
-                  textAlign={"center"}
-                  fontWeight={"bold"}
-                  fontFamily={"Nunito Sans, sans-serif"}
-                  mt={1}
+                <img
+                  style={{
+                    height: "70%",
+                    maxWidth: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                  }}
+                  src={item.Image}
+                  alt="products"
+                />
+                <Box
+                  display={"flex"}
+                  flexDirection={"column"}
+                  justifyContent={"flex-start"}
                 >
-                  {item.name}
-                </Typography>
-                <Box justifyContent={"center"} display={"flex"} gap={"0.5rem"}>
-                  {item.offerprice ? (
-                    <Typography
-                      fontSize={"18px"}
-                      color={"#EB3C70"}
-                      fontFamily={"Nunito Sans, sans-serif"}
-                      style={{
-                        opacity: 0.5,
-                        textDecoration: "line-through",
-                      }}
-                    >
-                      {" "}
-                      ₹{item.offerprice}
-                    </Typography>
-                  ) : null}
                   <Typography
-                    style={{
-                      textDecoration: item.offerprice ? "underline" : undefined,
-                    }}
-                    fontSize={"18px"}
-                    color={"#EB3C70"}
-                    fontFamily={"Nunito Sans, sans-serif"}
+                    textAlign={"center"}
+                    fontSize={"10px"}
+                    fontWeight={"bold"}
+                    mt={1}
                   >
-                    {item.price ? "₹" : undefined} {item.price}
+                    {item.name}
                   </Typography>
+                  <Box
+                    mb={1}
+                    justifyContent={"center"}
+                    display={"flex"}
+                    gap={"0.5rem"}
+                  >
+                    <Typography fontSize={"18px"} color={"#EB3C70"}>
+                      {item.price}
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
+            </Link>
           </Grid>
         ))}
       </Grid>

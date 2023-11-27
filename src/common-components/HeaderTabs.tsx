@@ -21,10 +21,10 @@ export default function HeaderTabs() {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
     navigate(CustomTabs[newValue].link);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
-    // Update the active tab based on the current route
     const activeTab = CustomTabs.findIndex(
       (tab) => tab.link === location.pathname
     );

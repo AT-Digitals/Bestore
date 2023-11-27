@@ -8,7 +8,7 @@ export default function HomeDecorProducts() {
     (item) => item.producttype === "Homedecor"
   );
   return (
-    <Box mb={15} padding={"0 40px"}>
+    <Box mb={15}>
       <Grid container>
         {HomeDecorProducts.map((item, index) => (
           <Grid
@@ -25,15 +25,15 @@ export default function HomeDecorProducts() {
                 textDecoration: "none",
                 color: "black",
                 width: "100%",
-                fontFamily: "Nunito Sans, sans-serif",
               }}
             >
               <Box
-                height={"90%"}
+                padding={"10px"}
+                height={360}
                 mb={2}
                 mt={2}
                 maxWidth={{ xs: 330, sm: 240, md: 330 }}
-                width={"80%"}
+                width={330}
                 gap={"2rem"}
                 key={index}
                 position="relative"
@@ -49,66 +49,38 @@ export default function HomeDecorProducts() {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "scale(1)";
                 }}
-                padding={"10px"}
               >
                 <img
                   style={{
-                    maxWidth: 330,
-                    width: "100%",
-                    minHeight: 250,
-                    objectFit: "cover",
                     height: "70%",
-                    // Ensure the image covers the container without stretching
+                    maxWidth: "100%",
+                    width: "100%",
+                    objectFit: "cover",
                   }}
                   src={item.Image}
                   alt="products"
                 />
-
                 <Box
                   display={"flex"}
                   flexDirection={"column"}
                   justifyContent={"flex-start"}
                 >
                   <Typography
-                    fontSize={"10px"}
-                    padding={"5px"}
                     textAlign={"center"}
+                    fontSize={"10px"}
                     fontWeight={"bold"}
-                    fontFamily={"Nunito Sans, sans-serif"}
                     mt={1}
                   >
                     {item.name}
                   </Typography>
                   <Box
+                    mb={1}
                     justifyContent={"center"}
                     display={"flex"}
                     gap={"0.5rem"}
                   >
-                    {item.offerprice ? (
-                      <Typography
-                        fontSize={"18px"}
-                        color={"#EB3C70"}
-                        fontFamily={"Nunito Sans, sans-serif"}
-                        style={{
-                          opacity: 0.5,
-                          textDecoration: "line-through",
-                        }}
-                      >
-                        {" "}
-                        ₹{item.offerprice}
-                      </Typography>
-                    ) : null}
-                    <Typography
-                      style={{
-                        textDecoration: item.offerprice
-                          ? "underline"
-                          : undefined,
-                      }}
-                      fontSize={"18px"}
-                      color={"#EB3C70"}
-                      fontFamily={"Nunito Sans, sans-serif"}
-                    >
-                      {item.price ? "₹" : undefined} {item.price}
+                    <Typography fontSize={"18px"} color={"#EB3C70"}>
+                      {item.price}
                     </Typography>
                   </Box>
                 </Box>

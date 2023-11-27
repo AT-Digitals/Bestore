@@ -56,7 +56,7 @@ export default function AppFooter() {
                 The customer is at the heart of our unique business model, which
                 includes design
               </CustomLabel>
-              <Box border={"1px solid black"}></Box>
+              <Box border={"1px solid gray"}></Box>
               <Stack spacing={1} direction={"row"}>
                 <FacebookIcon
                   style={{
@@ -141,10 +141,11 @@ export default function AppFooter() {
         display={"flex"}
         justifyContent={"center"}
         width={"80%"}
-        borderTop={"1px solid black"}
+        borderTop={"1px solid gray"}
         margin={"0 auto"}
       >
         <Box mt={3} mb={2}>
+
           <Typography  fontFamily={"Nunito Sans, sans-serif"}>copyright@2023 | All rights reserved</Typography>
         </Box>
       </Box>

@@ -56,24 +56,6 @@ export default function AppHeader() {
           </Box>
           <Stack spacing={2} direction={"row"}>
             <HeaderTabs />
-
-            {/* <Box alignItems={"center"} display={"flex"} gap={"1rem"}>
-              <IconButton>
-                <ShoppingBagIcon />
-              </IconButton>
-              <Button
-                style={{
-                  textTransform: "capitalize",
-                  borderRadius: "40px",
-                  color: "white",
-                  background: "black",
-                  width: "90px",
-                  height: "38px",
-                }}
-              >
-                Buy now
-              </Button>
-            </Box> */}
           </Stack>
         </Box>
       </Box>
