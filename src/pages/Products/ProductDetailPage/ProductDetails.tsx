@@ -1,4 +1,4 @@
-import { Button, Grid, IconButton, Stack } from "@mui/material";
+import { Button, IconButton, Stack } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";

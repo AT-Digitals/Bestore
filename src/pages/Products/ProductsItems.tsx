@@ -16,9 +16,7 @@ import Homedecor4 from "../../assets/ProductsImage/home-decor4.webp";
 import Lipsstick from "../../assets/ProductsImage/lipsstick.jpg";
 import Redshoes from "../../assets/ProductsImage/red shoes.jpg";
 import Shades from "../../assets/ProductsImage/shades.jpg";
-import Sweater from "../../assets/ProductsImage/sweater.jpg";
 import Watch from "../../assets/ProductsImage/watch.jpg";
-import shirts from "../../assets/ProductsImage/shirts.jpg";
 
 const ProductsImage = [
   {

@@ -6,7 +6,6 @@ import ProductsImage1 from "../../../assets/ProductsImage/ak-p1.avif";
 import ProductsImage3 from "../../../assets/ProductsImage/fab1.jpg";
 import ProductsImage4 from "../../../assets/ProductsImage/fab2.jpg";
 import ProductsImage5 from "../../../assets/ProductsImage/home-decor1.webp";
-import WishtList from "./WishitList";
 
 const ProductsImage = [
   {
