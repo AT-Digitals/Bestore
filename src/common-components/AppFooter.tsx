@@ -18,6 +18,7 @@ import routes from "../routes/routes";
 const CustomLabel = styled(Typography)({
   color: "#6F6F6F",
   fontSize: "16px",
+  fontFamily: "Nunito Sans, sans-serif",
 });
 export default function AppFooter() {
   return (
@@ -55,7 +56,7 @@ export default function AppFooter() {
                 The customer is at the heart of our unique business model, which
                 includes design
               </CustomLabel>
-              <Box border={"1px solid black"}></Box>
+              <Box border={"1px solid gray"}></Box>
               <Stack spacing={1} direction={"row"}>
                 <FacebookIcon
                   style={{
@@ -140,11 +141,11 @@ export default function AppFooter() {
         display={"flex"}
         justifyContent={"center"}
         width={"80%"}
-        borderTop={"1px solid black"}
+        borderTop={"1px solid gray"}
         margin={"0 auto"}
       >
         <Box mt={3} mb={2}>
-          <Typography>copyright@2023 | All rights reserved</Typography>
+          <CustomLabel>copyright@2023 | All rights reserved</CustomLabel>
         </Box>
       </Box>
     </Box>

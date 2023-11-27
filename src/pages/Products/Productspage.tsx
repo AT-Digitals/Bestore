@@ -94,7 +94,12 @@ export default function ProductsPage() {
         textAlign={"center"}
         bgcolor={"#F6F6F6"}
       >
-        <Typography color={"white"} fontSize={"75px"} fontWeight={"bold"}>
+        <Typography
+          fontFamily={"Nunito Sans, sans-serif"}
+          color={"white"}
+          fontSize={"75px"}
+          fontWeight={"bold"}
+        >
           {" "}
           {selectedCategory ? selectedCategory : "Products"}
         </Typography>
@@ -122,7 +127,11 @@ export default function ProductsPage() {
                     display="flex"
                     justifyContent="space-between"
                   >
-                    <Typography fontSize={"16px"} fontWeight={"bold"}>
+                    <Typography
+                      fontFamily={"Nunito Sans, sans-serif"}
+                      fontSize={"16px"}
+                      fontWeight={"bold"}
+                    >
                       CATEGORIES
                     </Typography>
                     <ArrowDropDownIcon />
@@ -136,6 +145,7 @@ export default function ProductsPage() {
                             color={"gray"}
                             key={name.name}
                             onClick={() => handleCategoryClick(name.name)}
+                            fontFamily={"Nunito Sans, sans-serif"}
                             sx={{
                               marginBottom: 2,
                               color: "gray",
@@ -185,16 +195,16 @@ export default function ProductsPage() {
                           style={{
                             textDecoration: "none",
                             color: "black",
-                            width: "100%", // Ensure the link takes the full width of the Grid item
+                            width: "100%",
                           }}
                         >
                           <Box
                             padding={"10px"}
-                            height={360} // Set a fixed height for all boxes
+                            height={360}
                             mb={2}
                             mt={2}
                             maxWidth={{ xs: 330, sm: 240, md: 330 }}
-                            width={330} // Set a fixed width for all boxes
+                            width={330}
                             gap={"2rem"}
                             key={index}
                             position="relative"
@@ -230,6 +240,7 @@ export default function ProductsPage() {
                                 textAlign={"center"}
                                 fontSize={"10px"}
                                 fontWeight={"bold"}
+                                fontFamily={"Nunito Sans, sans-serif"}
                                 mt={1}
                               >
                                 {item.name}
@@ -240,7 +251,11 @@ export default function ProductsPage() {
                                 display={"flex"}
                                 gap={"0.5rem"}
                               >
-                                <Typography fontSize={"18px"} color={"#EB3C70"}>
+                                <Typography
+                                  fontFamily={"Nunito Sans, sans-serif"}
+                                  fontSize={"18px"}
+                                  color={"#EB3C70"}
+                                >
                                   {item.price}
                                 </Typography>
                               </Box>
