@@ -10,7 +10,7 @@ const SizeSelection = () => {
 
   return (
     <Box>
-      <Typography fontSize={"10px"} fontWeight="bold" marginBottom="2">
+      <Typography fontSize={"10px"}  fontFamily={"Nunito Sans, sans-serif"} fontWeight="bold" marginBottom="2">
         SELECT SIZE
       </Typography>
       <Select

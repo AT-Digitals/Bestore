@@ -98,7 +98,7 @@ export default function BestSellingProducts() {
                 />
                 {item.type === "Best selling" && <BadgeStyle />}
                 <WishtList right={0} />
-                <Typography fontSize={"21px"} fontWeight={"bold"} mt={1}>
+                <Typography fontSize={"21px"} fontWeight={"bold"} mt={1}  fontFamily={"Nunito Sans, sans-serif"}>
                   {item.name}
                 </Typography>
                 <Box
@@ -111,6 +111,7 @@ export default function BestSellingProducts() {
                     <Typography
                       fontSize={"18px"}
                       color={"#EB3C70"}
+                      fontFamily={"Nunito Sans, sans-serif"}
                       style={{
                         opacity: 0.5,
                         textDecoration: "line-through",
@@ -122,6 +123,7 @@ export default function BestSellingProducts() {
                   ) : null}
                   <Typography
                     fontSize={"18px"}
+                    fontFamily={"Nunito Sans, sans-serif"}
                     style={{
                       textDecoration: item.offerprice ? "underline" : undefined,
                     }}

@@ -60,7 +60,7 @@ export default function BlogAbout() {
           textAlign={"center"}
           color={"black"}
           fontSize={"60px"}
-          fontFamily={"sans-serif"}
+          fontFamily={"Nunito Sans, sans-serif"}
           fontWeight={"500"}
         >
           Lorem ipsum dolor mit
@@ -68,7 +68,7 @@ export default function BlogAbout() {
             textAlign={"center"}
             color={"black"}
             fontSize={"60px"}
-            fontFamily={"sans-serif"}
+            fontFamily={"Nunito Sans, sans-serif"}
             fontWeight={"500"}
           >
             samet et omnia
@@ -90,6 +90,7 @@ export default function BlogAbout() {
             color={"black"}
             fontWeight={"bold"}
             fontSize={"16px"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             dolore magna aliqua. Ut enim ad minim veni sit amet Lorem ipsum
@@ -103,6 +104,7 @@ export default function BlogAbout() {
             color={"black"}
             fontWeight={"500"}
             fontSize={"16px"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -119,6 +121,7 @@ export default function BlogAbout() {
             color={"black"}
             fontWeight={"500"}
             fontSize={"16px"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -238,6 +241,7 @@ export default function BlogAbout() {
             color={"black"}
             fontWeight={"500"}
             fontSize={"30px"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             „Lorem modi tempora incidunt ut labore et dolore magnam.”
           </Typography>
@@ -247,6 +251,7 @@ export default function BlogAbout() {
               maxWidth={"600px"}
               color={"black"}
               fontSize={"16px"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -254,7 +259,7 @@ export default function BlogAbout() {
               dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
               aspernatur aut odit aut fugit, sed qunt.
             </Typography>
-            <Typography maxWidth={"600px"} color={"black"} fontSize={"16px"}>
+            <Typography maxWidth={"600px"} color={"black"} fontSize={"16px"}  fontFamily={"Nunito Sans, sans-serif"}>
               Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
               consectetur, adipisci velit, sed quia non numquam eius modi
               tempora incidunt ut labore et dolore magnam aliquam quaerat
@@ -270,6 +275,7 @@ export default function BlogAbout() {
             color={"black"}
             fontWeight={"bold"}
             fontSize={"16px"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
@@ -286,6 +292,7 @@ export default function BlogAbout() {
             color={"black"}
             fontWeight={"500"}
             fontSize={"16px"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
