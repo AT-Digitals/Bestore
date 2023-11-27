@@ -36,7 +36,7 @@ export default function AboutConainer() {
         >
           We provide the newest trends in fashion
         </Typography>
-        <Typography fontSize={"15px"}  fontFamily={"Nunito Sans, sans-serif"}>
+        <Typography fontSize={"15px"} fontFamily={"Nunito Sans, sans-serif"}>
           Elevate your wardrobe with our versatile denim jeans, transform your
           living room with our geometric patterned rugs, and indulge in cozy
           evenings with our plush fleece blankets.
@@ -44,8 +44,8 @@ export default function AboutConainer() {
         <Link to={routes.ABOUT}>
           <Button
             style={{
-              color: "black",
-              background: "#ef9e1e",
+              color: "white",
+              background: "black",
               maxWidth: 160,
               width: "100%",
               borderRadius: "30px",

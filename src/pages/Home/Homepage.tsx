@@ -163,7 +163,11 @@ export default function Homepage() {
         paddingBottom={"70px"}
         textAlign={"center"}
       >
-        <Typography fontSize={{ xs: "22px", md: "37px" }} fontWeight={600}  fontFamily={"Nunito Sans, sans-serif"}>
+        <Typography
+          fontSize={{ xs: "22px", md: "37px" }}
+          fontWeight={600}
+          fontFamily={"Nunito Sans, sans-serif"}
+        >
           Products on sale
         </Typography>
         <ProductsCard />
@@ -172,7 +176,7 @@ export default function Homepage() {
           <Link to={routes.PRODUCTS}>
             <Button
               style={{
-                background: "#7F7F7F",
+                background: "black",
                 color: "white",
                 padding: "15px 50px",
                 borderRadius: "20px",
