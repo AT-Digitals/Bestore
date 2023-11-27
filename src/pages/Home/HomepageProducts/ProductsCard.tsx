@@ -87,7 +87,6 @@ export default function ProductsCard() {
                   src={item.Image}
                   alt="products"
                 />
-                <WishtList right={0} />
                 <Typography
                   fontSize={"10px"}
                   padding={"5px"}

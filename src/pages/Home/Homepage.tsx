@@ -15,14 +15,17 @@ const HoverImageText = [
   {
     label: "Clothing",
     image: Card1,
+    link: routes.CLOTHING_PRODUCT,
   },
   {
     label: "Home Decor",
     image: Card2,
+    link: routes.HOME_DECOR_PRODUCT,
   },
   {
     label: "Fabric",
     image: Card3,
+    link: routes.FABRIC_PRODUCT,
   },
 ];
 
@@ -180,14 +183,9 @@ export default function Homepage() {
         </Box>
       </Box>
 
-      {/* <CustomerTarings /> */}
-
       <AboutConainer />
-      {/* <BestoreReviews /> */}
 
       <CartImage />
-
-      {/* <SignUpNewsLetter /> */}
 
       <SliderImages />
     </Box>

@@ -8,6 +8,7 @@ import React from "react";
 import SizeSelection from "./SelectSizeOption";
 import Typography from "@mui/material/Typography";
 import banner from "./pdetail.webp";
+import logo from "./Akka creartions horizontal 2-03-03.png";
 import routes from "../../../routes/routes";
 
 export default function ProductDetailPage() {
@@ -52,7 +53,10 @@ export default function ProductDetailPage() {
             </IconButton>
           </Link>
         </Box>
-
+        <Box margin={"0 auto"}>
+          {" "}
+          <img width={300} src={logo} alt="" />
+        </Box>
         <Stack
           padding={"60px"}
           margin={"0px auto"}
@@ -83,6 +87,9 @@ export default function ProductDetailPage() {
 
             <Typography variant="h6" color="textSecondary" gutterBottom>
               ₹{product.price}
+            </Typography>
+            <Typography variant="h6" color="textSecondary" gutterBottom>
+              Category: {product.producttype}
             </Typography>
             <SizeSelection />
 
@@ -122,12 +129,12 @@ export default function ProductDetailPage() {
                 style={{
                   textDecoration: "none",
                   color: "black",
-                  width: "100%", // Ensure the link takes the full width of the Grid item
+                  width: "100%",
                 }}
               >
                 <Box
-                  height={350} // Set a fixed height for the box
-                  width={330} // Set a fixed width for the box
+                  height={350}
+                  width={330}
                   mb={2}
                   mt={2}
                   maxWidth={{ xs: 330, sm: 240, md: 330 }}
