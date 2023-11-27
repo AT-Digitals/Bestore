@@ -20,10 +20,10 @@ export default function AboutPage() {
         ></Box>
         <Stack padding={"0 50px"} marginTop={"90px"} alignItems={"center"}>
           <Typography>
-            <Typography textAlign={"center"} color={"red"}>
+            <Typography textAlign={"center"} color={"red"}  fontFamily={"Nunito Sans, sans-serif"}>
               PARTNER
             </Typography>
-            <Typography fontSize={"30px"}> Happy Clients</Typography>
+            <Typography fontSize={"30px"}  fontFamily={"Nunito Sans, sans-serif"}> Happy Clients</Typography>
           </Typography>
           <img
             width={"100%"}
@@ -92,7 +92,7 @@ export default function AboutPage() {
           margin={{ sm: "70px 70px", md: "50px 70px" }}
         >
           <Typography fontSize={"80px"} color={"#e53637"} textAlign={"center"}>,,</Typography>
-          <Typography textAlign={"center"} fontSize={"30px"} fontWeight={"600"} color={"black"}>
+          <Typography textAlign={"center"} fontSize={"30px"} fontWeight={"600"} color={"black"}  fontFamily={"Nunito Sans, sans-serif"}>
             Our vission
           </Typography>
           <Typography
@@ -102,6 +102,7 @@ export default function AboutPage() {
             color={"black"}
             textAlign={"center"}
             fontStyle={"italic"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -118,6 +119,7 @@ export default function AboutPage() {
               padding: "10px 20px",
               width: "175px",
               marginTop: "30px",
+              fontFamily: "Nunito Sans, sans-serif",
             }}
           >
             Contact us
@@ -145,7 +147,7 @@ export default function AboutPage() {
           margin={{ sm: "70px 70px", md: "50px 70px" }}
         >
           <Typography fontSize={"80px"} color={"#e53637"} textAlign={"center"}>,,</Typography>
-          <Typography textAlign={"center"} fontSize={"30px"} fontWeight={"600"} color={"black"}>
+          <Typography textAlign={"center"} fontSize={"30px"} fontWeight={"600"} color={"black"}  fontFamily={"Nunito Sans, sans-serif"}>
             Our vission
           </Typography>
           <Typography
@@ -156,6 +158,7 @@ export default function AboutPage() {
             color={"black"}
             textAlign={"center"}
             fontStyle={"italic"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -172,6 +175,7 @@ export default function AboutPage() {
               padding: "10px 20px",
               width: "175px",
               marginTop: "30px",
+              fontFamily: "Nunito Sans, sans-serif",
             }}
           >
             Contact us

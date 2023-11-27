@@ -52,7 +52,7 @@ export default function ProductShoe() {
           fontSize={"68px"}
           fontWeight={"bold"}
           color={"black"}
-          fontFamily={"sans-serif"}
+          fontFamily={"Nunito Sans, sans-serif"}
         >
           Beige shoes
         </Typography>
@@ -85,7 +85,7 @@ export default function ProductShoe() {
             <Typography
               fontSize={"36px"}
               color={"black"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
             >
               Beige shoes
             </Typography>
@@ -109,6 +109,7 @@ export default function ProductShoe() {
                   marginLeft={"-229px"}
                   fontSize={"29px"}
                   color={"#eb3c70"}
+                  fontFamily={"Nunito Sans, sans-serif"}
                 >
                   £189.00
                 </Typography>
@@ -119,6 +120,7 @@ export default function ProductShoe() {
                   marginLeft={"-198px"}
                   fontSize={"19px"}
                   color={"lightpink"}
+                  fontFamily={"Nunito Sans, sans-serif"}
                 >
                   £199.00
                 </Typography>
@@ -128,6 +130,7 @@ export default function ProductShoe() {
                 marginLeft={"-229px"}
                 color={"black"}
                 fontSize={"15px"}
+                fontFamily={"Nunito Sans, sans-serif"}
               >
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, adipisci velit, sed quia non
@@ -164,6 +167,7 @@ export default function ProductShoe() {
                     padding: "9px 6px",
                     textTransform: "none",
                     width: "147px",
+                    fontFamily: "Nunito Sans, sans-serif",
                   }}
                 >
                   Add To Cart
@@ -175,10 +179,10 @@ export default function ProductShoe() {
                 gap={"5px"}
                 marginLeft={"-229px"}
               >
-                <Typography fontSize={"16px"} color={"#a8a8a8"}>
+                <Typography fontSize={"16px"} color={"#a8a8a8"}  fontFamily={"Nunito Sans, sans-serif"}>
                   Category:
                 </Typography>
-                <Typography fontSize={"16px"} color={"#eb3c70"}>
+                <Typography fontSize={"16px"} color={"#eb3c70"}  fontFamily={"Nunito Sans, sans-serif"}>
                   Bags
                 </Typography>
               </Box>
@@ -197,6 +201,7 @@ export default function ProductShoe() {
                   marginLeft={"-229px"}
                   fontSize={"16px"}
                   color={"black"}
+                  fontFamily={"Nunito Sans, sans-serif"}
                 >
                   Share
                 </Typography>
@@ -274,6 +279,7 @@ export default function ProductShoe() {
           marginLeft={"57px"}
           color={"black"}
           fontSize={"17px"}
+          fontFamily={"Nunito Sans, sans-serif"}
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -294,19 +300,19 @@ export default function ProductShoe() {
           flexItem
         />
       </Box>
-      <Typography margin={"20px 200px"} fontSize={"25px"} color={"black"}>
+      <Typography margin={"20px 200px"} fontSize={"25px"} color={"black"}  fontFamily={"Nunito Sans, sans-serif"}>
         Related products
       </Typography>
       <Stack margin={"20px 190px"} direction={"row"}>
         <Box display={"flex"} flexDirection={"column"} gap={"10px"}>
           <img src={FlipFlops} alt="flip" width={"200px"} />
-          <Typography textAlign={"center"} fontSize={"20px"} color={"black"}>
+          <Typography textAlign={"center"} fontSize={"20px"} color={"black"}  fontFamily={"Nunito Sans, sans-serif"}>
             FlipFlops
           </Typography>
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"10px"}>
           <img src={Redshoes} alt="flip" width={"200px"} />
-          <Typography fontSize={"20px"} textAlign={"center"} color={"black"}>
+          <Typography fontSize={"20px"} textAlign={"center"} color={"black"}  fontFamily={"Nunito Sans, sans-serif"}>
             RedShoes
           </Typography>
           <Typography
@@ -314,6 +320,7 @@ export default function ProductShoe() {
             marginRight={"29px"}
             fontSize={"18px"}
             color={"#eb3c70"}
+            fontFamily={"Nunito Sans, sans-serif"}
           >
             £89.00
           </Typography>
@@ -327,7 +334,7 @@ export default function ProductShoe() {
         flexDirection={"column"}
         alignItems={"end"}
       >
-        <Typography mb={2} marginRight={"97px"} marginTop={"50px"}>
+        <Typography mb={2} marginRight={"97px"} marginTop={"50px"}  fontFamily={"Nunito Sans, sans-serif"}>
           Products categories
         </Typography>
 

@@ -25,6 +25,7 @@ export default function HomeDecorProducts() {
                 textDecoration: "none",
                 color: "black",
                 width: "100%",
+                fontFamily: "Nunito Sans, sans-serif",
               }}
             >
               <Box
@@ -73,6 +74,7 @@ export default function HomeDecorProducts() {
                     padding={"5px"}
                     textAlign={"center"}
                     fontWeight={"bold"}
+                    fontFamily={"Nunito Sans, sans-serif"}
                     mt={1}
                   >
                     {item.name}
@@ -86,6 +88,7 @@ export default function HomeDecorProducts() {
                       <Typography
                         fontSize={"18px"}
                         color={"#EB3C70"}
+                        fontFamily={"Nunito Sans, sans-serif"}
                         style={{
                           opacity: 0.5,
                           textDecoration: "line-through",
@@ -103,6 +106,7 @@ export default function HomeDecorProducts() {
                       }}
                       fontSize={"18px"}
                       color={"#EB3C70"}
+                      fontFamily={"Nunito Sans, sans-serif"}
                     >
                       {item.price ? "₹" : undefined} {item.price}
                     </Typography>

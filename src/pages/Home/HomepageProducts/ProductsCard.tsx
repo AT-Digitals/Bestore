@@ -91,6 +91,7 @@ export default function ProductsCard() {
                   padding={"5px"}
                   fontWeight={"bold"}
                   mt={1}
+                  fontFamily={"Nunito Sans, sans-serif"}
                 >
                   {item.name}
                 </Typography>
@@ -99,6 +100,7 @@ export default function ProductsCard() {
                     <Typography
                       fontSize={"18px"}
                       color={"#EB3C70"}
+                      fontFamily={"Nunito Sans, sans-serif"}
                       style={{
                         opacity: 0.5,
                         textDecoration: "line-through",
@@ -112,6 +114,7 @@ export default function ProductsCard() {
                     fontSize={"18px"}
                     fontWeight={"bold"}
                     color={"#EB3C70"}
+                    fontFamily={"Nunito Sans, sans-serif"}
                     style={{
                       textDecoration: item.offerprice ? "underline" : undefined,
                     }}

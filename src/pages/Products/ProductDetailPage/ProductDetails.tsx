@@ -21,7 +21,7 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <Box maxWidth={600} margin="auto" mt={5}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4"  fontFamily={"Nunito Sans, sans-serif"} gutterBottom>
           Product not found
         </Typography>
       </Box>
@@ -81,19 +81,19 @@ export default function ProductDetailPage() {
             />
           </Box>
           <Stack spacing={3} maxWidth={400}>
-            <Typography fontSize={"20px"} gutterBottom>
+            <Typography fontSize={"20px"}  fontFamily={"Nunito Sans, sans-serif"} gutterBottom>
               {product.name}
             </Typography>
 
-            <Typography variant="h6" color="textSecondary" gutterBottom>
+            <Typography variant="h6"  fontFamily={"Nunito Sans, sans-serif"} color="textSecondary" gutterBottom>
               ₹{product.price}
             </Typography>
-            <Typography variant="h6" color="textSecondary" gutterBottom>
+            <Typography variant="h6"  fontFamily={"Nunito Sans, sans-serif"} color="textSecondary" gutterBottom>
               Category: {product.producttype}
             </Typography>
             <SizeSelection />
 
-            <Typography>
+            <Typography  fontFamily={"Nunito Sans, sans-serif"}>
               Coat with quilted lining and an adjustable hood. Featuring long
               sleeves with adjustable cuff tabs, adjustable asymmetric hem with
               elastic side tabs and a front zip fastening with placket.
@@ -103,6 +103,7 @@ export default function ProductDetailPage() {
               style={{
                 background: "black",
                 color: "white",
+                fontFamily: "Nunito Sans, sans-serif",
               }}
             >
               ADD TO CART
@@ -111,6 +112,7 @@ export default function ProductDetailPage() {
               style={{
                 background: "black",
                 color: "white",
+                fontFamily: "Nunito Sans, sans-serif",
               }}
             >
               Buy Now
@@ -119,7 +121,7 @@ export default function ProductDetailPage() {
         </Stack>
 
         <Stack margin={"0 auto"}>
-          <Typography textAlign={"center"} fontSize={"30px"}>
+          <Typography textAlign={"center"} fontSize={"30px"}  fontFamily={"Nunito Sans, sans-serif"}>
             Related Products
           </Typography>
           <Stack mt={10} spacing={5} direction={"row"} width={"100%"}>
@@ -130,6 +132,7 @@ export default function ProductDetailPage() {
                   textDecoration: "none",
                   color: "black",
                   width: "100%",
+                  fontFamily: "Nunito Sans, sans-serif",
                 }}
               >
                 <Box
@@ -178,6 +181,7 @@ export default function ProductDetailPage() {
                       textAlign={"center"}
                       fontWeight={"bold"}
                       mt={1}
+                      fontFamily={"Nunito Sans, sans-serif"}
                     >
                       {relatedProduct.name}
                     </Typography>
@@ -186,7 +190,7 @@ export default function ProductDetailPage() {
                       display={"flex"}
                       gap={"0.5rem"}
                     >
-                      <Typography fontSize={"18px"} color={"#EB3C70"}>
+                      <Typography fontSize={"18px"} color={"#EB3C70"}  fontFamily={"Nunito Sans, sans-serif"}>
                         {relatedProduct.price}
                       </Typography>
                     </Box>

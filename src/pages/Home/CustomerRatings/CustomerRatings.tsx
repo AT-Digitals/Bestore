@@ -50,22 +50,22 @@ export default function CustomerTarings() {
           direction={{ xs: "column", sm: "row", md: "row" }}
         >
           <Box textAlign={"center"}>
-            <Typography fontSize={"69px"} fontWeight={"bold"}>
+            <Typography fontSize={"69px"} fontWeight={"bold"}  fontFamily={"Nunito Sans, sans-serif"}>
               {count2}M
             </Typography>
-            <Typography fontSize={"15px"}>Lorem ipsum dolor</Typography>
+            <Typography fontSize={"15px"}  fontFamily={"Nunito Sans, sans-serif"}>Lorem ipsum dolor</Typography>
           </Box>{" "}
           <Box textAlign={"center"}>
-            <Typography fontSize={"69px"} fontWeight={"bold"}>
+            <Typography fontSize={"69px"} fontWeight={"bold"}  fontFamily={"Nunito Sans, sans-serif"}>
               {count}K
             </Typography>
-            <Typography fontSize={"15px"}>Sid es omnia es</Typography>
+            <Typography fontSize={"15px"}  fontFamily={"Nunito Sans, sans-serif"}>Sid es omnia es</Typography>
           </Box>
           <Box textAlign={"center"}>
-            <Typography fontSize={"69px"} fontWeight={"bold"}>
+            <Typography fontSize={"69px"} fontWeight={"bold"}  fontFamily={"Nunito Sans, sans-serif"}>
               {count3}
             </Typography>
-            <Typography fontSize={"15px"}>Quanta fermium damus</Typography>
+            <Typography fontSize={"15px"}  fontFamily={"Nunito Sans, sans-serif"}>Quanta fermium damus</Typography>
           </Box>
         </Stack>
       </Box>

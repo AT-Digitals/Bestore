@@ -28,7 +28,7 @@ export default function ProductBag() {
     return (
         <Box>
         <Box padding={"185px 0 60px"} textAlign={"center"} bgcolor={"#F6F6F6"}>
-            <Typography textAlign={"center"} fontSize={"68px"} fontWeight={"bold"} color={"black"} fontFamily={"sans-serif"}>Bag</Typography>
+            <Typography textAlign={"center"} fontSize={"68px"} fontWeight={"bold"} color={"black"}  fontFamily={"Nunito Sans, sans-serif"}>Bag</Typography>
         </Box>
         <Divider style={{
         width: "1060px",
@@ -44,15 +44,15 @@ export default function ProductBag() {
         marginTop: "20px"
        }} />
        
-       <Typography fontSize={"36px"} color={"black"} fontFamily={"sans-serif"}>Bag</Typography>
+       <Typography fontSize={"36px"} color={"black"}  fontFamily={"Nunito Sans, sans-serif"}>Bag</Typography>
        <Box display={"flex"} flexDirection={"column"} gap={"20px"}>
        <Divider style={{
         width: "89px",
         height: "60px",
         marginLeft: "-109px",
        }} orientation="horizontal" flexItem/>
-       <Typography marginLeft={"-109px"} fontSize={"29px"} color={"#eb3c70"}>£156.00</Typography>
-       <Typography maxWidth={"500px"}  marginLeft={"-109px"} color={"black"} fontSize={"15px"}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</Typography>
+       <Typography  fontFamily={"Nunito Sans, sans-serif"} marginLeft={"-109px"} fontSize={"29px"} color={"#eb3c70"}>£156.00</Typography>
+       <Typography  fontFamily={"Nunito Sans, sans-serif"} maxWidth={"500px"}  marginLeft={"-109px"} color={"black"} fontSize={"15px"}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</Typography>
       <Box display={"flex"} gap={"20px"} alignItems={"center"}>
        <TextField sx={{
                   width: "100%",
@@ -74,12 +74,13 @@ export default function ProductBag() {
                 borderRadius: "20px",
                 padding: "9px 6px",
                 textTransform: "none",
-                width: "147px"
+                width: "147px",
+                fontFamily: "Nunito Sans, sans-serif",
               }}>Add To Cart</Button>
               </Box>
               <Box marginTop={"15px"} display={"flex"} gap={"5px"} marginLeft={"-109px"}>
-              <Typography fontSize={"16px"} color={"#a8a8a8"}>Category:</Typography>
-              <Typography fontSize={"16px"} color={"#eb3c70"}>Bags</Typography>
+              <Typography  fontFamily={"Nunito Sans, sans-serif"} fontSize={"16px"} color={"#a8a8a8"}>Category:</Typography>
+              <Typography  fontFamily={"Nunito Sans, sans-serif"} fontSize={"16px"} color={"#eb3c70"}>Bags</Typography>
               </Box>
               <Divider style={{
         width: "420px",
@@ -87,7 +88,7 @@ export default function ProductBag() {
         marginLeft: "-109px",
        }} orientation="horizontal" flexItem/>
        <Stack direction="row" gap={"20px"}>
-       <Typography marginLeft={"-109px"} fontSize={"16px"} color={"black"}>Share</Typography>
+       <Typography  fontFamily={"Nunito Sans, sans-serif"} marginLeft={"-109px"} fontSize={"16px"} color={"black"}>Share</Typography>
        <FacebookIcon style={{
         fontSize: "23px",
         color: "#a8a8a8"
@@ -129,10 +130,10 @@ export default function ProductBag() {
         }} />
       </Tabs>
     </Box>
-    <Typography marginBottom={"40px"} marginTop={"-40px"} maxWidth={"831px"} marginLeft={"57px"} color={"black"} fontSize={"17px"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo c fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</Typography>
+    <Typography  fontFamily={"Nunito Sans, sans-serif"} marginBottom={"40px"} marginTop={"-40px"} maxWidth={"831px"} marginLeft={"57px"} color={"black"} fontSize={"17px"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo c fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</Typography>
     </Box>
     <Box marginTop={"-780px"} p={"0 20px"} marginRight={"160px"} display={"flex"} flexDirection={"column"} alignItems={"end"}>
-              <Typography mb={2} marginRight={"97px"} marginTop={"50px"}>Products categories</Typography>
+              <Typography mb={2} marginRight={"97px"} marginTop={"50px"}  fontFamily={"Nunito Sans, sans-serif"}>Products categories</Typography>
 
               <Stack spacing={2} maxWidth={{ sm: 160, md: 250 }} gap={"3rem"}>
                 <Box bgcolor={"#eb3c70"} width={226}>

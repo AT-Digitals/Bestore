@@ -110,7 +110,7 @@ export default function SignUpNewsLetter() {
           paddingTop={"55px"}
           fontSize={{ xs: "22px", md: "35px" }}
           fontWeight={"700"}
-          fontFamily={"sans-serif"}
+          fontFamily={"Nunito Sans, sans-serif"}
         >
           Sign up for a newsletter
         </Typography>
@@ -121,10 +121,11 @@ export default function SignUpNewsLetter() {
           textAlign={"center"}
           fontSize={"14px"}
           width={{ sm: "66%", margin: "0 auto" }}
+          fontFamily={"Nunito Sans, sans-serif"}
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore{" "}
-          <Typography textAlign={"center"} fontSize={"14px"}>
+          <Typography textAlign={"center"} fontSize={"14px"}  fontFamily={"Nunito Sans, sans-serif"}>
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat
             consequat.
           </Typography>
@@ -195,6 +196,7 @@ export default function SignUpNewsLetter() {
                 borderRadius: "20px",
                 padding: "10px 40px",
                 textTransform: "none",
+                fontFamily: "Nunito Sans, sans-serif",
               }}
               type="submit"
             >

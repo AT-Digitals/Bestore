@@ -18,6 +18,7 @@ import routes from "../routes/routes";
 const CustomLabel = styled(Typography)({
   color: "#6F6F6F",
   fontSize: "16px",
+  fontFamily: "Nunito Sans, sans-serif",
 });
 export default function AppFooter() {
   return (
@@ -115,7 +116,7 @@ export default function AppFooter() {
 
           <Stack spacing={2} maxWidth={300}>
             <br />
-            <Typography fontSize={"16px"} fontWeight={"bold"}>
+            <Typography fontSize={"16px"} fontWeight={"bold"}  fontFamily={"Nunito Sans, sans-serif"}>
               NEWSLETTER{" "}
             </Typography>
             <CustomLabel fontSize={"15px"}>
@@ -144,7 +145,7 @@ export default function AppFooter() {
         margin={"0 auto"}
       >
         <Box mt={3} mb={2}>
-          <Typography>copyright@2023 | All rights reserved</Typography>
+          <Typography  fontFamily={"Nunito Sans, sans-serif"}>copyright@2023 | All rights reserved</Typography>
         </Box>
       </Box>
     </Box>

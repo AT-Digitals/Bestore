@@ -11,7 +11,7 @@ export default function Blogpage() {
   return (
     <Box>
       <Box padding={"175px 0 60px"} textAlign={"center"} bgcolor={"#F6F6F6"}>
-        <Typography fontSize={"80px"} fontWeight={"bold"}>
+        <Typography fontSize={"80px"} fontWeight={"bold"}  fontFamily={"Nunito Sans, sans-serif"}>
           {" "}
           Blog
         </Typography>
@@ -56,7 +56,7 @@ export default function Blogpage() {
               padding={"30px"}
               fontSize={{ xs: "13px", sm: "15px", md: "20px" }}
               fontWeight={"bold"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
               color={"black"}
             >
               Nam scelerisque ante ac
@@ -91,7 +91,7 @@ export default function Blogpage() {
                   },
                 }}
               >
-                <Typography color={"#eb3c70"} fontSize={"16px"}>
+                <Typography color={"#eb3c70"} fontSize={"16px"}  fontFamily={"Nunito Sans, sans-serif"}>
                   admin
                 </Typography>
               </Link>
@@ -101,7 +101,7 @@ export default function Blogpage() {
                   color: "#a8a8a8",
                 }}
               />
-              <Typography color={"#a8a8a8"} fontSize={"15px"}>
+              <Typography color={"#a8a8a8"} fontSize={"15px"}  fontFamily={"Nunito Sans, sans-serif"}>
                 {" "}
                 July 23, 2020
               </Typography>
@@ -141,7 +141,7 @@ export default function Blogpage() {
               padding={"30px"}
               fontSize={{ xs: "13px", sm: "15px", md: "20px" }}
               fontWeight={"bold"}
-              fontFamily={"sans-serif"}
+              fontFamily={"Nunito Sans, sans-serif"}
               color={"black"}
             >
               Phasellus nec nisl
@@ -176,7 +176,7 @@ export default function Blogpage() {
                   },
                 }}
               >
-                <Typography color={"#eb3c70"} fontSize={"16px"}>
+                <Typography color={"#eb3c70"} fontSize={"16px"}  fontFamily={"Nunito Sans, sans-serif"}>
                   admin
                 </Typography>
               </Link>
@@ -186,7 +186,7 @@ export default function Blogpage() {
                   color: "#a8a8a8",
                 }}
               />
-              <Typography color={"#a8a8a8"} fontSize={"15px"}>
+              <Typography color={"#a8a8a8"} fontSize={"15px"}  fontFamily={"Nunito Sans, sans-serif"}>
                 {" "}
                 July 23, 2020
               </Typography>
