@@ -101,7 +101,7 @@ export default function ClothingSample() {
           fontFamily={"Nunito Sans, sans-serif"}
         >
           {" "}
-          clothing
+          Clothing
         </Typography>
       </Box>
       <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>

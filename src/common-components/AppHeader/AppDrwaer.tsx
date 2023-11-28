@@ -29,9 +29,16 @@ const StyledDrawer = styled(Drawer)({
 interface AppDrawerProps {
   open: boolean;
   onClose?: () => void;
+  setActiveTab: (event: any) => void;
+  activeTab: string;
 }
 
-export default function AppDrawer({ open, onClose }: AppDrawerProps) {
+export default function AppDrawer({
+  open,
+  onClose,
+  setActiveTab,
+  activeTab,
+}: AppDrawerProps) {
   const services = [
     { linkname: "HOME", url: routes.HOME },
     { linkname: "ABOUT", url: routes.ABOUT },
@@ -39,6 +46,11 @@ export default function AppDrawer({ open, onClose }: AppDrawerProps) {
     { linkname: "PRODUCTS", url: routes.PRODUCTS },
     { linkname: "CONTACT US", url: routes.CONTACT },
   ];
+
+  const handleMenuClick = (menu: string) => {
+    localStorage.setItem(activeTab, menu);
+    setActiveTab(menu);
+  };
 
   return (
     <StyledDrawer
@@ -53,7 +65,7 @@ export default function AppDrawer({ open, onClose }: AppDrawerProps) {
         {services.map((service, index) => (
           <HeaderLink
             href={service.url}
-            // onClick={() => handleMenuClick(service.url)}
+            onClick={() => handleMenuClick(service.url)}
             key={index}
             className="service-item"
           >

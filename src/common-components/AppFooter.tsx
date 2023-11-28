@@ -28,9 +28,33 @@ const CustomLink = styled(Link)({
   fontFamily: "Nunito Sans, sans-serif",
   textDecoration: "none",
 });
-export default function AppFooter() {
+
+interface footerProps {
+  activeTab: string;
+  setActiveTab: (event: any) => void;
+}
+
+const FooterNames = [
+  { name: "Clothing", url: routes.PRODUCTS },
+  { name: "Home Decor", url: routes.HOME_DECOR_PRODUCT },
+  { name: "Fabric", url: routes.FABRIC_PRODUCT },
+];
+
+const FooterPageNames = [
+  { name: "Home", url: routes.HOME },
+  { name: "About", url: routes.ABOUT },
+  { name: "Products", url: routes.PRODUCTS },
+  { name: "Contact Us", url: routes.CONTACT },
+];
+export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
   const location = useLocation();
   const isProductsPage = location.pathname.includes(routes.PRODUCTS);
+
+  const handleMenuClick = (menu: string) => {
+    localStorage.setItem(activeTab, menu);
+    setActiveTab(menu);
+    window.scroll(0, 0);
+  };
 
   return (
     <Box
@@ -98,78 +122,50 @@ export default function AppFooter() {
           <Stack direction={"column"} spacing={1}>
             <br />
 
-            <Box
+            <Stack
+              spacing={4}
               p={1}
               display={"flex"}
+              flexDirection={"column"}
               className={isProductsPage ? "active-tab" : ""}
             >
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>
-                <CustomLink
-                  onClick={() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth",
-                    });
-                  }}
-                  to={routes.CLOTHING_PRODUCT}
-                >
-                  Clothing
-                </CustomLink>
-              </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>
-                <CustomLink
-                  onClick={() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth",
-                    });
-                  }}
-                  to={routes.HOME_DECOR_PRODUCT}
-                >
-                  Home Decor
-                </CustomLink>
-              </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>
-                <CustomLink
-                  onClick={() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth",
-                    });
-                  }}
-                  to={routes.FABRIC_PRODUCT}
-                >
-                  Fabrics
-                </CustomLink>
-              </CustomLabel>
-            </Box>
+              {" "}
+              {FooterNames.map((item, index) => (
+                <Box display={"flex"}>
+                  <ChevronRightIcon style={{ color: "#ec4979" }} />
+                  <CustomLabel>
+                    <CustomLink
+                      onClick={() => handleMenuClick(item.url)}
+                      to={item.url}
+                    >
+                      {item.name}
+                    </CustomLink>
+                  </CustomLabel>
+                </Box>
+              ))}
+            </Stack>
           </Stack>
-          <Stack direction={"column"} spacing={1}>
-            <br />
 
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Home </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> About </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Products </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Contact Us </CustomLabel>
-            </Box>
+          <Stack
+            spacing={0}
+            p={1}
+            display={"flex"}
+            flexDirection={"column"}
+            className={isProductsPage ? "active-tab" : ""}
+          >
+            {FooterPageNames.map((item, index) => (
+              <Box paddingTop={"2rem"} display={"flex"}>
+                <ChevronRightIcon style={{ color: "#ec4979" }} />
+                <CustomLabel>
+                  <CustomLink
+                    onClick={() => handleMenuClick(item.url)}
+                    to={item.url}
+                  >
+                    {item.name}
+                  </CustomLink>
+                </CustomLabel>
+              </Box>
+            ))}
           </Stack>
 
           <Stack spacing={2} maxWidth={300}>
