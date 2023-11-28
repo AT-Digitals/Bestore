@@ -58,7 +58,11 @@ export default function SliderImages() {
     );
   };
   return (
-    <Stack width={"100%"} direction={{ xs: "column", sm: "row", md: "row" }}>
+    <Stack
+      width={"100%"}
+      mt={"5rem"}
+      direction={{ xs: "column", sm: "row", md: "row" }}
+    >
       {SlideImage.map((image, index) => (
         <Box
           onClick={() => openModal(index)}
