@@ -131,7 +131,13 @@ export default function ProductsPage() {
                   <>
                     <Box padding={"0 20px"}>
                       {ProductsNavigatoinItems.map((name) => (
-                        <Link to={name.link}>
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            color: "black",
+                          }}
+                          to={name.link}
+                        >
                           <Typography
                             color={"gray"}
                             fontFamily={"Nunito Sans, sans-serif"}
