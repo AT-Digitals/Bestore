@@ -1,13 +1,10 @@
-import { Button, IconButton, Stack } from "@mui/material";
+import { IconButton, Stack } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
-import React, { useState } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import ProductsImage from "../ProductsItems";
-import SizeSelection from "./SelectSizeOption";
+import React from "react";
 import Typography from "@mui/material/Typography";
 import banner from "./pdetail.webp";
 import logo from "./Akka creartions horizontal 2-03-03.png";
@@ -18,11 +15,7 @@ export default function ProductDetailPage() {
 
   const product = ProductsImage.find((item) => item.id === id?.toString());
   console.log(id, "setSelectedCategory");
-  const [isFavorited, setIsFavorited] = useState(false);
 
-  const handleFavoriteClick = () => {
-    setIsFavorited(!isFavorited);
-  };
   if (!product) {
     return (
       <Box maxWidth={600} margin="auto" mt={5}>

@@ -78,7 +78,7 @@ export default function ContactPage() {
               color={"black"}
               fontFamily={"Nunito Sans, sans-serif"}
             >
-              America
+              Tamil Nadu
             </Typography>
             <Typography
               paddingTop={"12px"}
@@ -88,7 +88,15 @@ export default function ContactPage() {
               color={"black"}
               fontFamily={"Nunito Sans, sans-serif"}
             >
-              195 E Parker Square Dr, Parker, CO 801
+              Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
+              Mahabalipuram,
+              <br /> Tamil Nadu-603104
+            </Typography>
+            <Typography>
+              <span>Email- </span>
+              <a style={{ color: "black" }} href="vero.mamallapuram@yahoo.com">
+                vero.mamallapuram@yahoo.com{" "}
+              </a>
             </Typography>
             <Typography
               textAlign={"start"}
@@ -97,9 +105,9 @@ export default function ContactPage() {
               color={"black"}
               fontFamily={"Nunito Sans, sans-serif"}
             >
-              +43 982-314-0958
+              +91 97910 68220
             </Typography>
-            <Typography
+            {/* <Typography
               paddingTop={"25px"}
               textAlign={"start"}
               fontWeight={"600"}
@@ -127,7 +135,7 @@ export default function ContactPage() {
               fontFamily={"Nunito Sans, sans-serif"}
             >
               +12 345-423-9893
-            </Typography>
+            </Typography> */}
           </Box>
           <ContactForm />
         </Box>

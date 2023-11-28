@@ -53,8 +53,10 @@ export default function AppFooter() {
               </a>
 
               <CustomLabel>
-                <span style={{ color: "black" }}>AKKA CREATION</span> in
-                Mamallapuram <br />
+                <span style={{ color: "black", fontWeight: "bold" }}>
+                  AKKA CREATION
+                </span>{" "}
+                in Mamallapuram. <br />
                 The power of colors! Fashion Mamallapuram, a small town in the
                 Bay of Bengal that belongs to the world cultural heritage
               </CustomLabel>
@@ -88,11 +90,11 @@ export default function AppFooter() {
             </Box>
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> Home decor </CustomLabel>
+              <CustomLabel> Home Decor </CustomLabel>
             </Box>
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Fabric </CustomLabel>
+              <CustomLabel>Fabrics </CustomLabel>
             </Box>
           </Stack>
           <Stack direction={"column"} spacing={1}>
@@ -112,7 +114,7 @@ export default function AppFooter() {
             </Box>
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Contact us </CustomLabel>
+              <CustomLabel>Contact Us </CustomLabel>
             </Box>
           </Stack>
 

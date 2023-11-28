@@ -9,9 +9,7 @@ import ContactPage from "../pages/Contact/Contactpage";
 import FabricProducts from "../pages/Products/ProductsCategories/FabricProducts";
 import HomeDecorProducts from "../pages/Products/ProductsCategories/HomeDecorProducts";
 import Homepage from "../pages/Home/Homepage";
-import ProductBag from "../pages/Products/ProductBag";
 import ProductDetailPage from "../pages/Products/ProductDetailPage/ProductDetails";
-import ProductShoe from "../pages/Products/ProductShoe";
 import ProductsPage from "../pages/Products/Productspage";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import routes from "./routes";
@@ -30,8 +28,6 @@ export default function AppRouter() {
           <Route path={routes.BLOG} element={<Blogpage />} />
           <Route path={routes.SIGN_UP} element={<SignUpNewsLetter />} />
           <Route path={routes.BLOG_ABOUT} element={<BlogAbout />} />
-          <Route path={routes.PRODUCT_BAG} element={<ProductBag />} />
-          <Route path={routes.PRODUCT_SHOE} element={<ProductShoe />} />
           <Route path="/products/:id" element={<ProductDetailPage />} />
 
           <Route
