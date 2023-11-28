@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 
-import ContactBanner from "./contact-banner.jpg"
+import ContactBanner from "./contact-banner.jpg";
 import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
@@ -94,7 +94,10 @@ export default function ContactPage() {
             </Typography>
             <Typography>
               <span>Email- </span>
-              <a style={{ color: "black" }} href="vero.mamallapuram@yahoo.com">
+              <a
+                style={{ color: "black" }}
+                href="mailto:vero.mamallapuram@yahoo.com"
+              >
                 vero.mamallapuram@yahoo.com{" "}
               </a>
             </Typography>

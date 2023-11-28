@@ -85,9 +85,9 @@ export default function Homepage() {
               fontWeight: "bold",
               fontFamily: "Nunito Sans, sans-serif",
               ":hover": {
-                color: "black",
-                backgroundColor: "rgb(229 224 224)",
-              }
+                color: "white",
+                backgroundColor: "rgb(11, 120, 189)",
+              },
             }}
           >
             See whats's on sale
@@ -196,8 +196,6 @@ export default function Homepage() {
       </Box>
 
       <AboutConainer />
-
-      
 
       <SliderImages />
       <CartImage />

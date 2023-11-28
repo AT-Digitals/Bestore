@@ -52,13 +52,28 @@ export default function AboutPage() {
         />
       </Box>
       <Stack
-        direction={"row"}
+        direction={{ xs: "column", sm: "row", md: "row" }}
         marginTop={"50px"}
         spacing={3}
         justifyContent={"center"}
       >
         {TesttmoalProps.map((item, index) => (
-          <Box maxWidth={400} gap={"3rem"} textAlign={"center"}>
+          <Box
+            style={{
+              overflow: "hidden",
+              cursor: "pointer",
+              transition: "transform 0.5s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+            maxWidth={400}
+            gap={"3rem"}
+            textAlign={"center"}
+          >
             <Box width={"100%"}>
               <img
                 src={item.image}
