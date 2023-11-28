@@ -6,13 +6,12 @@ import {
   Typography,
   styled,
 } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { Link } from "react-router-dom";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import logo from "./Akka creartions horizontal 2-03-03.png";
 import routes from "../routes/routes";
 
@@ -29,6 +28,9 @@ const CustomLink = styled(Link)({
   textDecoration: "none",
 });
 export default function AppFooter() {
+  const location = useLocation();
+  const isProductsPage = location.pathname.includes(routes.PRODUCTS);
+
   return (
     <Box
       bgcolor={"#f6f6f6"}
@@ -77,18 +79,17 @@ export default function AppFooter() {
                     }}
                   />
                 </Link>
-                <Link to="https://twitter.com/i/flow/login" target="_blank">
-                  <TwitterIcon
+
+                <Link
+                  to="https://www.instagram.com/akka_creation/"
+                  target="_blank"
+                >
+                  <InstagramIcon
                     style={{
                       color: "gray",
                     }}
                   />
                 </Link>
-                <Link to="https://www.instagram.com/?hl=en" target="_blank">
-                <InstagramIcon style={{
-                      color: "gray",
-                    }} />
-                    </Link>
               </Stack>
             </Stack>
           </Stack>
@@ -96,16 +97,38 @@ export default function AppFooter() {
           <Stack direction={"column"} spacing={1}>
             <br />
 
-            <Box p={1} display={"flex"}>
+            <Box
+              p={1}
+              display={"flex"}
+              className={isProductsPage ? "active-tab" : ""}
+            >
               <ChevronRightIcon style={{ color: "#ec4979" }} />
               <CustomLabel>
-                <CustomLink to={routes.CLOTHING_PRODUCT}>Clothing</CustomLink>
+                <CustomLink
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                  to={routes.CLOTHING_PRODUCT}
+                >
+                  Clothing
+                </CustomLink>
               </CustomLabel>
             </Box>
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
               <CustomLabel>
-                <CustomLink to={routes.HOME_DECOR_PRODUCT}>
+                <CustomLink
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                  to={routes.HOME_DECOR_PRODUCT}
+                >
                   Home Decor
                 </CustomLink>
               </CustomLabel>
@@ -113,7 +136,17 @@ export default function AppFooter() {
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
               <CustomLabel>
-                <CustomLink to={routes.FABRIC_PRODUCT}>Fabrics</CustomLink>
+                <CustomLink
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                  to={routes.FABRIC_PRODUCT}
+                >
+                  Fabrics
+                </CustomLink>
               </CustomLabel>
             </Box>
           </Stack>

@@ -34,9 +34,10 @@ export default function ProductsHeader({
         padding: "0 30px",
       }}
     >
-      <Typography color={"#A8A8A8"} fontFamily={"Nunito Sans, sans-serif"}>
-        Showing all {totalItems} results
-      </Typography>
+      <Typography
+        color={"#A8A8A8"}
+        fontFamily={"Nunito Sans, sans-serif"}
+      ></Typography>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 230 }}>
         <Select
           style={{

@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -6,8 +7,21 @@ interface ProductProps {
   currentItems: any;
 }
 export default function FabricProducts({ currentItems }: ProductProps) {
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    setOpacity(1.5);
+  }, []);
   return (
-    <Box mb={15}>
+    <Box
+      style={{
+        opacity,
+        transition: "opacity 2s ease",
+        overflow: "hidden",
+        cursor: "pointer",
+      }}
+      mb={15}
+    >
       <Grid container>
         {currentItems.map((item: any, index: any) => (
           <Grid
