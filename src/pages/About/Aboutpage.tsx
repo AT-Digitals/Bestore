@@ -1,4 +1,11 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Stack,
+  Typography,
+  keyframes,
+  styled,
+} from "@mui/material";
 
 import AboutBanner from "../../assets/AboutBanner.jpg";
 import CartImage from "../../common-components/CartImage";
@@ -17,7 +24,29 @@ const TesttmoalProps = [
     discription:
       "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat",
   },
+  {
+    image: image,
+    discription:
+      "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat",
+  },
 ];
+
+const testimonialAnimation = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
+
+const TestimonialBox = styled(Box)`
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  animation: ${testimonialAnimation} 10s linear infinite;
+  margin: 0 10px; /* Adjust the margin as needed */
+`;
 export default function AboutPage() {
   return (
     <Box>
@@ -58,18 +87,19 @@ export default function AboutPage() {
         justifyContent={"center"}
       >
         {TesttmoalProps.map((item, index) => (
-          <Box
-            style={{
-              overflow: "hidden",
-              cursor: "pointer",
-              transition: "transform 0.5s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.1)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-            }}
+          <TestimonialBox
+            // style={{
+            //   overflow: "hidden",
+            //   cursor: "pointer",
+            //   transition: "transform 0.5s ease",
+            // }}
+            style={{ transitionDelay: `${index * 0.1}s` }}
+            // onMouseEnter={(e) => {
+            //   e.currentTarget.style.transform = "scale(1.1)";
+            // }}
+            // onMouseLeave={(e) => {
+            //   e.currentTarget.style.transform = "scale(1)";
+            // }}
             maxWidth={400}
             gap={"3rem"}
             textAlign={"center"}
@@ -122,7 +152,7 @@ export default function AboutPage() {
                 Vision
               </Typography>
             </Box>
-          </Box>
+          </TestimonialBox>
         ))}
       </Stack>
 
