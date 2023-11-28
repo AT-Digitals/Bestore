@@ -47,6 +47,12 @@ const TestimonialBox = styled(Box)`
   animation: ${testimonialAnimation} 10s linear infinite;
   margin: 0 10px; /* Adjust the margin as needed */
 `;
+
+const TestimonialStack = styled(Stack)`
+  width: 80%; /* Set your desired fixed width */
+  margin: 0 auto;
+  overflow: hidden;
+`;
 export default function AboutPage() {
   return (
     <Box>
@@ -80,7 +86,7 @@ export default function AboutPage() {
           }}
         />
       </Box>
-      <Stack
+      <TestimonialStack
         direction={{ xs: "column", sm: "row", md: "row" }}
         marginTop={"50px"}
         spacing={3}
@@ -154,7 +160,7 @@ export default function AboutPage() {
             </Box>
           </TestimonialBox>
         ))}
-      </Stack>
+      </TestimonialStack>
 
       <Stack padding={"0 50px"} marginTop={"50px"} alignItems={"center"}>
         <Typography>
