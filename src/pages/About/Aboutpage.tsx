@@ -58,8 +58,8 @@ export default function AboutPage() {
         justifyContent={"center"}
       >
         {TesttmoalProps.map((item, index) => (
-          <Box textAlign={"center"}>
-            <Box>
+          <Box maxWidth={400} gap={"3rem"} textAlign={"center"}>
+            <Box width={"100%"}>
               <img
                 src={item.image}
                 style={{
@@ -72,12 +72,12 @@ export default function AboutPage() {
               />
             </Box>
             <Box
+              width={"100%"}
               sx={{
-                width: "300px",
-                height: "280px",
                 backgroundColor: "#e5e4e4",
                 marginTop: "-46px",
                 paddingBottom: "30px",
+                boxShadow: "0px 0px 7px 0px",
               }}
             >
               <Typography
