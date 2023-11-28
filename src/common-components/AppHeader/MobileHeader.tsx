@@ -8,7 +8,15 @@ import { Link } from "react-router-dom";
 import logo from "../Akka creartions horizontal 2-03-03.png";
 import routes from "../../routes/routes";
 
-export default function MoblieHeader() {
+interface MobileHeaderProps {
+  setActiveTab: (event: any) => void;
+  activeTab: string;
+}
+
+export default function MoblieHeader({
+  setActiveTab,
+  activeTab,
+}: MobileHeaderProps) {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = useCallback(() => setOpen(true), []);
@@ -41,7 +49,12 @@ export default function MoblieHeader() {
         </Stack>
       </Box>
 
-      <AppDrawer open={open} onClose={handleDrawerClose} />
+      <AppDrawer
+        open={open}
+        onClose={handleDrawerClose}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
+      />
     </>
   );
 }

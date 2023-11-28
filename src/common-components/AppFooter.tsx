@@ -1,18 +1,18 @@
 import {
   Box,
+  IconButton,
   InputAdornment,
   Stack,
   TextField,
   Typography,
   styled,
 } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import EmailIcon from "@mui/icons-material/Email";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { Link } from "react-router-dom";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import logo from "./Akka creartions horizontal 2-03-03.png";
 import routes from "../routes/routes";
 
@@ -28,7 +28,34 @@ const CustomLink = styled(Link)({
   fontFamily: "Nunito Sans, sans-serif",
   textDecoration: "none",
 });
-export default function AppFooter() {
+
+interface footerProps {
+  activeTab: string;
+  setActiveTab: (event: any) => void;
+}
+
+const FooterNames = [
+  { name: "Clothing", url: routes.PRODUCTS },
+  { name: "Home Decor", url: routes.HOME_DECOR_PRODUCT },
+  { name: "Fabric", url: routes.FABRIC_PRODUCT },
+];
+
+const FooterPageNames = [
+  { name: "Home", url: routes.HOME },
+  { name: "About", url: routes.ABOUT },
+  { name: "Products", url: routes.PRODUCTS },
+  { name: "Contact Us", url: routes.CONTACT },
+];
+export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
+  const location = useLocation();
+  const isProductsPage = location.pathname.includes(routes.PRODUCTS);
+
+  const handleMenuClick = (menu: string) => {
+    localStorage.setItem(activeTab, menu);
+    setActiveTab(menu);
+    window.scroll(0, 0);
+  };
+
   return (
     <Box
       bgcolor={"#f6f6f6"}
@@ -77,18 +104,17 @@ export default function AppFooter() {
                     }}
                   />
                 </Link>
-                <Link to="https://twitter.com/i/flow/login" target="_blank">
-                  <TwitterIcon
+
+                <Link
+                  to="https://www.instagram.com/akka_creation/"
+                  target="_blank"
+                >
+                  <InstagramIcon
                     style={{
                       color: "gray",
                     }}
                   />
                 </Link>
-                <Link to="https://www.instagram.com/?hl=en" target="_blank">
-                <InstagramIcon style={{
-                      color: "gray",
-                    }} />
-                    </Link>
               </Stack>
             </Stack>
           </Stack>
@@ -96,46 +122,50 @@ export default function AppFooter() {
           <Stack direction={"column"} spacing={1}>
             <br />
 
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>
-                <CustomLink to={routes.CLOTHING_PRODUCT}>Clothing</CustomLink>
-              </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>
-                <CustomLink to={routes.HOME_DECOR_PRODUCT}>
-                  Home Decor
-                </CustomLink>
-              </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>
-                <CustomLink to={routes.FABRIC_PRODUCT}>Fabrics</CustomLink>
-              </CustomLabel>
-            </Box>
+            <Stack
+              spacing={4}
+              p={1}
+              display={"flex"}
+              flexDirection={"column"}
+              className={isProductsPage ? "active-tab" : ""}
+            >
+              {" "}
+              {FooterNames.map((item, index) => (
+                <Box display={"flex"}>
+                  <ChevronRightIcon style={{ color: "#ec4979" }} />
+                  <CustomLabel>
+                    <CustomLink
+                      onClick={() => handleMenuClick(item.url)}
+                      to={item.url}
+                    >
+                      {item.name}
+                    </CustomLink>
+                  </CustomLabel>
+                </Box>
+              ))}
+            </Stack>
           </Stack>
-          <Stack direction={"column"} spacing={1}>
-            <br />
 
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Home </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> About </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Products </CustomLabel>
-            </Box>
-            <Box p={1} display={"flex"}>
-              <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Contact Us </CustomLabel>
-            </Box>
+          <Stack
+            spacing={0}
+            p={1}
+            display={"flex"}
+            flexDirection={"column"}
+            className={isProductsPage ? "active-tab" : ""}
+          >
+            {FooterPageNames.map((item, index) => (
+              <Box paddingTop={"2rem"} display={"flex"}>
+                <ChevronRightIcon style={{ color: "#ec4979" }} />
+                <CustomLabel>
+                  <CustomLink
+                    onClick={() => handleMenuClick(item.url)}
+                    to={item.url}
+                  >
+                    {item.name}
+                  </CustomLink>
+                </CustomLabel>
+              </Box>
+            ))}
           </Stack>
 
           <Stack spacing={2} maxWidth={300}>
@@ -157,7 +187,9 @@ export default function AppFooter() {
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <EmailIcon />
+                    <IconButton>
+                      <EmailOutlinedIcon />
+                    </IconButton>
                   </InputAdornment>
                 ),
               }}
