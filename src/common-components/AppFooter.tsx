@@ -1,5 +1,6 @@
 import {
   Box,
+  IconButton,
   InputAdornment,
   Stack,
   TextField,
@@ -9,7 +10,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import EmailIcon from "@mui/icons-material/Email";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import logo from "./Akka creartions horizontal 2-03-03.png";
@@ -190,7 +191,9 @@ export default function AppFooter() {
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <EmailIcon />
+                    <IconButton>
+                      <EmailOutlinedIcon />
+                    </IconButton>
                   </InputAdornment>
                 ),
               }}
