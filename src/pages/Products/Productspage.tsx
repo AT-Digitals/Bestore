@@ -12,8 +12,8 @@ import ProductsImage from "./ProductsItems";
 
 const ProductsNavigatoinItems = [
   { name: "Clothing", link: "" },
-  { name: "Home decoration", link: "" },
-  { name: "Fabarics", link: "" },
+  { name: "Home Decor", link: "" },
+  { name: "Fabrics", link: "" },
 ];
 
 export default function ProductsPage() {
@@ -174,9 +174,9 @@ export default function ProductsPage() {
               <Box mb={15}>
                 {selectedCategory === "Clothing" ? (
                   <ClothingCategories />
-                ) : selectedCategory === "Home decoration" ? (
+                ) : selectedCategory === "Home Decor" ? (
                   <HomeDecorProducts />
-                ) : selectedCategory === "Fabarics" ? (
+                ) : selectedCategory === "Fabrics" ? (
                   <FabricProducts />
                 ) : (
                   <Grid container>
@@ -256,7 +256,7 @@ export default function ProductsPage() {
                                   color={"#EB3C70"}
                                   fontFamily={"Nunito Sans, sans-serif"}
                                 >
-                                  {item.price}
+                                  ₹ {item.price}
                                 </Typography>
                               </Box>
                             </Box>
