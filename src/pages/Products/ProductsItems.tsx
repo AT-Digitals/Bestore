@@ -205,5 +205,13 @@ const ProductsImage = [
     offerprice: "",
     id: "24",
   },
+  {
+    name: "KIMONO JACKET cotton hand block print print for men or women short kimono robe",
+    Image: Dress9,
+    price: "2663.00",
+    producttype: "Clothing",
+    offerprice: "",
+    id: "24",
+  },
 ];
 export default ProductsImage;
