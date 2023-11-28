@@ -15,6 +15,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import logo from "./Akka creartions horizontal 2-03-03.png";
 import routes from "../routes/routes";
+import { Link } from "react-router-dom";
 
 const CustomLabel = styled(Typography)({
   color: "#6F6F6F",
@@ -70,21 +71,26 @@ export default function AppFooter() {
               </CustomLabel>
               <Box border={"1px solid gray"}></Box>
               <Stack spacing={1} direction={"row"}>
+              <Link
+            to="https://www.facebook.com/login.php/"
+            target="_blank"
+          >
                 <FacebookIcon
                   style={{
                     color: "gray",
                   }}
                 />
+                </Link>
+                <Link
+            to="https://twitter.com/i/flow/login"
+            target="_blank"
+          >
                 <TwitterIcon
                   style={{
                     color: "gray",
                   }}
                 />
-                <LinkedInIcon
-                  style={{
-                    color: "gray",
-                  }}
-                />
+                </Link>
               </Stack>
             </Stack>
           </Stack>

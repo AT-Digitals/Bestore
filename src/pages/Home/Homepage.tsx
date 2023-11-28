@@ -84,6 +84,10 @@ export default function Homepage() {
               textTransform: "capitalize",
               fontWeight: "bold",
               fontFamily: "Nunito Sans, sans-serif",
+              ":hover": {
+                color: "black",
+                backgroundColor: "rgb(229 224 224)",
+              }
             }}
           >
             See whats's on sale
@@ -193,9 +197,10 @@ export default function Homepage() {
 
       <AboutConainer />
 
-      <CartImage />
+      
 
       <SliderImages />
+      <CartImage />
     </Box>
   );
 }
