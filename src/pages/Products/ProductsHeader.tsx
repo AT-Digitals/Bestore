@@ -34,25 +34,59 @@ export default function ProductsHeader({
         padding: "0 30px",
       }}
     >
-      <Typography color={"#A8A8A8"}  fontFamily={"Nunito Sans, sans-serif"}>
+      <Typography color={"#A8A8A8"} fontFamily={"Nunito Sans, sans-serif"}>
         Showing all {totalItems} results
       </Typography>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 230 }}>
         <Select
+          style={{
+            fontFamily: "Nunito Sans, sans-serif",
+          }}
           value={sort}
           defaultValue="Default sorting"
           onChange={handleChange}
         >
-          <MenuItem value="Default sorting">Default sorting</MenuItem>
-          <MenuItem value={"Sort by popularity"}>Sort by popularity</MenuItem>
-          <MenuItem value={"Sort by average rating"}>
+          <MenuItem
+            style={{
+              fontFamily: "Nunito Sans, sans-serif",
+            }}
+            value="Default sorting"
+          >
+            Default sorting
+          </MenuItem>
+          <MenuItem
+            style={{
+              fontFamily: "Nunito Sans, sans-serif",
+            }}
+            value={"Sort by popularity"}
+          >
+            Sort by popularity
+          </MenuItem>
+          <MenuItem
+            style={{
+              fontFamily: "Nunito Sans, sans-serif",
+            }}
+            value={"Sort by average rating"}
+          >
             Sort by average rating
           </MenuItem>
-          <MenuItem value={"Sort by latest"}>Sort by latest</MenuItem>
+          <MenuItem
+            style={{
+              fontFamily: "Nunito Sans, sans-serif",
+            }}
+            value={"Sort by latest"}
+          >
+            Sort by latest
+          </MenuItem>
           <MenuItem value={"Sort by price: low to high"}>
             Sort by price: low to high
           </MenuItem>
-          <MenuItem value={"Sort by price: high to low"}>
+          <MenuItem
+            style={{
+              fontFamily: "Nunito Sans, sans-serif",
+            }}
+            value={"Sort by price: high to low"}
+          >
             Sort by price: high to low
           </MenuItem>
         </Select>

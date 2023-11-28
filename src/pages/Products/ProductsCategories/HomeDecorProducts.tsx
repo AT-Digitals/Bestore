@@ -5,7 +5,7 @@ import ProductsImage from "../ProductsItems";
 
 export default function HomeDecorProducts() {
   const HomeDecorProducts = ProductsImage.filter(
-    (item) => item.producttype === "Homedecor"
+    (item) => item.producttype === "Home Decor"
   );
   return (
     <Box mb={15}>
@@ -80,7 +80,7 @@ export default function HomeDecorProducts() {
                     gap={"0.5rem"}
                   >
                     <Typography fontSize={"18px"} color={"#EB3C70"}>
-                      {item.price}
+                      ₹ {item.price}
                     </Typography>
                   </Box>
                 </Box>

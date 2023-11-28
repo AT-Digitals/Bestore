@@ -80,7 +80,7 @@ export default function ClothingCategories() {
                     gap={"0.5rem"}
                   >
                     <Typography fontSize={"18px"} color={"#EB3C70"}>
-                      {item.price}
+                      ₹ {item.price}
                     </Typography>
                   </Box>
                 </Box>

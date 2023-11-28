@@ -86,7 +86,7 @@ export default function ProductDetailPage() {
             />
           </Box>
           <Stack spacing={3} maxWidth={400}>
-            <Box position={"absolute"} right={"20%"}>
+            {/* <Box position={"absolute"} right={"20%"}>
               <span onClick={handleFavoriteClick}>
                 {isFavorited ? (
                   <FavoriteIcon
@@ -106,7 +106,7 @@ export default function ProductDetailPage() {
                   />
                 )}
               </span>
-            </Box>
+            </Box> */}
             <Typography
               fontFamily={"Nunito Sans, sans-serif"}
               fontSize={"20px"}
@@ -114,7 +114,6 @@ export default function ProductDetailPage() {
             >
               {product.name}
             </Typography>
-
             <Typography
               fontFamily={"Nunito Sans, sans-serif"}
               variant="h6"
@@ -131,15 +130,13 @@ export default function ProductDetailPage() {
             >
               Category: {product.producttype}
             </Typography>
-            <SizeSelection />
 
             <Typography fontFamily={"Nunito Sans, sans-serif"}>
               Coat with quilted lining and an adjustable hood. Featuring long
               sleeves with adjustable cuff tabs, adjustable asymmetric hem with
               elastic side tabs and a front zip fastening with placket.
             </Typography>
-
-            <Button
+            {/* <Button
               style={{
                 background: "black",
                 color: "white",
@@ -156,7 +153,7 @@ export default function ProductDetailPage() {
               }}
             >
               Buy Now
-            </Button>
+            </Button> */}
           </Stack>
         </Stack>
 
