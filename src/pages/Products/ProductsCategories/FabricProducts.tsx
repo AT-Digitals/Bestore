@@ -1,16 +1,15 @@
 import { Box, Grid, Typography } from "@mui/material";
 
 import { Link } from "react-router-dom";
-import ProductsImage from "../ProductsItems";
 
-export default function FabricProducts() {
-  const fabricProducts = ProductsImage.filter(
-    (item) => item.producttype === "Fabrics"
-  );
+interface ProductProps {
+  currentItems: any;
+}
+export default function FabricProducts({ currentItems }: ProductProps) {
   return (
     <Box mb={15}>
       <Grid container>
-        {fabricProducts.map((item, index) => (
+        {currentItems.map((item: any, index: any) => (
           <Grid
             columnSpacing={"2rem"}
             rowGap={"4rem"}

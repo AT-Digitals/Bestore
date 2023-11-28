@@ -1,12 +1,13 @@
-import { Box, Grid, Pagination, Stack, Typography } from "@mui/material";
+import { Box, Pagination, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ClothingCategories from "./ClothingProducts";
 import { Link } from "react-router-dom";
-import ProductBanner from "./Products-banner.jpg";
-import ProductsHeader from "./ProductsHeader";
-import ProductsImage from "./ProductsItems";
-import routes from "../../routes/routes";
+import ProductBanner from "../Products-banner.jpg";
+import ProductsHeader from "../ProductsHeader";
+import ProductsImage from "../ProductsItems";
+import routes from "../../../routes/routes";
 
 const ProductsNavigatoinItems = [
   { name: "Clothing", link: routes.CLOTHING_PRODUCT },
@@ -14,8 +15,8 @@ const ProductsNavigatoinItems = [
   { name: "Fabrics", link: routes.FABRIC_PRODUCT },
 ];
 
-export default function ProductsPage() {
-  const itemsPerPage = 10;
+export default function ClothingSample() {
+  const itemsPerPage = 8;
   const [currentPage, setCurrentPage] = useState(1);
 
   const TotalItems = ProductsImage.length;
@@ -56,6 +57,7 @@ export default function ProductsPage() {
         break;
     }
   };
+  console.log(sortedProducts);
 
   useEffect(() => {
     handleSortChange("Default sorting");
@@ -68,7 +70,14 @@ export default function ProductsPage() {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = sortedProducts.slice(indexOfFirstItem, indexOfLastItem);
+
+  const clothingProducts = ProductsImage.filter(
+    (item) => item.producttype === "Clothing"
+  );
+  const currentItems = clothingProducts.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
 
   return (
     <Box>
@@ -92,7 +101,7 @@ export default function ProductsPage() {
           fontFamily={"Nunito Sans, sans-serif"}
         >
           {" "}
-          Products
+          clothing
         </Typography>
       </Box>
       <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>
@@ -131,7 +140,13 @@ export default function ProductsPage() {
                   <>
                     <Box padding={"0 20px"}>
                       {ProductsNavigatoinItems.map((name) => (
-                        <Link to={name.link}>
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            color: "black",
+                          }}
+                          to={name.link}
+                        >
                           <Typography
                             color={"gray"}
                             fontFamily={"Nunito Sans, sans-serif"}
@@ -162,92 +177,7 @@ export default function ProductsPage() {
             </Box>
             <Box width={{ md: "80%" }}>
               <Box mb={15}>
-                <Grid container>
-                  {currentItems.map((item, index) => (
-                    <Grid
-                      columnSpacing={"2rem"}
-                      rowGap={"4rem"}
-                      item
-                      xs={12}
-                      sm={6}
-                      md={4}
-                      style={{ display: "flex" }}
-                    >
-                      <Link
-                        to={`/products/${item.id}`}
-                        style={{
-                          textDecoration: "none",
-                          color: "black",
-                          width: "100%",
-                        }}
-                      >
-                        <Box
-                          padding={"10px"}
-                          height={360}
-                          mb={2}
-                          mt={2}
-                          maxWidth={{ xs: 330, sm: 240, md: 330 }}
-                          width={330}
-                          gap={"2rem"}
-                          key={index}
-                          position="relative"
-                          style={{
-                            overflow: "hidden",
-                            cursor: "pointer",
-                            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                            transition: "transform 0.5s ease",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "scale(1.1)";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
-                          }}
-                        >
-                          <img
-                            style={{
-                              height: "70%",
-                              maxWidth: "100%",
-                              width: "100%",
-                              objectFit: "cover",
-                            }}
-                            src={item.Image}
-                            alt="products"
-                          />
-                          <Box
-                            display={"flex"}
-                            flexDirection={"column"}
-                            justifyContent={"flex-start"}
-                          >
-                            <Typography
-                              textAlign={"center"}
-                              fontSize={"10px"}
-                              fontWeight={"bold"}
-                              fontFamily={"Nunito Sans, sans-serif"}
-                              mt={1}
-                            >
-                              {item.name}
-                            </Typography>
-                            <Box
-                              mb={1}
-                              justifyContent={"center"}
-                              display={"flex"}
-                              gap={"0.5rem"}
-                            >
-                              <Typography
-                                fontSize={"18px"}
-                                color={"#EB3C70"}
-                                fontFamily={"Nunito Sans, sans-serif"}
-                              >
-                                ₹ {item.price}
-                              </Typography>
-                            </Box>
-                          </Box>
-                        </Box>
-                      </Link>
-                    </Grid>
-                  ))}
-                </Grid>
+                <ClothingCategories currentItems={currentItems} />
               </Box>
             </Box>
           </Stack>

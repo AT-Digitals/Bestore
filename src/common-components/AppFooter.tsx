@@ -10,6 +10,7 @@ import {
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import { Link } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import logo from "./Akka creartions horizontal 2-03-03.png";
@@ -19,6 +20,13 @@ const CustomLabel = styled(Typography)({
   color: "#6F6F6F",
   fontSize: "16px",
   fontFamily: "Nunito Sans, sans-serif",
+});
+
+const CustomLink = styled(Link)({
+  color: "#6F6F6F",
+  fontSize: "16px",
+  fontFamily: "Nunito Sans, sans-serif",
+  textDecoration: "none",
 });
 export default function AppFooter() {
   return (
@@ -86,15 +94,23 @@ export default function AppFooter() {
 
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Clothing </CustomLabel>
+              <CustomLabel>
+                <CustomLink to={routes.CLOTHING_PRODUCT}>Clothing</CustomLink>
+              </CustomLabel>
             </Box>
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel> Home Decor </CustomLabel>
+              <CustomLabel>
+                <CustomLink to={routes.HOME_DECOR_PRODUCT}>
+                  Home Decor
+                </CustomLink>
+              </CustomLabel>
             </Box>
             <Box p={1} display={"flex"}>
               <ChevronRightIcon style={{ color: "#ec4979" }} />
-              <CustomLabel>Fabrics </CustomLabel>
+              <CustomLabel>
+                <CustomLink to={routes.FABRIC_PRODUCT}>Fabrics</CustomLink>
+              </CustomLabel>
             </Box>
           </Stack>
           <Stack direction={"column"} spacing={1}>
