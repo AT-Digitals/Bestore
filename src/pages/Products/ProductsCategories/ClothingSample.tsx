@@ -21,7 +21,7 @@ export default function ClothingSample() {
 
   const TotalItems = ProductsImage.length;
   const [sortedProducts, setSortedProducts] = useState([...ProductsImage]);
-  const [sort, setSort] = useState("Default sorting");
+  const [sort, setSort] = useState("Filter by");
 
   const handleSortChange = (sortingOption: any) => {
     setSort(sortingOption);
@@ -60,7 +60,7 @@ export default function ClothingSample() {
   console.log(sortedProducts);
 
   useEffect(() => {
-    handleSortChange("Default sorting");
+    handleSortChange("Filter by");
   }, []);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 

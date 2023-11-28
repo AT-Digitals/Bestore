@@ -20,7 +20,7 @@ export default function ProductsPage() {
 
   const TotalItems = ProductsImage.length;
   const [sortedProducts, setSortedProducts] = useState([...ProductsImage]);
-  const [sort, setSort] = useState("Default sorting");
+  const [sort, setSort] = useState("Filter by");
 
   const handleSortChange = (sortingOption: any) => {
     setSort(sortingOption);
@@ -58,7 +58,7 @@ export default function ProductsPage() {
   };
 
   useEffect(() => {
-    handleSortChange("Default sorting");
+    handleSortChange("Filter by");
   }, []);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 

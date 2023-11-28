@@ -43,16 +43,16 @@ export default function ProductsHeader({
             fontFamily: "Nunito Sans, sans-serif",
           }}
           value={sort}
-          defaultValue="Default sorting"
+          defaultValue="Filter by"
           onChange={handleChange}
         >
           <MenuItem
             style={{
               fontFamily: "Nunito Sans, sans-serif",
             }}
-            value="Default sorting"
+            value="Filter by"
           >
-            Default sorting
+            Filter by{" "}
           </MenuItem>
           <MenuItem
             style={{
@@ -62,22 +62,7 @@ export default function ProductsHeader({
           >
             Sort by popularity
           </MenuItem>
-          <MenuItem
-            style={{
-              fontFamily: "Nunito Sans, sans-serif",
-            }}
-            value={"Sort by average rating"}
-          >
-            Sort by average rating
-          </MenuItem>
-          <MenuItem
-            style={{
-              fontFamily: "Nunito Sans, sans-serif",
-            }}
-            value={"Sort by latest"}
-          >
-            Sort by latest
-          </MenuItem>
+
           <MenuItem value={"Sort by price: low to high"}>
             Sort by price: low to high
           </MenuItem>
