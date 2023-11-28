@@ -10,6 +10,7 @@ import {
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import logo from "./Akka creartions horizontal 2-03-03.png";
@@ -83,6 +84,11 @@ export default function AppFooter() {
                     }}
                   />
                 </Link>
+                <Link to="https://www.instagram.com/?hl=en" target="_blank">
+                <InstagramIcon style={{
+                      color: "gray",
+                    }} />
+                    </Link>
               </Stack>
             </Stack>
           </Stack>
