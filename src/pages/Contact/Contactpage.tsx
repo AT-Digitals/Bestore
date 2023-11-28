@@ -110,35 +110,6 @@ export default function ContactPage() {
             >
               +91 97910 68220
             </Typography>
-            {/* <Typography
-              paddingTop={"25px"}
-              textAlign={"start"}
-              fontWeight={"600"}
-              fontSize={"24px"}
-              color={"black"}
-              fontFamily={"Nunito Sans, sans-serif"}
-            >
-              France
-            </Typography>
-            <Typography
-              paddingTop={"12px"}
-              textAlign={"start"}
-              fontWeight={"500"}
-              fontSize={"17px"}
-              color={"black"}
-              fontFamily={"Nunito Sans, sans-serif"}
-            >
-              109 Avenue Léon, 63 Clermont-Ferrand
-            </Typography>
-            <Typography
-              textAlign={"start"}
-              fontWeight={"500"}
-              fontSize={"17px"}
-              color={"black"}
-              fontFamily={"Nunito Sans, sans-serif"}
-            >
-              +12 345-423-9893
-            </Typography> */}
           </Box>
           <ContactForm />
         </Box>
