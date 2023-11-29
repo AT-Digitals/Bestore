@@ -22,7 +22,7 @@ export default function ClothingCategories({ currentItems }: ProductProps) {
       }}
       mb={15}
     >
-      <Grid container>
+      <Grid marginLeft={"20px"} marginTop={"10px"} container>
         {currentItems.map((item: any, index: any) => (
           <Grid
             columnSpacing={"2rem"}
@@ -45,7 +45,7 @@ export default function ClothingCategories({ currentItems }: ProductProps) {
                 height={360}
                 mb={2}
                 mt={2}
-                maxWidth={{ xs: 330, sm: 240, md: 330 }}
+                maxWidth={{ xs: 330, sm: 240, md: 320 }}
                 width={330}
                 gap={"2rem"}
                 key={index}

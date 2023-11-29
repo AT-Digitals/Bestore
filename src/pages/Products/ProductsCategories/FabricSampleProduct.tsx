@@ -103,7 +103,7 @@ export default function FabricSampleProducts() {
             sort={sort}
           />
           <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
-            <Box width="20%" p="0 20px">
+            <Box width="25%">
               <Stack
                 mt={2}
                 spacing={2}
@@ -142,7 +142,7 @@ export default function FabricSampleProducts() {
                 </div>
               </Stack>
             </Box>
-            <Box width={{ md: "80%" }}>
+            <Box width={{ md: "100%" }}>
               <Box mb={15}>
                 <FabricProducts currentItems={currentItems} />
               </Box>

@@ -1,7 +1,7 @@
-import { Box, Typography } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import { Typography } from "@mui/material";
 import routes from "../../../routes/routes";
 
 const ProductsNavigatoinItems = [
