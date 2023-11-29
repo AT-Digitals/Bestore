@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
 import routes from "../../../routes/routes";
 
 const ProductsNavigatoinItems = [
@@ -10,33 +11,41 @@ const ProductsNavigatoinItems = [
 ];
 
 export default function CommonCategory() {
+  const location = useLocation();
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  useEffect(() => {
+    const currentPath = location.pathname;
+    setSelectedCategory(currentPath);
+  }, [location]);
+
   return (
-    <Box padding={"0 20px"}>
-      {ProductsNavigatoinItems.map((name) => (
+    <>
+      {ProductsNavigatoinItems.map((category) => (
         <Link
+          key={category.name}
+          to={category.link}
           style={{
             textDecoration: "none",
-            color: "black",
+            color: selectedCategory === category.link ? "black" : "gray",
           }}
-          to={name.link}
         >
           <Typography
-            color={"gray"}
             fontFamily={"Nunito Sans, sans-serif"}
-            key={name.name}
             sx={{
               marginBottom: 2,
-              color: "gray",
               cursor: "pointer",
               "&:hover": {
                 color: "black",
               },
+              fontWeight:
+                selectedCategory === category.link ? "bold" : "normal",
             }}
           >
-            {name.name}
+            {category.name}
           </Typography>
         </Link>
       ))}
-    </Box>
+    </>
   );
 }

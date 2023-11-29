@@ -129,8 +129,9 @@ export default function FabricSampleProducts() {
                   </Box>
 
                   <>
-                    <CommonCategory />
-
+                    <Box padding={"0 20px"}>
+                      <CommonCategory />
+                    </Box>
                     <Box
                       pt={2}
                       margin={"0 auto"}
