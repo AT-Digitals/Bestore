@@ -21,7 +21,7 @@ export default function ContactPage() {
       >
         <Typography color={"black"} fontSize={"75px"} fontWeight={"bold"}>
           {" "}
-          {"Contact Us"}
+          {"Reach Us"}
         </Typography>
       </Box>
       <Stack direction={"row"}>

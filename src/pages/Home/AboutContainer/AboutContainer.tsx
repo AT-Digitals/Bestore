@@ -1,10 +1,15 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
 import About from "../about-home.avif";
-import { Link } from "react-router-dom";
 import routes from "../../../routes/routes";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutConainer() {
+  const navigate = useNavigate();
+  const handleAboutPage = () => {
+    navigate(routes.ABOUT);
+    window.scroll(0, 0);
+  };
   return (
     <Box
       boxShadow="5px 5px 8px 5px rgba(0, 0, 0, 0.1)"
@@ -54,30 +59,29 @@ export default function AboutConainer() {
           vivre. <br /> We welcome you on our site, and also in our shop and our
           workshop in Mamallapuram.
         </Typography>
-        <Link to={routes.ABOUT}>
-          <Button
-            style={{
-              color: "white",
-              background: "black",
-              maxWidth: 160,
-              width: "100%",
-              borderRadius: "30px",
-              textTransform: "none",
-              fontWeight: "bold",
-              boxShadow: "0px 0px 15px 0px",
-              transition: "transform 0.3s ease",
-              fontFamily: "Nunito Sans, sans-serif",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.1)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-          >
-            About us
-          </Button>
-        </Link>
+        <Button
+          onClick={handleAboutPage}
+          style={{
+            color: "white",
+            background: "black",
+            maxWidth: 160,
+            width: "100%",
+            borderRadius: "30px",
+            textTransform: "none",
+            fontWeight: "bold",
+            boxShadow: "0px 0px 15px 0px",
+            transition: "transform 0.3s ease",
+            fontFamily: "Nunito Sans, sans-serif",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "scale(1.1)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+          }}
+        >
+          About us
+        </Button>
       </Stack>
     </Box>
   );

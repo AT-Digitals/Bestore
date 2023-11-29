@@ -11,7 +11,6 @@ import AboutBanner from "../../assets/AboutBanner.jpg";
 import CartImage from "../../common-components/CartImage";
 import image from "../../assets/store2-about-bg1.jpg";
 import image1 from "../../assets/store2-about-bg2.jpg";
-import logo from "./akkacreationlogo.png";
 
 const TesttmoalProps = [
   {
@@ -49,7 +48,7 @@ const TestimonialBox = styled(Box)`
 `;
 
 const TestimonialStack = styled(Stack)`
-  width: 80%; /* Set your desired fixed width */
+  width: 90%; /* Set your desired fixed width */
   margin: 0 auto;
   overflow: hidden;
 `;
@@ -64,19 +63,18 @@ export default function AboutPage() {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             height: "auto",
-            minHeight: { xs: 400, md: 900 },
+            minHeight: { xs: 400, md: 550 },
           }}
-        ></Box>
+          padding={{ sm: "40px 0 60px", md: "270px 0 60px" }}
+          textAlign={"center"}
+        >
+          <Typography color={"black"} fontSize={"75px"} fontWeight={"bold"}>
+            {" "}
+            {"About Us"}
+          </Typography>
+        </Box>
       </Box>
-      <Typography
-        fontWeight={"600"}
-        marginTop={"30px"}
-        color={"balck"}
-        textAlign={"center"}
-        fontSize={"35px"}
-      >
-        TESTIMONIALS
-      </Typography>
+
       <Box display={"flex"} justifyContent={"center"}>
         <Divider
           orientation="horizontal"
@@ -86,81 +84,6 @@ export default function AboutPage() {
           }}
         />
       </Box>
-      <TestimonialStack
-        direction={{ xs: "column", sm: "row", md: "row" }}
-        marginTop={"50px"}
-        spacing={3}
-        justifyContent={"center"}
-      >
-        {TesttmoalProps.map((item, index) => (
-          <TestimonialBox
-            // style={{
-            //   overflow: "hidden",
-            //   cursor: "pointer",
-            //   transition: "transform 0.5s ease",
-            // }}
-            style={{ transitionDelay: `${index * 0.1}s` }}
-            // onMouseEnter={(e) => {
-            //   e.currentTarget.style.transform = "scale(1.1)";
-            // }}
-            // onMouseLeave={(e) => {
-            //   e.currentTarget.style.transform = "scale(1)";
-            // }}
-            maxWidth={400}
-            gap={"3rem"}
-            textAlign={"center"}
-          >
-            <Box width={"100%"}>
-              <img
-                src={item.image}
-                style={{
-                  borderRadius: "50%",
-                  border: "6px solid white",
-                }}
-                width={"100px"}
-                height={"100px"}
-                alt="aboutimage"
-              />
-            </Box>
-            <Box
-              width={"100%"}
-              sx={{
-                backgroundColor: "#e5e4e4",
-                marginTop: "-46px",
-                paddingBottom: "30px",
-                boxShadow: "0px 0px 7px 0px",
-              }}
-            >
-              <Typography
-                color={"#e53637"}
-                paddingTop={"40px"}
-                fontSize={"35px"}
-                textAlign={"center"}
-              >
-                ,,
-              </Typography>
-              <Typography
-                fontFamily={"Nunito Sans, sans-serif"}
-                padding={"0px 15px"}
-                color={"black"}
-                fontSize={"15px"}
-              >
-                {item.discription}
-              </Typography>
-              <Typography
-                marginTop={"20px"}
-                fontWeight={"500"}
-                textAlign={"center"}
-                fontSize={"26px"}
-                color={"#e53637"}
-                fontFamily={"Nunito Sans, sans-serif"}
-              >
-                Vision
-              </Typography>
-            </Box>
-          </TestimonialBox>
-        ))}
-      </TestimonialStack>
 
       <Stack padding={"0 50px"} marginTop={"50px"} alignItems={"center"}>
         <Typography>
@@ -176,14 +99,70 @@ export default function AboutPage() {
             Happy Clients
           </Typography>
         </Typography>
-        <img
-          width={"100%"}
-          style={{
-            maxWidth: "500px",
-          }}
-          src={logo}
-          alt="logo"
-        />
+        <TestimonialStack
+          direction={{ xs: "column", sm: "row", md: "row" }}
+          marginTop={"50px"}
+          spacing={3}
+          justifyContent={"center"}
+        >
+          {TesttmoalProps.map((item, index) => (
+            <TestimonialBox
+              style={{ transitionDelay: `${index * 0.1}s` }}
+              maxWidth={400}
+              gap={"3rem"}
+              textAlign={"center"}
+            >
+              <Box width={"100%"}>
+                <img
+                  src={item.image}
+                  style={{
+                    borderRadius: "50%",
+                    border: "6px solid white",
+                  }}
+                  width={"100px"}
+                  height={"100px"}
+                  alt="aboutimage"
+                />
+              </Box>
+              <Box
+                width={"100%"}
+                sx={{
+                  backgroundColor: "#e5e4e4",
+                  marginTop: "-46px",
+                  paddingBottom: "30px",
+                  boxShadow: "0px 0px 7px 0px",
+                }}
+              >
+                <Typography
+                  color={"#e53637"}
+                  paddingTop={"40px"}
+                  fontSize={"35px"}
+                  textAlign={"center"}
+                >
+                  ,,
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  padding={"0px 15px"}
+                  color={"black"}
+                  fontSize={"15px"}
+                >
+                  {item.discription}
+                </Typography>
+                <Typography
+                  marginTop={"20px"}
+                  fontWeight={"500"}
+                  textAlign={"center"}
+                  fontSize={"26px"}
+                  color={"#e53637"}
+                  fontFamily={"Nunito Sans, sans-serif"}
+                >
+                  Our Vision
+                </Typography>
+              </Box>
+            </TestimonialBox>
+          ))}
+        </TestimonialStack>
       </Stack>
 
       <Stack alignItems={"center"}>
