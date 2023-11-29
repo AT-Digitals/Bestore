@@ -4,7 +4,11 @@ import { useEffect, useState } from "react";
 import HeaderTabs from "./HeaderTabs";
 import logo from "./Akka creartions horizontal 2-03-03.png";
 
-export default function AppHeader() {
+interface TabsProps {
+  activeTab: any;
+  setActiveTab: any;
+}
+export default function AppHeader({ activeTab, setActiveTab }: TabsProps) {
   const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
@@ -55,7 +59,7 @@ export default function AppHeader() {
             />
           </Box>
           <Stack spacing={2} direction={"row"}>
-            <HeaderTabs />
+            <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
           </Stack>
         </Box>
       </Box>

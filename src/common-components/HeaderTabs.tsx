@@ -1,18 +1,17 @@
 import { Box, Tab, Tabs, css } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import logo from "./Akka creartions horizontal 2-03-03.png";
 import routes from "../routes/routes";
-import { useState } from "react";
 
 const CustomTabs = [
   { name: "HOME", link: routes.HOME },
   { name: "ABOUT", link: routes.ABOUT },
-
   { name: "PRODUCTS", link: routes.PRODUCTS },
   { name: "CONTACT US", link: routes.CONTACT },
 ];
+
 const rotateKeyframes = css`
   @keyframes rotate {
     from {
@@ -32,14 +31,18 @@ const rotateKeyframes = css`
   }
 `;
 
-export default function HeaderTabs() {
-  const [value, setValue] = useState(0);
-  const location = useLocation();
+interface HeaderTabsProps {
+  activeTab: string;
+  setActiveTab: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const HeaderTabs: React.FC<HeaderTabsProps> = ({ activeTab, setActiveTab }) => {
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setLoading(true);
-    setValue(newValue);
+    setActiveTab(CustomTabs[newValue].link);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -54,11 +57,16 @@ export default function HeaderTabs() {
   }, [loading]);
 
   useEffect(() => {
-    const activeTab = CustomTabs.findIndex(
-      (tab) => tab.link === location.pathname
+    const activeTabIndex = CustomTabs.findIndex(
+      (tab) => tab.link === activeTab
     );
-    setValue(activeTab !== -1 ? activeTab : 0);
-  }, [location.pathname]);
+
+    if (activeTabIndex !== -1) {
+      setValue(activeTabIndex);
+    }
+  }, [activeTab]);
+
+  const [value, setValue] = useState(0);
 
   return (
     <Box>
@@ -115,4 +123,6 @@ export default function HeaderTabs() {
       )}
     </Box>
   );
-}
+};
+
+export default HeaderTabs;

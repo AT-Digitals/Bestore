@@ -8,16 +8,10 @@ interface MobileHeaderProps {
 }
 export default function Header({ setActiveTab, activeTab }: MobileHeaderProps) {
   return (
-    <Box
-      borderBottom={`1px solid ${"black"}`}
-      bgcolor={"white"}
-      position="sticky"
-      top={0}
-      zIndex={1000}
-    >
+    <Box bgcolor={"white"} position="sticky" top={0} zIndex={1000}>
       <MobileHeader setActiveTab={setActiveTab} activeTab={activeTab} />
       <Box bgcolor={"black"}>
-        <AppHeader />
+        <AppHeader activeTab={activeTab} setActiveTab={setActiveTab} />
       </Box>
     </Box>
   );
