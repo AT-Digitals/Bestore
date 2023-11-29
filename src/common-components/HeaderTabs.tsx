@@ -1,7 +1,7 @@
 import { Box, Tab, Tabs, css } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
 import logo from "./Akka creartions horizontal 2-03-03.png";
 import routes from "../routes/routes";
 
@@ -38,7 +38,6 @@ interface HeaderTabsProps {
 
 const HeaderTabs: React.FC<HeaderTabsProps> = ({ activeTab, setActiveTab }) => {
   const [loading, setLoading] = useState(false);
-  const location = useLocation();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setLoading(true);
