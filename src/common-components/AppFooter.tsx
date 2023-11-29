@@ -85,7 +85,10 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
         >
           <Stack direction={"column"} spacing={3} maxWidth={260}>
             <Stack direction={"column"} spacing={3}>
-              <a href={routes.HOME}>
+              <a
+                href={routes.HOME}
+                onClick={() => handleMenuClick(routes.HOME)}
+              >
                 <img
                   src={logo}
                   alt="alterknit logo"

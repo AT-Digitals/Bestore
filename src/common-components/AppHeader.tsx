@@ -51,7 +51,7 @@ export default function AppHeader({ activeTab, setActiveTab }: TabsProps) {
           flexWrap={"wrap"}
         >
           <Box pl={"35px"} pt={2} textAlign={"center"}>
-            <Link to={routes.HOME}>
+            <Link to={routes.HOME} onClick={() => setActiveTab(routes.HOME)}>
               <img
                 src={logo}
                 alt="app-logo"
