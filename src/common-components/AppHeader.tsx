@@ -1,8 +1,8 @@
 import { Box, Stack } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import HeaderTabs from "./HeaderTabs";
-import { Link } from "react-router-dom";
 import logo from "./Akka creartions horizontal 2-03-03.png";
 import routes from "../routes/routes";
 
@@ -12,7 +12,7 @@ interface TabsProps {
 }
 export default function AppHeader({ activeTab, setActiveTab }: TabsProps) {
   const [scrolling, setScrolling] = useState(false);
-
+  const location = useLocation();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -22,12 +22,18 @@ export default function AppHeader({ activeTab, setActiveTab }: TabsProps) {
       }
     };
 
+    const handleRouteChange = () => {
+      const currentPath = location.pathname;
+      setActiveTab(currentPath);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    handleRouteChange();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location.pathname, setActiveTab]);
   return (
     <Stack
       display={{ xs: "none", xl: "flex" }}
