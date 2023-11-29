@@ -2,7 +2,9 @@ import { Box, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import HeaderTabs from "./HeaderTabs";
+import { Link } from "react-router-dom";
 import logo from "./Akka creartions horizontal 2-03-03.png";
+import routes from "../routes/routes";
 
 interface TabsProps {
   activeTab: any;
@@ -49,14 +51,16 @@ export default function AppHeader({ activeTab, setActiveTab }: TabsProps) {
           flexWrap={"wrap"}
         >
           <Box pl={"35px"} pt={2} textAlign={"center"}>
-            <img
-              src={logo}
-              alt="app-logo"
-              style={{
-                maxWidth: 160,
-                width: "100%",
-              }}
-            />
+            <Link to={routes.HOME}>
+              <img
+                src={logo}
+                alt="app-logo"
+                style={{
+                  maxWidth: 160,
+                  width: "100%",
+                }}
+              />
+            </Link>
           </Box>
           <Stack spacing={2} direction={"row"}>
             <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
