@@ -1,4 +1,5 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 
 import AboutConainer from "./AboutContainer/AboutContainer";
 import Banner from "./homepage-ba.jpg";
@@ -6,7 +7,6 @@ import Card1 from "./home-card1.jpg";
 import Card2 from "./home-image3.png";
 import Card3 from "./home-image2.png";
 import CartImage from "../../common-components/CartImage";
-import { Link } from "react-router-dom";
 import ProductsCard from "./HomepageProducts/ProductsCard";
 import SliderImages from "../../common-components/SliderImages";
 import routes from "../../routes/routes";
@@ -30,6 +30,12 @@ const HoverImageText = [
 ];
 
 export default function Homepage() {
+  const navigate = useNavigate();
+  const handleMoreProducts = () => {
+    navigate(routes.PRODUCTS);
+    window.scroll(0, 0);
+  };
+
   return (
     <Box>
       <Box
@@ -177,21 +183,22 @@ export default function Homepage() {
         <ProductsCard />
 
         <Box>
-          <Link to={routes.PRODUCTS}>
-            <Button
-              style={{
-                background: "black",
-                color: "white",
-                padding: "15px 50px",
-                borderRadius: "20px",
-                textTransform: "none",
-                fontWeight: "bold",
-                fontFamily: "Nunito Sans, sans-serif",
-              }}
-            >
-              More products
-            </Button>
-          </Link>
+          {/* <Link to={routes.PRODUCTS}> */}
+          <Button
+            onClick={handleMoreProducts}
+            style={{
+              background: "black",
+              color: "white",
+              padding: "15px 50px",
+              borderRadius: "20px",
+              textTransform: "none",
+              fontWeight: "bold",
+              fontFamily: "Nunito Sans, sans-serif",
+            }}
+          >
+            More products
+          </Button>
+          {/* </Link> */}
         </Box>
       </Box>
 
