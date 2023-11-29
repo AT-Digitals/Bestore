@@ -3,17 +3,10 @@ import { useEffect, useState } from "react";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ClothingCategories from "./ClothingProducts";
-import { Link } from "react-router-dom";
+import CommonCategory from "./commonCategory";
 import ProductBanner from "../Products-banner.jpg";
 import ProductsHeader from "../ProductsHeader";
 import ProductsImage from "../ProductsItems";
-import routes from "../../../routes/routes";
-
-const ProductsNavigatoinItems = [
-  { name: "Clothing", link: routes.CLOTHING_PRODUCT },
-  { name: "Home Decor", link: routes.HOME_DECOR_PRODUCT },
-  { name: "Fabrics", link: routes.FABRIC_PRODUCT },
-];
 
 export default function ClothingSample() {
   const itemsPerPage = 8;
@@ -138,7 +131,7 @@ export default function ClothingSample() {
                   </Box>
 
                   <>
-                    <Box padding={"0 20px"}>
+                    {/* <Box padding={"0 20px"}>
                       {ProductsNavigatoinItems.map((name) => (
                         <Link
                           style={{
@@ -164,7 +157,8 @@ export default function ClothingSample() {
                           </Typography>
                         </Link>
                       ))}
-                    </Box>
+                    </Box> */}
+                    <CommonCategory />
                     <Box
                       pt={2}
                       margin={"0 auto"}
