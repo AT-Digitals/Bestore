@@ -129,7 +129,7 @@ export default function ProductsPage() {
                   </Box>
 
                   <>
-                    <Box padding={"0 20px"}>
+                    <Box>
                       {ProductsNavigatoinItems.map((name) => (
                         <Link
                           style={{
