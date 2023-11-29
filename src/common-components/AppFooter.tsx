@@ -51,11 +51,19 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
   const isProductsPage = location.pathname.includes(routes.PRODUCTS);
 
   const handleMenuClick = (menu: string) => {
-    localStorage.setItem(activeTab, menu);
-    setActiveTab(menu);
-    window.scroll(0, 0);
-  };
+    console.log("Clicked Menu:", menu);
 
+    if (menu.startsWith(routes.PRODUCTS)) {
+      localStorage.setItem("activeTab", routes.PRODUCTS);
+      setActiveTab(routes.PRODUCTS);
+    } else {
+      localStorage.setItem("activeTab", menu);
+      setActiveTab(menu);
+    }
+
+    window.scroll(0, 0);
+    console.log("Updated activeTab:", activeTab);
+  };
   return (
     <Box
       bgcolor={"#f6f6f6"}

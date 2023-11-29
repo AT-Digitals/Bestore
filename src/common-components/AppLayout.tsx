@@ -27,7 +27,6 @@ export default function AppLayout({ children, ...props }: BoxProps) {
           >
             <Outlet />
           </Box>
-          {/* <AppFooter /> */}
           <AppFooter activeTab={activeTab} setActiveTab={setActiveTab} />
         </Box>
       </Box>

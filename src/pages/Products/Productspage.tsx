@@ -2,17 +2,11 @@ import { Box, Grid, Pagination, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import CommonCategory from "./ProductsCategories/commonCategory";
 import { Link } from "react-router-dom";
 import ProductBanner from "./Products-banner.jpg";
 import ProductsHeader from "./ProductsHeader";
 import ProductsImage from "./ProductsItems";
-import routes from "../../routes/routes";
-
-const ProductsNavigatoinItems = [
-  { name: "Clothing", link: routes.CLOTHING_PRODUCT },
-  { name: "Home Decor", link: routes.HOME_DECOR_PRODUCT },
-  { name: "Fabrics", link: routes.FABRIC_PRODUCT },
-];
 
 export default function ProductsPage() {
   const itemsPerPage = 10;
@@ -103,7 +97,7 @@ export default function ProductsPage() {
             sort={sort}
           />
           <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
-            <Box width="20%" p="0 20px">
+            <Box width="25%">
               <Stack
                 mt={2}
                 spacing={2}
@@ -129,32 +123,8 @@ export default function ProductsPage() {
                   </Box>
 
                   <>
-                    <Box>
-                      {ProductsNavigatoinItems.map((name) => (
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            color: "black",
-                          }}
-                          to={name.link}
-                        >
-                          <Typography
-                            color={"gray"}
-                            fontFamily={"Nunito Sans, sans-serif"}
-                            key={name.name}
-                            sx={{
-                              marginBottom: 2,
-                              color: "gray",
-                              cursor: "pointer",
-                              "&:hover": {
-                                color: "black",
-                              },
-                            }}
-                          >
-                            {name.name}
-                          </Typography>
-                        </Link>
-                      ))}
+                    <Box padding={"0 20px"}>
+                      <CommonCategory />
                     </Box>
                     <Box
                       pt={2}
@@ -166,9 +136,9 @@ export default function ProductsPage() {
                 </div>
               </Stack>
             </Box>
-            <Box width={{ md: "80%" }}>
+            <Box width={{ md: "100%" }}>
               <Box mb={15}>
-                <Grid container>
+                <Grid marginLeft={"20px"} marginTop={"10px"} container>
                   {currentItems.map((item, index) => (
                     <Grid
                       columnSpacing={"2rem"}
