@@ -1,18 +1,26 @@
 import { IconButton, Stack } from "@mui/material";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import React, { useEffect } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
 import ProductsImage from "../ProductsItems";
-import React from "react";
 import Typography from "@mui/material/Typography";
 import banner from "./pdetail.webp";
 import logo from "./Akka creartions horizontal 2-03-03.png";
-import routes from "../../../routes/routes";
 
 export default function ProductDetailPage() {
   const { id } = useParams();
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   const product = ProductsImage.find((item) => item.id === id?.toString());
   console.log(id, "setSelectedCategory");
 
@@ -45,14 +53,11 @@ export default function ProductDetailPage() {
     >
       <Stack padding={"60px"} margin={"60px auto"}>
         <Box display={"flex"} justifyContent={"left"}>
-          <Link to={routes.PRODUCTS}>
-            <IconButton>
-              <ArrowBackIcon />
-            </IconButton>
-          </Link>
+          <IconButton onClick={handleGoBack}>
+            <ArrowBackIcon />
+          </IconButton>
         </Box>
         <Box margin={"0  auto 3rem"}>
-          {" "}
           <img width={300} src={logo} alt="" />
         </Box>
         <Stack
@@ -79,27 +84,6 @@ export default function ProductDetailPage() {
             />
           </Box>
           <Stack spacing={3} maxWidth={400}>
-            {/* <Box position={"absolute"} right={"20%"}>
-              <span onClick={handleFavoriteClick}>
-                {isFavorited ? (
-                  <FavoriteIcon
-                    style={{
-                      color: "red",
-                      // top: "10px",
-                      right: "15%",
-                      cursor: "pointer",
-                    }}
-                  />
-                ) : (
-                  <FavoriteBorderOutlinedIcon
-                    style={{
-                      right: "15%",
-                      cursor: "pointer",
-                    }}
-                  />
-                )}
-              </span>
-            </Box> */}
             <Typography
               fontFamily={"Nunito Sans, sans-serif"}
               fontSize={"20px"}
@@ -129,24 +113,6 @@ export default function ProductDetailPage() {
               sleeves with adjustable cuff tabs, adjustable asymmetric hem with
               elastic side tabs and a front zip fastening with placket.
             </Typography>
-            {/* <Button
-              style={{
-                background: "black",
-                color: "white",
-                fontFamily: "Nunito Sans, sans-serif",
-              }}
-            >
-              ADD TO CART
-            </Button>
-            <Button
-              style={{
-                background: "black",
-                color: "white",
-                fontFamily: "Nunito Sans, sans-serif",
-              }}
-            >
-              Buy Now
-            </Button> */}
           </Stack>
         </Stack>
 
