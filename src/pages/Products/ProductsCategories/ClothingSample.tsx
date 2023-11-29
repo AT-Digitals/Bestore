@@ -105,7 +105,7 @@ export default function ClothingSample() {
             sort={sort}
           />
           <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
-            <Box width="20%" p="0 20px">
+            <Box width="25%">
               <Stack
                 mt={2}
                 spacing={2}
@@ -144,7 +144,7 @@ export default function ClothingSample() {
                 </div>
               </Stack>
             </Box>
-            <Box width={{ md: "80%" }}>
+            <Box width={{ md: "100%" }}>
               <Box mb={15}>
                 <ClothingCategories currentItems={currentItems} />
               </Box>
