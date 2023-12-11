@@ -180,7 +180,7 @@ export default function Homepage() {
         >
           PRODUCTS ON SALE
         </Typography>
-        <ProductsCard />
+        {/* <ProductsCard /> */}
 
         <Box>
           {/* <Link to={routes.PRODUCTS}> */}
