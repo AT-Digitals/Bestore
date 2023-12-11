@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import ProductBanner from "./Products-banner.jpg";
 import ProductsHeader from "./ProductsHeader";
 import ProductsImage from "./ProductsItems";
+import ProductsLeftSide from "./ProductsCategories/ProductsLeftSide";
 
 export default function ProductsPage() {
   const itemsPerPage = 10;
@@ -91,11 +92,6 @@ export default function ProductsPage() {
       </Box>
       <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>
         <Box p={"30px"}>
-          <ProductsHeader
-            totalItems={TotalItems}
-            onSortChange={handleSortChange}
-            sort={sort}
-          />
           <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
             <Box width="25%">
               <Stack
@@ -104,36 +100,7 @@ export default function ProductsPage() {
                 maxWidth={{ sm: 160, md: 280 }}
                 gap="1rem"
               >
-                <div>
-                  <Box
-                    padding={2}
-                    style={{ cursor: "pointer" }}
-                    onClick={handleToggleDropdown}
-                    display="flex"
-                    justifyContent="space-between"
-                  >
-                    <Typography
-                      fontSize={"16px"}
-                      fontWeight={"bold"}
-                      fontFamily={"Nunito Sans, sans-serif"}
-                    >
-                      CATEGORIES
-                    </Typography>
-                    <ArrowDropDownIcon />
-                  </Box>
-
-                  <>
-                    <Box padding={"0 20px"}>
-                      <CommonCategory />
-                    </Box>
-                    <Box
-                      pt={2}
-                      margin={"0 auto"}
-                      width={"90%"}
-                      borderBottom={"1px solid gray"}
-                    ></Box>
-                  </>
-                </div>
+                <ProductsLeftSide />
               </Stack>
             </Box>
             <Box width={{ md: "100%" }}>
