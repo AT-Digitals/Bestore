@@ -6,44 +6,9 @@ import ProductsImage1 from "../../../assets/ProductsImage/ak-p1.avif";
 import ProductsImage3 from "../../../assets/ProductsImage/fab1.jpg";
 import ProductsImage4 from "../../../assets/ProductsImage/fab2.jpg";
 import ProductsImage5 from "../../../assets/ProductsImage/home-decor1.webp";
+import ProductsImage from "../../Products/ProductsItems";
 
-const ProductsImage = [
-  {
-    name: "Reversible multicolored Kimono jacket with large collar and one size animal design",
-    Image: ProductsImage1,
-    price: "2116.00",
-    type: "not-best selling",
-    offerprice: "",
-  },
-  {
-    name: "SHORT fleece JACKET Women's jacket in green and MULTICOLOR cotton patchwork Lined jacket buttoned on the front Women's mid-season jacket",
-    Image: ProductsImag2,
-    price: "2343.00",
-    type: "Best selling",
-    offerprice: "",
-  },
-  {
-    name: "Handmade brown and multicolor printed cotton PATCHWORK sold by the meter in 100 cm wide",
-    Image: ProductsImage3,
-    price: "1700.00",
-    type: "Best selling",
-    offerprice: "",
-  },
-  {
-    name: "Handmade blue and multicolor printed cotton PATCHWORK sold by the meter in 100 cm wide",
-    Image: ProductsImage4,
-    price: "1700.00",
-    type: "Best selling",
-    offerprice: "",
-  },
-  {
-    name: "PATCHWORK CURTAIN black and multicolored custom curtain cotton curtain with solid color lining matching the patchwork",
-    Image: ProductsImage5,
-    price: "1209.00",
-    type: "Best selling",
-    offerprice: "",
-  },
-];
+
 export default function ProductsCard() {
   return (
     <Stack direction={{ xs: "column", sm: "row", md: "row" }}>

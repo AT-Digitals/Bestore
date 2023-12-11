@@ -1,4 +1,4 @@
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 
 export default function ContactForm() {
   return (
@@ -7,85 +7,126 @@ export default function ContactForm() {
         margin={"0 auto"}
         maxWidth={600}
         width={"100%"}
+        padding={"50px"}
+        borderRight={"1px solid rgba(0,0,0,0.105)"}
+        mt={2}
         sx={{
           backgroundColor: "white",
         }}
       >
         <Stack marginBottom={"25px"}>
-          <Stack direction={"row"} spacing={4}>
-            <Box
-              paddingTop={"50px"}
-              margin={"auto"}
-              width={"100%"}
-              maxWidth={"720px"}
-            >
-              <TextField
-                sx={{
-                  width: "100%",
-                  maxWidth: "300px",
-                  "& input::placeholder": {
-                    paddingLeft: "8px",
-                  },
-                  ".MuiFormHelperText-root": {
-                    color: "#d32f2f",
-                  },
-                }}
-                required
-                id="standard-required"
-                placeholder="Name"
-                variant="outlined"
-                name="name"
-              />
-            </Box>
-            <Box
-              paddingTop={"50px"}
-              margin={"auto"}
-              width={"100%"}
-              maxWidth={"720px"}
-            >
-              <TextField
-                sx={{
-                  width: "100%",
-                  maxWidth: "300px",
-                  "& input::placeholder": {
-                    paddingLeft: "8px",
-                  },
-                  ".MuiFormHelperText-root": {
-                    color: "#d32f2f",
-                  },
-                }}
-                required
-                id="standard-required"
-                placeholder="Email"
-                variant="outlined"
-                name="name"
-              />
-            </Box>
+          <Stack direction={"row"} spacing={3} alignItems={"center"}>
+          <Typography color={"black"} fontWeight={"bold"} fontFamily={"Nunito Sans, sans-serif"} fontSize={"25px"}>SEND US AN EMAIL</Typography>
+          <Box width={"60%"} borderTop={"1px solid rgba(0,0,0,0.105)"}></Box>
           </Stack>
+            <Box
+              paddingTop={"40px"}
+              margin={"auto"}
+              width={"100%"}
+              maxWidth={"720px"}
+            >
+              <Typography pb={1} color={"black"} fontSize={"17px"} fontFamily={"Nunito Sans, sans-serif"}>Your Name</Typography>
+              <TextField
+                sx={{
+                  width: "100%",
+                  maxWidth: "600px",
+                  ".MuiInputBase-root": {
+                    borderRadius: "30px",
+                    height: "45px"
+                  }
+                }}
+                required
+                id="standard-required"
+                variant="outlined"
+                name="name"
+              />
+            </Box>
+            <Box
+              paddingTop={"40px"}
+              margin={"auto"}
+              width={"100%"}
+              maxWidth={"720px"}
+            >
+               <Typography pb={1} color={"black"} fontSize={"17px"} fontFamily={"Nunito Sans, sans-serif"}>Your Email</Typography>
+              <TextField
+                sx={{
+                  width: "100%",
+                  maxWidth: "600px",
+                  ".MuiInputBase-root": {
+                    borderRadius: "30px",
+                    height: "45px"
+                  }
+                }}
+                required
+                id="standard-required"
+                variant="outlined"
+                name="name"
+              />
+            </Box>
+            <Box
+              paddingTop={"40px"}
+              margin={"auto"}
+              width={"100%"}
+              maxWidth={"720px"}
+            >
+               <Typography pb={1} color={"black"} fontSize={"17px"} fontFamily={"Nunito Sans, sans-serif"}>Phone Number</Typography>
+              <TextField
+                sx={{
+                  width: "100%",
+                  maxWidth: "600px",
+                  ".MuiInputBase-root": {
+                    borderRadius: "30px",
+                    height: "45px"
+                  }
+                }}
+                required
+                type="number"
+                id="standard-required"
+                variant="outlined"
+                name="name"
+              />
+            </Box>
+            <Box
+              paddingTop={"40px"}
+              margin={"auto"}
+              width={"100%"}
+              maxWidth={"720px"}
+            >
+              <Typography pb={1} color={"black"} fontSize={"17px"} fontFamily={"Nunito Sans, sans-serif"}>Products</Typography>
+              <TextField
+                sx={{
+                  width: "100%",
+                  maxWidth: "600px",
+                  ".MuiInputBase-root": {
+                    borderRadius: "30px",
+                    height: "45px"
+                  }
+                }}
+                required
+                id="standard-required"
+                variant="outlined"
+                name="name"
+              />
+            </Box>
           <Box
             paddingTop={"30px"}
             margin={"auto"}
             width={"100%"}
             maxWidth={"720px"}
           >
+              <Typography pb={1} color={"black"} fontSize={"17px"} fontFamily={"Nunito Sans, sans-serif"}>Your Message</Typography>
             <TextField
               sx={{
                 width: "100%",
                 maxWidth: "720px",
-                "& input::placeholder": {
-                  paddingLeft: "8px",
-                },
-                ".MuiFormHelperText-root": {
-                  color: "#d32f2f",
-                },
                 ".MuiInputBase-root": {
-                  paddingBottom: "116px",
-                },
+                  borderRadius: "30px",
+                  height: "160px"
+                }
               }}
               required
               multiline
               id="standard-required"
-              placeholder="Your message"
               variant="outlined"
               name="name"
             />
