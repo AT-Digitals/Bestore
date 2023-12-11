@@ -58,7 +58,7 @@ export default function ClothingSample() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
   const clothingProducts = ProductsImage.filter(
-    (item) => item.producttype === "Clothing"
+    (item) => item.producttype === "Patterns"
   );
   const currentItems = clothingProducts.slice(
     indexOfFirstItem,
@@ -87,7 +87,7 @@ export default function ClothingSample() {
           fontFamily={"Nunito Sans, sans-serif"}
         >
           {" "}
-          Clothing
+          Patterns
         </Typography>
       </Box>
       <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>

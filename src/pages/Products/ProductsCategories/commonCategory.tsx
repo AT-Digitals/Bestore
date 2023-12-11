@@ -8,19 +8,19 @@ import routes from "../../../routes/routes";
 
 const ProductsNavigationItems = [
   {
-    name: "Clothing",
+    name: "Fabrics",
+    link: routes.FABRIC_PRODUCT,
+    subcategories: ["Cotton", "Silk", "Polyester"],
+  },
+  {
+    name: "Patterns",
     link: routes.CLOTHING_PRODUCT,
     subcategories: ["Men's", "Women's", "Kids"],
   },
   {
-    name: "Home Decor",
+    name: "Colours",
     link: routes.HOME_DECOR_PRODUCT,
     subcategories: ["Living Room", "Bedroom", "Kitchen"],
-  },
-  {
-    name: "Fabrics",
-    link: routes.FABRIC_PRODUCT,
-    subcategories: ["Cotton", "Silk", "Polyester"],
   },
 ];
 

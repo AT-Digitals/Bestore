@@ -141,14 +141,6 @@ export default function ProductsPage() {
                         md={4}
                         style={{ display: "flex" }}
                       >
-                        {/* <Link
-                        to={`/products/${item.id}`}
-                        style={{
-                          textDecoration: "none",
-                          color: "black",
-                          width: "100%",
-                        }}
-                      > */}
                         <Box
                           onClick={() => handleProductClick(item)}
                           padding={"10px"}
@@ -199,7 +191,6 @@ export default function ProductsPage() {
                             </Typography>
                           </Box>
                         </Box>
-                        {/* </Link> */}
                       </Grid>
                     ))}
                   </Grid>

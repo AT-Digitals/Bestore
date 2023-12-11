@@ -63,7 +63,7 @@ export default function HomeDecorSample() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
   const homeProducts = ProductsImage.filter(
-    (item) => item.producttype === "Home Decor"
+    (item) => item.producttype === "Colours"
   );
 
   const currentItems = homeProducts.slice(indexOfFirstItem, indexOfLastItem);
@@ -90,7 +90,7 @@ export default function HomeDecorSample() {
           fontFamily={"Nunito Sans, sans-serif"}
         >
           {" "}
-          Home Decor
+          Colours
         </Typography>
       </Box>
       <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>
