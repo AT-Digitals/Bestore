@@ -1,16 +1,7 @@
-import {
-  Box,
-  IconButton,
-  InputAdornment,
-  Stack,
-  TextField,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Box, Stack, Typography, styled } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import logo from "./Akka creartions horizontal 2-03-03.png";
@@ -35,9 +26,9 @@ interface footerProps {
 }
 
 const FooterNames = [
-  { name: "Clothing", url: routes.CLOTHING_PRODUCT },
-  { name: "Home Decor", url: routes.HOME_DECOR_PRODUCT },
   { name: "Fabric", url: routes.FABRIC_PRODUCT },
+  { name: "Patterns", url: routes.CLOTHING_PRODUCT },
+  { name: "Colours", url: routes.HOME_DECOR_PRODUCT },
 ];
 
 const FooterPageNames = [
@@ -106,27 +97,6 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
                 The power of colors! Fashion Mamallapuram, a small town in the
                 Bay of Bengal that belongs to the world cultural heritage
               </CustomLabel>
-              <Box border={"1px solid gray"}></Box>
-              <Stack spacing={1} direction={"row"}>
-                <Link to="https://www.facebook.com/login.php/" target="_blank">
-                  <FacebookIcon
-                    style={{
-                      color: "gray",
-                    }}
-                  />
-                </Link>
-
-                <Link
-                  to="https://www.instagram.com/akka_creation/"
-                  target="_blank"
-                >
-                  <InstagramIcon
-                    style={{
-                      color: "gray",
-                    }}
-                  />
-                </Link>
-              </Stack>
             </Stack>
           </Stack>
 
@@ -181,30 +151,35 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
 
           <Stack spacing={2} maxWidth={300}>
             <br />
+
             <Typography
-              fontSize={"16px"}
-              fontWeight={"bold"}
+              color={"#6F6F6F"}
               fontFamily={"Nunito Sans, sans-serif"}
             >
-              NEWSLETTER{" "}
+              contactat@akkacreation.com
             </Typography>
-            <CustomLabel fontSize={"15px"}>
-              Join now for exclusive deals, special promos, and a better
-              shopping experience
-            </CustomLabel>
-            <TextField
-              variant="standard"
-              placeholder="Your email"
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton>
-                      <EmailOutlinedIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />{" "}
+            <CustomLabel fontSize={"15px"}> Phone: +91 97910 68220</CustomLabel>
+            <Box border={"1px solid gray"}></Box>
+            <Stack spacing={1} direction={"row"}>
+              <Link to="https://www.facebook.com/login.php/" target="_blank">
+                <FacebookIcon
+                  style={{
+                    color: "gray",
+                  }}
+                />
+              </Link>
+
+              <Link
+                to="https://www.instagram.com/akka_creation/"
+                target="_blank"
+              >
+                <InstagramIcon
+                  style={{
+                    color: "gray",
+                  }}
+                />
+              </Link>
+            </Stack>
           </Stack>
         </Stack>
       </Stack>

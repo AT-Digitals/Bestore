@@ -1,7 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
-import AboutConainer from "./AboutContainer/AboutContainer";
 import Banner from "./homepage-ba.jpg";
 import Card1 from "./home-card1.jpg";
 import Card2 from "./home-image3.png";
@@ -9,23 +8,24 @@ import Card3 from "./home-image2.png";
 import CartImage from "../../common-components/CartImage";
 import ProductsCard from "./HomepageProducts/ProductsCard";
 import SliderImages from "../../common-components/SliderImages";
+import Testimonials from "../../common-components/Testimonials";
 import routes from "../../routes/routes";
 
 const HoverImageText = [
   {
-    label: "Clothing",
+    label: "Fabric",
+    image: Card3,
+    link: routes.FABRIC_PRODUCT,
+  },
+  {
+    label: "Patterns",
     image: Card1,
     link: routes.CLOTHING_PRODUCT,
   },
   {
-    label: "Home Decor",
+    label: "Colours",
     image: Card2,
     link: routes.HOME_DECOR_PRODUCT,
-  },
-  {
-    label: "Fabric",
-    image: Card3,
-    link: routes.FABRIC_PRODUCT,
   },
 ];
 
@@ -178,7 +178,7 @@ export default function Homepage() {
           fontWeight={600}
           fontFamily={"Nunito Sans, sans-serif"}
         >
-          Products on sale
+          PRODUCTS ON SALE
         </Typography>
         <ProductsCard />
 
@@ -196,14 +196,13 @@ export default function Homepage() {
               fontFamily: "Nunito Sans, sans-serif",
             }}
           >
-            More products
+            More Products
           </Button>
           {/* </Link> */}
         </Box>
       </Box>
 
-      <AboutConainer />
-
+      <Testimonials />
       <SliderImages />
       <CartImage />
     </Box>

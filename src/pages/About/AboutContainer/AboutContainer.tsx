@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
-import About from "../about-home.avif";
+import About from "./about-home.avif";
 import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
 
