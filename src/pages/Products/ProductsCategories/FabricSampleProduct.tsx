@@ -63,7 +63,7 @@ export default function FabricSampleProducts() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
   const fabricProducts = ProductsImage.filter(
-    (item) => item.producttype === "Fabrics"
+    (item) => item.producttype === "Fabric"
   );
 
   const currentItems = fabricProducts.slice(indexOfFirstItem, indexOfLastItem);

@@ -1,19 +1,21 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 
 import { Link } from "react-router-dom";
-import ProductsImag2 from "../../../assets/ProductsImage/ak-p-2.webp";
-import ProductsImage1 from "../../../assets/ProductsImage/ak-p1.avif";
-import ProductsImage3 from "../../../assets/ProductsImage/fab1.jpg";
-import ProductsImage4 from "../../../assets/ProductsImage/fab2.jpg";
-import ProductsImage5 from "../../../assets/ProductsImage/home-decor1.webp";
 import ProductsImage from "../../Products/ProductsItems";
 
+interface Prosp {
+  relatedProduct: any;
+}
+export default function ProductsCard({ relatedProduct }: Prosp) {
+  const filteredProducts = ProductsImage.filter((item) =>
+    relatedProduct ? item.producttype === relatedProduct : true
+  );
+  const displayedProducts = filteredProducts.slice(0, 5);
 
-export default function ProductsCard() {
   return (
     <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
       <Grid padding={"0 20px"} ml={0} container spacing={2}>
-        {ProductsImage.map((item, index) => (
+        {displayedProducts.map((item, index) => (
           <Grid item xs={12} sm={6} md={2.4} key={index}>
             <Link
               style={{
@@ -60,33 +62,6 @@ export default function ProductsCard() {
                 >
                   {item.name}
                 </Typography>
-                <Box display={"flex"} gap={"0.5rem"} justifyContent={"center"}>
-                  {item.offerprice ? (
-                    <Typography
-                      fontSize={"18px"}
-                      color={"#EB3C70"}
-                      fontFamily={"Nunito Sans, sans-serif"}
-                      style={{
-                        opacity: 0.5,
-                        textDecoration: "line-through",
-                      }}
-                    >
-                      {" "}
-                      ₹{item.offerprice}
-                    </Typography>
-                  ) : null}
-                  <Typography
-                    fontSize={"18px"}
-                    fontWeight={"bold"}
-                    color={"#EB3C70"}
-                    fontFamily={"Nunito Sans, sans-serif"}
-                    style={{
-                      textDecoration: item.offerprice ? "underline" : undefined,
-                    }}
-                  >
-                    ₹{item.price}
-                  </Typography>
-                </Box>
               </Box>
             </Link>
           </Grid>

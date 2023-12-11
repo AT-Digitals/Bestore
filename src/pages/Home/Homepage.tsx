@@ -6,9 +6,11 @@ import CartImage from "../../common-components/CartImage";
 import ColoursImage from "./colours.avif";
 import FabricImage from "./fabric.d.jpg";
 import PatternsImage from "./patterns.jpg";
+import ProductsCard from "./HomepageProducts/ProductsCard";
 import SliderImages from "../../common-components/SliderImages";
 import Testimonials from "../../common-components/Testimonials";
 import routes from "../../routes/routes";
+import { useState } from "react";
 
 const HoverImageText = [
   {
@@ -33,6 +35,12 @@ export default function Homepage() {
   const handleMoreProducts = () => {
     navigate(routes.PRODUCTS);
     window.scroll(0, 0);
+  };
+
+  const [selectedLabel, setSelectedLabel] = useState(null);
+
+  const handleLabelClick = (label: any) => {
+    setSelectedLabel(label);
   };
 
   return (
@@ -102,6 +110,7 @@ export default function Homepage() {
       <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
         {HoverImageText.map((item, index) => (
           <Box
+            onClick={() => handleLabelClick(item.label)}
             sx={{
               position: "relative",
               width: "100%",
@@ -179,7 +188,7 @@ export default function Homepage() {
         >
           PRODUCTS ON SALE
         </Typography>
-        {/* <ProductsCard /> */}
+        <ProductsCard relatedProduct={selectedLabel} />
 
         <Box>
           {/* <Link to={routes.PRODUCTS}> */}
