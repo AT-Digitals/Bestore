@@ -204,20 +204,6 @@ export default function ProductsPage() {
                             >
                               {item.name}
                             </Typography>
-                            <Box
-                              mb={1}
-                              justifyContent={"center"}
-                              display={"flex"}
-                              gap={"0.5rem"}
-                            >
-                              <Typography
-                                fontSize={"18px"}
-                                color={"#EB3C70"}
-                                fontFamily={"Nunito Sans, sans-serif"}
-                              >
-                                ₹ {item.price}
-                              </Typography>
-                            </Box>
                           </Box>
                         </Box>
                       </Link>

@@ -86,16 +86,6 @@ export default function HomeDecorProducts({ currentItems }: ProductProps) {
                   >
                     {item.name}
                   </Typography>
-                  <Box
-                    mb={1}
-                    justifyContent={"center"}
-                    display={"flex"}
-                    gap={"0.5rem"}
-                  >
-                    <Typography fontSize={"18px"} color={"#EB3C70"}>
-                      ₹ {item.price}
-                    </Typography>
-                  </Box>
                 </Box>
               </Box>
             </Link>
