@@ -2,11 +2,10 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
 import Banner from "./homepage-ba.jpg";
-import Card1 from "./home-card1.jpg";
-import Card2 from "./home-image3.png";
-import Card3 from "./home-image2.png";
 import CartImage from "../../common-components/CartImage";
-import ProductsCard from "./HomepageProducts/ProductsCard";
+import ColoursImage from "./colours.avif";
+import FabricImage from "./fabric.d.jpg";
+import PatternsImage from "./patterns.jpg";
 import SliderImages from "../../common-components/SliderImages";
 import Testimonials from "../../common-components/Testimonials";
 import routes from "../../routes/routes";
@@ -14,17 +13,17 @@ import routes from "../../routes/routes";
 const HoverImageText = [
   {
     label: "Fabric",
-    image: Card3,
+    image: FabricImage,
     link: routes.FABRIC_PRODUCT,
   },
   {
     label: "Patterns",
-    image: Card1,
+    image: PatternsImage,
     link: routes.CLOTHING_PRODUCT,
   },
   {
     label: "Colours",
-    image: Card2,
+    image: ColoursImage,
     link: routes.HOME_DECOR_PRODUCT,
   },
 ];
