@@ -1,11 +1,4 @@
-import {
-  Box,
-  Divider,
-  IconButton,
-  Rating,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, IconButton, Rating, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";

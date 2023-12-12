@@ -2,7 +2,6 @@ import { Box, Breadcrumbs, Grid, Typography } from "@mui/material";
 
 import ProductViewPage from "../ProductDetailPage/ProductView";
 import ProductsImage from "../ProductsItems";
-import routes from "../../../routes/routes";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
