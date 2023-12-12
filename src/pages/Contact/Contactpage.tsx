@@ -36,7 +36,7 @@ export default function ContactPage() {
         >
           <Box
             margin={"0 auto"}
-            maxWidth={600}
+            maxWidth={"700px"}
             width={"100%"}
             sx={{
               backgroundColor: "white",
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 Address:
               </span>
               Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
-              Mahabalipuram, Tamil Nadu-603104
+              Mahabalipuram, Tamil Nadu-603104.
             </Typography>
             <Box margin={"30px 25px"}>
               <Typography fontSize={"15px"} color={"grey"}>
