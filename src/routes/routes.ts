@@ -8,8 +8,8 @@ const SIGN_UP = "/sign-up";
 const BLOG_ABOUT = "/blog-about";
 const PRODUCT_BAG = "/product-bag";
 const PRODUCT_SHOE = "/product-shoe";
-const CLOTHING_PRODUCT = `${PRODUCTS}/product-categories/clothing`;
-const HOME_DECOR_PRODUCT = `${PRODUCTS}/product-categories/home-decor`;
+const CLOTHING_PRODUCT = `${PRODUCTS}/product-categories/patterns`;
+const HOME_DECOR_PRODUCT = `${PRODUCTS}/product-categories/colours`;
 const FABRIC_PRODUCT = `${PRODUCTS}/product-categories/fabric`;
 
 const routes = {

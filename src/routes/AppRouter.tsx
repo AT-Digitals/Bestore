@@ -1,16 +1,17 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import AboutPage from "../pages/About/Aboutpage";
+import AllProductsPage from "../pages/Products/ProductsCategories/AllProductsPage";
 import AppLayout from "../common-components/AppLayout";
 import BlogAbout from "../pages/Blog/BlogAbout";
 import Blogpage from "../pages/Blog/Blogpage";
-import ClothingSample from "../pages/Products/ProductsCategories/ClothingSample";
+import ColoursProductsPage from "../pages/Products/ProductsCategories/ColoursProductsPage";
 import ContactPage from "../pages/Contact/Contactpage";
-import FabricSampleProducts from "../pages/Products/ProductsCategories/FabricSampleProduct";
-import HomeDecorSample from "../pages/Products/ProductsCategories/HomeDecorSampleProduct";
+import FabricProductsPAge from "../pages/Products/ProductsCategories/FabricProductsPage";
 import Homepage from "../pages/Home/Homepage";
+import PatternsProducts from "../pages/Products/ProductsCategories/PatternsProducts";
 import ProductDetailPage from "../pages/Products/ProductDetailPage/ProductDetails";
-import ProductsPage from "../pages/Products/Productspage";
+import ProductPageLayout from "../common-components/ProductPageLayout";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import routes from "./routes";
 
@@ -22,23 +23,28 @@ export default function AppRouter() {
           <Route path={routes.ROOT} element={<Homepage />} />
           <Route path={routes.HOME} element={<Homepage />} />
 
-          <Route path={routes.PRODUCTS} element={<ProductsPage />} />
           <Route path={routes.ABOUT} element={<AboutPage />} />
           <Route path={routes.CONTACT} element={<ContactPage />} />
           <Route path={routes.BLOG} element={<Blogpage />} />
           <Route path={routes.SIGN_UP} element={<SignUpNewsLetter />} />
           <Route path={routes.BLOG_ABOUT} element={<BlogAbout />} />
           <Route path="/products/:id" element={<ProductDetailPage />} />
+          <Route path={routes.PRODUCTS} element={<ProductPageLayout />}>
+            <Route path={routes.PRODUCTS} element={<AllProductsPage />} />
 
-          <Route path={routes.CLOTHING_PRODUCT} element={<ClothingSample />} />
-          <Route
-            path={routes.HOME_DECOR_PRODUCT}
-            element={<HomeDecorSample />}
-          />
-          <Route
-            path={routes.FABRIC_PRODUCT}
-            element={<FabricSampleProducts />}
-          />
+            <Route
+              path={routes.HOME_DECOR_PRODUCT}
+              element={<PatternsProducts />}
+            />
+            <Route
+              path={routes.FABRIC_PRODUCT}
+              element={<FabricProductsPAge />}
+            />
+            <Route
+              path={routes.CLOTHING_PRODUCT}
+              element={<ColoursProductsPage />}
+            />
+          </Route>
         </Route>
       </Routes>
     </Router>
