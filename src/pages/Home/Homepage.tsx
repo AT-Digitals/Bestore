@@ -71,15 +71,22 @@ export default function Homepage() {
           fontSize={{ xs: "44px", sm: "50px", md: "60px" }}
           lineHeight={1}
           fontWeight={"bold"}
-          color={"black"}
+          style={{
+            textShadow: "0px 0px 3px white",
+            color: "black",
+           }}
         >
           Shoping as <br /> you love
         </Typography>
         <Typography
-          color={"black"}
+         style={{
+          textShadow: "0px 0px 3px white",
+          color: "black",
+         }}
           display={{ xs: "none", sm: "none", md: "block", lg: "block" }}
           maxWidth={350}
           fontFamily={"Nunito Sans, sans-serif"}
+          fontWeight={"bold"}
         >
           Shop in style, savings guaranteed. Unleash fashion-forward finds.
           Explore now!{" "}
