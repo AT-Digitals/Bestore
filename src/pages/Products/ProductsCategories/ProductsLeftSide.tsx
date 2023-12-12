@@ -13,7 +13,16 @@ export default function ProductsLeftSide() {
 
   const WidthmenuItems = ["Select all", "42", "44", "54", "56", "58"];
   const CompositionmenuItems = ["Select all", "100%", "50 - 55%", "97- 3%"];
+  const [selectedWidth, setSelectedWidth] = useState("Select all");
+  const [selectedComposition, setSelectedComposition] = useState("Select all");
 
+  const handleWidthChange = (event: any) => {
+    setSelectedWidth(event.target.value);
+  };
+
+  const handleCompositionChange = (event: any) => {
+    setSelectedComposition(event.target.value);
+  };
   return (
     <div>
       <Box
@@ -95,6 +104,8 @@ export default function ProductsLeftSide() {
             }}
             fullWidth
             variant="outlined"
+            value={selectedWidth}
+            onChange={handleWidthChange}
           >
             {WidthmenuItems.map((item) => (
               <MenuItem
@@ -134,6 +145,8 @@ export default function ProductsLeftSide() {
             }}
             fullWidth
             variant="outlined"
+            value={selectedComposition}
+            onChange={handleCompositionChange}
           >
             {CompositionmenuItems.map((item) => (
               <MenuItem key={item} value={item}>

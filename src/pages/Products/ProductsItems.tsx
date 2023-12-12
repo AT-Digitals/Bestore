@@ -213,5 +213,21 @@ const ProductsImage = [
     offerprice: "",
     id: "24",
   },
+  {
+    name: "Handmade brown and multicolor printed cotton PATCHWORK sold by the meter in 100 cm wide",
+    Image: Fabaric1,
+    price: "1700.00",
+    producttype: "Fabric",
+    offerprice: "",
+    id: "25",
+  },
+  {
+    name: "Handmade brown and multicolor printed cotton PATCHWORK sold by the meter in 100 cm wide",
+    Image: Fabaric1,
+    price: "1700.00",
+    producttype: "Fabric",
+    offerprice: "",
+    id: "26",
+  },
 ];
 export default ProductsImage;

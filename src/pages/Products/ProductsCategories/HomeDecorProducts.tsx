@@ -1,8 +1,10 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Breadcrumbs, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import ProductViewPage from "../ProductDetailPage/ProductView";
 import ProductsImage from "../ProductsItems";
+import routes from "../../../routes/routes";
+import { useLocation } from "react-router-dom";
 
 interface ProductProps {
   currentItems: any;
@@ -17,6 +19,7 @@ interface Product {
 }
 export default function HomeDecorProducts({ currentItems }: ProductProps) {
   const [opacity, setOpacity] = useState(0);
+  const location = useLocation(); // Get the location object
 
   useEffect(() => {
     setOpacity(1.5);
@@ -35,6 +38,8 @@ export default function HomeDecorProducts({ currentItems }: ProductProps) {
           item.id !== selectedProduct.id
       )
     : [];
+  const breadcrumbs = [location.pathname.split("/").pop() || ""];
+
   return (
     <Box>
       {selectedProduct ? (
@@ -53,6 +58,28 @@ export default function HomeDecorProducts({ currentItems }: ProductProps) {
           }}
           mb={15}
         >
+          <Breadcrumbs
+            style={{
+              padding: "30px 30px 0",
+              color: "blue",
+            }}
+          >
+            <a
+              style={{
+                textDecoration: "none",
+                fontFamily: "Nunito Sans, sans-serif",
+                color: "blue",
+              }}
+              href={routes.PRODUCTS}
+            >
+              Products
+            </a>
+            {breadcrumbs.map((crumb, index) => (
+              <Typography fontFamily={"Nunito Sans, sans-serif"} key={index}>
+                {crumb}
+              </Typography>
+            ))}
+          </Breadcrumbs>{" "}
           <Grid marginLeft={"20px"} marginTop={"10px"} container>
             {currentItems.map((item: any, index: any) => (
               <Grid
@@ -63,14 +90,6 @@ export default function HomeDecorProducts({ currentItems }: ProductProps) {
                 sm={6}
                 md={4}
               >
-                {/* <Link
-                  to={`/products/${item.id}`}
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                    width: "100%",
-                  }}
-                > */}
                 <Box
                   onClick={() => handleProductClick(item)}
                   padding={"10px"}
@@ -106,6 +125,7 @@ export default function HomeDecorProducts({ currentItems }: ProductProps) {
                     alt="products"
                   />
                   <Box
+                    mt={3}
                     display={"flex"}
                     flexDirection={"column"}
                     justifyContent={"flex-start"}
@@ -120,7 +140,6 @@ export default function HomeDecorProducts({ currentItems }: ProductProps) {
                     </Typography>
                   </Box>
                 </Box>
-                {/* </Link> */}
               </Grid>
             ))}
           </Grid>

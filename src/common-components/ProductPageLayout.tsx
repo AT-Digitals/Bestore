@@ -1,17 +1,10 @@
-import { Box, BoxProps, Pagination, Stack, Typography } from "@mui/material";
+import { Box, BoxProps, Stack, Typography } from "@mui/material";
 
 import Layout from "./Layout";
 import { Outlet } from "react-router-dom";
-import ProductsImage from "../pages/Products/ProductsItems";
 import ProductsLeftSide from "../pages/Products/ProductsCategories/ProductsLeftSide";
-import { useState } from "react";
 
 export default function ProductPageLayout({ children, ...props }: BoxProps) {
-  const itemsPerPage = 10;
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const TotalItems = ProductsImage.length;
-
   return (
     <Layout {...props}>
       <Box>
@@ -57,14 +50,14 @@ export default function ProductPageLayout({ children, ...props }: BoxProps) {
                 </Box>
               </Box>
             </Stack>
-            <Box mt={3} display="flex" justifyContent="center">
+            {/* <Box mt={3} display="flex" justifyContent="center">
               <Pagination
                 count={Math.ceil(TotalItems / itemsPerPage)}
                 page={currentPage}
                 onChange={(event, value) => setCurrentPage(value)}
                 color="primary"
               />
-            </Box>
+            </Box> */}
           </Box>
         </Box>
       </Box>
