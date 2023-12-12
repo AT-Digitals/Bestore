@@ -1,5 +1,14 @@
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  SelectChangeEvent,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useEffect, useState } from "react";
+
+import CustomDropdown from "./CustomDropdown";
 
 const getPersonalDetails = {
   firstname: "",
@@ -7,10 +16,14 @@ const getPersonalDetails = {
   phone: "",
   products: "",
   yourMessage: "",
+  subcategory: "",
+  category: "",
+};
+type CategoriesWithSubcategories = {
+  [category: string]: string[];
 };
 
 export default function ContactForm() {
-
   const [personalDetails, setPersonalDetails] = useState(getPersonalDetails);
   const [firstnameError, setFirstNameError] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -135,6 +148,15 @@ export default function ContactForm() {
     setPersonalDetails({ ...personalDetails, [name]: value });
   };
 
+  // const handleProductChange = (event: SelectChangeEvent<string>) => {
+  //   setPersonalDetails({
+  //     ...personalDetails,
+  //     products: event.target.value,
+  //   });
+  //   // Additional logic for handling errors if needed
+  //   // setProductError(// your error condition);
+  // };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -181,17 +203,6 @@ export default function ContactForm() {
     setProductError(productError);
     setMessageError(messageError);
 
-
-    if (!firstNameError && !emailError && !phoneError && !productError && !messageError) {
-          setPersonalDetails({
-            firstname: "",
-            email: "",
-            phone: "",
-            products: "",
-            yourMessage: "", // Assuming it's a file input
-          });
-
-    // Check if all errors are empty (i.e., inputs are valid)
     if (
       !firstNameError &&
       !emailError &&
@@ -199,19 +210,63 @@ export default function ContactForm() {
       !productError &&
       !messageError
     ) {
-      const data = {
-        firstname: residentDetails.personalDetails.firstname,
-        email: residentDetails.personalDetails.email,
-        phone: residentDetails.personalDetails.phone,
-        passage: residentDetails.personalDetails.products,
-        selectedImage: residentDetails.personalDetails.yourMessage,
-      };
+      setPersonalDetails({
+        firstname: "",
+        email: "",
+        phone: "",
+        products: "",
+        yourMessage: "", // Assuming it's a file input
+        subcategory: "",
+        category: "",
+      });
 
-      console.log(data);
+      // Check if all errors are empty (i.e., inputs are valid)
+      if (
+        !firstNameError &&
+        !emailError &&
+        !phoneError &&
+        !productError &&
+        !messageError
+      ) {
+        const data = {
+          firstname: residentDetails.personalDetails.firstname,
+          email: residentDetails.personalDetails.email,
+          phone: residentDetails.personalDetails.phone,
+          passage: residentDetails.personalDetails.products,
+          selectedImage: residentDetails.personalDetails.yourMessage,
+        };
+
+        console.log(data);
+      }
     }
   };
-};
+  // const productTypes = Array.from(
+  //   new Set(ProductsImage.map((product) => product.producttype))
+  // );
 
+  const categoriesWithSubcategories: CategoriesWithSubcategories = {
+    Fabric: ["Subcategory1", "Subcategory2"],
+    Patterns: ["Subcategory3", "Subcategory4"],
+    Colours: ["Subcategory5", "Subcategory6"],
+  };
+  const handleCategoryChange = (event: SelectChangeEvent<string>) => {
+    const selectedCategory = event.target.value;
+    setPersonalDetails((prevPersonalDetails) => ({
+      ...prevPersonalDetails,
+      category: selectedCategory,
+      subcategory: "", // Reset subcategory when the category changes
+    }));
+  };
+
+  const handleSubcategoryChange = (event: SelectChangeEvent<string>) => {
+    setPersonalDetails({
+      ...personalDetails,
+      subcategory: event.target.value,
+    });
+  };
+
+  const selectedSubcategories =
+    categoriesWithSubcategories[personalDetails.category] || [];
 
   return (
     <>
@@ -226,219 +281,194 @@ export default function ContactForm() {
           backgroundColor: "white",
         }}
       >
-          <form onSubmit={handleSubmit}>
-        <Stack marginBottom={"25px"}>
-          <Stack direction={"row"} spacing={3} alignItems={"center"}>
-            <Typography
-              color={"black"}
-              fontWeight={"bold"}
-              fontFamily={"Nunito Sans, sans-serif"}
-              fontSize={"25px"}
+        <form onSubmit={handleSubmit}>
+          <Stack marginBottom={"25px"}>
+            <Stack direction={"row"} spacing={3} alignItems={"center"}>
+              <Typography
+                color={"black"}
+                fontWeight={"bold"}
+                fontFamily={"Nunito Sans, sans-serif"}
+                fontSize={"25px"}
+              >
+                SEND US AN EMAIL
+              </Typography>
+              <Box
+                width={"60%"}
+                borderTop={"1px solid rgba(0,0,0,0.105)"}
+              ></Box>
+            </Stack>
+
+            <Box
+              paddingTop={"40px"}
+              margin={"auto"}
+              width={"100%"}
+              maxWidth={"720px"}
             >
-              SEND US AN EMAIL
-            </Typography>
-            <Box width={"60%"} borderTop={"1px solid rgba(0,0,0,0.105)"}></Box>
-          </Stack>
-        
-          <Box
-            paddingTop={"40px"}
-            margin={"auto"}
-            width={"100%"}
-            maxWidth={"720px"}
-          >
-            <Typography
-              pb={1}
-              color={"black"}
-              fontSize={"17px"}
-              fontFamily={"Nunito Sans, sans-serif"}
-            >
-              Your Name
-            </Typography>
-            <TextField
-              sx={{
-                width: "100%",
-                maxWidth: "600px",
-                ".MuiFormHelperText-root": {
-                  color: "#d32f2f",
-                },
-                ".MuiInputBase-root": {
-                  borderRadius: "30px",
-                  height: "45px",
-                },
-              }}
-              required
-              id="standard-required"
-              variant="outlined"
-              error={personalDetails.firstname ? !!firstnameError : false}
+              <Typography
+                pb={1}
+                color={"black"}
+                fontSize={"17px"}
+                fontFamily={"Nunito Sans, sans-serif"}
+              >
+                Your Name
+              </Typography>
+              <TextField
+                sx={{
+                  width: "100%",
+                  maxWidth: "600px",
+                  ".MuiFormHelperText-root": {
+                    color: "#d32f2f",
+                  },
+                  ".MuiInputBase-root": {
+                    borderRadius: "30px",
+                    height: "45px",
+                  },
+                }}
+                required
+                id="standard-required"
+                variant="outlined"
+                error={personalDetails.firstname ? !!firstnameError : false}
                 helperText={firstnameError}
                 name="firstname"
                 value={personalDetails.firstname}
                 onChange={handleInputChange}
-            />
-          </Box>
-          <Box
-            paddingTop={"40px"}
-            margin={"auto"}
-            width={"100%"}
-            maxWidth={"720px"}
-          >
-            <Typography
-              pb={1}
-              color={"black"}
-              fontSize={"17px"}
-              fontFamily={"Nunito Sans, sans-serif"}
+              />
+            </Box>
+            <Box
+              paddingTop={"40px"}
+              margin={"auto"}
+              width={"100%"}
+              maxWidth={"720px"}
             >
-              Your Email
-            </Typography>
-            <TextField
-              sx={{
-                width: "100%",
-                maxWidth: "600px",
-                ".MuiFormHelperText-root": {
-                  color: "#d32f2f",
-                },
-                ".MuiInputBase-root": {
-                  borderRadius: "30px",
-                  height: "45px",
-                },
-              }}
-              required
-              id="standard-required"
-              variant="outlined"
-              error={personalDetails.email ? !!emailError : false}
+              <Typography
+                pb={1}
+                color={"black"}
+                fontSize={"17px"}
+                fontFamily={"Nunito Sans, sans-serif"}
+              >
+                Your Email
+              </Typography>
+              <TextField
+                sx={{
+                  width: "100%",
+                  maxWidth: "600px",
+                  ".MuiFormHelperText-root": {
+                    color: "#d32f2f",
+                  },
+                  ".MuiInputBase-root": {
+                    borderRadius: "30px",
+                    height: "45px",
+                  },
+                }}
+                required
+                id="standard-required"
+                variant="outlined"
+                error={personalDetails.email ? !!emailError : false}
                 helperText={emailError}
                 name="email"
                 value={personalDetails.email}
                 onChange={handleInputChange}
-            />
-          </Box>
-          <Box
-            paddingTop={"40px"}
-            margin={"auto"}
-            width={"100%"}
-            maxWidth={"720px"}
-          >
-            <Typography
-              pb={1}
-              color={"black"}
-              fontSize={"17px"}
-              fontFamily={"Nunito Sans, sans-serif"}
+              />
+            </Box>
+            <Box
+              paddingTop={"40px"}
+              margin={"auto"}
+              width={"100%"}
+              maxWidth={"720px"}
             >
-              Phone Number
-            </Typography>
-            <TextField
-              sx={{
-                width: "100%",
-                maxWidth: "600px",
-                ".MuiFormHelperText-root": {
-                  color: "#d32f2f",
-                },
-                ".MuiInputBase-root": {
-                  borderRadius: "30px",
-                  height: "45px",
-                },
-              }}
-              required
-              type="number"
-              id="standard-required"
-              variant="outlined"
-              error={personalDetails.phone ? !!phoneError : false}
-              helperText={phoneError}
-              name="phone"
-              value={personalDetails.phone}
-              onChange={handleInputChange}
+              <Typography
+                pb={1}
+                color={"black"}
+                fontSize={"17px"}
+                fontFamily={"Nunito Sans, sans-serif"}
+              >
+                Phone Number
+              </Typography>
+              <TextField
+                sx={{
+                  width: "100%",
+                  maxWidth: "600px",
+                  ".MuiFormHelperText-root": {
+                    color: "#d32f2f",
+                  },
+                  ".MuiInputBase-root": {
+                    borderRadius: "30px",
+                    height: "45px",
+                  },
+                }}
+                required
+                type="number"
+                id="standard-required"
+                variant="outlined"
+                error={personalDetails.phone ? !!phoneError : false}
+                helperText={phoneError}
+                name="phone"
+                value={personalDetails.phone}
+                onChange={handleInputChange}
+              />
+            </Box>
+            <CustomDropdown
+              personalDetails={personalDetails}
+              productError={productError}
+              handleCategoryChange={handleCategoryChange}
+              categoriesWithSubcategories={categoriesWithSubcategories}
+              handleSubcategoryChange={handleSubcategoryChange}
+              selectedSubcategories={selectedSubcategories}
             />
-          </Box>
-          <Box
-            paddingTop={"40px"}
-            margin={"auto"}
-            width={"100%"}
-            maxWidth={"720px"}
-          >
-            <Typography
-              pb={1}
-              color={"black"}
-              fontSize={"17px"}
-              fontFamily={"Nunito Sans, sans-serif"}
+            <Box
+              paddingTop={"30px"}
+              margin={"auto"}
+              width={"100%"}
+              maxWidth={"720px"}
             >
-              Products
-            </Typography>
-            <TextField
-              sx={{
-                width: "100%",
-                maxWidth: "600px",
-                ".MuiFormHelperText-root": {
-                  color: "#d32f2f",
-                },
-                ".MuiInputBase-root": {
-                  borderRadius: "30px",
-                  height: "45px",
-                },
+              <Typography
+                pb={1}
+                color={"black"}
+                fontSize={"17px"}
+                fontFamily={"Nunito Sans, sans-serif"}
+              >
+                Your Message
+              </Typography>
+              <TextField
+                sx={{
+                  width: "100%",
+                  maxWidth: "720px",
+                  ".MuiFormHelperText-root": {
+                    color: "#d32f2f",
+                  },
+                  ".MuiInputBase-root": {
+                    borderRadius: "30px",
+                    paddingBottom: "120px",
+                  },
+                }}
+                required
+                multiline
+                id="standard-required"
+                variant="outlined"
+                error={personalDetails.yourMessage ? !!messageError : false}
+                helperText={messageError}
+                name="yourMessage"
+                value={personalDetails.yourMessage}
+                onChange={handleInputChange}
+              />
+            </Box>
+          </Stack>
+          <Box marginBottom={"190px"}>
+            <Button
+              style={{
+                color: "#fff",
+                backgroundColor: "black",
+                borderRadius: "5px",
+                padding: "10px 30px",
+                textTransform: "none",
+                width: "200px",
+                fontFamily: "Nunito Sans, sans-serif",
               }}
-              required
-              id="standard-required"
-              variant="outlined"
-              error={personalDetails.products ? !!productError : false}
-              helperText={productError}
-              name="products"
-              value={personalDetails.products}
-              onChange={handleInputChange}
-            />
-          </Box>
-          <Box
-            paddingTop={"30px"}
-            margin={"auto"}
-            width={"100%"}
-            maxWidth={"720px"}
-          >
-            <Typography
-              pb={1}
-              color={"black"}
-              fontSize={"17px"}
-              fontFamily={"Nunito Sans, sans-serif"}
+              type="submit"
             >
-              Your Message
-            </Typography>
-            <TextField
-              sx={{
-                width: "100%",
-                maxWidth: "720px",
-                ".MuiFormHelperText-root": {
-                  color: "#d32f2f",
-                },
-                ".MuiInputBase-root": {
-                  borderRadius: "30px",
-                  paddingBottom: "120px",
-                },
-              }}
-              required
-              multiline
-              id="standard-required"
-              variant="outlined"
-              error={personalDetails.yourMessage ? !!messageError : false}
-              helperText={messageError}
-              name="yourMessage"
-              value={personalDetails.yourMessage}
-              onChange={handleInputChange}
-            />
+              Send the message
+            </Button>
           </Box>
-        
-        </Stack>
-        <Box marginBottom={"190px"}>
-          <Button
-            style={{
-              color: "#fff",
-              backgroundColor: "black",
-              borderRadius: "5px",
-              padding: "10px 30px",
-              textTransform: "none",
-              width: "200px",
-              fontFamily: "Nunito Sans, sans-serif",
-            }} type="submit"
-          >
-            Send the message
-          </Button>
-        </Box>
         </form>
       </Box>
     </>

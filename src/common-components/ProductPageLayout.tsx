@@ -20,7 +20,6 @@ export default function ProductPageLayout({ children, ...props }: BoxProps) {
           height={{ sm: undefined, md: 200 }}
           padding={{ sm: "40px 0 60px", md: "140px 0 60px" }}
           textAlign={"center"}
-          bgcolor={"purple"}
         >
           <Typography
             color={"white"}
@@ -51,14 +50,6 @@ export default function ProductPageLayout({ children, ...props }: BoxProps) {
                 </Box>
               </Box>
             </Stack>
-            {/* <Box mt={3} display="flex" justifyContent="center">
-              <Pagination
-                count={Math.ceil(TotalItems / itemsPerPage)}
-                page={currentPage}
-                onChange={(event, value) => setCurrentPage(value)}
-                color="primary"
-              />
-            </Box> */}
           </Box>
         </Box>
       </Box>

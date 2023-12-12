@@ -5,11 +5,11 @@ import CommonCategory from "./commonCategory";
 import { useState } from "react";
 
 export default function ProductsLeftSide() {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  // const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const handleToggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
-  };
+  // const handleToggleDropdown = () => {
+  //   setDropdownOpen(!isDropdownOpen);
+  // };
 
   const WidthmenuItems = ["Select all", "42", "44", "54", "56", "58"];
   const CompositionmenuItems = ["Select all", "100%", "50 - 55%", "97- 3%"];
@@ -58,7 +58,7 @@ export default function ProductsLeftSide() {
       <Box
         padding={2}
         style={{ cursor: "pointer" }}
-        onClick={handleToggleDropdown}
+        // onClick={handleToggleDropdown}
         display="flex"
         justifyContent="space-between"
       >
@@ -73,11 +73,11 @@ export default function ProductsLeftSide() {
       </Box>
 
       <>
-        {isDropdownOpen && (
-          <Box padding={"0 20px"}>
-            <CommonCategory />
-          </Box>
-        )}
+        {/* {isDropdownOpen && ( */}
+        <Box padding={"0 20px"}>
+          <CommonCategory />
+        </Box>
+        {/* )} */}
         <Box
           pt={2}
           margin={"0 auto"}

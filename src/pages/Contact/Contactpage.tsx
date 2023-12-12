@@ -24,6 +24,12 @@ export default function ContactPage() {
           Reach Us
         </Typography>
       </Box>
+
+      <Box padding={" 0 60px"}>
+        <Typography paddingTop={" 60px"} fontFamily={"Nunito Sans, sans-serif"}>
+          Working Hours <br /> Monday – Saturday : 9.00 AM – 11.00 PM
+        </Typography>
+      </Box>
       <Stack direction={"row"}>
         <ContactForm />
         <Box
@@ -32,7 +38,6 @@ export default function ContactPage() {
           margin={"0 auto"}
           display={"flex"}
           marginBottom={"40px"}
-          // marginRight={"88px"}
         >
           <Box
             margin={"0 auto"}
