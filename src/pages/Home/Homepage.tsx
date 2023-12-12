@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
-import Banner from "./homepage-ba.jpg";
+import Banner from "./Cotton-fabric-Banner.jpg";
 import CartImage from "../../common-components/CartImage";
 import ColoursImage from "./colours.avif";
 import FabricImage from "./fabric.d.jpg";
