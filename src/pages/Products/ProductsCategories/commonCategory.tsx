@@ -109,7 +109,7 @@ export default function CommonCategory() {
               }}
             >
               {category.name}
-              {subcategoriesVisible ? (
+              {selectedCategory === category.link && subcategoriesVisible ? (
                 <RemoveCircleOutlinedIcon />
               ) : (
                 <AddCircleOutlineIcon />

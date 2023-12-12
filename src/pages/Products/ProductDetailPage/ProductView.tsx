@@ -94,14 +94,14 @@ export default function ProductViewPage({
           <Stack
             paddingTop={3}
             mt={10}
-            spacing={4}
+            spacing={7}
             direction={"row"}
-            width={"70%"}
+            width={"80%"}
             margin={"0 auto"}
           >
             {limitedRelatedProducts.map((relatedProduct, index) => (
               <Box
-                height={300}
+                height={340}
                 width={330}
                 mb={2}
                 mt={2}
