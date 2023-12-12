@@ -94,7 +94,7 @@ export default function Testimonials() {
     );
   };
   return (
-    <Box bgcolor={"whitesmoke"}>
+    <Box bgcolor={"whitesmoke"} paddingBottom={"30px"}>
       <TestimonialStack
         direction={{ xs: "column", sm: "row", md: "row" }}
         marginTop={"50px"}
