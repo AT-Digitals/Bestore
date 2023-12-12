@@ -35,7 +35,9 @@ export default function CommonCategory() {
   }, [location]);
 
   const toggleSubcategories = () => {
-    setSubcategoriesVisible(!subcategoriesVisible);
+    setSubcategoriesVisible(
+      (prevSubcategoriesVisible) => !prevSubcategoriesVisible
+    );
   };
 
   const renderSubcategories = (subcategories: any) => {

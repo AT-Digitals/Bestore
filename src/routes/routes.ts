@@ -1,16 +1,16 @@
 const ROOT = "/";
 const HOME = "/home-page";
 const ABOUT = "/about-page";
-const PRODUCTS = "/products-page";
+const PRODUCTS = "/Products";
 const CONTACT = "/contact-page";
 const BLOG = "/blog-page";
 const SIGN_UP = "/sign-up";
 const BLOG_ABOUT = "/blog-about";
 const PRODUCT_BAG = "/product-bag";
 const PRODUCT_SHOE = "/product-shoe";
-const CLOTHING_PRODUCT = `${PRODUCTS}/product-categories/patterns`;
-const HOME_DECOR_PRODUCT = `${PRODUCTS}/product-categories/colours`;
-const FABRIC_PRODUCT = `${PRODUCTS}/product-categories/fabric`;
+const CLOTHING_PRODUCT = `${PRODUCTS}/Products-categories/Patterns`;
+const HOME_DECOR_PRODUCT = `${PRODUCTS}/Products-categories/Colours`;
+const FABRIC_PRODUCT = `${PRODUCTS}/Products-categories/Fabric`;
 
 const routes = {
   ROOT,
