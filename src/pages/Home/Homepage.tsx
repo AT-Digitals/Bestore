@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
-import Banner from "./Cotton-fabric-Banner.jpg";
+import Banner from "./Cotton-fabric1-Banner.jpg";
 import CartImage from "../../common-components/CartImage";
 import ColoursImage from "./colours.avif";
 import FabricImage from "./fabric.d.jpg";
@@ -74,15 +74,15 @@ export default function Homepage() {
           style={{
             textShadow: "0px 0px 3px white",
             color: "black",
-           }}
+          }}
         >
           Shoping as <br /> you love
         </Typography>
         <Typography
-         style={{
-          textShadow: "0px 0px 3px white",
-          color: "black",
-         }}
+          style={{
+            textShadow: "0px 0px 3px white",
+            color: "black",
+          }}
           display={{ xs: "none", sm: "none", md: "block", lg: "block" }}
           maxWidth={350}
           fontFamily={"Nunito Sans, sans-serif"}
