@@ -1,25 +1,28 @@
-import { Box, Stack, Typography } from "@mui/material";
-
+import { Box, IconButton, Rating, Stack, Typography } from "@mui/material";
+import StarIcon from '@mui/icons-material/Star';
 import image from "../assets/store2-about-bg1.jpg";
 import image1 from "../assets/store2-about-bg2.jpg";
+import image2 from "../assets/1692816605528.jpg";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
+import React, { useState } from "react";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const testimonialAnimation = keyframes`
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-`;
+// const testimonialAnimation = keyframes`
+//   0% {
+//     transform: translateX(100%);
+//   }
+//   100% {
+//     transform: translateX(-100%);
+//   }
+// `;
 
 const TestimonialBox = styled(Box)`
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.5s ease;
-  animation: ${testimonialAnimation} 10s linear infinite;
-  margin: 0 10px; /* Adjust the margin as needed */
+  
 `;
 
 const TestimonialStack = styled(Stack)`
@@ -32,35 +35,91 @@ const TesttmoalProps = [
   {
     image: image,
     discription:
-      "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat",
+      "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     image: image1,
     discription:
-      "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat",
+      "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    image: image,
+    image: image2,
     discription:
-      "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat",
+      "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, they don't just come back, they don't simply recommend you",
   },
+  
 ];
+
+const labels: { [index: string]: string } = {
+  0.5: 'Useless',
+  1: 'Useless+',
+  1.5: 'Poor',
+  2: 'Poor+',
+  2.5: 'Ok',
+  3: 'Ok+',
+  3.5: 'Good',
+  4: 'Good+',
+  4.5: 'Excellent',
+  5: 'Excellent+',
+};
+
+// function getLabelText(value: number) {
+//   return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
+// }
 export default function Testimonials() {
+  const [value, setValue] = React.useState<number | null>(5);
+  const [hover, setHover] = React.useState(-1);
+  const [visibleIndex, setVisibleIndex] = useState(0);
+
+  const handleNextClick = () => {
+    // Increment the visibleIndex to show the next two testimonials
+    setVisibleIndex((prevIndex) => (prevIndex + 2 < TesttmoalProps.length ? prevIndex + 2 : 0));
+  };
+
+  const handlePrevClick = () => {
+    // Decrement the visibleIndex to show the previous two testimonials
+    setVisibleIndex((prevIndex) => (prevIndex - 2 >= 0 ? prevIndex - 2 : TesttmoalProps.length - 2));
+  };
   return (
+    <>
     <TestimonialStack
       direction={{ xs: "column", sm: "row", md: "row" }}
       marginTop={"50px"}
-      spacing={3}
       justifyContent={"center"}
     >
-      {TesttmoalProps.map((item, index) => (
+      <Box display={"flex"} flexDirection={"column"} gap={"20px"}>
+       <Typography paddingTop={"110px"} fontWeight={"600"} paddingRight={"264px"} color={"#e53637"} fontSize={"25px"}  fontFamily={"Nunito Sans, sans-serif"}>Happy Clients</Typography>
+      <Typography color={"black"} fontSize={"20px"} fontWeight={"600"} fontFamily={"Nunito Sans, sans-serif"}>We Care About Our Customers<Typography color={"black"} fontSize={"20px"} fontWeight={"600"} fontFamily={"Nunito Sans, sans-serif"}>Experience Too</Typography></Typography>
+      <Stack direction={"row"} spacing={1}>
+      <IconButton onClick={handlePrevClick} style={{
+        border: "1px solid #e53637",
+        backgroundColor: "#e53637"
+      }}>
+      <ArrowBackIcon style={{
+        color: "white"
+      }} />
+      </IconButton>
+      <IconButton onClick={handleNextClick} style={{
+        border: "1px solid #e53637",
+        backgroundColor: "#e53637"
+      }}>
+      <ArrowForwardIcon style={{
+        color: "white"
+      }} />
+      </IconButton>
+      </Stack>
+      </Box>
+      {TesttmoalProps.slice(visibleIndex, visibleIndex + 2).map((item, index) => (
         <TestimonialBox
-          style={{ transitionDelay: `${index * 0.1}s` }}
+          // style={{ transitionDelay: `${index * 0.1}s` }}
           maxWidth={400}
+          key={index}
+          padding={"10px"}
           gap={"3rem"}
           textAlign={"center"}
+          // style={{ display: index === visibleIndex ? 'block' : 'none' }}
         >
-          <Box width={"100%"}>
+          <Box width={"76%"}>
             <img
               src={item.image}
               style={{
@@ -73,18 +132,20 @@ export default function Testimonials() {
             />
           </Box>
           <Box
-            width={"100%"}
+            width={"76%"}
+          
             sx={{
-              backgroundColor: "#e5e4e4",
+              backgroundColor: "white",
               marginTop: "-46px",
               paddingBottom: "30px",
-              boxShadow: "0px 0px 7px 0px",
+              boxShadow: "0px 0px 7px 0px #c5b8b8",
+              borderRadius: "20px",
+              border: "2px solid white",
             }}
           >
             <Typography
               color={"#e53637"}
-              paddingTop={"40px"}
-              fontSize={"35px"}
+              fontSize={"76px"}
               textAlign={"center"}
             >
               ,,
@@ -93,13 +154,37 @@ export default function Testimonials() {
               fontFamily={"Nunito Sans, sans-serif"}
               padding={"0px 15px"}
               color={"black"}
-              fontSize={"15px"}
+              fontSize={"20px"}
             >
               {item.discription}
             </Typography>
+            <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: "center",
+        marginTop: "20px"
+      }}
+    >
+      <Rating
+        name="hover-feedback"
+        value={value}
+        precision={3}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        onChangeActive={(event, newHover) => {
+          setHover(newHover);
+        }}
+        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+      />
+      {/* {value !== null && (
+        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+      )} */}
+    </Box>
             <Typography
               marginTop={"20px"}
-              fontWeight={"500"}
+              fontWeight={"600"}
               textAlign={"center"}
               fontSize={"26px"}
               color={"#e53637"}
@@ -111,5 +196,6 @@ export default function Testimonials() {
         </TestimonialBox>
       ))}
     </TestimonialStack>
+    </>
   );
 }

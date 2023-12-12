@@ -32,20 +32,7 @@ export default function AboutPage() {
         <AboutConainer />
       </Box>
 
-      <Stack padding={"0 50px"} marginTop={"50px"} alignItems={"center"}>
-        <Typography>
-          <Typography
-            fontFamily={"Nunito Sans, sans-serif"}
-            textAlign={"center"}
-            color={"red"}
-          >
-            PARTNER
-          </Typography>
-          <Typography fontSize={"30px"} fontFamily={"Nunito Sans, sans-serif"}>
-            {" "}
-            Happy Clients
-          </Typography>
-        </Typography>
+      <Stack width={"100%"} padding={"0 50px"} marginTop={"50px"} alignItems={"center"}>
         <Testimonials />
       </Stack>
 
