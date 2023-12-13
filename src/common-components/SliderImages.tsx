@@ -1,150 +1,59 @@
-import { Box, IconButton, Stack } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import image1 from "../common-components/Mens_Fabric-min.jpg"
+import image2 from "../assets/ProductsImage/il_794xN.5185197427_16jr.avif"
+import image3 from "../assets/ProductsImage/fab2.jpg"
 
-import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import CloseIcon from "@mui/icons-material/Close";
-import Slide1 from "../assets/SlideImage/il_794xN.4374480045_9aqm.avif";
-import Slide2 from "../assets/SlideImage/il_794xN.3664512244_9pkp.webp";
-import Slide3 from "../assets/SlideImage/il_794xN.4487385691_blk9.webp";
-import Slide4 from "../assets/SlideImage/il_794xN.4445830523_h89z.webp";
-import Slide5 from "../assets/SlideImage/il_794xN.5458415738_evj9.jpg";
-import Slide6 from "../assets/SlideImage/il_794xN.2852836687_dm0j.webp";
-import { useState } from "react";
-
-const SlideImage = [
-  {
-    image: Slide1,
-  },
-  {
-    image: Slide2,
-  },
-  {
-    image: Slide3,
-  },
-  {
-    image: Slide4,
-  },
-  {
-    image: Slide5,
-  },
-  {
-    image: Slide6,
-  },
-];
-const SlideImage1 = [Slide1, Slide2, Slide3, Slide4, Slide5, Slide6];
 
 export default function SliderImages() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const openModal = (index: any) => {
-    setCurrentImageIndex(index);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleNext = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === SlideImage.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? SlideImage.length - 1 : prevIndex - 1
-    );
-  };
   return (
-    <Stack
-      width={"100%"}
-      mt={"5rem"}
-      direction={{ xs: "column", sm: "row", md: "row" }}
-    >
-      {SlideImage.map((image, index) => (
-        <Box
-          onClick={() => openModal(index)}
-          width={"100%"}
-          height={"320px"}
-          key={index}
-          overflow={"hidden"}
-        >
-          <img
-            style={{
-              width: "100%",
-              transition: "transform 0.5s ease",
-              height: "100%",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.1)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-            src={image.image}
-            alt="slide"
-          />
-        </Box>
-      ))}
-
-      {isModalOpen && (
-        <Box
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 9999,
-            cursor: "pointer",
-          }}
-        >
-          <IconButton
-            onClick={handlePrev}
-            style={{ position: "absolute", left: 16, top: "50%" }}
-          >
-            <ArrowLeftIcon style={{ color: "#fff", fontSize: "70px" }} />
-          </IconButton>
-          <IconButton
-            onClick={handleNext}
-            style={{ position: "absolute", right: 16, top: "50%" }}
-          >
-            <ArrowRightIcon style={{ color: "#fff", fontSize: "70px" }} />
-          </IconButton>
-          <Stack direction={"column"}>
-            <Box display={"flex"} justifyContent={"flex-end"}>
-              <IconButton onClick={closeModal} style={{ top: 5, right: 0 }}>
-                <CloseIcon style={{ color: "white" }} />
-              </IconButton>
-            </Box>
-            <img
-              src={SlideImage1[currentImageIndex]}
-              alt={`slide-${currentImageIndex}`}
-              style={{
-                width: "100%",
-                maxHeight: "80vh",
-                objectFit: "contain",
-              }}
-            />
-            <span
-              style={{
-                color: "white",
-                display: "flex",
-                justifyContent: "flex-end",
-                fontSize: "12px",
-              }}
-            >
-              {currentImageIndex + 1}/ 6
-            </span>
-          </Stack>
-        </Box>
-      )}
-    </Stack>
+   <>
+   <Box bgcolor={"#f2d7b3"} paddingTop={"65px"} paddingBottom={"60px"}>
+<Box margin={"0 auto"} boxShadow={"0px 0px 10px 0px"} height={"850px"} maxWidth={"1240px"} width={"100%"} bgcolor={"#f4dcbd"}>
+<Stack mb={9} direction={"row"} spacing={3} alignItems={"center"}>
+<Box style={{
+      marginTop: "54px" ,
+      marginLeft: "45px",
+}}  width={"35%"} borderTop={"1px solid black"}></Box>
+<Typography style={{
+   textShadow: "0px 0px 3px #494545",
+   color: "black",
+}} textAlign={"center"} paddingTop={"60px"} fontWeight={"bold"} fontSize={"35px"}  fontFamily={"Nunito Sans, sans-serif"}>Fabric Products</Typography>
+<Box style={{
+      marginTop: "59px" ,
+      marginLeft: "30px",
+}}  width={"35%"} borderTop={"1px solid black"}></Box>
+</Stack>
+<Box  margin={"0 auto"} width={"100%"} height={"360px"} maxWidth={"500px"} boxShadow={"0px 0px 10px 0px"} bgcolor={"#f1dfc9"}>
+<img style={{
+  boxShadow: "0px 0px 10px 0px saddlebrown",
+  margin: "30px"
+}} src={image1} height={"300px"} alt="image" width={"440px"} />
+<Box marginLeft={"-56px"} marginTop={"-140px"} position={"absolute"} width={"100%"} maxWidth={"150px"} height={"250px"} boxShadow={"0px 0px 10px 0px"} bgcolor={"#ede3d6"}>
+<img src={image2} style={{
+  margin: "15px",
+  boxShadow: "0px 0px 10px 0px #1e1c1b",
+}} width={"120px"} height={"220px"} alt="image2" />
+</Box>
+<Box marginLeft={"400px"} marginTop={"-140px"} position={"absolute"} width={"100%"} maxWidth={"150px"} height={"250px"} boxShadow={"0px 0px 10px 0px"} bgcolor={"#ede3d6"}>
+<img src={image3} style={{
+  margin: "15px",
+  boxShadow: "0px 0px 10px 0px #1e1c1b",
+}} width={"120px"} height={"220px"} alt="image2" />
+</Box>
+</Box>
+<Box display={"flex"} justifyContent={"center"}>
+<Button style={{
+  width: "200px",
+  height: "50px",
+  backgroundColor: "white",
+  color: "black",
+  marginTop: "200px",
+  boxShadow: "0px 0px 10px 0px black",
+  fontWeight: "bold"
+}}>View More Products</Button>
+</Box>
+</Box>
+</Box>
+   </>
   );
 }
