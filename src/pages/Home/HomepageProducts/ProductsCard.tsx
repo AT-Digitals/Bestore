@@ -26,6 +26,7 @@ export default function ProductsCard({ relatedProduct }: Prosp) {
               to={""}
             >
               <Box
+                borderRadius={"20px"}
                 height={"100%"}
                 mb={2}
                 key={index}
