@@ -48,7 +48,7 @@ export default function ProductsCard({ relatedProduct }: Prosp) {
                 <img
                   style={{
                     height: 260,
-                    maxWidth: 260,
+                    maxWidth: 280,
                     width: "100%",
                   }}
                   src={item.Image}
