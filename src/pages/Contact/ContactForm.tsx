@@ -245,9 +245,9 @@ export default function ContactForm() {
   // );
 
   const categoriesWithSubcategories: CategoriesWithSubcategories = {
-    Fabric: ["Subcategory1", "Subcategory2"],
-    Patterns: ["Subcategory3", "Subcategory4"],
-    Colours: ["Subcategory5", "Subcategory6"],
+    Fabric: ["Cotton", "Silk", "Polyster"],
+    Patterns: ["Women", "Men's", "Kids"],
+    Colours: ["Black", "Red", "White"],
   };
   const handleCategoryChange = (event: SelectChangeEvent<string>) => {
     const selectedCategory = event.target.value;

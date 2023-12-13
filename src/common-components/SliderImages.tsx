@@ -1,59 +1,146 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
-import image1 from "../common-components/mizzen_main_4.webp"
-import image2 from "../assets/ProductsImage/il_794xN.5185197427_16jr.avif"
-import image3 from "../assets/ProductsImage/fab2.jpg"
+import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
 
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ProductsImage from "../pages/Products/ProductsItems";
+import styled from "@emotion/styled";
+
+const TestimonialBox = styled(Box)`
+  overflow: visible;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+`;
+
+const TestimonialStack = styled(Stack)`
+  width: 90%;
+  overflow: hidden;
+`;
 
 export default function SliderImages() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Display the first two products initially
+    setCurrentIndex(0);
+
+    const interval = setInterval(() => {
+      // Increment the index to show the next product
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % ProductsImage.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-   <>
-   <Box bgcolor={"#f2d7b3"} paddingTop={"65px"} paddingBottom={"60px"}>
-<Box margin={"0 auto"} boxShadow={"0px 0px 10px 0px"} height={"850px"} paddingBottom={"40px"} maxWidth={"1240px"} width={"100%"} bgcolor={"#f4dcbd"}>
-<Stack mb={9} direction={"row"} spacing={3} alignItems={"center"}>
-<Box style={{
-      marginTop: "54px" ,
-      marginLeft: "45px",
-}}  width={"35%"} borderTop={"1px solid black"}></Box>
-<Typography style={{
-   textShadow: "0px 0px 3px #494545",
-   color: "black",
-}} textAlign={"center"} paddingTop={"60px"} fontWeight={"bold"} fontSize={"35px"}  fontFamily={"Nunito Sans, sans-serif"}>Fabric Products</Typography>
-<Box style={{
-      marginTop: "59px" ,
-      marginLeft: "30px",
-}}  width={"35%"} borderTop={"1px solid black"}></Box>
-</Stack>
-<Box  margin={"0 auto"} width={"100%"} height={"410px"} maxWidth={"700px"} boxShadow={"0px 0px 10px 0px #f7ead9"} bgcolor={"#e7d7c4"}>
-<img style={{
-  boxShadow: "0px 0px 10px 0px saddlebrown",
-  margin: "30px"
-}} src={image1} height={"350px"} alt="image" width={"640px"} />
-<Box marginLeft={"-56px"} marginTop={"-140px"} position={"absolute"} width={"100%"} maxWidth={"120px"} height={"200px"} bgcolor={"#ede3d6"}>
-<img src={image2} style={{
-  margin: "15px",
-  boxShadow: "0px 0px 10px 0px rgb(160 152 147)",
-}} width={"90px"} height={"170px"} alt="image2" />
-</Box>
-<Box marginLeft={"620px"} marginTop={"-140px"} position={"absolute"} width={"100%"} maxWidth={"190px"} height={"270px"} bgcolor={"#ede3d6"}>
-<img src={image3} style={{
-  margin: "15px",
-  boxShadow: "0px 0px 10px 0px rgb(160 152 147)",
-}} width={"160px"} height={"240px"} alt="image2" />
-</Box>
-</Box>
-<Box marginBottom={"30px"} display={"flex"} justifyContent={"center"}>
-<Button style={{
-  width: "200px",
-  height: "50px",
-  backgroundColor: "white",
-  color: "black",
-  marginTop: "200px",
-  boxShadow: "0px 0px 10px 0px black",
-  fontWeight: "bold",
-}}>View More Products</Button>
-</Box>
-</Box>
-</Box>
-   </>
+    <Stack
+      direction={"row"}
+      spacing={10}
+      display={"flex"}
+      flexDirection={"row"}
+      bgcolor={"whitesmoke"}
+      mb={"50px"}
+    >
+      <TestimonialStack
+        maxWidth={800}
+        direction={{ xs: "column", sm: "row", md: "row" }}
+        marginTop={"50px"}
+        spacing={4}
+        justifyContent={"center"}
+      >
+        {ProductsImage.map((item, index) => (
+          <TestimonialBox
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            maxWidth={400}
+            minHeight={500}
+            key={index}
+            padding={"10px"}
+            gap={"3rem"}
+            textAlign={"center"}
+          >
+            <Box width={"76%"}>
+              <img
+                src={item.Image}
+                style={{
+                  border: "6px solid white",
+                }}
+                width={"200px"}
+                height={"200px"}
+                alt="aboutimage"
+              />
+            </Box>
+            <Box
+              height={"40%"}
+              boxShadow={"0px 0px 10px 0px"}
+              width={"100%"}
+              sx={{
+                backgroundColor: "white",
+                marginTop: "-46px",
+                paddingBottom: "30px",
+                boxShadow: "0px 0px 7px 0px #c5b8b8",
+                borderRadius: "20px",
+                border: "2px solid white",
+              }}
+            >
+              <br />
+              <br />
+              <br />
+              <br />
+
+              <Typography
+                fontFamily={"Nunito Sans, sans-serif"}
+                padding={"0px 15px"}
+                color={"black"}
+                fontSize={"15px"}
+              >
+                {item.name}
+              </Typography>
+            </Box>
+          </TestimonialBox>
+        ))}
+      </TestimonialStack>
+      <Box
+        maxWidth={400}
+        width="100%"
+        display={"flex"}
+        flexDirection={"column"}
+        gap={"20px"}
+        padding={"10px"}
+      >
+        <Typography
+          paddingTop={"110px"}
+          fontWeight={"600"}
+          color={"#e53637"}
+          fontSize={"25px"}
+          fontFamily={"Nunito Sans, sans-serif"}
+        >
+          Our Readymade Products
+        </Typography>
+        <Typography
+          color={"black"}
+          fontSize={"20px"}
+          fontWeight={"600"}
+          fontFamily={"Nunito Sans, sans-serif"}
+        >
+          Style's is Your's
+        </Typography>
+        <Stack direction={"row"} spacing={1}>
+          <IconButton>
+            <ArrowBackIcon />
+          </IconButton>
+          <IconButton>
+            <ArrowForwardIcon />
+          </IconButton>
+        </Stack>
+        <Button
+          style={{
+            background: "black",
+            color: "white",
+          }}
+        >
+          Click to show more
+        </Button>
+      </Box>
+    </Stack>
   );
 }
