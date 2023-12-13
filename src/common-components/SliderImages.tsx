@@ -1,8 +1,6 @@
-import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ProductsImage from "../pages/Products/ProductsItems";
 import styled from "@emotion/styled";
 
@@ -35,35 +33,40 @@ export default function SliderImages() {
 
   return (
     <Stack
+      paddingRight={"40px"}
       direction={"row"}
       spacing={10}
       display={"flex"}
       flexDirection={"row"}
-      bgcolor={"whitesmoke"}
+      bgcolor={"white"}
       mb={"50px"}
     >
       <TestimonialStack
-        maxWidth={800}
+        maxWidth={1000}
         direction={{ xs: "column", sm: "row", md: "row" }}
         marginTop={"50px"}
+        padding={"30px"}
         spacing={4}
         justifyContent={"center"}
       >
-        {ProductsImage.slice(0, 2).map((item, index) => (
+        {ProductsImage.slice(0, 3).map((item, index) => (
           <TestimonialBox
-          // style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            style={{
+              transform: `scale(${index === 1 ? 1.2 : 1})`, // Apply zoom effect to the center image box
+            }}
             maxWidth={400}
             minHeight={500}
             key={index}
-            padding={"10px"}
+            padding={"30px"}
             gap={"3rem"}
             textAlign={"center"}
           >
-            <Box width={"76%"}>
+            <Box>
               <img
                 src={item.Image}
                 style={{
                   border: "6px solid white",
+                  borderRadius: "20px",
                 }}
                 width={"200px"}
                 height={"200px"}
@@ -71,10 +74,9 @@ export default function SliderImages() {
               />
             </Box>
             <Box
-              height={"40%"}
               boxShadow={"0px 0px 10px 0px"}
               width={"100%"}
-              maxWidth={"208px"}
+              maxWidth={index === 1 ? "230px" : "230px"}
               sx={{
                 backgroundColor: "white",
                 marginTop: "-46px",
@@ -97,7 +99,21 @@ export default function SliderImages() {
               >
                 {item.name}
               </Typography>
+              <Typography
+                fontFamily={"Nunito Sans, sans-serif"}
+                padding={"0px 15px"}
+                color={"red"}
+                fontSize={"15px"}
+              >
+                Rs. {item.price}
+              </Typography>
             </Box>
+
+            <Box
+              style={{
+                boxShadow: index === 1 ? "0px 20px 20px 6px" : "none",
+              }}
+            ></Box>
           </TestimonialBox>
         ))}
       </TestimonialStack>
@@ -120,16 +136,28 @@ export default function SliderImages() {
         >
           Our Readymade Products
         </Typography>
-        {isHovered && (
+        <Typography
+          fontWeight={"600"}
+          color={"black"}
+          fontSize={"15px"}
+          fontFamily={"Nunito Sans, sans-serif"}
+        >
+          Style encompasses personal expression, reflecting taste in aesthetics,
+          fashion, and design, conveying individuality through choices in
+          appearance and presentation.
+        </Typography>
+
         <Button
           style={{
             background: "black",
             color: "white",
+            opacity: isHovered ? 1 : 0, // Set initial opacity to 0
+            transition: "opacity 0.5s ease", // Apply transition to opacity
+            textTransform: "none",
           }}
         >
           Click to show more
         </Button>
-        )}
       </Box>
     </Stack>
   );
