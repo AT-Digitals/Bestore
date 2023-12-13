@@ -19,6 +19,7 @@ const TestimonialStack = styled(Stack)`
 
 export default function SliderImages() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     // Display the first two products initially
@@ -26,7 +27,7 @@ export default function SliderImages() {
 
     const interval = setInterval(() => {
       // Increment the index to show the next product
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % ProductsImage.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 2) % ProductsImage.length);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -48,9 +49,9 @@ export default function SliderImages() {
         spacing={4}
         justifyContent={"center"}
       >
-        {ProductsImage.map((item, index) => (
+        {ProductsImage.slice(0, 2).map((item, index) => (
           <TestimonialBox
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          // style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             maxWidth={400}
             minHeight={500}
             key={index}
@@ -73,6 +74,7 @@ export default function SliderImages() {
               height={"40%"}
               boxShadow={"0px 0px 10px 0px"}
               width={"100%"}
+              maxWidth={"208px"}
               sx={{
                 backgroundColor: "white",
                 marginTop: "-46px",
@@ -106,6 +108,8 @@ export default function SliderImages() {
         flexDirection={"column"}
         gap={"20px"}
         padding={"10px"}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         <Typography
           paddingTop={"110px"}
@@ -116,22 +120,7 @@ export default function SliderImages() {
         >
           Our Readymade Products
         </Typography>
-        <Typography
-          color={"black"}
-          fontSize={"20px"}
-          fontWeight={"600"}
-          fontFamily={"Nunito Sans, sans-serif"}
-        >
-          Style's is Your's
-        </Typography>
-        <Stack direction={"row"} spacing={1}>
-          <IconButton>
-            <ArrowBackIcon />
-          </IconButton>
-          <IconButton>
-            <ArrowForwardIcon />
-          </IconButton>
-        </Stack>
+        {isHovered && (
         <Button
           style={{
             background: "black",
@@ -140,6 +129,7 @@ export default function SliderImages() {
         >
           Click to show more
         </Button>
+        )}
       </Box>
     </Stack>
   );
