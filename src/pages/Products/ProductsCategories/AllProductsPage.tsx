@@ -10,13 +10,9 @@ interface Product {
   Image: string;
   name: string;
   producttype: string;
-  // Add other properties as needed
 }
 
 export default function AllProductsPage() {
-  //   const itemsPerPage = 10;
-
-  //   const currentItems = ProductsImage.slice(indexOfFirstItem, indexOfLastItem);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const location = useLocation(); // Get the location object
 

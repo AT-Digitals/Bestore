@@ -1,0 +1,108 @@
+import { Box, Breadcrumbs, Grid, Typography } from "@mui/material";
+
+import cotton1 from "./Screenshot 2023-12-13 112032.png";
+import cotton2 from "./Screenshot 2023-12-13 112107.png";
+import cotton3 from "./Screenshot 2023-12-13 112134.png";
+import cotton4 from "./Screenshot 2023-12-13 112212.png";
+import { useLocation } from "react-router-dom";
+
+const CottonProductsImages = [
+  {
+    name: "White and Blue Base Stripe Print Fabric (FC-226)  ",
+    image: cotton1,
+  },
+  { name: "Printed Base Stripe Print Fabric (FC-226)  ", image: cotton2 },
+  {
+    name: "Styled Printed Base Stripe Print Fabric (FC-226)  ",
+    image: cotton3,
+  },
+  { name: "Pink Base Stripe Print Fabric (FC-226)  ", image: cotton4 },
+];
+
+export default function CottonProducts() {
+  const location = useLocation(); // Get the location object
+
+  const breadcrumbs = [location.pathname.split("/").pop() || ""];
+
+  return (
+    <>
+      <Breadcrumbs
+        style={{
+          padding: "30px 30px 0",
+          color: "blue",
+        }}
+      >
+        {breadcrumbs.map((crumb, index) => (
+          <Typography fontFamily={"Nunito Sans, sans-serif"} key={index}>
+            Products / Fabric / {crumb} /
+          </Typography>
+        ))}
+      </Breadcrumbs>
+      <Grid marginLeft={"20px"} marginTop={"10px"} container>
+        {CottonProductsImages.map((item, index) => (
+          <Grid
+            columnSpacing={"2rem"}
+            rowGap={"4rem"}
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            style={{ display: "flex" }}
+          >
+            <Box
+              //   onClick={() => handleProductClick(item)}
+              padding={"10px"}
+              height={360}
+              mb={2}
+              mt={2}
+              maxWidth={{ xs: 330, sm: 240, md: 330 }}
+              width={330}
+              gap={"2rem"}
+              key={index}
+              position="relative"
+              style={{
+                overflow: "hidden",
+                cursor: "pointer",
+                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                transition: "transform 0.5s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            >
+              <img
+                style={{
+                  height: "70%",
+                  maxWidth: "100%",
+                  width: "100%",
+                  objectFit: "cover",
+                }}
+                src={item.image}
+                alt="products"
+              />
+              <Box
+                mt={3}
+                display={"flex"}
+                flexDirection={"column"}
+                justifyContent={"flex-start"}
+              >
+                <Typography
+                  textAlign={"center"}
+                  fontSize={"10px"}
+                  fontWeight={"bold"}
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  mt={1}
+                >
+                  {item.name}
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+    </>
+  );
+}

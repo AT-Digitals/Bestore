@@ -7,12 +7,15 @@ import BlogAbout from "../pages/Blog/BlogAbout";
 import Blogpage from "../pages/Blog/Blogpage";
 import ColoursProductsPage from "../pages/Products/ProductsCategories/ColoursProductsPage";
 import ContactPage from "../pages/Contact/Contactpage";
+import CottonProducts from "../pages/Products/ProductsCategories/SubProducts/CottonProducts";
 import FabricProductsPAge from "../pages/Products/ProductsCategories/FabricProductsPage";
 import Homepage from "../pages/Home/Homepage";
 import PatternsProducts from "../pages/Products/ProductsCategories/PatternsProducts";
+import PolysterProducts from "../pages/Products/ProductsCategories/SubProducts/PolysterProducts";
 import ProductDetailPage from "../pages/Products/ProductDetailPage/ProductDetails";
 import ProductPageLayout from "../common-components/ProductPageLayout";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
+import SilkProducts from "../pages/Products/ProductsCategories/SubProducts/SilkProduct";
 import routes from "./routes";
 
 export default function AppRouter() {
@@ -43,6 +46,18 @@ export default function AppRouter() {
             <Route
               path={routes.CLOTHING_PRODUCT}
               element={<ColoursProductsPage />}
+            />
+            <Route
+              path={routes.FABRIC_PRODUCT_COTTON}
+              element={<CottonProducts />}
+            />
+            <Route
+              path={routes.FABRIC_PRODUCT_SILK}
+              element={<SilkProducts />}
+            />
+            <Route
+              path={routes.FABRIC_PRODUCT_POLY}
+              element={<PolysterProducts />}
             />
           </Route>
         </Route>

@@ -10,7 +10,10 @@ const PRODUCT_BAG = "/product-bag";
 const PRODUCT_SHOE = "/product-shoe";
 const CLOTHING_PRODUCT = `${PRODUCTS}/Products-categories/Patterns`;
 const HOME_DECOR_PRODUCT = `${PRODUCTS}/Products-categories/Colours`;
-const FABRIC_PRODUCT = `${PRODUCTS}/Products-categories/Fabric`;
+const FABRIC_PRODUCT = `${PRODUCTS}/Products-categories/silk`;
+const FABRIC_PRODUCT_COTTON = "products/Products-categories/Fabric/cotton";
+const FABRIC_PRODUCT_SILK = "products/Products-categories/Fabric/silk";
+const FABRIC_PRODUCT_POLY = "products/Products-categories/Fabric/polyster";
 
 const routes = {
   ROOT,
@@ -26,5 +29,8 @@ const routes = {
   CLOTHING_PRODUCT,
   HOME_DECOR_PRODUCT,
   FABRIC_PRODUCT,
+  FABRIC_PRODUCT_COTTON,
+  FABRIC_PRODUCT_SILK,
+  FABRIC_PRODUCT_POLY,
 };
 export default routes;
