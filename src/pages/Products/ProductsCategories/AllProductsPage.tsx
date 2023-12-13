@@ -2,7 +2,6 @@ import { Box, Breadcrumbs, Grid, Typography } from "@mui/material";
 
 import ProductViewPage from "../ProductDetailPage/ProductView";
 import ProductsImage from "../ProductsItems";
-import routes from "../../../routes/routes";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
@@ -11,13 +10,9 @@ interface Product {
   Image: string;
   name: string;
   producttype: string;
-  // Add other properties as needed
 }
 
 export default function AllProductsPage() {
-  //   const itemsPerPage = 10;
-
-  //   const currentItems = ProductsImage.slice(indexOfFirstItem, indexOfLastItem);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const location = useLocation(); // Get the location object
 

@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 
-import AboutBanner from "../../assets/AboutBanner.jpg";
+import AboutBanner from "./plainfab.webp";
 import AboutConainer from "./AboutContainer/AboutContainer";
 import CartImage from "../../common-components/CartImage";
 import Testimonials from "../../common-components/Testimonials";
@@ -16,12 +16,12 @@ export default function AboutPage() {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             height: "auto",
-            minHeight: { xs: 400, md: 550 },
+            // minHeight: { xs: 400, md: 550 },
           }}
-          padding={{ sm: "40px 0 60px", md: "270px 0 60px" }}
+          padding={{ sm: "40px 0 60px", md: "200px 0 190px" }}
           textAlign={"center"}
         >
-          <Typography color={"black"} fontSize={"75px"} fontWeight={"bold"}>
+          <Typography color={"white"} fontSize={"75px"} fontWeight={"bold"}>
             {" "}
             {"About Us"}
           </Typography>

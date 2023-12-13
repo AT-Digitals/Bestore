@@ -10,22 +10,35 @@ const ProductsNavigationItems = [
   {
     name: "Fabrics",
     link: routes.FABRIC_PRODUCT,
-    subcategories: ["Cotton", "Silk", "Polyester"],
+    subcategories: [
+      { name: "Cotton", link: routes.FABRIC_PRODUCT_COTTON },
+      { name: "Silk", link: routes.FABRIC_PRODUCT_SILK },
+      { name: "Polyester", link: routes.FABRIC_PRODUCT_POLY },
+    ],
   },
   {
     name: "Patterns",
     link: routes.CLOTHING_PRODUCT,
-    subcategories: ["Men's", "Women's", "Kids"],
+    subcategories: [
+      { name: "Women's", link: routes.ABOUT },
+      { name: "Men's", link: routes.ABOUT },
+      { name: "Kids", link: routes.ABOUT },
+    ],
   },
   {
     name: "Colours",
     link: routes.HOME_DECOR_PRODUCT,
-    subcategories: ["Living Room", "Bedroom", "Kitchen"],
+    subcategories: [
+      { name: "Bedroom", link: routes.ABOUT },
+      { name: "Living Room", link: routes.ABOUT },
+      { name: "Kitchen", link: routes.ABOUT },
+    ],
   },
 ];
 
 export default function CommonCategory() {
   const location = useLocation();
+
   const [selectedCategory, setSelectedCategory] = useState("");
   const [subcategoriesVisible, setSubcategoriesVisible] = useState(false);
 
@@ -34,10 +47,13 @@ export default function CommonCategory() {
     setSelectedCategory(currentPath);
   }, [location]);
 
-  const toggleSubcategories = () => {
+  const toggleSubcategories = (event: any, categoryLink: string) => {
+    event.preventDefault();
     setSubcategoriesVisible(
-      (prevSubcategoriesVisible) => !prevSubcategoriesVisible
+      (prevSubcategoriesVisible) =>
+        selectedCategory !== categoryLink || !prevSubcategoriesVisible
     );
+    setSelectedCategory(categoryLink);
   };
 
   const renderSubcategories = (subcategories: any) => {
@@ -45,14 +61,11 @@ export default function CommonCategory() {
       <div>
         {subcategories.map((subcategory: any) => (
           <Link
-            key={subcategory}
-            to={`${selectedCategory}/${subcategory}`}
+            key={subcategory.link}
+            to={subcategory.link}
             style={{
               textDecoration: "none",
-              color:
-                selectedCategory === `${selectedCategory}/${subcategory}`
-                  ? "black"
-                  : "gray",
+              color: selectedCategory === subcategory.link ? "black" : "gray",
             }}
           >
             <Typography
@@ -68,12 +81,10 @@ export default function CommonCategory() {
                   color: "black",
                 },
                 fontWeight:
-                  selectedCategory === `${selectedCategory}/${subcategory}`
-                    ? "bold"
-                    : "normal",
+                  selectedCategory === subcategory.link ? "bold" : "normal",
               }}
             >
-              {subcategory}
+              {subcategory.name}
             </Typography>
           </Link>
         ))}
@@ -85,12 +96,10 @@ export default function CommonCategory() {
     <>
       {ProductsNavigationItems.map((category) => (
         <div key={category.name}>
-          <Link
-            to={category.link}
-            onClick={toggleSubcategories}
+          <div
+            onClick={(event) => toggleSubcategories(event, category.link)}
             style={{
-              textDecoration: "none",
-              color: selectedCategory === category.link ? "black" : "gray",
+              cursor: "pointer",
             }}
           >
             <Typography
@@ -100,7 +109,6 @@ export default function CommonCategory() {
               fontSize={"16px"}
               sx={{
                 marginBottom: 2,
-                cursor: "pointer",
                 "&:hover": {
                   color: "black",
                 },
@@ -115,7 +123,7 @@ export default function CommonCategory() {
                 <AddCircleOutlineIcon />
               )}
             </Typography>
-          </Link>
+          </div>
 
           {selectedCategory === category.link &&
             renderSubcategories(category.subcategories)}
