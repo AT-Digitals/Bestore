@@ -45,14 +45,15 @@ export default function CommonCategory() {
   useEffect(() => {
     const currentPath = location.pathname;
     setSelectedCategory(currentPath);
-    setSubcategoriesVisible(false);
   }, [location]);
 
-  const toggleSubcategories = (event: any) => {
+  const toggleSubcategories = (event: any, categoryLink: string) => {
     event.preventDefault();
     setSubcategoriesVisible(
-      (prevSubcategoriesVisible) => !prevSubcategoriesVisible
+      (prevSubcategoriesVisible) =>
+        selectedCategory !== categoryLink || !prevSubcategoriesVisible
     );
+    setSelectedCategory(categoryLink);
   };
 
   const renderSubcategories = (subcategories: any) => {
@@ -96,10 +97,7 @@ export default function CommonCategory() {
       {ProductsNavigationItems.map((category) => (
         <div key={category.name}>
           <div
-            onClick={(event) => {
-              toggleSubcategories(event);
-              setSelectedCategory(category.link);
-            }}
+            onClick={(event) => toggleSubcategories(event, category.link)}
             style={{
               cursor: "pointer",
             }}
