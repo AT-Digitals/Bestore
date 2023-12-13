@@ -62,6 +62,7 @@ export default function Testimonials() {
     );
   };
   return (
+
     <Box bgcolor={"whitesmoke"} mb={"50px"}>
       <TestimonialStack
         direction={{ xs: "column", sm: "row", md: "row" }}
