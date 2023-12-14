@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
+
 import { Box, Stack, Typography } from "@mui/material";
 
 import ContactBanner from "./plain-fabric-banner.jpg";
@@ -67,46 +69,82 @@ export default function ContactPage() {
               ></Box>
             </Stack>
             <Stack>
-            <Box marginLeft={"20px"} paddingTop={"30px"} gap={"7px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography   fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+              <Box
+                marginLeft={"20px"}
+                paddingTop={"30px"}
+                gap={"7px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-                Address:
-              </Typography>
-            <Typography  fontFamily={"Nunito Sans, sans-serif"} maxWidth={"400px"} fontSize={"15px"} color={"grey"}>
-              Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
-              Mahabalipuram, Tamil Nadu-603104.
-            </Typography>
-            </Box>
-            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Address:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  maxWidth={"400px"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
+                  Mahabalipuram, Tamil Nadu-603104.
+                </Typography>
+              </Box>
+              <Box
+                marginLeft={"20px"}
+                paddingTop={"30px"}
+                gap={"17px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-               Phone:
-              </Typography>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
-            +91 97910 68220
-            </Typography>
-            </Box>
-            <Box  marginLeft={"20px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Phone:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  +91 97910 68220
+                </Typography>
+              </Box>
+              <Box
+                marginLeft={"20px"}
+                gap={"17px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-               Email:
-              </Typography>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
-            contactat@akkacreation.com
-            </Typography>
-            </Box>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Email:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  contactat@akkacreation.com
+                </Typography>
+              </Box>
             </Stack>
             <Stack direction={"row"} spacing={4} alignItems={"center"}>
               <Typography
@@ -128,86 +166,165 @@ export default function ContactPage() {
               ></Box>
             </Stack>
             <Stack>
-            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"7px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+              <Box
+                marginLeft={"20px"}
+                paddingTop={"30px"}
+                gap={"7px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-                Address:
-              </Typography>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"} maxWidth={"400px"} fontSize={"15px"} color={"grey"}>
-              Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
-              Mahabalipuram, Tamil Nadu-603104.
-            </Typography>
-            </Box>
-            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Address:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  maxWidth={"400px"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
+                  Mahabalipuram, Tamil Nadu-603104.
+                </Typography>
+              </Box>
+              <Box
+                marginLeft={"20px"}
+                paddingTop={"30px"}
+                gap={"17px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-               Phone:
-              </Typography>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
-            +91 97910 68220
-            </Typography>
-            </Box>
-            <Box  marginLeft={"20px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Phone:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  +91 97910 68220
+                </Typography>
+              </Box>
+              <Box
+                marginLeft={"20px"}
+                gap={"17px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-               Email:
-              </Typography>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
-            contactat@akkacreation.com
-            </Typography>
-            </Box>
-            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"7px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Email:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  contactat@akkacreation.com
+                </Typography>
+              </Box>
+              <Box
+                marginLeft={"20px"}
+                paddingTop={"30px"}
+                gap={"7px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-                Address:
-              </Typography>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"} maxWidth={"400px"} fontSize={"15px"} color={"grey"}>
-              Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
-              Mahabalipuram, Tamil Nadu-603104.
-            </Typography>
-            </Box>
-            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Address:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  maxWidth={"400px"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
+                  Mahabalipuram, Tamil Nadu-603104.
+                </Typography>
+              </Box>
+              <Box
+                marginLeft={"20px"}
+                paddingTop={"30px"}
+                gap={"17px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-               Phone:
-              </Typography>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
-            +91 97910 68220
-            </Typography>
-            </Box>
-            <Box  marginLeft={"20px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"}
-                style={{
-                  color: "black",
-                  fontSize: "16px",
-                }}
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Phone:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  +91 97910 68220
+                </Typography>
+              </Box>
+              <Box
+                marginLeft={"20px"}
+                gap={"17px"}
+                display={"flex"}
+                flexDirection={"row"}
+                alignItems={"baseline"}
               >
-               Email:
-              </Typography>
-            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
-            contactat@akkacreation.com
-            </Typography>
-            </Box>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  style={{
+                    color: "black",
+                    fontSize: "16px",
+                  }}
+                >
+                  Email:
+                </Typography>
+                <Typography
+                  fontFamily={"Nunito Sans, sans-serif"}
+                  fontSize={"15px"}
+                  color={"grey"}
+                >
+                  contactat@akkacreation.com
+                </Typography>
+              </Box>
+              <Box padding={"0 20px"} marginTop={3}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15573.737649706532!2d80.1963331!3d12.6194818!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53acac30ee8d5d%3A0xad2be778ecae5918!2sTina%20Blue%20View!5e0!3m2!1sen!2sin!4v1702554954296!5m2!1sen!2sin"
+                  width="600"
+                  height="450"
+                ></iframe>
+              </Box>
             </Stack>
           </Box>
         </Box>
