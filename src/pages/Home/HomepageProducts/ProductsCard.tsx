@@ -55,7 +55,7 @@ export default function ProductsCard({ relatedProduct }: Prosp) {
                   alt="products"
                 />
                 <Typography
-                  fontSize={"10px"}
+                  fontSize={"13px"}
                   padding={"5px"}
                   fontWeight={"bold"}
                   mt={1}

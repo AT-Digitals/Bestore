@@ -95,7 +95,7 @@ export default function CottonProducts() {
               >
                 <Typography
                   textAlign={"center"}
-                  fontSize={"10px"}
+                  fontSize={"13px"}
                   fontWeight={"bold"}
                   fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}
