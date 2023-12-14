@@ -1,5 +1,6 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Tooltip, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
 
 import Banner from "./Cotton-fabric1-Banner.jpg";
 import CartImage from "../../common-components/CartImage";
@@ -10,7 +11,6 @@ import ProductsCard from "./HomepageProducts/ProductsCard";
 import SliderImages from "../../common-components/SliderImages";
 import Testimonials from "../../common-components/Testimonials";
 import routes from "../../routes/routes";
-import { useState } from "react";
 
 const HoverImageText = [
   {
@@ -41,7 +41,10 @@ export default function Homepage() {
 
   const handleLabelClick = (label: any) => {
     setSelectedLabel(label);
+    productSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const productSectionRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <Box>
@@ -116,71 +119,74 @@ export default function Homepage() {
       </Box>
       <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
         {HoverImageText.map((item, index) => (
-          <Box
-            onClick={() => handleLabelClick(item.label)}
-            sx={{
-              position: "relative",
-              width: "100%",
-              overflow: "hidden",
-
-              "&:hover::before": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                backgroundColor: "rgba(255, 255, 255, 0.5)",
-                zIndex: 1,
-                transition: ".5s ease",
-              },
-              "&:hover .overlay": {
-                opacity: 1,
-                color: "white",
-              },
-            }}
-          >
-            <img
-              style={
-                {
-                  opacity: 1,
-                  width: "100%",
-                  transition: ".5s ease",
-                  backfaceVisibility: "hidden",
-                  minHeight: { sm: 300, md: 520 },
-                  height: "100%",
-                } as any
-              }
-              src={item.image}
-              alt=""
-            />
+          <Tooltip title="Click to view Products" followCursor>
             <Box
-              className="overlay"
+              onClick={() => handleLabelClick(item.label)}
               sx={{
-                transition: ".5s ease",
-                opacity: 0,
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%,-50%)",
-                textAlign: "center",
+                position: "relative",
+                width: "100%",
+                overflow: "hidden",
+
+                "&:hover::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(255, 255, 255, 0.5)",
+                  zIndex: 1,
+                  transition: ".5s ease",
+                },
+                "&:hover .overlay": {
+                  opacity: 1,
+                  color: "white",
+                },
               }}
             >
-              <Typography
-                padding={"16px"}
-                fontSize={{ xs: "54px", sm: "30px", md: "54px" }}
-                color={"white"}
-                fontWeight={"bold"}
-                whiteSpace={"nowrap"}
-                fontFamily={"Nunito Sans, sans-serif"}
+              <img
+                style={
+                  {
+                    opacity: 1,
+                    width: "100%",
+                    transition: ".5s ease",
+                    backfaceVisibility: "hidden",
+                    minHeight: { sm: 300, md: 520 },
+                    height: "100%",
+                  } as any
+                }
+                src={item.image}
+                alt=""
+              />
+              <Box
+                className="overlay"
+                sx={{
+                  transition: ".5s ease",
+                  opacity: 0,
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                  textAlign: "center",
+                }}
               >
-                {item.label}
-              </Typography>
+                <Typography
+                  padding={"16px"}
+                  fontSize={{ xs: "54px", sm: "30px", md: "54px" }}
+                  color={"white"}
+                  fontWeight={"bold"}
+                  whiteSpace={"nowrap"}
+                  fontFamily={"Nunito Sans, sans-serif"}
+                >
+                  {item.label}
+                </Typography>
+              </Box>
             </Box>
-          </Box>
+          </Tooltip>
         ))}
       </Stack>
       <Box
+        ref={productSectionRef}
         gap={"3rem"}
         display={"flex"}
         flexDirection={"column"}

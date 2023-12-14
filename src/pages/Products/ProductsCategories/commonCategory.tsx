@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutlined";
@@ -16,22 +16,23 @@ const ProductsNavigationItems = [
       { name: "Polyester", link: routes.FABRIC_PRODUCT_POLY },
     ],
   },
+
   {
     name: "Patterns",
     link: routes.CLOTHING_PRODUCT,
     subcategories: [
-      { name: "Women's", link: routes.ABOUT },
-      { name: "Men's", link: routes.ABOUT },
-      { name: "Kids", link: routes.ABOUT },
+      { name: "Women's", link: "routes.ABOUT" },
+      { name: "Men's", link: "routes.ABOUT" },
+      { name: "Kids", link: "routes.ABOUT" },
     ],
   },
   {
     name: "Colours",
     link: routes.HOME_DECOR_PRODUCT,
     subcategories: [
-      { name: "Bedroom", link: routes.ABOUT },
-      { name: "Living Room", link: routes.ABOUT },
-      { name: "Kitchen", link: routes.ABOUT },
+      { name: "Bedroom", link: "routes.ABOUT" },
+      { name: "Living Room", link: "routes.ABOUT" },
+      { name: "Kitchen", link: "routes.ABOUT" },
     ],
   },
 ];
@@ -39,57 +40,61 @@ const ProductsNavigationItems = [
 export default function CommonCategory() {
   const location = useLocation();
 
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [subcategoriesVisible, setSubcategoriesVisible] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [subcategoriesVisibility, setSubcategoriesVisibility] = useState<{
+    [key: string]: boolean;
+  }>(() => {
+    const initialVisibility: { [key: string]: boolean } = {};
+    ProductsNavigationItems.forEach((category) => {
+      initialVisibility[category.link] = location.pathname === category.link;
+    });
+    return initialVisibility;
+  });
 
-  useEffect(() => {
-    const currentPath = location.pathname;
-    setSelectedCategory(currentPath);
-  }, [location]);
-
-  const toggleSubcategories = (event: any, categoryLink: string) => {
+  const toggleSubcategories = (
+    event: React.MouseEvent,
+    categoryLink: string
+  ) => {
     event.preventDefault();
-    setSubcategoriesVisible(
-      (prevSubcategoriesVisible) =>
-        selectedCategory !== categoryLink || !prevSubcategoriesVisible
-    );
+
+    setSubcategoriesVisibility((prev) => ({
+      ...prev,
+      [categoryLink]: !prev[categoryLink],
+    }));
+
     setSelectedCategory(categoryLink);
   };
 
   const renderSubcategories = (subcategories: any) => {
-    return subcategoriesVisible ? (
-      <div>
-        {subcategories.map((subcategory: any) => (
-          <Link
-            key={subcategory.link}
-            to={subcategory.link}
-            style={{
-              textDecoration: "none",
-              color: selectedCategory === subcategory.link ? "black" : "gray",
-            }}
-          >
-            <Typography
-              padding={"0 20px"}
-              display={"flex"}
-              justifyContent={"space-between"}
-              fontFamily={"Nunito Sans, sans-serif"}
-              sx={{
-                color: "blue",
-                marginBottom: 2,
-                cursor: "pointer",
-                "&:hover": {
-                  color: "black",
-                },
-                fontWeight:
-                  selectedCategory === subcategory.link ? "bold" : "normal",
-              }}
-            >
-              {subcategory.name}
-            </Typography>
-          </Link>
-        ))}
-      </div>
-    ) : null;
+    return subcategories.map((subcategory: any) => (
+      <Link
+        key={subcategory.link}
+        to={subcategory.link}
+        style={{
+          textDecoration: "none",
+          color: selectedCategory === subcategory.link ? "black" : "gray",
+        }}
+      >
+        <Typography
+          padding={"0 20px"}
+          display={"flex"}
+          justifyContent={"space-between"}
+          fontFamily={"Nunito Sans, sans-serif"}
+          sx={{
+            color: "blue",
+            marginBottom: 2,
+            cursor: "pointer",
+            "&:hover": {
+              color: "black",
+            },
+            fontWeight:
+              selectedCategory === subcategory.link ? "bold" : "normal",
+          }}
+        >
+          {subcategory.name}
+        </Typography>
+      </Link>
+    ));
   };
 
   return (
@@ -117,7 +122,8 @@ export default function CommonCategory() {
               }}
             >
               {category.name}
-              {selectedCategory === category.link && subcategoriesVisible ? (
+              {selectedCategory === category.link &&
+              subcategoriesVisibility[category.link] ? (
                 <RemoveCircleOutlinedIcon />
               ) : (
                 <AddCircleOutlineIcon />
@@ -126,6 +132,7 @@ export default function CommonCategory() {
           </div>
 
           {selectedCategory === category.link &&
+            subcategoriesVisibility[category.link] &&
             renderSubcategories(category.subcategories)}
         </div>
       ))}
