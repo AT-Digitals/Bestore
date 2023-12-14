@@ -66,8 +66,9 @@ export default function ContactPage() {
                 borderTop={"1px solid rgba(0,0,0,0.105)"}
               ></Box>
             </Stack>
-            <Box paddingTop={"30px"} gap={"7px"} margin={"10px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Stack>
+            <Box marginLeft={"20px"} paddingTop={"30px"} gap={"7px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography   fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -75,13 +76,13 @@ export default function ContactPage() {
               >
                 Address:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography  fontFamily={"Nunito Sans, sans-serif"} maxWidth={"400px"} fontSize={"15px"} color={"grey"}>
               Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
               Mahabalipuram, Tamil Nadu-603104.
             </Typography>
             </Box>
-            <Box paddingTop={"30px"} gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -89,12 +90,12 @@ export default function ContactPage() {
               >
                Phone:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
             +91 97910 68220
             </Typography>
             </Box>
-            <Box gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Box  marginLeft={"20px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -102,10 +103,11 @@ export default function ContactPage() {
               >
                Email:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
             contactat@akkacreation.com
             </Typography>
             </Box>
+            </Stack>
             <Stack direction={"row"} spacing={4} alignItems={"center"}>
               <Typography
                 textAlign={"start"}
@@ -125,8 +127,9 @@ export default function ContactPage() {
                 borderTop={"1px solid rgba(0,0,0,0.105)"}
               ></Box>
             </Stack>
-            <Box paddingTop={"30px"} gap={"7px"} margin={"10px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Stack>
+            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"7px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -134,13 +137,13 @@ export default function ContactPage() {
               >
                 Address:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"} maxWidth={"400px"} fontSize={"15px"} color={"grey"}>
               Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
               Mahabalipuram, Tamil Nadu-603104.
             </Typography>
             </Box>
-            <Box paddingTop={"30px"} gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -148,12 +151,12 @@ export default function ContactPage() {
               >
                Phone:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
             +91 97910 68220
             </Typography>
             </Box>
-            <Box gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Box  marginLeft={"20px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -161,12 +164,12 @@ export default function ContactPage() {
               >
                Email:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
             contactat@akkacreation.com
             </Typography>
             </Box>
-            <Box paddingTop={"30px"} gap={"7px"} margin={"10px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"7px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -174,13 +177,13 @@ export default function ContactPage() {
               >
                 Address:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"} maxWidth={"400px"} fontSize={"15px"} color={"grey"}>
               Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
               Mahabalipuram, Tamil Nadu-603104.
             </Typography>
             </Box>
-            <Box paddingTop={"30px"} gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Box  marginLeft={"20px"} paddingTop={"30px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -188,12 +191,12 @@ export default function ContactPage() {
               >
                Phone:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
             +91 97910 68220
             </Typography>
             </Box>
-            <Box gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
-            <Typography
+            <Box  marginLeft={"20px"} gap={"17px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"}
                 style={{
                   color: "black",
                   fontSize: "16px",
@@ -201,10 +204,11 @@ export default function ContactPage() {
               >
                Email:
               </Typography>
-            <Typography fontSize={"15px"} color={"grey"}>
+            <Typography     fontFamily={"Nunito Sans, sans-serif"} fontSize={"15px"} color={"grey"}>
             contactat@akkacreation.com
             </Typography>
             </Box>
+            </Stack>
           </Box>
         </Box>
       </Stack>
