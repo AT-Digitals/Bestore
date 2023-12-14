@@ -101,6 +101,7 @@ export default function ProductsLeftSide() {
               borderRadius: "30px",
               marginTop: "12px",
               height: "42px",
+              fontFamily: "Nunito Sans, sans-serif",
             }}
             fullWidth
             variant="outlined"
@@ -109,6 +110,9 @@ export default function ProductsLeftSide() {
           >
             {WidthmenuItems.map((item) => (
               <MenuItem
+                style={{
+                  fontFamily: "Nunito Sans, sans-serif",
+                }}
                 defaultValue={"Select all"}
                 defaultChecked={true}
                 key={item}
@@ -142,6 +146,7 @@ export default function ProductsLeftSide() {
               borderRadius: "30px",
               marginTop: "12px",
               height: "42px",
+              fontFamily: "Nunito Sans, sans-serif",
             }}
             fullWidth
             variant="outlined"
@@ -149,7 +154,13 @@ export default function ProductsLeftSide() {
             onChange={handleCompositionChange}
           >
             {CompositionmenuItems.map((item) => (
-              <MenuItem key={item} value={item}>
+              <MenuItem
+                style={{
+                  fontFamily: "Nunito Sans, sans-serif",
+                }}
+                key={item}
+                value={item}
+              >
                 {item}
               </MenuItem>
             ))}

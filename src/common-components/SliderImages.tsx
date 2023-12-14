@@ -151,8 +151,6 @@ export default function SliderImages() {
           style={{
             background: "black",
             color: "white",
-            opacity: isHovered ? 1 : 0, // Set initial opacity to 0
-            transition: "opacity 0.5s ease", // Apply transition to opacity
             textTransform: "none",
           }}
         >

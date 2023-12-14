@@ -50,7 +50,13 @@ export default function CustomDropdown({
         onChange={handleCategoryChange}
       >
         {Object.keys(categoriesWithSubcategories).map((category) => (
-          <MenuItem key={category} value={category}>
+          <MenuItem
+            style={{
+              fontFamily: "Nunito Sans, sans-serif",
+            }}
+            key={category}
+            value={category}
+          >
             {category}
           </MenuItem>
         ))}
@@ -89,7 +95,13 @@ export default function CustomDropdown({
             onChange={handleSubcategoryChange}
           >
             {selectedSubcategories.map((subcategory: any) => (
-              <MenuItem key={subcategory} value={subcategory}>
+              <MenuItem
+                style={{
+                  fontFamily: "Nunito Sans, sans-serif",
+                }}
+                key={subcategory}
+                value={subcategory}
+              >
                 {subcategory}
               </MenuItem>
             ))}
