@@ -1,8 +1,8 @@
 import { IconButton, Stack } from "@mui/material";
+import React, { useEffect } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
-import React from "react";
 import Typography from "@mui/material/Typography";
 
 interface ProductSelectProps {
@@ -22,6 +22,11 @@ export default function ProductViewPage({
   //   };
 
   const limitedRelatedProducts = relatedProducts.slice(0, 3);
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Box
