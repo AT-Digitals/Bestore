@@ -66,41 +66,45 @@ export default function ContactPage() {
                 borderTop={"1px solid rgba(0,0,0,0.105)"}
               ></Box>
             </Stack>
-            <Typography margin={"30px 25px"} fontSize={"15px"} color={"grey"}>
-              <span
+            <Box paddingTop={"30px"} gap={"7px"} margin={"10px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
                 style={{
                   color: "black",
                   fontSize: "16px",
                 }}
               >
                 Address:
-              </span>
+              </Typography>
+            <Typography fontSize={"15px"} color={"grey"}>
               Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
               Mahabalipuram, Tamil Nadu-603104.
             </Typography>
-            <Box margin={"30px 25px"}>
-              <Typography fontSize={"15px"} color={"grey"}>
-                <span
-                  style={{
-                    color: "black",
-                    fontSize: "16px",
-                  }}
-                >
-                  Phone:
-                </span>
-                +91 97910 68220
+            </Box>
+            <Box paddingTop={"30px"} gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
+                style={{
+                  color: "black",
+                  fontSize: "16px",
+                }}
+              >
+               Phone:
               </Typography>
-              <Typography fontSize={"15px"} color={"grey"}>
-                <span
-                  style={{
-                    color: "black",
-                    fontSize: "16px",
-                  }}
-                >
-                  Email:
-                </span>
-                contactat@akkacreation.com
+            <Typography fontSize={"15px"} color={"grey"}>
+            +91 97910 68220
+            </Typography>
+            </Box>
+            <Box gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
+                style={{
+                  color: "black",
+                  fontSize: "16px",
+                }}
+              >
+               Email:
               </Typography>
+            <Typography fontSize={"15px"} color={"grey"}>
+            contactat@akkacreation.com
+            </Typography>
             </Box>
             <Stack direction={"row"} spacing={4} alignItems={"center"}>
               <Typography
@@ -121,77 +125,85 @@ export default function ContactPage() {
                 borderTop={"1px solid rgba(0,0,0,0.105)"}
               ></Box>
             </Stack>
-            <Typography margin={"30px 25px"} fontSize={"15px"} color={"grey"}>
-              <span
+            <Box paddingTop={"30px"} gap={"7px"} margin={"10px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
                 style={{
                   color: "black",
                   fontSize: "16px",
                 }}
               >
                 Address:
-              </span>
+              </Typography>
+            <Typography fontSize={"15px"} color={"grey"}>
               Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
-              Mahabalipuram, Tamil Nadu-603104
+              Mahabalipuram, Tamil Nadu-603104.
             </Typography>
-            <Box margin={"30px 25px"}>
-              <Typography fontSize={"15px"} color={"grey"}>
-                <span
-                  style={{
-                    color: "black",
-                    fontSize: "16px",
-                  }}
-                >
-                  Phone:
-                </span>
-                +91 97910 68220
-              </Typography>
-              <Typography fontSize={"15px"} color={"grey"}>
-                <span
-                  style={{
-                    color: "black",
-                    fontSize: "16px",
-                  }}
-                >
-                  Email:
-                </span>
-                contactat@akkacreation.com
-              </Typography>
             </Box>
-            <Typography margin={"30px 25px"} fontSize={"15px"} color={"grey"}>
-              <span
+            <Box paddingTop={"30px"} gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
+                style={{
+                  color: "black",
+                  fontSize: "16px",
+                }}
+              >
+               Phone:
+              </Typography>
+            <Typography fontSize={"15px"} color={"grey"}>
+            +91 97910 68220
+            </Typography>
+            </Box>
+            <Box gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
+                style={{
+                  color: "black",
+                  fontSize: "16px",
+                }}
+              >
+               Email:
+              </Typography>
+            <Typography fontSize={"15px"} color={"grey"}>
+            contactat@akkacreation.com
+            </Typography>
+            </Box>
+            <Box paddingTop={"30px"} gap={"7px"} margin={"10px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
                 style={{
                   color: "black",
                   fontSize: "16px",
                 }}
               >
                 Address:
-              </span>
+              </Typography>
+            <Typography fontSize={"15px"} color={"grey"}>
               Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
-              Mahabalipuram, Tamil Nadu-603104
+              Mahabalipuram, Tamil Nadu-603104.
             </Typography>
-            <Box margin={"30px 25px"}>
-              <Typography fontSize={"15px"} color={"grey"}>
-                <span
-                  style={{
-                    color: "black",
-                    fontSize: "16px",
-                  }}
-                >
-                  Phone:
-                </span>
-                +91 97910 68220
+            </Box>
+            <Box paddingTop={"30px"} gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
+                style={{
+                  color: "black",
+                  fontSize: "16px",
+                }}
+              >
+               Phone:
               </Typography>
-              <Typography fontSize={"15px"} color={"grey"}>
-                <span
-                  style={{
-                    color: "black",
-                    fontSize: "16px",
-                  }}
-                >
-                  Email:
-                </span>
-                contactat@akkacreation.com
+            <Typography fontSize={"15px"} color={"grey"}>
+            +91 97910 68220
+            </Typography>
+            </Box>
+            <Box gap={"7px"} margin={"0px 27px"} display={"flex"} flexDirection={"row"} alignItems={"baseline"}>
+            <Typography
+                style={{
+                  color: "black",
+                  fontSize: "16px",
+                }}
+              >
+               Email:
               </Typography>
+            <Typography fontSize={"15px"} color={"grey"}>
+            contactat@akkacreation.com
+            </Typography>
             </Box>
           </Box>
         </Box>
