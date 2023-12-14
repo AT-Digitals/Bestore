@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 
-import ContactBanner from "./contact-banner.jpg";
+import ContactBanner from "./plain-fabric-banner.jpg";
 import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
@@ -15,11 +15,11 @@ export default function ContactPage() {
         }}
         width={"100%"}
         height={{ sm: undefined, md: 310 }}
-        padding={{ sm: "40px 0 60px", md: "140px 0 60px" }}
+        padding={{ sm: "40px 0 60px", md: "100px 0 40px" }}
         textAlign={"center"}
         bgcolor={"#F6F6F6"}
       >
-        <Typography color={"black"} fontSize={"75px"} fontWeight={"bold"}>
+        <Typography color={"white"} fontSize={"75px"} fontWeight={"bold"}>
           {" "}
           Reach Us
         </Typography>

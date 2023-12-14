@@ -62,7 +62,6 @@ export default function Testimonials() {
     );
   };
   return (
-
     <Box bgcolor={"whitesmoke"} mb={"50px"}>
       <TestimonialStack
         direction={{ xs: "column", sm: "row", md: "row" }}
@@ -79,7 +78,6 @@ export default function Testimonials() {
           <Typography
             paddingTop={"110px"}
             fontWeight={"600"}
-            paddingRight={"264px"}
             color={"#e53637"}
             fontSize={"25px"}
             fontFamily={"Nunito Sans, sans-serif"}
@@ -133,91 +131,101 @@ export default function Testimonials() {
             </IconButton>
           </Stack>
         </Box>
-        {TesttmoalProps.slice(visibleIndex, visibleIndex + 2).map(
-          (item, index) => (
-            <TestimonialBox
-              maxWidth={400}
-              key={index}
-              padding={"10px"}
-              gap={"3rem"}
-              textAlign={"center"}
-            >
-              <Box width={"76%"}>
-                <img
-                  src={item.image}
-                  style={{
-                    borderRadius: "50%",
-                    border: "6px solid white",
-                  }}
-                  width={"100px"}
-                  height={"100px"}
-                  alt="aboutimage"
-                />
-              </Box>
-              <Box
-                boxShadow={"0px 0px 10px 0px"}
-                width={"76%"}
-                sx={{
-                  backgroundColor: "white",
-                  marginTop: "-46px",
-                  paddingBottom: "30px",
-                  boxShadow: "0px 0px 7px 0px #c5b8b8",
-                  borderRadius: "20px",
-                  border: "2px solid white",
-                }}
+        <Stack
+          justifyContent={"center"}
+          maxWidth={1000}
+          width={"100%"}
+          direction={"row"}
+        >
+          {TesttmoalProps.slice(visibleIndex, visibleIndex + 2).map(
+            (item, index) => (
+              <TestimonialBox
+                maxWidth={400}
+                key={index}
+                padding={"10px"}
+                gap={"3rem"}
+                textAlign={"center"}
               >
-                <Typography
-                  color={"#e53637"}
-                  fontSize={"76px"}
-                  textAlign={"center"}
-                >
-                  ,,
-                </Typography>
-                <Typography
-                  fontFamily={"Nunito Sans, sans-serif"}
-                  padding={"0px 15px"}
-                  color={"black"}
-                  fontSize={"20px"}
-                >
-                  {item.discription}
-                </Typography>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginTop: "20px",
-                  }}
-                >
-                  <Rating
-                    name="hover-feedback"
-                    value={value}
-                    precision={3}
-                    onChange={(event, newValue) => {
-                      setValue(newValue);
+                <Box width={"76%"}>
+                  <img
+                    src={item.image}
+                    style={{
+                      borderRadius: "50%",
+                      border: "6px solid white",
                     }}
-                    onChangeActive={(event, newHover) => {
-                      setHover(newHover);
-                    }}
-                    emptyIcon={
-                      <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                    }
+                    width={"100px"}
+                    height={"100px"}
+                    alt="aboutimage"
                   />
                 </Box>
-                <Typography
-                  marginTop={"20px"}
-                  fontWeight={"600"}
-                  textAlign={"center"}
-                  fontSize={"26px"}
-                  color={"#e53637"}
-                  fontFamily={"Nunito Sans, sans-serif"}
+                <Box
+                  boxShadow={"0px 0px 10px 0px"}
+                  width={"76%"}
+                  sx={{
+                    backgroundColor: "white",
+                    marginTop: "-46px",
+                    paddingBottom: "30px",
+                    boxShadow: "0px 0px 7px 0px #c5b8b8",
+                    borderRadius: "20px",
+                    border: "2px solid white",
+                  }}
                 >
-                  Our Vision
-                </Typography>
-              </Box>
-            </TestimonialBox>
-          )
-        )}
+                  <Typography
+                    color={"#e53637"}
+                    fontSize={"76px"}
+                    textAlign={"center"}
+                  >
+                    ,,
+                  </Typography>
+                  <Typography
+                    fontFamily={"Nunito Sans, sans-serif"}
+                    padding={"0px 15px"}
+                    color={"black"}
+                    fontSize={"20px"}
+                  >
+                    {item.discription}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <Rating
+                      name="hover-feedback"
+                      value={value}
+                      precision={3}
+                      onChange={(event, newValue) => {
+                        setValue(newValue);
+                      }}
+                      onChangeActive={(event, newHover) => {
+                        setHover(newHover);
+                      }}
+                      emptyIcon={
+                        <StarIcon
+                          style={{ opacity: 0.55 }}
+                          fontSize="inherit"
+                        />
+                      }
+                    />
+                  </Box>
+                  <Typography
+                    marginTop={"20px"}
+                    fontWeight={"600"}
+                    textAlign={"center"}
+                    fontSize={"26px"}
+                    color={"#e53637"}
+                    fontFamily={"Nunito Sans, sans-serif"}
+                  >
+                    Our Vision
+                  </Typography>
+                </Box>
+              </TestimonialBox>
+            )
+          )}
+        </Stack>
       </TestimonialStack>
     </Box>
   );

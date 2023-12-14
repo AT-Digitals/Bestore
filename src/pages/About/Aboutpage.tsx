@@ -32,13 +32,7 @@ export default function AboutPage() {
         <AboutConainer />
       </Box>
 
-      <Stack
-        bgcolor={"whitesmoke"}
-        width={"100%"}
-        maxWidth={1519}
-        marginTop={"50px"}
-        alignItems={"center"}
-      >
+      <Stack pt={4}>
         <Testimonials />
       </Stack>
 

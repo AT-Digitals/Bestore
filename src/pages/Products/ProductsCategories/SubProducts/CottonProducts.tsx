@@ -33,7 +33,11 @@ export default function CottonProducts() {
         }}
       >
         {breadcrumbs.map((crumb, index) => (
-          <Typography fontFamily={"Nunito Sans, sans-serif"} key={index}>
+          <Typography
+            fontWeight={"bold"}
+            fontFamily={"Nunito Sans, sans-serif"}
+            key={index}
+          >
             Products / Fabric / {crumb} /
           </Typography>
         ))}
