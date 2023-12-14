@@ -3,7 +3,9 @@ import React, { useState } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Link } from "react-router-dom";
 import ProductsImage from "../pages/Products/ProductsItems";
+import routes from "../routes/routes";
 import styled from "@emotion/styled";
 
 const TestimonialBox = styled(Box)`
@@ -188,16 +190,18 @@ export default function SliderImages() {
           fashion, and design, conveying individuality through choices in
           appearance and presentation.
         </Typography>
-
-        <Button
-          style={{
-            background: "black",
-            color: "white",
-            textTransform: "none",
-          }}
-        >
-          Click to show more
-        </Button>
+        <Link to={routes.PRODUCTS}>
+          <Button
+            fullWidth
+            style={{
+              background: "black",
+              color: "white",
+              textTransform: "none",
+            }}
+          >
+            Click to show more
+          </Button>
+        </Link>
       </Box>
     </Stack>
   );
