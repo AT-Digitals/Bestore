@@ -1,6 +1,7 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-
+import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ProductsImage from "../pages/Products/ProductsItems";
 import styled from "@emotion/styled";
 
@@ -17,14 +18,23 @@ const TestimonialStack = styled(Stack)`
 
 export default function SliderImages() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+
+  const handlePrevClick = () => {
+    setCurrentIndex((currentIndex) =>
+      currentIndex - 1 >= 0 ? currentIndex - 1 : ProductsImage.length - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setCurrentIndex((currentIndex) =>
+      (currentIndex + 1) % ProductsImage.length
+    );
+  };
 
   useEffect(() => {
-    // Display the first two products initially
     setCurrentIndex(0);
 
     const interval = setInterval(() => {
-      // Increment the index to show the next product
       setCurrentIndex((prevIndex) => (prevIndex + 2) % ProductsImage.length);
     }, 3000);
 
@@ -49,10 +59,26 @@ export default function SliderImages() {
         spacing={4}
         justifyContent={"center"}
       >
-        {ProductsImage.slice(0, 3).map((item, index) => (
+        <IconButton
+          style={{
+            height: "44px",
+            marginTop: "218px",
+            marginRight: "-30px",
+            backgroundColor: "#e53637",
+            boxShadow: "0px 7px 10px 0px",
+          }}
+          onClick={handlePrevClick}
+        >
+          <ArrowBackIcon
+            style={{
+              color: "white",
+            }}
+          />
+        </IconButton>
+        {ProductsImage.slice(currentIndex, currentIndex + 3).map((item, index) => (
           <TestimonialBox
             style={{
-              transform: `scale(${index === 1 ? 1.2 : 1})`, // Apply zoom effect to the center image box
+              transform: `scale(${index === 1 ? 1.2 : 1})`,
             }}
             maxWidth={400}
             minHeight={500}
@@ -117,6 +143,27 @@ export default function SliderImages() {
           </TestimonialBox>
         ))}
       </TestimonialStack>
+      
+      <Stack style={{
+        marginLeft: "0px"
+      }} direction={"row"} spacing={1}>
+        <IconButton
+          onClick={handleNextClick}
+          style={{
+            height: "44px",
+            marginTop: "245px",
+            backgroundColor: "#e53637",
+            boxShadow: "0px 7px 10px 0px",
+          }}
+        >
+          <ArrowForwardIcon
+            style={{
+              color: "white",
+            }}
+          />
+        </IconButton>
+      </Stack>
+
       <Box
         maxWidth={400}
         width="100%"
@@ -124,8 +171,6 @@ export default function SliderImages() {
         flexDirection={"column"}
         gap={"20px"}
         padding={"10px"}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
         <Typography
           paddingTop={"110px"}
