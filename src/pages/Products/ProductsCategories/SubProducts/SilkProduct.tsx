@@ -44,12 +44,11 @@ export default function SilkProducts() {
             style={{ display: "flex" }}
           >
             <Box
-              //   onClick={() => handleProductClick(item)}
               padding={"10px"}
-              height={360}
+              height={{ xs: 270, sm: 300, md: 400 }}
               mb={2}
               mt={2}
-              maxWidth={{ xs: 330, sm: 240, md: 330 }}
+              maxWidth={{ xs: 170, sm: 240, md: 330 }}
               width={330}
               gap={"2rem"}
               key={index}
@@ -68,12 +67,14 @@ export default function SilkProducts() {
               }}
             >
               <img
-                style={{
-                  height: "70%",
-                  maxWidth: "100%",
-                  width: "100%",
-                  objectFit: "cover",
-                }}
+                style={
+                  {
+                    height: { xs: "65%", md: "70%" },
+                    maxWidth: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                  } as any
+                }
                 src={item.image}
                 alt="products"
               />
