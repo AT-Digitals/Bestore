@@ -32,9 +32,9 @@ export default function ProductPageLayout({ children, ...props }: BoxProps) {
           </Typography>
         </Box>
         <Box bgcolor={"white"} width={"100%"} margin={"0 auto"}>
-          <Box p={"30px"}>
-            <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
-              <Box width="25%">
+          <Box p={{ xs: "none", sm: "20px" }}>
+            <Stack direction={{ xs: "row", sm: "row", md: "row" }}>
+              <Box width={{ xs: undefined, sm: "25%", md: "25%" }}>
                 <Stack
                   mt={2}
                   spacing={2}
