@@ -54,7 +54,6 @@ export default function SliderImages() {
 
   return (
     <Stack
-      paddingRight={"40px"}
       direction={{ xs: "column", sm: "row", md: "row" }}
       spacing={10}
       display={"flex"}
@@ -66,9 +65,10 @@ export default function SliderImages() {
         maxWidth={1000}
         direction={{ xs: "column", sm: "row", md: "row" }}
         marginTop={"50px"}
-        padding={"30px"}
+        padding={{ sm: "50px", md: "30px" }}
         spacing={4}
         justifyContent={"center"}
+        width={{ xs: "100%", sm: "100%", md: "90%" }}
       >
         <Stack
           maxWidth={600}
