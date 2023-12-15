@@ -1,5 +1,5 @@
 import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -21,6 +21,7 @@ const TestimonialStack = styled(Stack)`
 
 export default function SliderImages() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [numImages, setNumImages] = useState(window.innerWidth < 1100 ? 1 : 3);
 
   const handlePrevClick = () => {
     setCurrentIndex((currentIndex) =>
@@ -34,10 +35,27 @@ export default function SliderImages() {
     );
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      // Recalculate the number of images to display based on the window width
+      const numImages = window.innerWidth < 1100 ? 1 : 3;
+      // Update state with the new number of images
+      setNumImages(numImages);
+    };
+
+    // Attach the event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Stack
       paddingRight={"40px"}
-      direction={"row"}
+      direction={{ xs: "column", sm: "row", md: "row" }}
       spacing={10}
       display={"flex"}
       flexDirection={"row"}
@@ -52,116 +70,114 @@ export default function SliderImages() {
         spacing={4}
         justifyContent={"center"}
       >
-        <IconButton
-          style={{
-            height: "44px",
-            marginTop: "218px",
-            marginRight: "-30px",
-            backgroundColor: "#e53637",
-            boxShadow: "0px 7px 10px 0px",
-          }}
-          onClick={handlePrevClick}
+        <Stack
+          maxWidth={600}
+          width={"100%"}
+          direction={"row"}
+          justifyContent={"center"}
         >
-          <ArrowBackIcon
+          <IconButton
             style={{
-              color: "white",
+              height: "44px",
+              marginTop: "218px",
+              backgroundColor: "#e53637",
+              boxShadow: "0px 7px 10px 0px",
             }}
-          />
-        </IconButton>
-        {ProductsImage.slice(currentIndex, currentIndex + 3).map(
-          (item, index) => (
-            <TestimonialBox
+            onClick={handlePrevClick}
+          >
+            <ArrowBackIcon
               style={{
-                transform: `scale(${index === 1 ? 1.2 : 1})`,
+                color: "white",
               }}
-              maxWidth={400}
-              minHeight={index === 1 ? "240px" : "220px"}
-              key={index}
-              padding={"30px"}
-              gap={"3rem"}
-              textAlign={"center"}
-            >
-              <Box>
-                <img
-                  src={item.Image}
-                  style={{
-                    border: "6px solid white",
-                    borderRadius: "20px",
-                  }}
-                  width={"200px"}
-                  height={"200px"}
-                  alt="aboutimage"
-                />
-              </Box>
-              <Box
-                boxShadow={"0px 0px 10px 0px"}
-                width={"100%"}
-                maxWidth={index === 1 ? "230px" : "230px"}
-                sx={{
-                  backgroundColor: "white",
-                  marginTop: "-46px",
-                  paddingBottom: "30px",
-                  boxShadow: "0px 0px 7px 0px #c5b8b8",
-                  borderRadius: "20px",
-                  border: "2px solid white",
-                }}
-              >
-                <br />
-                <br />
-                <br />
-                <br />
-
-                <Typography
-                  fontFamily={"Nunito Sans, sans-serif"}
-                  padding={"0px 15px"}
-                  color={"black"}
-                  fontSize={"15px"}
-                >
-                  {item.name}
-                </Typography>
-                <Typography
-                  fontFamily={"Nunito Sans, sans-serif"}
-                  padding={"0px 15px"}
-                  color={"red"}
-                  fontSize={"15px"}
-                >
-                  Rs. {item.price}
-                </Typography>
-              </Box>
-
-              <Box
+            />
+          </IconButton>
+          {ProductsImage.slice(currentIndex, currentIndex + numImages).map(
+            (item, index) => (
+              <TestimonialBox
                 style={{
-                  boxShadow: index === 1 ? "0px 20px 20px 6px" : "none",
+                  transform: `scale(${index === 1 ? 1.2 : 1})`,
                 }}
-              ></Box>
-            </TestimonialBox>
-          )
-        )}
-      </TestimonialStack>
+                maxWidth={400}
+                minHeight={index === 1 ? "240px" : "220px"}
+                key={index}
+                padding={"30px"}
+                gap={"3rem"}
+                textAlign={"center"}
+              >
+                <Box>
+                  <img
+                    src={item.Image}
+                    style={{
+                      border: "6px solid white",
+                      borderRadius: "20px",
+                    }}
+                    width={"200px"}
+                    height={"200px"}
+                    alt="aboutimage"
+                  />
+                </Box>
+                <Box
+                  boxShadow={"0px 0px 10px 0px"}
+                  width={"100%"}
+                  maxWidth={index === 1 ? "230px" : "230px"}
+                  sx={{
+                    backgroundColor: "white",
+                    marginTop: "-46px",
+                    paddingBottom: "30px",
+                    boxShadow: "0px 0px 7px 0px #c5b8b8",
+                    borderRadius: "20px",
+                    border: "2px solid white",
+                  }}
+                >
+                  <br />
+                  <br />
+                  <br />
+                  <br />
 
-      <Stack
-        style={{
-          marginLeft: "0px",
-        }}
-        direction={"row"}
-        spacing={1}
-      >
-        <IconButton
-          onClick={handleNextClick}
-          style={{
-            height: "44px",
-            marginTop: "245px",
-            backgroundColor: "#e53637",
-            boxShadow: "0px 7px 10px 0px",
-          }}
-        >
-          <ArrowForwardIcon
+                  <Typography
+                    fontFamily={"Nunito Sans, sans-serif"}
+                    padding={"0px 15px"}
+                    color={"black"}
+                    fontSize={"15px"}
+                  >
+                    {item.name}
+                  </Typography>
+                  <Typography
+                    fontFamily={"Nunito Sans, sans-serif"}
+                    padding={"0px 15px"}
+                    color={"red"}
+                    fontSize={"15px"}
+                  >
+                    Rs. {item.price}
+                  </Typography>
+                </Box>
+
+                <Box
+                  style={{
+                    boxShadow: index === 1 ? "0px 20px 20px 6px" : "none",
+                  }}
+                ></Box>
+              </TestimonialBox>
+            )
+          )}
+
+          <IconButton
+            onClick={handleNextClick}
             style={{
-              color: "white",
+              height: "44px",
+              marginTop: "218px",
+              backgroundColor: "#e53637",
+              boxShadow: "0px 7px 10px 0px",
             }}
-          />
-        </IconButton>
-      </Stack>
+          >
+            <ArrowForwardIcon
+              style={{
+                color: "white",
+              }}
+            />
+          </IconButton>
+        </Stack>
+      </TestimonialStack>
 
       <Box
         maxWidth={400}
