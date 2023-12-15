@@ -93,6 +93,7 @@ export default function ProductsLeftSide() {
             fontSize={"16px"}
             fontWeight={"bold"}
             fontFamily={"Nunito Sans, sans-serif"}
+            whiteSpace={"nowrap"}
           >
             Filter By Width
           </Typography>
@@ -138,6 +139,7 @@ export default function ProductsLeftSide() {
             fontSize={"16px"}
             fontWeight={"bold"}
             fontFamily={"Nunito Sans, sans-serif"}
+            whiteSpace={"nowrap"}
           >
             Filter By Coposition
           </Typography>

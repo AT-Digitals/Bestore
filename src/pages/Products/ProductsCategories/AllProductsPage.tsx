@@ -1,4 +1,10 @@
-import { Box, Breadcrumbs, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Breadcrumbs,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 
 import ProductViewPage from "../ProductDetailPage/ProductView";
 import ProductsImage from "../ProductsItems";
@@ -28,6 +34,9 @@ export default function AllProductsPage() {
     : [];
 
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
+  const isMediumScreen = useMediaQuery(
+    "(min-width: 900px) and (max-width: 1519px)"
+  );
 
   return (
     <Box mb={15}>
@@ -59,7 +68,7 @@ export default function AllProductsPage() {
                 item
                 xs={12}
                 sm={6}
-                md={4}
+                md={isMediumScreen ? 6 : 4}
                 style={{ display: "flex" }}
               >
                 <Box
@@ -99,7 +108,6 @@ export default function AllProductsPage() {
                     alt="products"
                   />
                   <Box
-                    // mt={3}
                     display={"flex"}
                     flexDirection={"column"}
                     justifyContent={"flex-start"}
