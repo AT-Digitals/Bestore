@@ -1,4 +1,4 @@
-import { Box, IconButton, Rating, Stack, Typography } from "@mui/material";
+import { Box, IconButton, Rating, Stack, Typography, useMediaQuery } from "@mui/material";
 import React, { useState } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -61,6 +61,7 @@ export default function Testimonials() {
       prevIndex + 2 < TesttmoalProps.length ? prevIndex + 2 : 0
     );
   };
+  const isXsScreen = useMediaQuery("(max-width:1200px)");
   return (
     <Box bgcolor={"whitesmoke"} mb={"50px"}>
       <TestimonialStack
@@ -75,7 +76,7 @@ export default function Testimonials() {
           flexDirection={"column"}
           gap={"20px"}
           padding={"10px"}
-          alignItems={{ xs: "center", sm: "center", md: "baseline", lg: "baseline" }}
+          alignItems={{ xs: "center", sm: "baseline", md: "baseline", lg: "baseline" }}
         >
           <Typography
             paddingTop={"110px"}
@@ -137,7 +138,7 @@ export default function Testimonials() {
           justifyContent={"center"}
           maxWidth={1000}
           width={"100%"}
-          direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
+          direction={{ xs: "column", sm: "row", md: "row", lg: "row" }}
         >
           {TesttmoalProps.slice(visibleIndex, visibleIndex + 2).map(
             (item, index) => (
@@ -150,7 +151,7 @@ export default function Testimonials() {
                 width={"100%"}
                  marginLeft={{ xs: "30px", sm: "30px", md: "0px", lg: "0px" }}
               >
-                <Box width={"76%"}>
+                <Box  width={{ xs: "76%", sm: "100%", md: "100%", lg: "76%" }}>
                   <img
                     src={item.image}
                     style={{
@@ -164,7 +165,8 @@ export default function Testimonials() {
                 </Box>
                 <Box
                   boxShadow={"0px 0px 10px 0px"}
-                  width={"76%"}
+                  width={{ xs: "76%", sm: "100%", md: "100%", lg: "76%" }}
+                  paddingTop={{ xs: "20px", sm: "20px", md: "0px", lg: "0px" }}
                   sx={{
                     backgroundColor: "white",
                     marginTop: "-46px",
@@ -176,7 +178,7 @@ export default function Testimonials() {
                 >
                   <Typography
                     color={"#e53637"}
-                    fontSize={"76px"}
+                    fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "76px" }}
                     textAlign={"center"}
                   >
                     ,,
@@ -185,7 +187,7 @@ export default function Testimonials() {
                     fontFamily={"Nunito Sans, sans-serif"}
                     padding={"0px 15px"}
                     color={"black"}
-                    fontSize={"20px"}
+                    fontSize={{ xs: "15px", sm: "15px", md: "18px", lg: "20px" }}
                   >
                     {item.discription}
                   </Typography>
@@ -219,7 +221,7 @@ export default function Testimonials() {
                     marginTop={"20px"}
                     fontWeight={"600"}
                     textAlign={"center"}
-                    fontSize={"26px"}
+                    fontSize={{ xs: "20px", sm: "20px", md: "20px", lg: "26px" }}
                     color={"#e53637"}
                     fontFamily={"Nunito Sans, sans-serif"}
                   >
