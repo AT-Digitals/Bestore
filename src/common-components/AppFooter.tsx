@@ -71,11 +71,11 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
           width={"100%"}
           paddingTop={"90px"}
           direction={{ xs: "column", sm: "row", md: "row" }}
-          spacing={10}
+          spacing={{ sm: 3, md: 10 }}
           marginBottom={"5rem"}
         >
           <Stack direction={"column"} spacing={3} maxWidth={260}>
-            <Stack direction={"column"} spacing={3}>
+            <Stack ml={0} direction={"column"} spacing={3}>
               <a
                 href={routes.HOME}
                 onClick={() => handleMenuClick(routes.HOME)}
@@ -100,9 +100,13 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             </Stack>
           </Stack>
 
-          <Stack direction={"column"} spacing={1} style={{
-            marginTop: "0px"
-          }}>
+          <Stack
+            direction={"column"}
+            spacing={1}
+            style={{
+              marginTop: "0px",
+            }}
+          >
             <br />
 
             <Stack
@@ -136,7 +140,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             flexDirection={"column"}
             className={isProductsPage ? "active-tab" : ""}
             style={{
-              marginTop: "0px"
+              marginTop: "0px",
             }}
           >
             {FooterPageNames.map((item, index) => (
@@ -154,9 +158,14 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             ))}
           </Stack>
 
-          <Stack spacing={2} maxWidth={300} style={{
-            marginTop: '0px'
-          }}>
+          <Stack
+            ml={0}
+            spacing={2}
+            maxWidth={200}
+            style={{
+              marginTop: "0px",
+            }}
+          >
             <br />
 
             <Typography
