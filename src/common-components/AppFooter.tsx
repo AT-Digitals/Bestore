@@ -100,7 +100,9 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             </Stack>
           </Stack>
 
-          <Stack direction={"column"} spacing={1}>
+          <Stack direction={"column"} spacing={1} style={{
+            marginTop: "0px"
+          }}>
             <br />
 
             <Stack
@@ -133,6 +135,9 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             display={"flex"}
             flexDirection={"column"}
             className={isProductsPage ? "active-tab" : ""}
+            style={{
+              marginTop: "0px"
+            }}
           >
             {FooterPageNames.map((item, index) => (
               <Box paddingTop={"2rem"} display={"flex"}>
@@ -149,7 +154,9 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             ))}
           </Stack>
 
-          <Stack spacing={2} maxWidth={300}>
+          <Stack spacing={2} maxWidth={300} style={{
+            marginTop: '0px'
+          }}>
             <br />
 
             <Typography

@@ -68,12 +68,14 @@ export default function Testimonials() {
         marginTop={"50px"}
         spacing={4}
         justifyContent={"center"}
+        width={{ xs: "90%", sm: "90%", md: "95%", lg: "95%" }}
       >
         <Box
           display={"flex"}
           flexDirection={"column"}
           gap={"20px"}
           padding={"10px"}
+          alignItems={{ xs: "center", sm: "center", md: "baseline", lg: "baseline" }}
         >
           <Typography
             paddingTop={"110px"}
@@ -135,7 +137,7 @@ export default function Testimonials() {
           justifyContent={"center"}
           maxWidth={1000}
           width={"100%"}
-          direction={"row"}
+          direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
         >
           {TesttmoalProps.slice(visibleIndex, visibleIndex + 2).map(
             (item, index) => (
@@ -145,6 +147,8 @@ export default function Testimonials() {
                 padding={"10px"}
                 gap={"3rem"}
                 textAlign={"center"}
+                width={"100%"}
+                 marginLeft={{ xs: "30px", sm: "30px", md: "0px", lg: "0px" }}
               >
                 <Box width={"76%"}>
                   <img
