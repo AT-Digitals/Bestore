@@ -8,7 +8,6 @@ import Testimonials from "../../common-components/Testimonials";
 
 export default function AboutPage() {
 
-  const isXsScreen = useMediaQuery("(max-width:1200px)");
   return (
     <Box>
       <Box>

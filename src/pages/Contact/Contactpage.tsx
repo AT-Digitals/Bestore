@@ -21,21 +21,21 @@ export default function ContactPage() {
         textAlign={"center"}
         bgcolor={"#F6F6F6"}
       >
-        <Typography color={"white"} fontSize={"75px"} fontWeight={"bold"}>
+        <Typography color={"white"} fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "76px" }} fontWeight={"bold"}>
           {" "}
           Reach Us
         </Typography>
       </Box>
 
-      <Box padding={" 0 60px"}>
+      <Box padding={{xs:" 0 20px", sm: "0 65px", md: "0 50px", lg: "0 60px"}}>
         <Typography paddingTop={" 60px"} fontFamily={"Nunito Sans, sans-serif"}>
           Working Hours <br /> Monday – Saturday : 9.00 AM – 11.00 PM
         </Typography>
       </Box>
-      <Stack direction={"row"}>
+      <Stack  direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}>
         <ContactForm />
         <Box
-          width={"85%"}
+          width={{xs: "85%", sm: "85%", md: "65%", lg: "85%"}}
           padding={"0px 10px"}
           margin={"0 auto"}
           display={"flex"}
@@ -49,11 +49,11 @@ export default function ContactPage() {
               backgroundColor: "white",
             }}
           >
-            <Stack direction={"row"} spacing={3} alignItems={"center"}>
+            <Stack direction={"row"} spacing={{xs: 0.2 , sm: 3, md: 3, lg: 3}} alignItems={"center"}>
               <Typography
                 textAlign={"start"}
                 fontWeight={"600"}
-                fontSize={"25px"}
+                fontSize={{xs: "17px", sm: "25px", md: "20px", lg: "25px"}}
                 color={"black"}
                 paddingTop={"60px"}
                 fontFamily={"Nunito Sans, sans-serif"}
@@ -146,11 +146,11 @@ export default function ContactPage() {
                 </Typography>
               </Box>
             </Stack>
-            <Stack direction={"row"} spacing={4} alignItems={"center"}>
+            <Stack direction={"row"} spacing={{xs: 0.4 , sm: 4, md: 4, lg: 4}} alignItems={"center"}>
               <Typography
                 textAlign={"start"}
                 fontWeight={"600"}
-                fontSize={"25px"}
+                fontSize={{xs: "15px", sm: "25px", md: "20px", lg: "25px"}}
                 color={"black"}
                 paddingTop={"60px"}
                 fontFamily={"Nunito Sans, sans-serif"}
@@ -318,7 +318,7 @@ export default function ContactPage() {
                   contactat@akkacreation.com
                 </Typography>
               </Box>
-              <Box padding={"0 20px"} marginTop={3}>
+              <Box display={"flex"} padding={"0 20px"} marginTop={3}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15573.737649706532!2d80.1963331!3d12.6194818!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53acac30ee8d5d%3A0xad2be778ecae5918!2sTina%20Blue%20View!5e0!3m2!1sen!2sin!4v1702554954296!5m2!1sen!2sin"
                   width="600"

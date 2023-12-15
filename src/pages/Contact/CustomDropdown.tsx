@@ -30,7 +30,7 @@ export default function CustomDropdown({
       <Select
         sx={{
           width: "100%",
-          maxWidth: "600px",
+          maxWidth: {xs: "300px", sm: "600px", md: "600px", lg: "600px"},
           borderRadius: "30px",
           height: "45px",
           ".MuiFormHelperText-root": {
@@ -75,7 +75,7 @@ export default function CustomDropdown({
           <Select
             sx={{
               width: "100%",
-              maxWidth: "600px",
+              maxWidth: {xs: "300px", sm: "600px", md: "600px", lg: "600px"},
               borderRadius: "30px",
               height: "45px",
               ".MuiFormHelperText-root": {

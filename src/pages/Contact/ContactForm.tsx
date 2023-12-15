@@ -271,10 +271,10 @@ export default function ContactForm() {
   return (
     <>
       <Box
-        margin={"0 auto"}
+        margin={{xs: "0 auto", sm: "10px", md: "0 auto", lg: "0 auto"}}
         maxWidth={600}
         width={"100%"}
-        padding={"60px"}
+        padding={{xs: "20px", sm: "20px 55px", md: "20px 50px", lg: "60px"}}
         borderRight={"1px solid rgba(0,0,0,0.105)"}
         mt={2}
         sx={{
@@ -283,12 +283,12 @@ export default function ContactForm() {
       >
         <form onSubmit={handleSubmit}>
           <Stack marginBottom={"25px"}>
-            <Stack direction={"row"} spacing={3} alignItems={"center"}>
+            <Stack direction={"row"} spacing={{xs: 0.2 , sm: 3, md: 0.3, lg: 3}} alignItems={"center"}>
               <Typography
                 color={"black"}
                 fontWeight={"bold"}
                 fontFamily={"Nunito Sans, sans-serif"}
-                fontSize={"25px"}
+                fontSize={{xs: "17px", sm: "25px", md: "20px", lg: "25px"}}
               >
                 SEND US AN EMAIL
               </Typography>
@@ -315,7 +315,7 @@ export default function ContactForm() {
               <TextField
                 sx={{
                   width: "100%",
-                  maxWidth: "600px",
+                  maxWidth: {xs: "300px", sm: "600px", md: "600px", lg: "600px"},
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -351,7 +351,7 @@ export default function ContactForm() {
               <TextField
                 sx={{
                   width: "100%",
-                  maxWidth: "600px",
+                  maxWidth: {xs: "300px", sm: "600px", md: "600px", lg: "600px"},
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -387,7 +387,7 @@ export default function ContactForm() {
               <TextField
                 sx={{
                   width: "100%",
-                  maxWidth: "600px",
+                  maxWidth: {xs: "300px", sm: "600px", md: "600px", lg: "600px"},
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -432,7 +432,7 @@ export default function ContactForm() {
               <TextField
                 sx={{
                   width: "100%",
-                  maxWidth: "720px",
+                  maxWidth: {xs: "300px", sm: "720px", md: "720px", lg: "720px"},
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -453,7 +453,7 @@ export default function ContactForm() {
               />
             </Box>
           </Stack>
-          <Box marginBottom={"190px"}>
+          <Box marginBottom={{xs: "30px", sm: "30px", md: "30px", lg: "190px"}}>
             <Button
               style={{
                 color: "#fff",
