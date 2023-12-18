@@ -44,7 +44,7 @@ export default function ProductPageLayout({ children, ...props }: BoxProps) {
                   <ProductsLeftSide />
                 </Stack>
               </Box>
-              <Box width={{ md: "100%" }}>
+              <Box width={{ xs: undefined, md: "100%" }}>
                 <Box mb={15}>
                   <Outlet />
                 </Box>

@@ -32,7 +32,12 @@ export default function SilkProducts() {
           </Typography>
         ))}
       </Breadcrumbs>
-      <Grid marginLeft={"20px"} marginTop={"10px"} container>
+      <Grid
+        width={{ xs: undefined, sm: "100%" }}
+        marginLeft={"20px"}
+        marginTop={"10px"}
+        container
+      >
         {SilkProductsImages.map((item, index) => (
           <Grid
             columnSpacing={"2rem"}
@@ -69,7 +74,9 @@ export default function SilkProducts() {
               <img
                 style={
                   {
-                    height: { xs: "65%", md: "70%" },
+                    // height: { xs: "65%", md: "70%" },
+                    height: "70%",
+
                     maxWidth: "100%",
                     width: "100%",
                     objectFit: "cover",

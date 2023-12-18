@@ -60,7 +60,12 @@ export default function AllProductsPage() {
               </Typography>
             ))}
           </Breadcrumbs>{" "}
-          <Grid marginLeft={"20px"} marginTop={"10px"} container>
+          <Grid
+            width={{ xs: undefined, sm: "100%" }}
+            marginLeft={"20px"}
+            marginTop={"10px"}
+            container
+          >
             {ProductsImage.map((item, index) => (
               <Grid
                 columnSpacing={"2rem"}

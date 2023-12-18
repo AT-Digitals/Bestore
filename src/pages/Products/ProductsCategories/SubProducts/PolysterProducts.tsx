@@ -35,6 +35,7 @@ export default function PolysterProducts() {
       <Grid marginLeft={"20px"} marginTop={"10px"} container>
         {PolysterProductsImages.map((item, index) => (
           <Grid
+            width={{ xs: undefined, sm: "100%" }}
             columnSpacing={"2rem"}
             rowGap={"4rem"}
             item
@@ -70,7 +71,9 @@ export default function PolysterProducts() {
               <img
                 style={
                   {
-                    height: { xs: "65%", md: "70%" },
+                    // height: { xs: "65%", md: "70%" },
+                    height: "70%",
+
                     maxWidth: "100%",
                     width: "100%",
                     objectFit: "cover",
