@@ -1,4 +1,10 @@
-import { Box, Breadcrumbs, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Breadcrumbs,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 
 import cotton1 from "./Screenshot 2023-12-13 112032.png";
 import cotton2 from "./Screenshot 2023-12-13 112107.png";
@@ -24,6 +30,9 @@ export default function CottonProducts() {
 
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
 
+  const isMediumScreen = useMediaQuery(
+    "(min-width: 900px) and (max-width: 1519px)"
+  );
   return (
     <>
       <Breadcrumbs
@@ -55,11 +64,10 @@ export default function CottonProducts() {
             item
             xs={12}
             sm={6}
-            md={4}
+            md={isMediumScreen ? 6 : 4}
             style={{ display: "flex" }}
           >
             <Box
-              // onClick={() => handleProductClick(item)}
               padding={"10px"}
               height={{ xs: 270, sm: 360, md: 400 }}
               mb={2}

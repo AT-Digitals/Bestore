@@ -1,6 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 
-import { Link } from "react-router-dom";
 import ProductsImage from "../../Products/ProductsItems";
 
 interface Prosp {

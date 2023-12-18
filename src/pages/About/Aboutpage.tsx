@@ -1,20 +1,23 @@
-import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 
 import AboutBanner from "./plainfab.webp";
 import AboutConainer from "./AboutContainer/AboutContainer";
 import CartImage from "../../common-components/CartImage";
 import Testimonials from "../../common-components/Testimonials";
 
-
 export default function AboutPage() {
-
   return (
     <Box>
       <Box>
         <Box
           sx={{
             backgroundImage: `url(${AboutBanner})`,
-            backgroundSize: { xs: "cover", sm: "cover", md: "cover", lg: "cover" },
+            backgroundSize: {
+              xs: "cover",
+              sm: "cover",
+              md: "cover",
+              lg: "cover",
+            },
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             height: "auto",
