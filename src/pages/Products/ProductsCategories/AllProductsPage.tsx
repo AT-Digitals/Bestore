@@ -103,7 +103,8 @@ export default function AllProductsPage() {
                   <img
                     style={
                       {
-                        height: { xs: "65%", md: "70%" },
+                        // height: { xs: "65%", md: "70%" },
+                        height: "70%",
                         maxWidth: "100%",
                         width: "100%",
                         objectFit: "cover",

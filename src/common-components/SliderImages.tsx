@@ -209,6 +209,7 @@ export default function SliderImages() {
         </Typography>
         <Link to={routes.PRODUCTS}>
           <Button
+            onClick={() => window.scroll(0, 0)}
             fullWidth
             style={{
               background: "black",
