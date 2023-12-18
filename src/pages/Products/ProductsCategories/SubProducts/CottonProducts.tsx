@@ -43,7 +43,7 @@ export default function CottonProducts() {
         ))}
       </Breadcrumbs>
       <Grid
-        width={{ xs: undefined, sm: "100%" }}
+        width={{ xs: "80%", sm: "100%" }}
         marginLeft={"20px"}
         marginTop={"10px"}
         container

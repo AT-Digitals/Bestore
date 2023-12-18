@@ -32,10 +32,14 @@ export default function PolysterProducts() {
           </Typography>
         ))}
       </Breadcrumbs>
-      <Grid marginLeft={"20px"} marginTop={"10px"} container>
+      <Grid
+        width={{ xs: "80%", sm: "100%" }}
+        marginLeft={"20px"}
+        marginTop={"10px"}
+        container
+      >
         {PolysterProductsImages.map((item, index) => (
           <Grid
-            width={{ xs: undefined, sm: "100%" }}
             columnSpacing={"2rem"}
             rowGap={"4rem"}
             item
