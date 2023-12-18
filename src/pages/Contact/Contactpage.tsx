@@ -42,7 +42,7 @@ export default function ContactPage() {
           marginBottom={"40px"}
         >
           <Box
-            margin={"0 auto"}
+            margin={{xs: "0 auto", sm: "0 auto", md: "-35px 0px", lg: "0 auto"}}
             maxWidth={"700px"}
             width={"100%"}
             sx={{
