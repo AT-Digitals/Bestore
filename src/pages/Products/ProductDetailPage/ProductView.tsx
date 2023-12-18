@@ -30,7 +30,7 @@ export default function ProductViewPage({
       width={"100%"}
     >
       <Stack pb={5}>
-        <Box display={"flex"} alignItems={"center"} justifyContent={"left"}>
+        <Box marginTop={{xs: "23px", sm: "23px", md: "23px", lg: "23px"}} display={"flex"} alignItems={"center"} justifyContent={"left"}>
           <IconButton onClick={handleGoBack}>
             <ArrowBackIcon />
           </IconButton>{" "}
@@ -92,9 +92,9 @@ export default function ProductViewPage({
               </Typography>
             </Stack>
           </Stack>
-
+          <Box width={{xs: "85%", sm: "94%", md: "110%", lg: "88%"}} borderTop={"1px solid black"}></Box>
           <Stack maxWidth={1000} width={"100%"}>
-            <Typography
+            <Typography marginTop={"20px"}
               textAlign={{ md: "center" }}
               fontSize={{ xs: "12px", sm: "15px", md: "30px" }}
             >
