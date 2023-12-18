@@ -71,8 +71,9 @@ export default function SliderImages() {
         width={{ xs: "100%", sm: "100%", md: "90%" }}
       >
         <Stack
-          maxWidth={600}
-          width={"100%"}
+          maxWidth={{ xs: 400, sm: 600 }}
+          width={{ xs: "85%", sm: "100%" }}
+          padding={{ xs: "0 20px", sm: "none" }}
           direction={"row"}
           justifyContent={"center"}
         >
@@ -100,7 +101,7 @@ export default function SliderImages() {
                 maxWidth={400}
                 minHeight={index === 1 ? "240px" : "220px"}
                 key={index}
-                padding={"30px"}
+                padding={{ xs: "0 5px", sm: "30px" }}
                 gap={"3rem"}
                 textAlign={"center"}
               >
@@ -181,7 +182,7 @@ export default function SliderImages() {
 
       <Box
         maxWidth={400}
-        width="100%"
+        width={{ xs: "90%", sm: "100%" }}
         display={"flex"}
         flexDirection={"column"}
         gap={"20px"}
