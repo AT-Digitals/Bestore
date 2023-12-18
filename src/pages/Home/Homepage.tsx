@@ -119,7 +119,7 @@ export default function Homepage() {
       </Box>
       <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
         {HoverImageText.map((item, index) => (
-          <Tooltip title="Click to view Products" followCursor>
+          <Tooltip title={`Click to view ${item.label} Products`} followCursor>
             <Box
               onClick={() => handleLabelClick(item.label)}
               sx={{
