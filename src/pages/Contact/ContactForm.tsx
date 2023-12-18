@@ -281,8 +281,8 @@ export default function ContactForm() {
           backgroundColor: "white",
         }}
       >
-        <form style={{ padding: "0 30px" }} onSubmit={handleSubmit}>
-          <Stack marginBottom={"25px"}>
+        <form onSubmit={handleSubmit}>
+          <Stack padding={{ xs: "15px 21px", sm: "0px", md: "0px", lg: "0px" }} marginBottom={"25px"}>
             <Stack
               direction={"row"}
               spacing={{ xs: 0.2, sm: 3, md: 0.3, lg: 3 }}
@@ -477,7 +477,7 @@ export default function ContactForm() {
               />
             </Box>
           </Stack>
-          <Box
+          <Box display={{xs: "flex", sm: "flex", md: "flex", lg: "flex"}} justifyContent={{xs: "center", sm: "center", md: "center", lg: "flex-start"}}
             marginBottom={{ xs: "30px", sm: "30px", md: "30px", lg: "190px" }}
           >
             <Button
