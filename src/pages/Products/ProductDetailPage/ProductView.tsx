@@ -42,7 +42,7 @@ export default function ProductViewPage({
             padding={{ xs: "10px", sm: "20px", md: "60px" }}
             spacing={8}
             bgcolor={"white"}
-            boxShadow={"0px 0px 15px 0px"}
+            boxShadow={{ xs: "none", sm: "none", md: "0px 0px 15px 0px" }}
             maxWidth={800}
             direction={{ xs: "column", sm: "column", md: "row" }}
             mb={3}
@@ -109,7 +109,7 @@ export default function ProductViewPage({
                 {limitedRelatedProducts.map((relatedProduct, index) => (
                   <Grid item key={index} xs={12} sm={6} md={4}>
                     <Box
-                      height={340}
+                      height={250}
                       maxWidth={{ xs: 330, sm: 240, md: 330 }}
                       mb={2}
                       mt={2}
@@ -132,9 +132,9 @@ export default function ProductViewPage({
                         style={{
                           maxWidth: 330,
                           width: "100%",
-                          minHeight: 230,
+                          minHeight: 170,
                           objectFit: "cover",
-                          height: "60%",
+                          height: "50%",
                         }}
                         src={relatedProduct.Image}
                         alt="products"
