@@ -11,7 +11,8 @@ import styled from "@emotion/styled";
 const TestimonialBox = styled(Box)`
   overflow: visible;
   cursor: pointer;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
 `;
 
 const TestimonialStack = styled(Stack)`
@@ -25,15 +26,18 @@ export default function SliderImages() {
 
   const handlePrevClick = () => {
     setTimeout(() => {
-    setCurrentIndex((currentIndex) =>
-      currentIndex - 1 >= 0 ? currentIndex - 1 : ProductsImage.length - 1)
+      setCurrentIndex((currentIndex) =>
+        currentIndex - 1 >= 0 ? currentIndex - 1 : ProductsImage.length - 1
+      );
     }, 200); // Adjust the delay as needed
   };
 
   const handleNextClick = () => {
     // Delay the update of the currentIndex to create a smooth transition
     setTimeout(() => {
-      setCurrentIndex((currentIndex) => (currentIndex + 1) % ProductsImage.length);
+      setCurrentIndex(
+        (currentIndex) => (currentIndex + 1) % ProductsImage.length
+      );
     }, 200); // Adjust the delay as needed
   };
 
@@ -99,6 +103,7 @@ export default function SliderImages() {
               <TestimonialBox
                 style={{
                   transform: `scale(${index === 1 ? 1.2 : 1})`,
+                  opacity: index === 1 ? 1 : 0.3, // Adjust opacity as needed
                 }}
                 maxWidth={400}
                 minHeight={index === 1 ? "240px" : "240px"}
@@ -212,7 +217,7 @@ export default function SliderImages() {
               ":hover": {
                 color: "white",
                 backgroundColor: "#e53637",
-              }
+              },
             }}
           >
             Click to show more
