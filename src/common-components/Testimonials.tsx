@@ -156,6 +156,7 @@ export default function Testimonials() {
           maxWidth={1000}
           width={"100%"}
           direction={{ xs: "column", sm: "row", md: "row", lg: "row" }}
+          pb={4}
         >
           {TesttmoalProps.slice(visibleIndex, visibleIndex + 2).map(
             (item, index) => (
