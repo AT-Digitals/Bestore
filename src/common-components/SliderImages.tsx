@@ -179,6 +179,7 @@ export default function SliderImages() {
       </TestimonialStack>
 
       <Box
+        ml={0}
         maxWidth={400}
         width={{ xs: "90%", sm: "100%" }}
         display={"flex"}
