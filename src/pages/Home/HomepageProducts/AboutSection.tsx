@@ -1,5 +1,5 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import Fabric from "./fabric-about.jpeg";
 import Fabric2 from "./fabric-about2.jpeg";
 
@@ -32,7 +32,14 @@ export default function AboutSection() {
             padding={"20px"}
             boxShadow={"0px 0px 5px 0px"}
           >
-            <Typography>
+            <Typography style={{
+              fontSize: "68px", 
+              color: "#e53637",
+              marginTop: "-24px"
+            }}>
+            “
+            </Typography>
+            <Typography marginLeft={"32px"} marginTop={"-69px"}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
               doeiusmod tempor incididunt ut labore et dolore magna aliqua.-{" "}
               <span
@@ -46,12 +53,16 @@ export default function AboutSection() {
             </Typography>
           </Box>
           <Button
-            style={{
-              background: "red",
+            sx={{
+              background: "black",
               color: "white",
               marginTop: "40px",
               textTransform: "none",
               width: 300,
+              ":hover": {
+                color: "white",
+                backgroundColor: "#e53637",
+              }
             }}
           >
             Read more
