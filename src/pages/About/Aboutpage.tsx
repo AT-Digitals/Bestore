@@ -40,10 +40,6 @@ export default function AboutPage() {
       <Stack pt={4}>
         <Testimonials />
       </Stack>
-
-      <Stack alignItems={"center"}>
-        <CartImage />
-      </Stack>
     </Box>
   );
 }

@@ -212,7 +212,7 @@ export default function Homepage() {
           {/* <Link to={routes.PRODUCTS}> */}
           <Button
             onClick={handleMoreProducts}
-            style={{
+            sx={{
               background: "black",
               color: "white",
               padding: "15px 50px",
@@ -220,6 +220,10 @@ export default function Homepage() {
               textTransform: "none",
               fontWeight: "bold",
               fontFamily: "Nunito Sans, sans-serif",
+              ":hover": {
+                color: "white",
+                backgroundColor: "rgb(11, 120, 189)",
+              }
             }}
           >
             More Products

@@ -99,7 +99,7 @@ export default function SliderImages() {
                   transform: `scale(${index === 1 ? 1.2 : 1})`,
                 }}
                 maxWidth={400}
-                minHeight={index === 1 ? "240px" : "220px"}
+                minHeight={index === 1 ? "240px" : "240px"}
                 key={index}
                 padding={{ xs: "0 5px", sm: "30px" }}
                 gap={"3rem"}
@@ -142,14 +142,6 @@ export default function SliderImages() {
                     fontSize={"15px"}
                   >
                     {item.name}
-                  </Typography>
-                  <Typography
-                    fontFamily={"Nunito Sans, sans-serif"}
-                    padding={"0px 15px"}
-                    color={"red"}
-                    fontSize={"15px"}
-                  >
-                    Rs. {item.price}
                   </Typography>
                 </Box>
 
@@ -211,10 +203,14 @@ export default function SliderImages() {
           <Button
             onClick={() => window.scroll(0, 0)}
             fullWidth
-            style={{
+            sx={{
               background: "black",
               color: "white",
               textTransform: "none",
+              ":hover": {
+                color: "white",
+                backgroundColor: "rgb(11, 120, 189)",
+              }
             }}
           >
             Click to show more
