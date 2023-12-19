@@ -10,7 +10,6 @@ import styled from "@emotion/styled";
 
 const TestimonialBox = styled(Box)`
   overflow: visible;
-  cursor: pointer;
   transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
   opacity: 1;
 `;
