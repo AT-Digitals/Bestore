@@ -44,14 +44,14 @@ export default function AboutSection() {
                 color: "#e53637",
                 width: "20px",
                 height: "20px",
-                marginTop: "-53px",
+                marginTop: "-28px",
               }}
             >
               “
             </Typography>
             <Typography
               fontFamily={"Nunito Sans, sans-serif"}
-              mt={"35px"}
+              mt={"14px"}
               marginLeft={"32px"}
             >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
