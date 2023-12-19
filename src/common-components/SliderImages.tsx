@@ -24,25 +24,31 @@ export default function SliderImages() {
   const [numImages, setNumImages] = useState(window.innerWidth < 1100 ? 1 : 3);
 
   const handlePrevClick = () => {
+    setTimeout(() => {
     setCurrentIndex((currentIndex) =>
-      currentIndex - 1 >= 0 ? currentIndex - 1 : ProductsImage.length - 1
-    );
+      currentIndex - 1 >= 0 ? currentIndex - 1 : ProductsImage.length - 1)
+    }, 200); // Adjust the delay as needed
   };
 
   const handleNextClick = () => {
-    setCurrentIndex(
-      (currentIndex) => (currentIndex + 1) % ProductsImage.length
-    );
+    // Delay the update of the currentIndex to create a smooth transition
+    setTimeout(() => {
+      setCurrentIndex((currentIndex) => (currentIndex + 1) % ProductsImage.length);
+    }, 200); // Adjust the delay as needed
   };
 
   useEffect(() => {
     const handleResize = () => {
+      // Recalculate the number of images to display based on the window width
       const numImages = window.innerWidth < 1100 ? 1 : 3;
+      // Update state with the new number of images
       setNumImages(numImages);
     };
 
+    // Attach the event listener
     window.addEventListener("resize", handleResize);
 
+    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -206,7 +212,7 @@ export default function SliderImages() {
               ":hover": {
                 color: "white",
                 backgroundColor: "#e53637",
-              },
+              }
             }}
           >
             Click to show more
