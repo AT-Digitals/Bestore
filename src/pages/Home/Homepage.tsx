@@ -2,6 +2,7 @@ import { Box, Button, Stack, Tooltip, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 
+import AboutSection from "./HomepageProducts/AboutSection";
 import Banner from "./Cotton-fabric1-Banner.jpg";
 import ColoursImage from "./colours.avif";
 import FabricImage from "./fabric.d.jpg";
@@ -116,6 +117,9 @@ export default function Homepage() {
           </Button>
         </Link>
       </Box>
+
+      <AboutSection />
+
       <Stack direction={{ xs: "column", sm: "row", md: "row" }}>
         {HoverImageText.map((item, index) => (
           <Tooltip title={`Click to view ${item.label} Products`} followCursor>
@@ -225,7 +229,7 @@ export default function Homepage() {
               ":hover": {
                 color: "white",
                 backgroundColor: "rgb(11, 120, 189)",
-              }
+              },
             }}
           >
             More Products
