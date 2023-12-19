@@ -3,7 +3,7 @@ import { Box, BoxProps, Stack, Typography } from "@mui/material";
 import Layout from "./Layout";
 import { Outlet } from "react-router-dom";
 import ProductsLeftSide from "../pages/Products/ProductsCategories/ProductsLeftSide";
-import banner from "./Organic-Cotton-Banner.jpg";
+import banner from "./fabric_stack.jpg";
 
 export default function ProductPageLayout({ children, ...props }: BoxProps) {
   return (

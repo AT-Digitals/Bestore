@@ -2,7 +2,7 @@
 
 import { Box, Stack, Typography } from "@mui/material";
 
-import ContactBanner from "./cotton-banner-wide-auto.jpg";
+import ContactBanner from "./Organic-Cotton-Banner.jpg";
 import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
