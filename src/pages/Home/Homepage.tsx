@@ -109,7 +109,7 @@ export default function Homepage() {
               fontFamily: "Nunito Sans, sans-serif",
               ":hover": {
                 color: "white",
-                backgroundColor: "rgb(11, 120, 189)",
+                backgroundColor: "#e53637",
               },
             }}
           >
@@ -228,8 +228,9 @@ export default function Homepage() {
               fontFamily: "Nunito Sans, sans-serif",
               ":hover": {
                 color: "white",
-                backgroundColor: "rgb(11, 120, 189)",
-              },
+                backgroundColor: "#e53637",
+              }
+
             }}
           >
             More Products

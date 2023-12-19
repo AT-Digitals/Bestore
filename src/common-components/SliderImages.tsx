@@ -209,7 +209,7 @@ export default function SliderImages() {
               textTransform: "none",
               ":hover": {
                 color: "white",
-                backgroundColor: "rgb(11, 120, 189)",
+                backgroundColor: "#e53637",
               }
             }}
           >
