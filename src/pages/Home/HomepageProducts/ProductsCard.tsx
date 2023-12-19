@@ -40,7 +40,6 @@ export default function ProductsCard({ relatedProduct }: Prosp) {
               width={"100%"}
               style={{
                 overflow: "hidden",
-                cursor: "pointer",
                 transition: "transform 0.5s ease",
                 boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
               }}

@@ -126,6 +126,7 @@ export default function Homepage() {
                 position: "relative",
                 width: "100%",
                 overflow: "hidden",
+                cursor: "pointer",
 
                 "&:hover::before": {
                   content: '""',
@@ -145,16 +146,20 @@ export default function Homepage() {
               }}
             >
               <img
-                style={
-                  {
-                    opacity: 1,
-                    width: "100%",
-                    transition: ".5s ease",
-                    backfaceVisibility: "hidden",
-                    minHeight: { sm: 300, md: 520 },
-                    height: "100%",
-                  } as any
-                }
+                style={{
+                  opacity: 1,
+                  width: "100%",
+                  transition: "transform 0.5s ease",
+                  height: "100%",
+                  overflow: "hidden",
+                  position: "relative",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
                 src={item.image}
                 alt=""
               />
