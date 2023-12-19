@@ -9,7 +9,7 @@ export default function AboutSection() {
       <Stack direction={"row"}>
         <Stack direction={"row"} spacing={3} maxWidth={600}>
           <Box>
-            <img width={350} src={Fabric} alt="" />
+            <img width={300} src={Fabric} alt="" />
           </Box>{" "}
           <Box pt={3}>
             <img width={350} src={Fabric2} alt="" />
