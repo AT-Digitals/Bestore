@@ -195,7 +195,7 @@ export default function SliderImages() {
           fontSize={"25px"}
           fontFamily={"Nunito Sans, sans-serif"}
         >
-          Our Readymade Products
+          Our Signature Products
         </Typography>
         <Typography
           fontWeight={"600"}
