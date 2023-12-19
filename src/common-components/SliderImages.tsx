@@ -37,16 +37,12 @@ export default function SliderImages() {
 
   useEffect(() => {
     const handleResize = () => {
-      // Recalculate the number of images to display based on the window width
       const numImages = window.innerWidth < 1100 ? 1 : 3;
-      // Update state with the new number of images
       setNumImages(numImages);
     };
 
-    // Attach the event listener
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -210,7 +206,7 @@ export default function SliderImages() {
               ":hover": {
                 color: "white",
                 backgroundColor: "#e53637",
-              }
+              },
             }}
           >
             Click to show more

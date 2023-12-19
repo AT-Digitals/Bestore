@@ -22,7 +22,7 @@ export default function ProductPageLayout({ children, ...props }: BoxProps) {
           textAlign={"center"}
         >
           <Typography
-            color={"white"}
+            color={"Black"}
             fontSize={"75px"}
             fontWeight={"bold"}
             fontFamily={"Nunito Sans, sans-serif"}
