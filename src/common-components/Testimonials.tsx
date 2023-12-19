@@ -1,4 +1,11 @@
-import { Box, IconButton, Rating, Stack, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Rating,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import React, { useState } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -36,6 +43,11 @@ const TesttmoalProps = [
     image: image2,
     discription:
       "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, they don't just come back, they don't simply recommend you",
+  },
+  {
+    image: image,
+    discription:
+      "  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 
@@ -76,7 +88,12 @@ export default function Testimonials() {
           flexDirection={"column"}
           gap={"20px"}
           padding={"10px"}
-          alignItems={{ xs: "center", sm: "baseline", md: "baseline", lg: "baseline" }}
+          alignItems={{
+            xs: "center",
+            sm: "baseline",
+            md: "baseline",
+            lg: "baseline",
+          }}
         >
           <Typography
             paddingTop={"110px"}
@@ -149,9 +166,9 @@ export default function Testimonials() {
                 gap={"3rem"}
                 textAlign={"center"}
                 width={"100%"}
-                 marginLeft={{ xs: "30px", sm: "30px", md: "0px", lg: "0px" }}
+                marginLeft={{ xs: "30px", sm: "30px", md: "0px", lg: "0px" }}
               >
-                <Box  width={{ xs: "76%", sm: "100%", md: "100%", lg: "76%" }}>
+                <Box width={{ xs: "76%", sm: "100%", md: "100%", lg: "76%" }}>
                   <img
                     src={item.image}
                     style={{
@@ -178,7 +195,12 @@ export default function Testimonials() {
                 >
                   <Typography
                     color={"#e53637"}
-                    fontSize={{ xs: "40px", sm: "40px", md: "50px", lg: "76px" }}
+                    fontSize={{
+                      xs: "40px",
+                      sm: "40px",
+                      md: "50px",
+                      lg: "76px",
+                    }}
                     textAlign={"center"}
                   >
                     ,,
@@ -187,7 +209,12 @@ export default function Testimonials() {
                     fontFamily={"Nunito Sans, sans-serif"}
                     padding={"0px 15px"}
                     color={"black"}
-                    fontSize={{ xs: "15px", sm: "15px", md: "18px", lg: "20px" }}
+                    fontSize={{
+                      xs: "15px",
+                      sm: "15px",
+                      md: "18px",
+                      lg: "20px",
+                    }}
                   >
                     {item.discription}
                   </Typography>
@@ -221,7 +248,12 @@ export default function Testimonials() {
                     marginTop={"20px"}
                     fontWeight={"600"}
                     textAlign={"center"}
-                    fontSize={{ xs: "20px", sm: "20px", md: "20px", lg: "26px" }}
+                    fontSize={{
+                      xs: "20px",
+                      sm: "20px",
+                      md: "20px",
+                      lg: "26px",
+                    }}
                     color={"#e53637"}
                     fontFamily={"Nunito Sans, sans-serif"}
                   >

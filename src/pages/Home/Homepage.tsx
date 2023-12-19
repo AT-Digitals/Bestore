@@ -230,7 +230,7 @@ export default function Homepage() {
 
       <Testimonials />
       <SliderImages />
-      <CartImage />
+      {/* <CartImage /> */}
     </Box>
   );
 }
