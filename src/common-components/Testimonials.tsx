@@ -1,11 +1,4 @@
-import {
-  Box,
-  IconButton,
-  Rating,
-  Stack,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, IconButton, Rating, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -73,7 +66,6 @@ export default function Testimonials() {
       prevIndex + 2 < TesttmoalProps.length ? prevIndex + 2 : 0
     );
   };
-  const isXsScreen = useMediaQuery("(max-width:1200px)");
   return (
     <Box bgcolor={"whitesmoke"} mb={"50px"}>
       <TestimonialStack
