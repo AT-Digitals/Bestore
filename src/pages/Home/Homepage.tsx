@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 
 import Banner from "./Cotton-fabric1-Banner.jpg";
-import CartImage from "../../common-components/CartImage";
 import ColoursImage from "./colours.avif";
 import FabricImage from "./fabric.d.jpg";
 import PatternsImage from "./patterns.jpg";
@@ -127,16 +126,15 @@ export default function Homepage() {
                 width: "100%",
                 overflow: "hidden",
                 cursor: "pointer",
-
+                height: 400,
                 "&:hover::before": {
-                  content: '""',
                   position: "absolute",
                   top: 0,
                   left: 0,
                   width: "100%",
                   height: "100%",
                   backgroundColor: "rgba(255, 255, 255, 0.5)",
-                  zIndex: 1,
+                  zIndex: 2, // Set a higher z-index value
                   transition: ".5s ease",
                 },
                 "&:hover .overlay": {
@@ -145,6 +143,7 @@ export default function Homepage() {
                 },
               }}
             >
+              {/* Image */}
               <img
                 style={{
                   opacity: 1,
@@ -163,6 +162,8 @@ export default function Homepage() {
                 src={item.image}
                 alt=""
               />
+
+              {/* Content */}
               <Box
                 className="overlay"
                 sx={{
@@ -173,6 +174,7 @@ export default function Homepage() {
                   left: "50%",
                   transform: "translate(-50%,-50%)",
                   textAlign: "center",
+                  zIndex: 1, // Set a lower z-index value
                 }}
               >
                 <Typography
