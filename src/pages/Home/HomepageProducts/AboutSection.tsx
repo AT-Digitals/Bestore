@@ -1,27 +1,19 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
-import Fabric from "./banner3.jpg";
+import Fabric from "./Art_Exhibit_Blog_Banner-min_1.webp";
 import { Link } from "react-router-dom";
 import routes from "../../../routes/routes";
 
 export default function AboutSection() {
   return (
     <Box padding={"50px"} mt={4} mb={4} bgcolor={"white"}>
-      <Stack direction={{ xs: "column", sm: "row" }}>
-        <Stack direction={"row"} spacing={3} maxWidth={600}>
+      <Stack direction={{ xs: "column", sm: "row" }} spacing={3}>
+        <Stack direction={"row"} maxWidth={800}>
           <Box>
-            <img
-              width={"100%"}
-              style={{
-                maxWidth: 600,
-                height: 270,
-              }}
-              src={Fabric}
-              alt=""
-            />
+            <img width={"100%"} src={Fabric} alt="" />
           </Box>{" "}
         </Stack>
-        <Stack margin={"0 auto"} maxWidth={600}>
+        <Stack pt={4} margin={"0 auto"} maxWidth={600}>
           <Typography fontFamily={"Nunito Sans, sans-serif"} fontSize={"35px"}>
             About Us
           </Typography>
