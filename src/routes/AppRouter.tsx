@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import AboutPage from "../pages/About/Aboutpage";
 import AllProductsPage from "../pages/Products/ProductsCategories/AllProductsPage";
 import AppLayout from "../common-components/AppLayout";
+import AviaryProducts from "../pages/Products/ProductsCategories/SubProducts/Patterns/Floral/Aviary/AviaryProducts";
 import BlogAbout from "../pages/Blog/BlogAbout";
 import Blogpage from "../pages/Blog/Blogpage";
 import BlueProduct from "../pages/Products/ProductsCategories/SubProducts/BlueProduct";
@@ -77,6 +78,10 @@ export default function AppRouter() {
             <Route
               path={routes.PATTERNS_PRODUCT_1}
               element={<FloralProducts />}
+            />
+            <Route
+              path={routes.PATTERNS_PRODUCT_2}
+              element={<AviaryProducts />}
             />
           </Route>
         </Route>
