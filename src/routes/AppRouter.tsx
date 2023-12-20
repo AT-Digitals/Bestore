@@ -22,15 +22,12 @@ import PeaceSilkProduct from "../pages/Products/ProductsCategories/SubProducts/P
 import PolysterProducts from "../pages/Products/ProductsCategories/SubProducts/PolysterProducts";
 import ProductDetailPage from "../pages/Products/ProductDetailPage/ProductDetails";
 import ProductPageLayout from "../common-components/ProductPageLayout";
+import RecycledCotton from "../pages/Products/ProductsCategories/SubProducts/RecycledCotton";
 import RecycledKnitProducts from "../pages/Products/ProductsCategories/SubProducts/RecycledKnit/RecycledProducts";
 import RedProduct from "../pages/Products/ProductsCategories/SubProducts/RedProduct";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import WaterRepllentRept from "../pages/Products/ProductsCategories/SubProducts/WaterRepllentRept/WaterRepllentRept";
 import routes from "./routes";
-import LycocellProduct from "../pages/Products/ProductsCategories/SubProducts/LycocellProduct";
-import PeaceSilkProduct from "../pages/Products/ProductsCategories/SubProducts/PeaceSilkProduct";
-import RecycledCotton from "../pages/Products/ProductsCategories/SubProducts/RecycledCotton";
-
 
 export default function AppRouter() {
   return (
@@ -77,8 +74,14 @@ export default function AppRouter() {
             <Route path={routes.PRODUCT_RED} element={<RedProduct />} />
             <Route path={routes.PRODUCT_BLUE} element={<BlueProduct />} />
             <Route path={routes.PRODUCT_GREEN} element={<GreenProduct />} />
-            <Route path={routes.LYCOCELL_PRODUCT} element={<LycocellProduct />} />
-            <Route path={routes.PEACESILK_PRODUCT} element={<PeaceSilkProduct />} />
+            <Route
+              path={routes.LYCOCELL_PRODUCT}
+              element={<LycocellProduct />}
+            />
+            <Route
+              path={routes.PEACESILK_PRODUCT}
+              element={<PeaceSilkProduct />}
+            />
             <Route path={routes.RECYCLED_COTTON} element={<RecycledCotton />} />
             <Route
               path={routes.LYCOCELL_PRODUCT}
