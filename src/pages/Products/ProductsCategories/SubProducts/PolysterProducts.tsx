@@ -8,14 +8,12 @@ import {
 
 import silk1 from "./poly1.jpeg";
 import silk2 from "./poly2.jpeg";
-import silk3 from "./silk3.jpeg";
 import silk4 from "./poly2.jpeg";
 import { useLocation } from "react-router-dom";
 
 const PolysterProductsImages = [
   { name: "Golikibar Polyster Blue", image: silk1 },
   { name: "Cotton Polyster", image: silk2 },
-  { name: "Surat Plain 3", image: silk3 },
   { name: "Polyster Coloured", image: silk4 },
 ];
 
