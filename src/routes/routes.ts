@@ -32,9 +32,11 @@ const FABRIC_PRODUCT_4 = "products/Products-categories/Fabric/linen";
 const PATTERNS_PRODUCT_1 = "products/Products-categories/Patterns/floral";
 const PATTERNS_PRODUCT_2 = "products/Products-categories/Patterns/aviary";
 
-const LYCOCELL_PRODUCT = "products/Products-categories/Fabric/lycocell"
+const LYCOCELL_PRODUCT = "products/Products-categories/Fabric/lycocell";
 
-const PEACESILK_PRODUCT = "products/Products-categories/Fabric/peace-silk"
+const PEACESILK_PRODUCT = "products/Products-categories/Fabric/peace-silk";
+
+const RECYCLED_COTTON = "products/Products-categories/Fabric/recycled-cotton";
 
 const routes = {
   ROOT,
@@ -66,5 +68,6 @@ const routes = {
   LYCOCELL_PRODUCT,
   PEACESILK_PRODUCT,
   PATTERNS_PRODUCT_2,
+  RECYCLED_COTTON,
 };
 export default routes;

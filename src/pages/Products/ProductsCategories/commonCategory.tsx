@@ -16,7 +16,7 @@ const ProductsNavigationItems = [
       { name: "KNITS-RFD GRADE B ONLY", link: routes.FABRIC_PRODUCT_3 },
       { name: "LINEN", link: routes.FABRIC_PRODUCT_4 },
       { name: "PEACE SILKS", link: routes.PEACESILK_PRODUCT },
-      { name: "RECYCLED COTTON", link: "routes.FABRIC_PRODUCT_POLY" },
+      { name: "RECYCLED COTTON", link: routes.RECYCLED_COTTON },
       { name: "RECYCLED KNIT", link: routes.FABRIC_PRODUCT_2 },
       { name: "WATER REPELLENT RPET", link: routes.FABRIC_PRODUCT_8 },
     ],

@@ -26,6 +26,7 @@ import WaterRepllentRept from "../pages/Products/ProductsCategories/SubProducts/
 import routes from "./routes";
 import LycocellProduct from "../pages/Products/ProductsCategories/SubProducts/LycocellProduct";
 import PeaceSilkProduct from "../pages/Products/ProductsCategories/SubProducts/PeaceSilkProduct";
+import RecycledCotton from "../pages/Products/ProductsCategories/SubProducts/RecycledCotton";
 
 export default function AppRouter() {
   return (
@@ -74,6 +75,7 @@ export default function AppRouter() {
             <Route path={routes.PRODUCT_GREEN} element={<GreenProduct />} />
             <Route path={routes.LYCOCELL_PRODUCT} element={<LycocellProduct />} />
             <Route path={routes.PEACESILK_PRODUCT} element={<PeaceSilkProduct />} />
+            <Route path={routes.RECYCLED_COTTON} element={<RecycledCotton />} />
 
             <Route
               path={routes.FABRIC_PRODUCT_8}
