@@ -11,9 +11,15 @@ const PRODUCT_SHOE = "/product-shoe";
 const CLOTHING_PRODUCT = `${PRODUCTS}/Products-categories/Patterns`;
 const HOME_DECOR_PRODUCT = `${PRODUCTS}/Products-categories/Colours`;
 const FABRIC_PRODUCT = `${PRODUCTS}/Products-categories/silk`;
-const FABRIC_PRODUCT_COTTON = "products/Products-categories/Fabric/Cotton";
-const FABRIC_PRODUCT_SILK = "products/Products-categories/Fabric/Silk";
-const FABRIC_PRODUCT_POLY = "products/Products-categories/Fabric/Polyster";
+const FABRIC_PRODUCT_1 =
+  "products/Products-categories/Fabric/organic-cotton-wovens";
+const FABRIC_PRODUCT_2 = "products/Products-categories/Fabric/recyled-knit";
+const FABRIC_PRODUCT_3 = "products/Products-categories/Fabric/Polyster";
+const FABRIC_PRODUCT_7 =
+  "products/Products-categories/Fabric/recycled-fab-knit";
+
+const FABRIC_PRODUCT_8 =
+  "products/Products-categories/Fabric/watter-repllent-rept";
 
 const routes = {
   ROOT,
@@ -29,8 +35,10 @@ const routes = {
   CLOTHING_PRODUCT,
   HOME_DECOR_PRODUCT,
   FABRIC_PRODUCT,
-  FABRIC_PRODUCT_COTTON,
-  FABRIC_PRODUCT_SILK,
-  FABRIC_PRODUCT_POLY,
+  FABRIC_PRODUCT_1,
+  FABRIC_PRODUCT_2,
+  FABRIC_PRODUCT_3,
+  FABRIC_PRODUCT_7,
+  FABRIC_PRODUCT_8,
 };
 export default routes;

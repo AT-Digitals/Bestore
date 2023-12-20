@@ -8,17 +8,17 @@ import routes from "../../../routes/routes";
 
 const ProductsNavigationItems = [
   {
-    name: "Fabrics",
+    name: "Fabric",
     link: routes.FABRIC_PRODUCT,
     subcategories: [
-      { name: "ORGANIC COTTONS WOVENS", link: routes.FABRIC_PRODUCT_COTTON },
-      { name: "WOODPULP/LYCOCELL FABRIC", link: routes.FABRIC_PRODUCT_SILK },
-      { name: "KNITS-RFD GRADE B ONLY", link: routes.FABRIC_PRODUCT_POLY },
+      { name: "ORGANIC COTTONS WOVENS", link: routes.FABRIC_PRODUCT_1 },
+      { name: "WOODPULP/LYCOCELL FABRIC", link: "routes.FABRIC_PRODUCT_2" },
+      { name: "KNITS-RFD GRADE B ONLY", link: routes.FABRIC_PRODUCT_3 },
       { name: "LINEN", link: "routes.FABRIC_PRODUCT_POLY" },
       { name: "PEACE SILKS", link: "routes.FABRIC_PRODUCT_POLY" },
       { name: "RECYCLED COTTON", link: "routes.FABRIC_PRODUCT_POLY" },
-      { name: "RECYCLED KNIT", link: "routes.FABRIC_PRODUCT_POLY" },
-      { name: "WATER REPELLENT RPET", link: "routes.FABRIC_PRODUCT_POLY" },
+      { name: "RECYCLED KNIT", link: routes.FABRIC_PRODUCT_2 },
+      { name: "WATER REPELLENT RPET", link: routes.FABRIC_PRODUCT_8 },
     ],
   },
 
