@@ -10,23 +10,23 @@ import green7 from './GreenProducts/7.jpg'
 
 const GreenProductImages = [
     {
-      name: "Green and Black Base Stripe Print Colour (FC-226)  ", image: green1,
+      name: "Product 1", image: green1,
     },
-    { name: "Printed Base Stripe Print Green Colour  ", image: green2 },
+    { name: "Product 2", image: green2 },
     {
-      name: "Styled Printed Base Stripe Print Green Colour (FC-226)  ", image: green3,
+      name: "Product 3", image: green3,
     },
     { 
-        name: "Green and Sandal Base Stripe Print Colurs  ", image: green4
+        name: "Product 4", image: green4
      },
     { 
-        name: "Base Stripe Print Colurs in Green (FC-226)  ", image: green5
+        name: "Product 5", image: green5
      },
     { 
-        name: "Green and Black Base Stripe styled Design  ", image: green6
+        name: "Product 6", image: green6
      },
      { 
-        name: "Green Base Stripe Print Colurs Looking (FC-226)  ", image: green7
+        name: "Product 7", image: green7
      },
   ];
   
@@ -119,7 +119,7 @@ export default function GreenProduct() {
               >
                 <Typography
                   textAlign={"center"}
-                  fontSize={"13px"}
+                  fontSize={"16px"}
                   fontWeight={"bold"}
                   fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}

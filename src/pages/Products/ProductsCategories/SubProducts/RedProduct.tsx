@@ -11,23 +11,23 @@ import { useLocation } from 'react-router-dom'
 
 const RedProductImages = [
     {
-      name: "Red and Black Base Stripe Print Colour (FC-226)  ", image: red1,
+      name: "Product 1", image: red1,
     },
-    { name: "Printed Base Stripe Print Red Colour (FC-226)  ", image: red2 },
+    { name: "Product 2", image: red2 },
     {
-      name: "Styled Printed Base Stripe Print Red Colour (FC-226)  ", image: red3,
+      name: "Product 3", image: red3,
     },
     { 
-        name: "Red and Black Base Stripe Print Colurs (FC-226)  ", image: red4
+        name: "Product 4", image: red4
      },
     { 
-        name: "Base Stripe Print Colurs in Red (FC-226)  ", image: red5
+        name: "Product 5", image: red5
      },
     { 
-        name: "Red and Black Base Stripe styled Design (FC-226)  ", image: red6
+        name: "Product 6", image: red6
      },
      { 
-        name: "Red Base Stripe Print Colurs Looking (FC-226)  ", image: red7
+        name: "Product 7", image: red7
      },
   ];
   
@@ -118,7 +118,7 @@ export default function RedProduct() {
               >
                 <Typography
                   textAlign={"center"}
-                  fontSize={"13px"}
+                  fontSize={"16px"}
                   fontWeight={"bold"}
                   fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}
