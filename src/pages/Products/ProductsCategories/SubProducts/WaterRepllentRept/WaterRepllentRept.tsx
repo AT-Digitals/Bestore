@@ -94,7 +94,7 @@ export default function WaterRepllentRept() {
               >
                 <Typography
                   textAlign={"center"}
-                  fontSize={"13px"}
+                  fontSize={"16px"}
                   fontWeight={"bold"}
                   fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}

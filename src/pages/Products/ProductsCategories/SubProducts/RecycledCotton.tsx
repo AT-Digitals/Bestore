@@ -1,6 +1,13 @@
-import { useMediaQuery, Breadcrumbs, Typography, Grid, Box } from "@mui/material";
-import { useLocation } from "react-router-dom";
+import {
+  Box,
+  Breadcrumbs,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+
 import recycledcotton1 from "./RecycledCotton/1.jpg";
+import recycledcotton10 from "./RecycledCotton/shalimar 150 cm.jpg";
 import recycledcotton2 from "./RecycledCotton/2.jpg";
 import recycledcotton3 from "./RecycledCotton/3.jpg";
 import recycledcotton4 from "./RecycledCotton/4.jpg";
@@ -9,54 +16,59 @@ import recycledcotton6 from "./RecycledCotton/6.jpg";
 import recycledcotton7 from "./RecycledCotton/7.jpg";
 import recycledcotton8 from "./RecycledCotton/BIG DESIGN.jpg";
 import recycledcotton9 from "./RecycledCotton/red shalimar 1 copy.jpg";
-import recycledcotton10 from "./RecycledCotton/shalimar 150 cm.jpg";
-
+import { useLocation } from "react-router-dom";
 
 const LycocellProductImages = [
-    {
-      name: "OC MUSLIN", image: recycledcotton1,
-    },
-    { name: "OC D.GAUZE", image: recycledcotton2 },
-    {
-      name: "OC D.GAUZE", image: recycledcotton3,
-    },
-    {
-        name: "OC VOILE", image: recycledcotton4,
-      },
-      {
-        name: "OC CAMBRIC/BATISTE", image: recycledcotton5,
-      },
-      {
-        name: "OC POPLIN", image: recycledcotton6,
-      },
-      {
-        name: "OC POPLIN", image: recycledcotton7,
-      },
-      {
-        name: "OC CANVAS", image: recycledcotton9,
-      },
-      {
-        name: "OC DUCK/DRILL", image: recycledcotton10,
-      },
-      {
-        name: "OC SATEEN", image: recycledcotton8,
-      },
-  ];
-
-
+  {
+    name: "OC MUSLIN",
+    image: recycledcotton1,
+  },
+  { name: "OC D.GAUZE", image: recycledcotton2 },
+  {
+    name: "OC D.GAUZE",
+    image: recycledcotton3,
+  },
+  {
+    name: "OC VOILE",
+    image: recycledcotton4,
+  },
+  {
+    name: "OC CAMBRIC/BATISTE",
+    image: recycledcotton5,
+  },
+  {
+    name: "OC POPLIN",
+    image: recycledcotton6,
+  },
+  {
+    name: "OC POPLIN",
+    image: recycledcotton7,
+  },
+  {
+    name: "OC CANVAS",
+    image: recycledcotton9,
+  },
+  {
+    name: "OC DUCK/DRILL",
+    image: recycledcotton10,
+  },
+  {
+    name: "OC SATEEN",
+    image: recycledcotton8,
+  },
+];
 
 export default function RecycledCotton() {
+  const location = useLocation(); // Get the location object
 
-    const location = useLocation(); // Get the location object
+  const breadcrumbs = [location.pathname.split("/").pop() || ""];
 
-    const breadcrumbs = [location.pathname.split("/").pop() || ""];
-  
-    const isMediumScreen = useMediaQuery(
-      "(min-width: 900px) and (max-width: 1519px)"
-    );
-    return (
-        <>
-  <Breadcrumbs
+  const isMediumScreen = useMediaQuery(
+    "(min-width: 900px) and (max-width: 1519px)"
+  );
+  return (
+    <>
+      <Breadcrumbs
         style={{
           padding: "30px 30px 0",
           color: "blue",
@@ -132,7 +144,7 @@ export default function RecycledCotton() {
               >
                 <Typography
                   textAlign={"center"}
-                  fontSize={"13px"}
+                  fontSize={"16px"}
                   fontWeight={"bold"}
                   fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}
@@ -144,6 +156,6 @@ export default function RecycledCotton() {
           </Grid>
         ))}
       </Grid>
-        </>
-    )
+    </>
+  );
 }

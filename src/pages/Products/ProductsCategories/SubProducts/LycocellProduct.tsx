@@ -1,32 +1,39 @@
-import { useMediaQuery, Breadcrumbs, Typography, Grid, Box } from "@mui/material";
+import {
+  Box,
+  Breadcrumbs,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+
+import lycocell1 from "./Lycocell/FLOWER SHAL BLUE  CANVAS (1).jpg";
+import lycocell2 from "./Lycocell/hatcanvas blue shalimar.jpg";
+import lycocell3 from "./Lycocell/light blue shalimar.jpg";
 import { useLocation } from "react-router-dom";
-import lycocell1 from "./Lycocell/FLOWER SHAL BLUE  CANVAS (1).jpg"
-import lycocell2 from "./Lycocell/hatcanvas blue shalimar.jpg"
-import lycocell3 from "./Lycocell/light blue shalimar.jpg"
 
 const LycocellProductImages = [
-    {
-      name: "MODAL", image: lycocell1,
-    },
-    { name: "OC-ECOVERA", image: lycocell2 },
-    {
-      name: "TENSIL", image: lycocell3,
-    },
-  ];
-
+  {
+    name: "MODAL",
+    image: lycocell1,
+  },
+  { name: "OC-ECOVERA", image: lycocell2 },
+  {
+    name: "TENSIL",
+    image: lycocell3,
+  },
+];
 
 export default function LycocellProduct() {
-
-    const location = useLocation(); // Get the location object
+  const location = useLocation(); // Get the location object
 
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
 
   const isMediumScreen = useMediaQuery(
     "(min-width: 900px) and (max-width: 1519px)"
   );
-    return (
-        <>
-          <Breadcrumbs
+  return (
+    <>
+      <Breadcrumbs
         style={{
           padding: "30px 30px 0",
           color: "blue",
@@ -102,7 +109,7 @@ export default function LycocellProduct() {
               >
                 <Typography
                   textAlign={"center"}
-                  fontSize={"13px"}
+                  fontSize={"16px"}
                   fontWeight={"bold"}
                   fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}
@@ -114,6 +121,6 @@ export default function LycocellProduct() {
           </Grid>
         ))}
       </Grid>
-        </>
-    )
+    </>
+  );
 }
