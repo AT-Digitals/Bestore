@@ -35,9 +35,9 @@ const ProductsNavigationItems = [
     name: "Colours",
     link: routes.HOME_DECOR_PRODUCT,
     subcategories: [
-      { name: "RED", link: "routes.ABOUT" },
-      { name: "BLUE", link: "routes.ABOUT" },
-      { name: "GREEN", link: "routes.ABOUT" },
+      { name: "RED", link: routes.PRODUCT_RED },
+      { name: "BLUE", link: routes.PRODUCT_BLUE },
+      { name: "GREEN", link: routes.PRODUCT_GREEN },
     ],
   },
 ];

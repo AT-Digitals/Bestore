@@ -18,6 +18,9 @@ import RecycledKnitProducts from "../pages/Products/ProductsCategories/SubProduc
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import WaterRepllentRept from "../pages/Products/ProductsCategories/SubProducts/WaterRepllentRept/WaterRepllentRept";
 import routes from "./routes";
+import RedProduct from "../pages/Products/ProductsCategories/SubProducts/RedProduct";
+import BlueProduct from "../pages/Products/ProductsCategories/SubProducts/BlueProduct";
+import GreenProduct from "../pages/Products/ProductsCategories/SubProducts/GreenProduct";
 
 export default function AppRouter() {
   return (
@@ -60,6 +63,9 @@ export default function AppRouter() {
               path={routes.FABRIC_PRODUCT_3}
               element={<PolysterProducts />}
             />
+            <Route path={routes.PRODUCT_RED} element={<RedProduct />} />
+            <Route path={routes.PRODUCT_BLUE} element={<BlueProduct />} />
+            <Route path={routes.PRODUCT_GREEN} element={<GreenProduct />} />
 
             <Route
               path={routes.FABRIC_PRODUCT_8}
