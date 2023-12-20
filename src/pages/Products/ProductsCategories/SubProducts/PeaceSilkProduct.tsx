@@ -1,38 +1,44 @@
-import { useMediaQuery, Breadcrumbs, Typography, Grid, Box } from "@mui/material";
+import {
+  Box,
+  Breadcrumbs,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+
+import peacesilk1 from "./PeaceSilks/Screenshot 2023-12-20 165042.png";
+import peacesilk2 from "./PeaceSilks/Screenshot 2023-12-20 165131.png";
+import peacesilk3 from "./PeaceSilks/Screenshot 2023-12-20 165154.png";
+import peacesilk4 from "./PeaceSilks/Screenshot 2023-12-20 165207.png";
 import { useLocation } from "react-router-dom";
-import peacesilk1 from "./PeaceSilks/Screenshot 2023-12-20 165042.png"
-import peacesilk2 from "./PeaceSilks/Screenshot 2023-12-20 165131.png"
-import peacesilk3 from "./PeaceSilks/Screenshot 2023-12-20 165154.png"
-import peacesilk4 from "./PeaceSilks/Screenshot 2023-12-20 165207.png"
-
-
 
 const LycocellProductImages = [
-    {
-      name: "PS HABOTAI", image: peacesilk1,
-    },
-    { name: "PS CREPE", image: peacesilk2 },
-    {
-      name: "PS CHARMEUSE/SATIN", image: peacesilk3,
-    },
-    {
-        name: "OC PS", image: peacesilk4,
-      },
-  ];
-
+  {
+    name: "PS HABOTAI",
+    image: peacesilk1,
+  },
+  { name: "PS CREPE", image: peacesilk2 },
+  {
+    name: "PS CHARMEUSE/SATIN",
+    image: peacesilk3,
+  },
+  {
+    name: "OC PS",
+    image: peacesilk4,
+  },
+];
 
 export default function PeaceSilkProduct() {
+  const location = useLocation(); // Get the location object
 
-    const location = useLocation(); // Get the location object
+  const breadcrumbs = [location.pathname.split("/").pop() || ""];
 
-    const breadcrumbs = [location.pathname.split("/").pop() || ""];
-  
-    const isMediumScreen = useMediaQuery(
-      "(min-width: 900px) and (max-width: 1519px)"
-    );
-    return (
-        <>
-         <Breadcrumbs
+  const isMediumScreen = useMediaQuery(
+    "(min-width: 900px) and (max-width: 1519px)"
+  );
+  return (
+    <>
+      <Breadcrumbs
         style={{
           padding: "30px 30px 0",
           color: "blue",
@@ -108,7 +114,7 @@ export default function PeaceSilkProduct() {
               >
                 <Typography
                   textAlign={"center"}
-                  fontSize={"13px"}
+                  fontSize={"16px"}
                   fontWeight={"bold"}
                   fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}
@@ -120,6 +126,6 @@ export default function PeaceSilkProduct() {
           </Grid>
         ))}
       </Grid>
-        </>
-    )
+    </>
+  );
 }
