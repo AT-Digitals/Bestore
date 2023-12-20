@@ -14,7 +14,7 @@ const ProductsNavigationItems = [
       { name: "ORGANIC COTTONS WOVENS", link: routes.FABRIC_PRODUCT_1 },
       { name: "WOODPULP/LYCOCELL FABRIC", link: "routes.FABRIC_PRODUCT_2" },
       { name: "KNITS-RFD GRADE B ONLY", link: routes.FABRIC_PRODUCT_3 },
-      { name: "LINEN", link: "routes.FABRIC_PRODUCT_POLY" },
+      { name: "LINEN", link: routes.FABRIC_PRODUCT_4 },
       { name: "PEACE SILKS", link: "routes.FABRIC_PRODUCT_POLY" },
       { name: "RECYCLED COTTON", link: "routes.FABRIC_PRODUCT_POLY" },
       { name: "RECYCLED KNIT", link: routes.FABRIC_PRODUCT_2 },
@@ -26,7 +26,7 @@ const ProductsNavigationItems = [
     name: "Patterns",
     link: routes.CLOTHING_PRODUCT,
     subcategories: [
-      { name: "Floral", link: "routes.ABOUT" },
+      { name: "Floral", link: routes.PATTERNS_PRODUCT_1 },
       { name: "Aviary", link: "routes.ABOUT" },
       { name: "Abstract", link: "routes.ABOUT" },
     ],

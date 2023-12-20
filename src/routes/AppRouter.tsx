@@ -5,22 +5,24 @@ import AllProductsPage from "../pages/Products/ProductsCategories/AllProductsPag
 import AppLayout from "../common-components/AppLayout";
 import BlogAbout from "../pages/Blog/BlogAbout";
 import Blogpage from "../pages/Blog/Blogpage";
+import BlueProduct from "../pages/Products/ProductsCategories/SubProducts/BlueProduct";
 import ColoursProductsPage from "../pages/Products/ProductsCategories/ColoursProductsPage";
 import ContactPage from "../pages/Contact/Contactpage";
 import FabricProductsPAge from "../pages/Products/ProductsCategories/FabricProductsPage";
+import FloralProducts from "../pages/Products/ProductsCategories/SubProducts/Patterns/Floral/FloralProducts";
+import GreenProduct from "../pages/Products/ProductsCategories/SubProducts/GreenProduct";
 import Homepage from "../pages/Home/Homepage";
+import LinenProducts from "../pages/Products/ProductsCategories/SubProducts/LineProducts/LinenProducts";
 import OrganicCottonWovens from "../pages/Products/ProductsCategories/SubProducts/OrganicCottonWovens/OrganicCottonWovens";
 import PatternsProducts from "../pages/Products/ProductsCategories/PatternsProducts";
 import PolysterProducts from "../pages/Products/ProductsCategories/SubProducts/PolysterProducts";
 import ProductDetailPage from "../pages/Products/ProductDetailPage/ProductDetails";
 import ProductPageLayout from "../common-components/ProductPageLayout";
 import RecycledKnitProducts from "../pages/Products/ProductsCategories/SubProducts/RecycledKnit/RecycledProducts";
+import RedProduct from "../pages/Products/ProductsCategories/SubProducts/RedProduct";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import WaterRepllentRept from "../pages/Products/ProductsCategories/SubProducts/WaterRepllentRept/WaterRepllentRept";
 import routes from "./routes";
-import RedProduct from "../pages/Products/ProductsCategories/SubProducts/RedProduct";
-import BlueProduct from "../pages/Products/ProductsCategories/SubProducts/BlueProduct";
-import GreenProduct from "../pages/Products/ProductsCategories/SubProducts/GreenProduct";
 
 export default function AppRouter() {
   return (
@@ -63,6 +65,7 @@ export default function AppRouter() {
               path={routes.FABRIC_PRODUCT_3}
               element={<PolysterProducts />}
             />
+            <Route path={routes.FABRIC_PRODUCT_4} element={<LinenProducts />} />
             <Route path={routes.PRODUCT_RED} element={<RedProduct />} />
             <Route path={routes.PRODUCT_BLUE} element={<BlueProduct />} />
             <Route path={routes.PRODUCT_GREEN} element={<GreenProduct />} />
@@ -70,6 +73,10 @@ export default function AppRouter() {
             <Route
               path={routes.FABRIC_PRODUCT_8}
               element={<WaterRepllentRept />}
+            />
+            <Route
+              path={routes.PATTERNS_PRODUCT_1}
+              element={<FloralProducts />}
             />
           </Route>
         </Route>
