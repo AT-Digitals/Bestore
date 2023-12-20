@@ -10,23 +10,23 @@ import blue7 from './BlueProducts/7.jpg'
 
 const BlueProductImages = [
     {
-      name: "Blue and Red Base Stripe Print Colour (FC-226)  ", image: blue1,
+      name: "Product 1", image: blue1,
     },
-    { name: "Printed Base Stripe Print Blue Colour ", image: blue2 },
+    { name: "Product 2", image: blue2 },
     {
-      name: "Styled Printed Base Stripe Print Blue Colour (FC-226)  ", image: blue3,
+      name: "Product 3", image: blue3,
     },
     { 
-        name: "Blue and White Base Stripe Print Colours  ", image: blue4,
+        name: "Product 4", image: blue4,
      },
      { 
-        name: "Blue Printed Base Stripe Print Colours  ", image: blue5,
+        name: "Product 5", image: blue5,
      },
      { 
-        name: "Blue Base Stripe Print Colurs Design (FC-226) ", image: blue6,
+        name: "Product 6", image: blue6,
      },
      { 
-        name: "Base Stripe Print Colurs in Blue and White ", image: blue7,
+        name: "Product 7", image: blue7,
      },
   ];
 
@@ -117,7 +117,7 @@ export default function BlueProduct() {
               >
                 <Typography
                   textAlign={"center"}
-                  fontSize={"13px"}
+                  fontSize={"16px"}
                   fontWeight={"bold"}
                   fontFamily={"Nunito Sans, sans-serif"}
                   mt={1}
