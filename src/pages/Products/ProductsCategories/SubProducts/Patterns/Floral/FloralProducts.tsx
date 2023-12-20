@@ -31,7 +31,7 @@ export default function FloralProducts() {
             fontFamily={"Nunito Sans, sans-serif"}
             key={index}
           >
-            Products / Fabric / {crumb} /
+            Products / Pattern / {crumb} /
           </Typography>
         ))}
       </Breadcrumbs>
