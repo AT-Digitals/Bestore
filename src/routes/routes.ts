@@ -14,6 +14,9 @@ const FABRIC_PRODUCT = `${PRODUCTS}/Products-categories/silk`;
 const FABRIC_PRODUCT_COTTON = "products/Products-categories/Fabric/Cotton";
 const FABRIC_PRODUCT_SILK = "products/Products-categories/Fabric/Silk";
 const FABRIC_PRODUCT_POLY = "products/Products-categories/Fabric/Polyster";
+const PRODUCT_RED = "products/Products-categories/Colour/Red";
+const PRODUCT_BLUE = "products/Products-categories/Colour/Blue";
+const PRODUCT_GREEN = "products/Products-categories/Colour/Green"
 
 const routes = {
   ROOT,
@@ -32,5 +35,8 @@ const routes = {
   FABRIC_PRODUCT_COTTON,
   FABRIC_PRODUCT_SILK,
   FABRIC_PRODUCT_POLY,
+  PRODUCT_RED,
+  PRODUCT_BLUE,
+  PRODUCT_GREEN,
 };
 export default routes;
