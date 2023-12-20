@@ -1,9 +1,10 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import AboutPage from "../pages/About/Aboutpage";
+import AbstractProducts from "../pages/Products/ProductsCategories/SubProducts/Patterns/Abstract/AbstractProduct";
 import AllProductsPage from "../pages/Products/ProductsCategories/AllProductsPage";
 import AppLayout from "../common-components/AppLayout";
-import AviaryProducts from "../pages/Products/ProductsCategories/SubProducts/Patterns/Floral/Aviary/AviaryProducts";
+import AviaryProducts from "../pages/Products/ProductsCategories/SubProducts/Patterns/Aviary/AviaryProducts";
 import BlogAbout from "../pages/Blog/BlogAbout";
 import Blogpage from "../pages/Blog/Blogpage";
 import BlueProduct from "../pages/Products/ProductsCategories/SubProducts/BlueProduct";
@@ -14,8 +15,10 @@ import FloralProducts from "../pages/Products/ProductsCategories/SubProducts/Pat
 import GreenProduct from "../pages/Products/ProductsCategories/SubProducts/GreenProduct";
 import Homepage from "../pages/Home/Homepage";
 import LinenProducts from "../pages/Products/ProductsCategories/SubProducts/LineProducts/LinenProducts";
+import LycocellProduct from "../pages/Products/ProductsCategories/SubProducts/LycocellProduct";
 import OrganicCottonWovens from "../pages/Products/ProductsCategories/SubProducts/OrganicCottonWovens/OrganicCottonWovens";
 import PatternsProducts from "../pages/Products/ProductsCategories/PatternsProducts";
+import PeaceSilkProduct from "../pages/Products/ProductsCategories/SubProducts/PeaceSilkProduct";
 import PolysterProducts from "../pages/Products/ProductsCategories/SubProducts/PolysterProducts";
 import ProductDetailPage from "../pages/Products/ProductDetailPage/ProductDetails";
 import ProductPageLayout from "../common-components/ProductPageLayout";
@@ -27,6 +30,7 @@ import routes from "./routes";
 import LycocellProduct from "../pages/Products/ProductsCategories/SubProducts/LycocellProduct";
 import PeaceSilkProduct from "../pages/Products/ProductsCategories/SubProducts/PeaceSilkProduct";
 import RecycledCotton from "../pages/Products/ProductsCategories/SubProducts/RecycledCotton";
+
 
 export default function AppRouter() {
   return (
@@ -76,6 +80,14 @@ export default function AppRouter() {
             <Route path={routes.LYCOCELL_PRODUCT} element={<LycocellProduct />} />
             <Route path={routes.PEACESILK_PRODUCT} element={<PeaceSilkProduct />} />
             <Route path={routes.RECYCLED_COTTON} element={<RecycledCotton />} />
+            <Route
+              path={routes.LYCOCELL_PRODUCT}
+              element={<LycocellProduct />}
+            />
+            <Route
+              path={routes.PEACESILK_PRODUCT}
+              element={<PeaceSilkProduct />}
+            />
 
             <Route
               path={routes.FABRIC_PRODUCT_8}
@@ -88,6 +100,10 @@ export default function AppRouter() {
             <Route
               path={routes.PATTERNS_PRODUCT_2}
               element={<AviaryProducts />}
+            />
+            <Route
+              path={routes.PATTERNS_PRODUCT_3}
+              element={<AbstractProducts />}
             />
           </Route>
         </Route>

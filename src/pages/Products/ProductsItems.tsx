@@ -1,29 +1,28 @@
-import Dress1 from "../../assets/ProductsImage/ak-p1.avif";
-import Dress2 from "../../assets/ProductsImage/ak-p-2.webp";
-import Dress3 from "../../assets/ProductsImage/dress3.jpg";
-import Dress4 from "../../assets/ProductsImage/dress4.jpg";
-import Dress5 from "../../assets/ProductsImage/dress5.jpg";
-import Dress6 from "../../assets/ProductsImage/dress6.jpg";
-import Dress7 from "../../assets/ProductsImage/dress7.jpg";
-import Dress8 from "../../assets/ProductsImage/il_794xN.4306523229_ori8.webp";
-import Dress9 from "../../assets/ProductsImage/il_794xN.3920746144_f52x.jpg";
-import Fabaric1 from "../../assets/ProductsImage/fab1.jpg";
-import Fabaric2 from "../../assets/ProductsImage/fab2.jpg";
-import Fabaric3 from "../../assets/ProductsImage/fab3.avif";
-import Fabaric4 from "../../assets/ProductsImage/fab4.avif";
-import Fabaric5 from "../../assets/ProductsImage/il_794xN.5136959656_m9or.jpg";
+import Colours1 from "../../assets/BlueProducts/3.jpg";
+import Colours2 from "../../assets/RedProducts/11.jpg";
+import Colours3 from "../../assets/GreenProducts/2.jpg";
+import Colours4 from "../../assets/BlueProducts/4.jpg";
+import Colours5 from "../../assets/BlueProducts/5.jpg";
+import Colours6 from "../../assets/ProductsImage/dress6.jpg";
+import Colours7 from "../../assets/ProductsImage/dress7.jpg";
+import Colours8 from "../../assets/ProductsImage/il_794xN.4306523229_ori8.webp";
+import Fabaric1 from "../../assets/RecycledAssets/AKKA FAKE FISG RED CANVAS.jpg";
+import Fabaric2 from "../../assets/LinenAssets/LINE/LINE.jpg";
+import Fabaric3 from "../../assets/OCassets/FLOWER SHAL BEIGE CANVAS.jpg";
+import Fabaric4 from "../../assets/OCassets/all shalimar canvas.jpg";
+import Fabaric5 from "../../assets/LinenAssets/LINE/olpure5.jpg";
 import Fabaric6 from "../../assets/ProductsImage/il_794xN.5185197427_16jr.avif";
-import Homedecor1 from "../../assets/ProductsImage/home-decor1.webp";
-import Homedecor2 from "../../assets/ProductsImage/home-decor2.webp";
-import Homedecor3 from "../../assets/ProductsImage/home-decor3.webp";
-import Homedecor4 from "../../assets/ProductsImage/home-decor4.webp";
-import Homedecor5 from "../../assets/ProductsImage/il_794xN.1131388500_qp84.avif";
-import Homedecor6 from "../../assets/ProductsImage/il_794xN.5204058218_10nu.webp";
+import Patterns1 from "../../assets/AviaryAssets/FRIDA BLUE FLOWER CANVAS.jpg";
+import Patterns2 from "../../assets/FloralAssets/big.jpg";
+import Patterns3 from "../../assets/AviaryAssets/TOUCAN GREEN CANVAS.jpg";
+import Patterns4 from "../../assets/AviaryAssets/bird.jpg";
+import Patterns5 from "../../assets/ProductsImage/il_794xN.1131388500_qp84.avif";
+import Patterns6 from "../../assets/ProductsImage/il_794xN.5204058218_10nu.webp";
 
 const ProductsImage = [
   {
     name: "Reversible multicolored Kimono jacket with large collar and one size animal design",
-    Image: Dress1,
+    Image: Colours1,
     price: "2116.00",
     producttype: "Colours",
     offerprice: "",
@@ -31,7 +30,7 @@ const ProductsImage = [
   },
   {
     name: "SHORT fleece JACKET Women's jacket in green and MULTICOLOR cotton patchwork Lined jacket buttoned on the front Women's mid-season jacket",
-    Image: Dress2,
+    Image: Colours2,
     price: "2343.00",
     producttype: "Colours",
     offerprice: "",
@@ -63,7 +62,7 @@ const ProductsImage = [
   },
   {
     name: "Long tunic, reversible blue and white dress with flower design and Lined cotton curtain with jacket buttoned on the front Women's mid-season jacket and one size animal design ",
-    Image: Dress3,
+    Image: Colours3,
     price: "1512.00",
     producttype: "Colours",
     offerprice: "",
@@ -71,7 +70,7 @@ const ProductsImage = [
   },
   {
     name: "Curtain Wall hanging Custom handmade multicolored cotton patchwork curtain, and front Women's cotton curtain with mid-season jacket and one size animal design   ",
-    Image: Homedecor3,
+    Image: Patterns1,
     price: "1210.00",
     producttype: "Patterns",
     offerprice: "",
@@ -79,7 +78,7 @@ const ProductsImage = [
   },
   {
     name: "PATCHWORK CURTAIN black and multicolored custom curtain cotton curtain with solid color lining matching cotton curtain with the patchwork and one size animal design    ",
-    Image: Homedecor1,
+    Image: Patterns2,
     price: " 1210.00",
     producttype: "Patterns",
     offerprice: "",
@@ -87,7 +86,7 @@ const ProductsImage = [
   },
   {
     name: "Door or window top garland made of boiled wool beads and small cotton curtain with wooden pot with solid color lining matching the patchwork and one size animal design  ",
-    Image: Homedecor2,
+    Image: Patterns3,
     price: "1796.00",
     producttype: "Patterns",
     offerprice: "",
@@ -95,7 +94,7 @@ const ProductsImage = [
   },
   {
     name: "Garland fabric at the top of the door or window with small hearts and stars in cotton curtain with multicolored deco multicolor decoration items  and one size animal design    ",
-    Image: Homedecor4,
+    Image: Patterns4,
     price: " 1890.00",
     producttype: "Patterns",
     offerprice: "",
@@ -103,7 +102,7 @@ const ProductsImage = [
   },
   {
     name: "Affiche numérique - Art at the top of the door or window cotton curtain with in multicolored with deco multicolor decoration items  and one size animal decoration design",
-    Image: Homedecor5,
+    Image: Patterns5,
     price: " 350.00",
     producttype: "Patterns",
     offerprice: "",
@@ -111,7 +110,7 @@ const ProductsImage = [
   },
   {
     name: "Asymmetrical Mirror, Irregular Mirror, Wavy Mirror, Mirror Wall cotton curtain with Decor on Tempered Glass, Entryway Hallway Mirror, Mirror for Bathroom",
-    Image: Homedecor6,
+    Image: Patterns6,
     price: " 11350.00",
     producttype: "Patterns",
     offerprice: "",
@@ -127,7 +126,7 @@ const ProductsImage = [
   },
   {
     name: "Long summer dress with or without sleeves in white cotton curtain with cotton printed in floral and bird design size in request  and front Women's jacket and one animal design  ",
-    Image: Dress6,
+    Image: Colours4,
     price: "1662.00",
     producttype: "Clothing",
     offerprice: "65.00",
@@ -167,7 +166,7 @@ const ProductsImage = [
   // },
   {
     name: "Long summer dress with or without sleeves in cotton curtain with pink cotton printed paisley flowers flared  matching scarf and front Women's jacket animal design ",
-    Image: Dress7,
+    Image: Colours5,
     price: "2078.00",
     producttype: "Patterns",
     offerprice: "",
@@ -175,7 +174,7 @@ const ProductsImage = [
   },
   {
     name: "SHORT fleece JACKET Women's jacket in green and cotton curtain with MULTICOLOR cotton patchwork buttoned flared cut with matching scarf animal design",
-    Image: Dress4,
+    Image: Colours6,
     price: "2343.00",
     producttype: "Patterns",
     offerprice: "",
@@ -183,7 +182,7 @@ const ProductsImage = [
   },
   {
     name: "SHORT fleece JACKET Women's jacket in green and MULTICOLOR cotton patchwork Lined jacket buttoned flared cut with matching scarf and front Women's jacket",
-    Image: Dress5,
+    Image: Colours7,
     price: "2343.00",
     producttype: "Colours",
     offerprice: "",
@@ -191,7 +190,7 @@ const ProductsImage = [
   },
   {
     name: "Summer dress with or in pink cotton and printed paisley and flowers flared cut with Lined MULTICOLOR cotton patchwork buttoned flared cut with matching scarf and front Women's jacket",
-    Image: Dress8,
+    Image: Colours8,
     price: "3663.00",
     producttype: "Colours",
     offerprice: "",
@@ -199,7 +198,7 @@ const ProductsImage = [
   },
   {
     name: "KIMONO JACKET cotton hand block  printed paisley and flowers flared cut with Lined cotton patchwork buttoned flared cut with matching scarf and front Women's jacket",
-    Image: Dress9,
+    Image: Colours1,
     price: "2663.00",
     producttype: "Colours",
     offerprice: "",
@@ -207,7 +206,7 @@ const ProductsImage = [
   },
   {
     name: "KIMONO JACKET cotton hand block  printed paisley and flowers flared cut with Lined cotton patchwork buttoned flared cut with matching scarf and front Women's jacket",
-    Image: Dress9,
+    Image: Colours3,
     price: "2663.00",
     producttype: "Colours",
     offerprice: "",
