@@ -1,7 +1,7 @@
-import OCDGAUZE from "./OCassets/hatcanvas blue shalimar.jpg";
-import OCDOBBY from "./OCassets/light blue shalimar.jpg";
-import OCMUSLIN from "./OCassets/FLOWER SHAL BEIGE CANVAS.jpg";
-import OCVOILET from "./OCassets/red shalimar 1 copy.jpg";
+import OCDGAUZE from "../../../../../assets/OCassets/hatcanvas blue shalimar.jpg";
+import OCDOBBY from "../../../../../assets/OCassets/light blue shalimar.jpg";
+import OCMUSLIN from "../../../../../assets/OCassets/FLOWER SHAL BEIGE CANVAS.jpg";
+import OCVOILET from "../../../../../assets/OCassets/red shalimar 1 copy.jpg";
 
 const OrganicCottonWovensItems = [
   {
