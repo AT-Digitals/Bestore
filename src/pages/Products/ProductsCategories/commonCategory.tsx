@@ -11,9 +11,14 @@ const ProductsNavigationItems = [
     name: "Fabrics",
     link: routes.FABRIC_PRODUCT,
     subcategories: [
-      { name: "Cotton", link: routes.FABRIC_PRODUCT_COTTON },
-      { name: "Silk", link: routes.FABRIC_PRODUCT_SILK },
-      { name: "Polyester", link: routes.FABRIC_PRODUCT_POLY },
+      { name: "ORGANIC COTTONS WOVENS", link: routes.FABRIC_PRODUCT_COTTON },
+      { name: "WOODPULP/LYCOCELL FABRIC", link: routes.FABRIC_PRODUCT_SILK },
+      { name: "KNITS-RFD GRADE B ONLY", link: routes.FABRIC_PRODUCT_POLY },
+      { name: "LINEN", link: "routes.FABRIC_PRODUCT_POLY" },
+      { name: "PEACE SILKS", link: "routes.FABRIC_PRODUCT_POLY" },
+      { name: "RECYCLED COTTON", link: "routes.FABRIC_PRODUCT_POLY" },
+      { name: "RECYCLED KNIT", link: "routes.FABRIC_PRODUCT_POLY" },
+      { name: "WATER REPELLENT RPET", link: "routes.FABRIC_PRODUCT_POLY" },
     ],
   },
 
@@ -21,18 +26,18 @@ const ProductsNavigationItems = [
     name: "Patterns",
     link: routes.CLOTHING_PRODUCT,
     subcategories: [
-      { name: "Women's", link: "routes.ABOUT" },
-      { name: "Men's", link: "routes.ABOUT" },
-      { name: "Kids", link: "routes.ABOUT" },
+      { name: "Floral", link: "routes.ABOUT" },
+      { name: "Aviary", link: "routes.ABOUT" },
+      { name: "Abstract", link: "routes.ABOUT" },
     ],
   },
   {
     name: "Colours",
     link: routes.HOME_DECOR_PRODUCT,
     subcategories: [
-      { name: "Bedroom", link: "routes.ABOUT" },
-      { name: "Living Room", link: "routes.ABOUT" },
-      { name: "Kitchen", link: "routes.ABOUT" },
+      { name: "RED", link: "routes.ABOUT" },
+      { name: "BLUE", link: "routes.ABOUT" },
+      { name: "GREEN", link: "routes.ABOUT" },
     ],
   },
 ];
