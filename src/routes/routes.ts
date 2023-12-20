@@ -17,6 +17,15 @@ const FABRIC_PRODUCT_POLY = "products/Products-categories/Fabric/Polyster";
 const PRODUCT_RED = "products/Products-categories/Colour/Red";
 const PRODUCT_BLUE = "products/Products-categories/Colour/Blue";
 const PRODUCT_GREEN = "products/Products-categories/Colour/Green"
+const FABRIC_PRODUCT_1 =
+  "products/Products-categories/Fabric/organic-cotton-wovens";
+const FABRIC_PRODUCT_2 = "products/Products-categories/Fabric/recyled-knit";
+const FABRIC_PRODUCT_3 = "products/Products-categories/Fabric/Polyster";
+const FABRIC_PRODUCT_7 =
+  "products/Products-categories/Fabric/recycled-fab-knit";
+
+const FABRIC_PRODUCT_8 =
+  "products/Products-categories/Fabric/watter-repllent-rept";
 
 const routes = {
   ROOT,
@@ -38,5 +47,10 @@ const routes = {
   PRODUCT_RED,
   PRODUCT_BLUE,
   PRODUCT_GREEN,
+  FABRIC_PRODUCT_1,
+  FABRIC_PRODUCT_2,
+  FABRIC_PRODUCT_3,
+  FABRIC_PRODUCT_7,
+  FABRIC_PRODUCT_8,
 };
 export default routes;

@@ -7,15 +7,16 @@ import BlogAbout from "../pages/Blog/BlogAbout";
 import Blogpage from "../pages/Blog/Blogpage";
 import ColoursProductsPage from "../pages/Products/ProductsCategories/ColoursProductsPage";
 import ContactPage from "../pages/Contact/Contactpage";
-import CottonProducts from "../pages/Products/ProductsCategories/SubProducts/CottonProducts";
 import FabricProductsPAge from "../pages/Products/ProductsCategories/FabricProductsPage";
 import Homepage from "../pages/Home/Homepage";
+import OrganicCottonWovens from "../pages/Products/ProductsCategories/SubProducts/OrganicCottonWovens/OrganicCottonWovens";
 import PatternsProducts from "../pages/Products/ProductsCategories/PatternsProducts";
 import PolysterProducts from "../pages/Products/ProductsCategories/SubProducts/PolysterProducts";
 import ProductDetailPage from "../pages/Products/ProductDetailPage/ProductDetails";
 import ProductPageLayout from "../common-components/ProductPageLayout";
+import RecycledKnitProducts from "../pages/Products/ProductsCategories/SubProducts/RecycledKnit/RecycledProducts";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
-import SilkProducts from "../pages/Products/ProductsCategories/SubProducts/SilkProduct";
+import WaterRepllentRept from "../pages/Products/ProductsCategories/SubProducts/WaterRepllentRept/WaterRepllentRept";
 import routes from "./routes";
 import RedProduct from "../pages/Products/ProductsCategories/SubProducts/RedProduct";
 import BlueProduct from "../pages/Products/ProductsCategories/SubProducts/BlueProduct";
@@ -51,20 +52,25 @@ export default function AppRouter() {
               element={<ColoursProductsPage />}
             />
             <Route
-              path={routes.FABRIC_PRODUCT_COTTON}
-              element={<CottonProducts />}
+              path={routes.FABRIC_PRODUCT_1}
+              element={<OrganicCottonWovens />}
             />
             <Route
-              path={routes.FABRIC_PRODUCT_SILK}
-              element={<SilkProducts />}
+              path={routes.FABRIC_PRODUCT_2}
+              element={<RecycledKnitProducts />}
             />
             <Route
-              path={routes.FABRIC_PRODUCT_POLY}
+              path={routes.FABRIC_PRODUCT_3}
               element={<PolysterProducts />}
             />
             <Route path={routes.PRODUCT_RED} element={<RedProduct />} />
             <Route path={routes.PRODUCT_BLUE} element={<BlueProduct />} />
             <Route path={routes.PRODUCT_GREEN} element={<GreenProduct />} />
+
+            <Route
+              path={routes.FABRIC_PRODUCT_8}
+              element={<WaterRepllentRept />}
+            />
           </Route>
         </Route>
       </Routes>
