@@ -32,6 +32,10 @@ const FABRIC_PRODUCT_4 = "products/Products-categories/Fabric/linen";
 const PATTERNS_PRODUCT_1 = "products/Products-categories/Patterns/floral";
 const PATTERNS_PRODUCT_2 = "products/Products-categories/Patterns/aviary";
 
+const LYCOCELL_PRODUCT = "products/Products-categories/Fabric/lycocell"
+
+const PEACESILK_PRODUCT = "products/Products-categories/Fabric/peace-silk"
+
 const routes = {
   ROOT,
   HOME,
@@ -59,6 +63,8 @@ const routes = {
   FABRIC_PRODUCT_8,
   FABRIC_PRODUCT_4,
   PATTERNS_PRODUCT_1,
+  LYCOCELL_PRODUCT,
+  PEACESILK_PRODUCT,
   PATTERNS_PRODUCT_2,
 };
 export default routes;

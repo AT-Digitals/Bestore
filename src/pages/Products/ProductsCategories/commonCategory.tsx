@@ -12,10 +12,10 @@ const ProductsNavigationItems = [
     link: routes.FABRIC_PRODUCT,
     subcategories: [
       { name: "ORGANIC COTTONS WOVENS", link: routes.FABRIC_PRODUCT_1 },
-      { name: "WOODPULP/LYCOCELL FABRIC", link: "routes.FABRIC_PRODUCT_2" },
+      { name: "WOODPULP/LYCOCELL FABRIC", link: routes.LYCOCELL_PRODUCT },
       { name: "KNITS-RFD GRADE B ONLY", link: routes.FABRIC_PRODUCT_3 },
       { name: "LINEN", link: routes.FABRIC_PRODUCT_4 },
-      { name: "PEACE SILKS", link: "routes.FABRIC_PRODUCT_POLY" },
+      { name: "PEACE SILKS", link: routes.PEACESILK_PRODUCT },
       { name: "RECYCLED COTTON", link: "routes.FABRIC_PRODUCT_POLY" },
       { name: "RECYCLED KNIT", link: routes.FABRIC_PRODUCT_2 },
       { name: "WATER REPELLENT RPET", link: routes.FABRIC_PRODUCT_8 },
