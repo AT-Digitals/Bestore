@@ -28,7 +28,7 @@ const ProductsNavigationItems = [
     subcategories: [
       { name: "Floral", link: routes.PATTERNS_PRODUCT_1 },
       { name: "Aviary", link: routes.PATTERNS_PRODUCT_2 },
-      { name: "Abstract", link: "routes.ABOUT" },
+      { name: "Abstract", link: routes.PATTERNS_PRODUCT_3 },
     ],
   },
   {
