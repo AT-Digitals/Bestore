@@ -1,7 +1,7 @@
-import Big from "./FloralAssets/BINDU FLOWER.jpg";
-import Big2 from "./FloralAssets/big2.jpg";
-import Bindu from "./FloralAssets/big.jpg";
-import Bindu2 from "./FloralAssets/bindu2.jpg";
+import Big from "../../../../../../assets/FloralAssets/BINDU FLOWER.jpg";
+import Big2 from "../../../../../../assets/FloralAssets/big2.jpg";
+import Bindu from "../../../../../../assets/FloralAssets/big.jpg";
+import Bindu2 from "../../../../../../assets/FloralAssets/bindu2.jpg";
 
 const FloralProductItems = [
   {

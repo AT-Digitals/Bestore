@@ -1,10 +1,10 @@
-import olpure from "./LinenAssets/LINE/7.jpg";
-import olpure1 from "./LinenAssets/LINE/olpure2.jpg";
-import olpure2 from "./LinenAssets/LINE/LINE.jpg";
-import olpure3 from "./LinenAssets/LINE/olpure3.jpg";
-import olpure4 from "./LinenAssets/LINE/olpure4.jpg";
-import olpure5 from "./LinenAssets/LINE/olpure5.jpg";
-import olpure6 from "./LinenAssets/LINE/olpure6.jpg";
+import olpure from "../../../../../assets/LinenAssets/LINE/7.jpg";
+import olpure1 from "../../../../../assets/LinenAssets/LINE/olpure2.jpg";
+import olpure2 from "../../../../../assets/LinenAssets/LINE/LINE.jpg";
+import olpure3 from "../../../../../assets/LinenAssets/LINE/olpure3.jpg";
+import olpure4 from "../../../../../assets/LinenAssets/LINE/olpure4.jpg";
+import olpure5 from "../../../../../assets/LinenAssets/LINE/olpure5.jpg";
+import olpure6 from "../../../../../assets/LinenAssets/LINE/olpure6.jpg";
 
 const LinenProductsItems = [
   {
