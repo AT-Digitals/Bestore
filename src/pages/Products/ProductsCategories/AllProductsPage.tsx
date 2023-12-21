@@ -120,10 +120,10 @@ export default function AllProductsPage() {
                   >
                     <Typography
                       textAlign={"center"}
-                      fontSize={"13px"}
+                      fontSize={"16px"}
                       fontWeight={"bold"}
                       fontFamily={"Nunito Sans, sans-serif"}
-                      mt={1}
+                      mt={5}
                     >
                       {item.name}
                     </Typography>
