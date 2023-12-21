@@ -175,10 +175,16 @@ const ProductsNavigationItems = [
         link: routes.PATTERNS_PRODUCT_1,
         subproducts: [
           {
-            name: "Subproduct A",
+            name: "Bindu Flower",
           },
           {
-            name: "Subproduct B",
+            name: "Big Flower",
+          },
+          {
+            name: "Pattern3",
+          },
+          {
+            name: "Pattern4",
           },
         ],
       },
@@ -187,10 +193,16 @@ const ProductsNavigationItems = [
         link: routes.PATTERNS_PRODUCT_2,
         subproducts: [
           {
-            name: "Subproduct A",
+            name: "Toucan",
           },
           {
-            name: "Subproduct B",
+            name: "Mynah",
+          },
+          {
+            name: "Peacock",
+          },
+          {
+            name: "Flamingo",
           },
         ],
       },
@@ -199,10 +211,13 @@ const ProductsNavigationItems = [
         link: routes.PATTERNS_PRODUCT_3,
         subproducts: [
           {
-            name: "Subproduct A",
+            name: "Geomentery",
           },
           {
-            name: "Subproduct B",
+            name: "Illusion",
+          },
+          {
+            name: "Patchwork",
           },
         ],
       },
@@ -220,6 +235,15 @@ const ProductsNavigationItems = [
           {
             name: "Red Subproduct 2",
           },
+          { name: "Red Subproduct 3" },
+          {
+            name: "Red Subproduct 4",
+          },
+          { name: "Red Subproduct 5" },
+          {
+            name: "Red Subproduct 6",
+          },
+          { name: "Red Subproduct 7" },
         ],
       },
       {
@@ -232,6 +256,21 @@ const ProductsNavigationItems = [
           {
             name: "Blue Subproduct 2",
           },
+          {
+            name: "Blue Subproduct 3",
+          },
+          {
+            name: "Blue Subproduct 4",
+          },
+          {
+            name: "Blue Subproduct 5",
+          },
+          {
+            name: "Blue Subproduct 6",
+          },
+          {
+            name: "Blue Subproduct 7",
+          },
         ],
       },
       {
@@ -243,6 +282,21 @@ const ProductsNavigationItems = [
           },
           {
             name: "Green Subproduct 2",
+          },
+          {
+            name: "Green Subproduct 3",
+          },
+          {
+            name: "Green Subproduct 4",
+          },
+          {
+            name: "Green Subproduct 5",
+          },
+          {
+            name: "Green Subproduct 6",
+          },
+          {
+            name: "Green Subproduct 7",
           },
         ],
       },

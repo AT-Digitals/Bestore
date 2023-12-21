@@ -8,6 +8,7 @@ interface DropdownProps {
   handleSubcategoryChange: any;
   selectedSubcategories: any;
   subProducts: string[];
+  handleSubproductChange: any;
 }
 
 export default function CustomDropdown({
@@ -18,6 +19,7 @@ export default function CustomDropdown({
   handleSubcategoryChange,
   selectedSubcategories,
   subProducts,
+  handleSubproductChange,
 }: DropdownProps) {
   return (
     <Box paddingTop={"40px"} margin={"auto"} width={"100%"} maxWidth={"720px"}>
@@ -146,17 +148,11 @@ export default function CustomDropdown({
             error={personalDetails.subproducts ? false : true}
             name="subproducts" // Change the name attribute to a unique name
             value={personalDetails.subproducts}
-            // onChange={handleSubcategoryChange} // Use a new handler for Sub Products
+            onChange={handleSubproductChange} // Use a new handler for Sub Products
           >
             {subProducts.map((subProduct: any) => (
-              <MenuItem
-                style={{
-                  fontFamily: "Nunito Sans, sans-serif",
-                }}
-                key={subProduct.name} // assuming subProduct has a unique identifier
-                value={subProduct.name} // assuming subProduct has a unique identifier
-              >
-                {subProduct.name}
+              <MenuItem key={subProduct.name} value={subProduct}>
+                {subProduct}
               </MenuItem>
             ))}
           </Select>

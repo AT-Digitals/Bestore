@@ -19,7 +19,9 @@ const getPersonalDetails = {
   yourMessage: "",
   subcategory: "",
   category: "",
+  subproducts: "",
 };
+
 type CategoriesWithSubcategories = {
   [category: string]: string[];
 };
@@ -219,6 +221,7 @@ export default function ContactForm() {
         yourMessage: "", // Assuming it's a file input
         subcategory: "",
         category: "",
+        subproducts: "",
       });
 
       // Check if all errors are empty (i.e., inputs are valid)
@@ -244,6 +247,59 @@ export default function ContactForm() {
   // const productTypes = Array.from(
   //   new Set(ProductsImage.map((product) => product.producttype))
   // );
+  const [subProducts, setSubProducts] = useState<string[]>([]);
+  interface SubProduct {
+    name: string;
+    // Add other properties if necessary
+  }
+  const getSubProductsForSubcategory = (
+    category: string,
+    subcategory: string
+  ): SubProduct[] => {
+    // Find the selected category in ProductNavigationItems
+    const selectedCategory = ProductsNavigationItems.find(
+      (item) => item.name === category
+    );
+
+    console.log("Selected Category:", selectedCategory);
+
+    // Find the selected subcategory in the selected category
+    const selectedSubcategory =
+      selectedCategory &&
+      selectedCategory.subcategories.find((sub) => sub.name === subcategory);
+
+    console.log("Selected Subcategory:", selectedSubcategory);
+
+    // Extract subproducts from the selected subcategory
+    const subProducts = selectedSubcategory?.subproducts || [];
+
+    console.log("Subproducts:", subProducts);
+
+    return subProducts;
+  };
+
+  const handleSubcategoryChange = (event: SelectChangeEvent<string>) => {
+    const selectedSubcategory = event.target.value;
+
+    // Fetch subproducts based on the selected category and subcategory
+    const fetchedSubProducts = getSubProductsForSubcategory(
+      personalDetails.category,
+      selectedSubcategory
+    );
+
+    // Extract subproduct names
+    const stringSubProducts = fetchedSubProducts.map(
+      (subProduct) => subProduct.name
+    );
+
+    setSubProducts(stringSubProducts);
+
+    setPersonalDetails((prevDetails) => ({
+      ...prevDetails,
+      subcategory: selectedSubcategory,
+      subproducts: "", // Reset subproducts when the subcategory changes
+    }));
+  };
 
   const CategoriesWithSubcategories: CategoriesWithSubcategories = {
     Fabric:
@@ -266,18 +322,21 @@ export default function ContactForm() {
       ...prevPersonalDetails,
       category: selectedCategory,
       subcategory: "", // Reset subcategory when the category changes
+      subproducts: "", // Reset subproducts when the category changes
     }));
-  };
-
-  const handleSubcategoryChange = (event: SelectChangeEvent<string>) => {
-    setPersonalDetails({
-      ...personalDetails,
-      subcategory: event.target.value,
-    });
   };
 
   const selectedSubcategories =
     CategoriesWithSubcategories[personalDetails.category] || [];
+
+  const handleSubproductChange = (event: SelectChangeEvent<string>) => {
+    const selectedSubproducts = event.target.value;
+
+    setPersonalDetails((prevDetails) => ({
+      ...prevDetails,
+      subproducts: selectedSubproducts,
+    }));
+  };
 
   return (
     <>
@@ -447,7 +506,8 @@ export default function ContactForm() {
               categoriesWithSubcategories={CategoriesWithSubcategories}
               handleSubcategoryChange={handleSubcategoryChange}
               selectedSubcategories={selectedSubcategories}
-              subProducts={[]}
+              subProducts={subProducts}
+              handleSubproductChange={handleSubproductChange}
             />
             <Box
               paddingTop={"30px"}
