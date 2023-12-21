@@ -7,6 +7,7 @@ interface DropdownProps {
   categoriesWithSubcategories: any;
   handleSubcategoryChange: any;
   selectedSubcategories: any;
+  subProducts: string[];
 }
 
 export default function CustomDropdown({
@@ -16,6 +17,7 @@ export default function CustomDropdown({
   categoriesWithSubcategories,
   handleSubcategoryChange,
   selectedSubcategories,
+  subProducts,
 }: DropdownProps) {
   return (
     <Box paddingTop={"40px"} margin={"auto"} width={"100%"} maxWidth={"720px"}>
@@ -29,8 +31,10 @@ export default function CustomDropdown({
       </Typography>
       <Select
         sx={{
+          fontFamily: "Nunito Sans, sans-serif",
+
           width: "100%",
-          maxWidth: {xs: "300px", sm: "600px", md: "600px", lg: "600px"},
+          maxWidth: { xs: "300px", sm: "600px", md: "600px", lg: "600px" },
           borderRadius: "30px",
           height: "45px",
           ".MuiFormHelperText-root": {
@@ -70,12 +74,13 @@ export default function CustomDropdown({
             fontSize={"17px"}
             fontFamily={"Nunito Sans, sans-serif"}
           >
-            Sub Products
+            Sub Category
           </Typography>
           <Select
             sx={{
+              fontFamily: "Nunito Sans, sans-serif",
               width: "100%",
-              maxWidth: {xs: "300px", sm: "600px", md: "600px", lg: "600px"},
+              maxWidth: { xs: "300px", sm: "600px", md: "600px", lg: "600px" },
               borderRadius: "30px",
               height: "45px",
               ".MuiFormHelperText-root": {
@@ -103,6 +108,55 @@ export default function CustomDropdown({
                 value={subcategory}
               >
                 {subcategory}
+              </MenuItem>
+            ))}
+          </Select>
+        </>
+      )}
+
+      {personalDetails.subcategory && (
+        <>
+          <Typography
+            mt={3}
+            pb={1}
+            color={"black"}
+            fontSize={"17px"}
+            fontFamily={"Nunito Sans, sans-serif"}
+          >
+            Sub Products
+          </Typography>
+          <Select
+            sx={{
+              fontFamily: "Nunito Sans, sans-serif",
+              width: "100%",
+              maxWidth: { xs: "300px", sm: "600px", md: "600px", lg: "600px" },
+              borderRadius: "30px",
+              height: "45px",
+              ".MuiFormHelperText-root": {
+                color: "#d32f2f",
+              },
+              ".MuiInputBase-root": {
+                borderRadius: "30px",
+                height: "45px",
+              },
+            }}
+            required
+            id="subcategory-select"
+            variant="outlined"
+            error={personalDetails.subproducts ? false : true}
+            name="subproducts" // Change the name attribute to a unique name
+            value={personalDetails.subproducts}
+            // onChange={handleSubcategoryChange} // Use a new handler for Sub Products
+          >
+            {subProducts.map((subProduct: any) => (
+              <MenuItem
+                style={{
+                  fontFamily: "Nunito Sans, sans-serif",
+                }}
+                key={subProduct.name} // assuming subProduct has a unique identifier
+                value={subProduct.name} // assuming subProduct has a unique identifier
+              >
+                {subProduct.name}
               </MenuItem>
             ))}
           </Select>
