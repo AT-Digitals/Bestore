@@ -2,45 +2,9 @@ import { Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import ProductsNavigationItems from "../../../common-components/ProductNavigationItems";
 import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutlined";
 import { Typography } from "@mui/material";
-import routes from "../../../routes/routes";
-
-const ProductsNavigationItems = [
-  {
-    name: "Fabric",
-    link: routes.FABRIC_PRODUCT,
-    subcategories: [
-      { name: "ORGANIC COTTONS WOVENS", link: routes.FABRIC_PRODUCT_1 },
-      { name: "WOODPULP/LYCOCELL FABRIC", link: routes.LYCOCELL_PRODUCT },
-      { name: "KNITS-RFD GRADE B ONLY", link: routes.FABRIC_PRODUCT_3 },
-      { name: "LINEN", link: routes.FABRIC_PRODUCT_4 },
-      { name: "PEACE SILKS", link: routes.PEACESILK_PRODUCT },
-      { name: "RECYCLED COTTON", link: routes.RECYCLED_COTTON },
-      { name: "RECYCLED KNIT", link: routes.FABRIC_PRODUCT_2 },
-      { name: "WATER REPELLENT RPET", link: routes.FABRIC_PRODUCT_8 },
-    ],
-  },
-
-  {
-    name: "Patterns",
-    link: routes.CLOTHING_PRODUCT,
-    subcategories: [
-      { name: "Floral", link: routes.PATTERNS_PRODUCT_1 },
-      { name: "Aviary", link: routes.PATTERNS_PRODUCT_2 },
-      { name: "Abstract", link: routes.PATTERNS_PRODUCT_3 },
-    ],
-  },
-  {
-    name: "Colours",
-    link: routes.HOME_DECOR_PRODUCT,
-    subcategories: [
-      { name: "RED", link: routes.PRODUCT_RED },
-      { name: "BLUE", link: routes.PRODUCT_BLUE },
-      { name: "GREEN", link: routes.PRODUCT_GREEN },
-    ],
-  },
-];
 
 export default function CommonCategory() {
   const location = useLocation();

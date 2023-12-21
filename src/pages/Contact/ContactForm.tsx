@@ -9,6 +9,7 @@ import {
 import { useEffect, useState } from "react";
 
 import CustomDropdown from "./CustomDropdown";
+import ProductsNavigationItems from "../../common-components/ProductNavigationItems";
 
 const getPersonalDetails = {
   firstname: "",
@@ -244,11 +245,21 @@ export default function ContactForm() {
   //   new Set(ProductsImage.map((product) => product.producttype))
   // );
 
-  const categoriesWithSubcategories: CategoriesWithSubcategories = {
-    Fabric: ["Cotton", "Silk", "Polyster"],
-    Patterns: ["Women", "Men's", "Kids"],
-    Colours: ["Black", "Red", "White"],
+  const CategoriesWithSubcategories: CategoriesWithSubcategories = {
+    Fabric:
+      ProductsNavigationItems.find(
+        (item) => item.name === "Fabric"
+      )?.subcategories.map((subcategory) => subcategory.name) || [],
+    Patterns:
+      ProductsNavigationItems.find(
+        (item) => item.name === "Patterns"
+      )?.subcategories.map((subcategory) => subcategory.name) || [],
+    Colours:
+      ProductsNavigationItems.find(
+        (item) => item.name === "Colours"
+      )?.subcategories.map((subcategory) => subcategory.name) || [],
   };
+
   const handleCategoryChange = (event: SelectChangeEvent<string>) => {
     const selectedCategory = event.target.value;
     setPersonalDetails((prevPersonalDetails) => ({
@@ -266,7 +277,7 @@ export default function ContactForm() {
   };
 
   const selectedSubcategories =
-    categoriesWithSubcategories[personalDetails.category] || [];
+    CategoriesWithSubcategories[personalDetails.category] || [];
 
   return (
     <>
@@ -282,7 +293,10 @@ export default function ContactForm() {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <Stack padding={{ xs: "15px 21px", sm: "0px", md: "0px", lg: "0px" }} marginBottom={"25px"}>
+          <Stack
+            padding={{ xs: "15px 21px", sm: "0px", md: "0px", lg: "0px" }}
+            marginBottom={"25px"}
+          >
             <Stack
               direction={"row"}
               spacing={{ xs: 0.2, sm: 3, md: 0.3, lg: 3 }}
@@ -430,9 +444,10 @@ export default function ContactForm() {
               personalDetails={personalDetails}
               productError={productError}
               handleCategoryChange={handleCategoryChange}
-              categoriesWithSubcategories={categoriesWithSubcategories}
+              categoriesWithSubcategories={CategoriesWithSubcategories}
               handleSubcategoryChange={handleSubcategoryChange}
               selectedSubcategories={selectedSubcategories}
+              subProducts={[]}
             />
             <Box
               paddingTop={"30px"}
@@ -477,7 +492,14 @@ export default function ContactForm() {
               />
             </Box>
           </Stack>
-          <Box display={{xs: "flex", sm: "flex", md: "flex", lg: "flex"}} justifyContent={{xs: "center", sm: "center", md: "center", lg: "flex-start"}}
+          <Box
+            display={{ xs: "flex", sm: "flex", md: "flex", lg: "flex" }}
+            justifyContent={{
+              xs: "center",
+              sm: "center",
+              md: "center",
+              lg: "flex-start",
+            }}
             marginBottom={{ xs: "30px", sm: "30px", md: "30px", lg: "190px" }}
           >
             <Button
