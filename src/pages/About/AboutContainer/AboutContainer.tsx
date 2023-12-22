@@ -1,16 +1,16 @@
 import { Box, Stack, Typography } from "@mui/material";
 
-import About from "./about-home.avif";
+import About from "./Akka creartions horizontal 2-03-03.png";
 
 export default function AboutConainer() {
   return (
     <Box
       boxShadow="5px 5px 8px 5px rgba(0, 0, 0, 0.1)"
-      flexDirection={{ xs: "column", sm: "row" }}
+      // flexDirection={{ xs: "column", sm: "row" }}
       maxWidth={1300}
       width={"100%"}
-      margin={"0 auto"}
-      display={"flex"}
+      // margin={"0 auto"}
+      // display={"flex"}
       justifyContent={"space-between"}
       padding={{ xs: "30px" }}
       gap={"3rem"}
@@ -25,7 +25,7 @@ export default function AboutConainer() {
           alt="about"
         />
       </Box>
-      <Stack pb={4} spacing={3} margin={"auto"} width={"100%"} maxWidth={490}>
+      <Stack pb={4} spacing={3} margin={"auto"} width={"100%"}>
         <Typography
           paddingTop={"2rem"}
           lineHeight={1}
