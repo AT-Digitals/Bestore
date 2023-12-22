@@ -171,6 +171,7 @@ export default function AllProductsPage() {
                     backgroundColor: "#e53637",
                   },
                 }}
+                onClick={() => window.scroll(0, 0)}
               >
                 Show more
               </Button>
@@ -282,6 +283,7 @@ export default function AllProductsPage() {
                     backgroundColor: "#e53637",
                   },
                 }}
+                onClick={() => window.scroll(0, 0)}
               >
                 Show more
               </Button>
@@ -394,6 +396,7 @@ export default function AllProductsPage() {
                     backgroundColor: "#e53637",
                   },
                 }}
+                onClick={() => window.scroll(0, 0)}
               >
                 Show more
               </Button>

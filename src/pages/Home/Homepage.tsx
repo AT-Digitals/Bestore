@@ -135,7 +135,7 @@ export default function Homepage() {
                   position: "absolute",
                   top: 0,
                   left: 0,
-                  width: "100%",
+                  width: "90%",
                   height: "100%",
                   backgroundColor: "rgba(255, 255, 255, 0.5)",
                   zIndex: 2,
@@ -218,7 +218,6 @@ export default function Homepage() {
         <ProductsCard relatedProduct={selectedLabel} />
 
         <Box>
-          {/* <Link to={routes.PRODUCTS}> */}
           <Button
             onClick={handleMoreProducts}
             sx={{
@@ -237,13 +236,11 @@ export default function Homepage() {
           >
             More Products
           </Button>
-          {/* </Link> */}
         </Box>
       </Box>
 
       <Testimonials />
       <SliderImages />
-      {/* <CartImage /> */}
     </Box>
   );
 }
