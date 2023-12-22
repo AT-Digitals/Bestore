@@ -1,13 +1,34 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 import About from "./Akka creartions horizontal 2-03-03.png";
+import Abt1 from "./sliderAssets/abt1.webp";
+import Abt2 from "./sliderAssets/abt2.avif";
+import Abt3 from "./sliderAssets/abt3.avif";
+import Abt4 from "./sliderAssets/abt4.avif";
 
 export default function AboutConainer() {
+  const images = [Abt1, Abt2, Abt3, Abt4];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Change the current image index in a cyclic manner
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change image every 2 seconds
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [images.length]); // Empty dependency array ensures useEffect runs only once on mount
+
   return (
     <Box
       boxShadow="5px 5px 8px 5px rgba(0, 0, 0, 0.1)"
       // flexDirection={{ xs: "column", sm: "row" }}
-      maxWidth={1300}
+      maxWidth={650}
       width={"100%"}
       // margin={"0 auto"}
       // display={"flex"}
@@ -15,17 +36,24 @@ export default function AboutConainer() {
       padding={{ xs: "30px" }}
       gap={"3rem"}
     >
-      <Box margin={"0 auto"}>
+      <Box
+        padding={"30px"}
+        display={"flex"}
+        justifyContent={"center"}
+        margin={"0 auto"}
+      >
         <img
-          src={About}
+          src={images[currentImageIndex]}
           style={{
-            maxWidth: 515,
+            maxWidth: 800,
             width: "100%",
+            maxHeight: 600,
+            height: "100%",
           }}
           alt="about"
         />
       </Box>
-      <Stack pb={4} spacing={3} margin={"auto"} width={"100%"}>
+      <Stack pb={4} spacing={3} margin={"auto"} width={"100%"} maxWidth={500}>
         <Typography
           paddingTop={"2rem"}
           lineHeight={1}
