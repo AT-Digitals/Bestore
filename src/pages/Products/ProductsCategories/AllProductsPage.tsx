@@ -20,7 +20,7 @@ interface Product {
 
 export default function AllProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const location = useLocation(); // Get the location object
+  const location = useLocation();
 
   const handleProductClick = (product: any) => {
     setSelectedProduct(product);
@@ -103,7 +103,6 @@ export default function AllProductsPage() {
                   <img
                     style={
                       {
-                        // height: { xs: "65%", md: "70%" },
                         height: "70%",
                         maxWidth: "100%",
                         width: "100%",

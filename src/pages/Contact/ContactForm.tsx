@@ -391,6 +391,8 @@ export default function ContactForm() {
               </Typography>
               <TextField
                 sx={{
+                  height: "45px",
+
                   width: "100%",
                   maxWidth: {
                     xs: "300px",
@@ -403,7 +405,6 @@ export default function ContactForm() {
                   },
                   ".MuiInputBase-root": {
                     borderRadius: "30px",
-                    height: "45px",
                   },
                 }}
                 required
@@ -444,8 +445,8 @@ export default function ContactForm() {
                   },
                   ".MuiInputBase-root": {
                     borderRadius: "30px",
-                    height: "45px",
                   },
+                  height: "45px",
                 }}
                 required
                 id="standard-required"
@@ -485,8 +486,8 @@ export default function ContactForm() {
                   },
                   ".MuiInputBase-root": {
                     borderRadius: "30px",
-                    height: "45px",
                   },
+                  height: "45px",
                 }}
                 required
                 type="number"

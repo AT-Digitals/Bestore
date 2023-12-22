@@ -30,7 +30,12 @@ export default function ProductViewPage({
       width={"100%"}
     >
       <Stack pb={5}>
-        <Box marginTop={{xs: "23px", sm: "23px", md: "23px", lg: "23px"}} display={"flex"} alignItems={"center"} justifyContent={"left"}>
+        <Box
+          marginTop={{ xs: "23px", sm: "23px", md: "23px", lg: "23px" }}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"left"}
+        >
           <IconButton onClick={handleGoBack}>
             <ArrowBackIcon />
           </IconButton>{" "}
@@ -74,27 +79,43 @@ export default function ProductViewPage({
               </Typography>
 
               <Typography
-                fontFamily={"Nunito Sans, sans-serif"}
                 fontSize={{ xs: "12px", sm: "20px", md: "20px" }}
-                color="textSecondary"
-                gutterBottom
+                fontFamily={"Nunito Sans, sans-serif"}
+                color="black"
               >
-                Category: {product.producttype}
+                Category:{" "}
+                <span
+                  style={{
+                    color: "gray",
+                  }}
+                >
+                  {product.producttype}
+                </span>
               </Typography>
 
               <Typography
                 fontSize={{ xs: "12px", sm: "20px", md: "20px" }}
                 fontFamily={"Nunito Sans, sans-serif"}
+                color="black"
               >
-                Coat with quilted lining and an adjustable hood. Featuring long
-                sleeves with adjustable cuff tabs, adjustable asymmetric hem
-                with elastic side tabs and a front zip fastening with placket.
+                Discription:{" "}
+                <span
+                  style={{
+                    color: "gray",
+                  }}
+                >
+                  {product.description}
+                </span>
               </Typography>
             </Stack>
           </Stack>
-          <Box width={{xs: "85%", sm: "94%", md: "110%", lg: "88%"}} borderTop={"1px solid black"}></Box>
+          <Box
+            width={{ xs: "85%", sm: "94%", md: "110%", lg: "88%" }}
+            borderTop={"1px solid black"}
+          ></Box>
           <Stack maxWidth={1000} width={"100%"}>
-            <Typography marginTop={"20px"}
+            <Typography
+              marginTop={"20px"}
               textAlign={{ md: "center" }}
               fontSize={{ xs: "12px", sm: "15px", md: "30px" }}
             >

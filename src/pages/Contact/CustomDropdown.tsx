@@ -85,18 +85,13 @@ export default function CustomDropdown({
               maxWidth: { xs: "300px", sm: "600px", md: "600px", lg: "600px" },
               borderRadius: "30px",
               height: "45px",
-              ".MuiFormHelperText-root": {
-                color: "#d32f2f",
-              },
               ".MuiInputBase-root": {
                 borderRadius: "30px",
                 height: "45px",
               },
             }}
-            required
             id="subcategory-select"
             variant="outlined"
-            error={personalDetails.subcategory ? false : true}
             name="subcategory"
             value={personalDetails.subcategory}
             onChange={handleSubcategoryChange}
@@ -134,21 +129,17 @@ export default function CustomDropdown({
               maxWidth: { xs: "300px", sm: "600px", md: "600px", lg: "600px" },
               borderRadius: "30px",
               height: "45px",
-              ".MuiFormHelperText-root": {
-                color: "#d32f2f",
-              },
+
               ".MuiInputBase-root": {
                 borderRadius: "30px",
                 height: "45px",
               },
             }}
-            required
             id="subcategory-select"
             variant="outlined"
-            error={personalDetails.subproducts ? false : true}
-            name="subproducts" // Change the name attribute to a unique name
+            name="subproducts"
             value={personalDetails.subproducts}
-            onChange={handleSubproductChange} // Use a new handler for Sub Products
+            onChange={handleSubproductChange}
           >
             {subProducts.map((subProduct: any) => (
               <MenuItem key={subProduct.name} value={subProduct}>

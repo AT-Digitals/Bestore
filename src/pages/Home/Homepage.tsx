@@ -138,14 +138,19 @@ export default function Homepage() {
                   width: "100%",
                   height: "100%",
                   backgroundColor: "rgba(255, 255, 255, 0.5)",
-                  zIndex: 2, // Set a higher z-index value
+                  zIndex: 2,
                   transition: ".5s ease",
                 },
                 "&:hover .overlay": {
                   opacity: 1,
                   color: "white",
                 },
+                "&.hovered .overlay": {
+                  opacity: 1,
+                  color: "white",
+                },
               }}
+              className="hovered"
             >
               {/* Image */}
               <img
@@ -178,7 +183,7 @@ export default function Homepage() {
                   left: "50%",
                   transform: "translate(-50%,-50%)",
                   textAlign: "center",
-                  zIndex: 1, // Set a lower z-index value
+                  zIndex: 1,
                 }}
               >
                 <Typography
@@ -229,8 +234,7 @@ export default function Homepage() {
               ":hover": {
                 color: "white",
                 backgroundColor: "#e53637",
-              }
-
+              },
             }}
           >
             More Products
