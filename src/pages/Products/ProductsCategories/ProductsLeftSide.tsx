@@ -1,7 +1,10 @@
-import { Box, MenuItem, Select, Typography } from "@mui/material";
+import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import CheckIcon from "@mui/icons-material/Check";
 import CommonCategory from "./commonCategory";
+import { Link } from "react-router-dom";
+import routes from "../../../routes/routes";
 import { useState } from "react";
 
 export default function ProductsLeftSide() {
@@ -38,6 +41,22 @@ export default function ProductsLeftSide() {
     "8  OZ",
   ];
 
+  const ColoursProduct = [
+    { bg: "red", name: "Red", link: routes.PRODUCT_RED },
+    { bg: "Blue", name: "Blue", link: routes.PRODUCT_BLUE },
+    { bg: "Green", name: "Green", link: routes.PRODUCT_GREEN },
+
+    { bg: "Beige", name: "Beige", link: " routes.PRODUCT_RED" },
+    { bg: "Black", name: "Black", link: "routes.PRODUCT_RED" },
+    { bg: "Brown", name: "Brown", link: " routes.PRODUCT_RED" },
+    { bg: "Maroon", name: "Maroon", link: "routes.PRODUCT_RED" },
+    { bg: "Orange", name: "Orange", link: "routes.PRODUCT_RED" },
+    { bg: "White", name: "White", link: "routes.PRODUCT_RED" },
+    { bg: "Pink", name: "Pink", link: "routes.PRODUCT_RED" },
+    { bg: "Violet", name: "Violet", link: " routes.PRODUCT_RED" },
+    { bg: "Yellow", name: "Yellow", link: " routes.PRODUCT_RED" },
+  ];
+
   const [selectedWidth, setSelectedWidth] = useState("Select all");
   const [selectedComposition, setSelectedComposition] = useState("Select all");
   const [selectedGSM, setSelectedGSM] = useState("Select all");
@@ -52,6 +71,13 @@ export default function ProductsLeftSide() {
 
   const handleGSMChange = (event: any) => {
     setSelectedGSM(event.target.value);
+  };
+
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [hoveredColor, setHoveredColor] = useState<string | null>(null);
+
+  const handleColorClick = (color: string) => {
+    setSelectedColor(color);
   };
   return (
     <div>
@@ -88,7 +114,6 @@ export default function ProductsLeftSide() {
       <Box
         padding={2}
         style={{ cursor: "pointer" }}
-        // onClick={handleToggleDropdown}
         display="flex"
         justifyContent="space-between"
       >
@@ -103,22 +128,16 @@ export default function ProductsLeftSide() {
       </Box>
 
       <>
-        {/* {isDropdownOpen && ( */}
         <Box padding={"0 20px"}>
           <CommonCategory />
         </Box>
-        {/* )} */}
         <Box
           pt={2}
           margin={"0 auto"}
           width={"90%"}
           borderBottom={"1px solid gray"}
         ></Box>
-        <Box
-          padding={2}
-          style={{ cursor: "pointer" }}
-          justifyContent="space-between"
-        >
+        <Box padding={2} justifyContent="space-between">
           <Typography
             fontSize={"16px"}
             fontWeight={"bold"}
@@ -204,11 +223,7 @@ export default function ProductsLeftSide() {
           width={"90%"}
           borderBottom={"1px solid gray"}
         ></Box>
-        <Box
-          padding={2}
-          style={{ cursor: "pointer" }}
-          justifyContent="space-between"
-        >
+        <Box padding={2} justifyContent="space-between">
           <Typography
             fontSize={"16px"}
             fontWeight={"bold"}
@@ -248,6 +263,75 @@ export default function ProductsLeftSide() {
           width={"90%"}
           borderBottom={"1px solid gray"}
         ></Box>
+
+        <Box padding={2} justifyContent="space-between">
+          <Typography
+            fontSize={"16px"}
+            fontWeight={"bold"}
+            fontFamily={"Nunito Sans, sans-serif"}
+            whiteSpace={"nowrap"}
+          >
+            Filter By Colours{" "}
+          </Typography>
+          <Stack
+            maxHeight={300}
+            height={"100%"}
+            style={{ overflowY: "scroll" }}
+            pt={2}
+            spacing={2}
+          >
+            {ColoursProduct.map((item) => (
+              <Link
+                style={{
+                  textDecoration: "none",
+                }}
+                to={item.link}
+              >
+                <Box
+                  key={item.name}
+                  display={"flex"}
+                  alignItems={"center"}
+                  padding={"0 20px"}
+                  style={{
+                    maxHeight: "250px",
+                    position: "relative",
+                  }}
+                  onMouseEnter={() => setHoveredColor(item.name)}
+                  onMouseLeave={() => setHoveredColor(null)}
+                  onClick={() => handleColorClick(item.name)}
+                >
+                  <Box
+                    bgcolor={item.bg}
+                    padding={"10px"}
+                    borderRadius={"50%"}
+                    style={{
+                      width: "5px",
+                      height: "5px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    mr={2}
+                  >
+                    {(hoveredColor === item.name ||
+                      selectedColor === item.name) && (
+                      <CheckIcon style={{ color: "white", fontSize: "20px" }} />
+                    )}
+                  </Box>
+                  <span
+                    style={{
+                      fontFamily: "Nunito Sans, sans-serif",
+                      fontSize: "15px",
+                      color: "gray",
+                    }}
+                  >
+                    {item.name}
+                  </span>
+                </Box>
+              </Link>
+            ))}
+          </Stack>
+        </Box>
       </>
     </div>
   );
