@@ -28,6 +28,8 @@ import RedProduct from "../pages/Products/ProductsCategories/SubProducts/RedProd
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
 import WaterRepllentRept from "../pages/Products/ProductsCategories/SubProducts/WaterRepllentRept/WaterRepllentRept";
 import routes from "./routes";
+import SignatureProduct from "../pages/Products/ProductsCategories/SignatureProduct";
+import SignatureProductsPAge from "../pages/Products/ProductsCategories/SignatureProductPage";
 
 export default function AppRouter() {
   return (
@@ -69,6 +71,10 @@ export default function AppRouter() {
             <Route
               path={routes.FABRIC_PRODUCT_3}
               element={<PolysterProducts />}
+            />
+             <Route
+              path={routes.SIGNATURE_PRODUCT}
+              element={<SignatureProductsPAge />}
             />
             <Route path={routes.FABRIC_PRODUCT_4} element={<LinenProducts />} />
             <Route path={routes.PRODUCT_RED} element={<RedProduct />} />

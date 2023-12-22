@@ -148,7 +148,7 @@ export default function AllProductsPage() {
               ))}
             </Grid>
             <Link
-              to={routes.FABRIC_PRODUCT_1}
+              to={routes.SIGNATURE_PRODUCT}
               style={{
                 display: "flex",
                 justifyContent: "center",

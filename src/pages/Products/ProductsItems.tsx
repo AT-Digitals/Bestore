@@ -21,7 +21,28 @@ import Patterns6 from "../../assets/ProductsImage/il_794xN.5204058218_10nu.webp"
 import Sign1 from "../../assets/ProductsImage/sign1.webp";
 import Sign2 from "../../assets/ProductsImage/sign2.webp";
 import Sign3 from "../../assets/ProductsImage/sign3.webp";
+import Sign4 from "../../assets/ProductsImage/1.webp"; 
+import Sign5 from "../../assets/ProductsImage/2.avif";
+import Sign6 from "../../assets/ProductsImage/3.avif";
 const ProductsImage = [
+  { name: "SANTE Midi", 
+  Image: Sign4,
+  description: "Product multicolored Kimono jacket with large collar and one size animal design",
+  producttype: "Signature",
+  id: "26", 
+},
+{ name: "OU Midi", 
+  Image: Sign5,
+  description: "Product multicolored Kimono jacket with large collar and one size animal design",
+  producttype: "Signature",
+  id: "27", 
+},
+{ name: "OS Midi", 
+  Image: Sign6,
+  description: "Product multicolored Kimono jacket with large collar and one size animal design",
+  producttype: "Signature",
+  id: "28", 
+},
   { name: "Robe Midi", 
   Image: Sign1,
   description: "Product multicolored Kimono jacket with large collar and one size animal design",
