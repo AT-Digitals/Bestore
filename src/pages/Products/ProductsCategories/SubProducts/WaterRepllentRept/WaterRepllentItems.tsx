@@ -4,11 +4,17 @@ import ripstop from "./WaterRepllentAssets/FLOWER SHAL GREEN CANVAS (3).jpg";
 const WaterRepllentItems = [
   {
     name: "CANVAS REPT",
-    image: Canvas,
+    Image: Canvas,
+    description: "WaterRepllent multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "1",
   },
   {
     name: "RIPSTOP",
-    image: ripstop,
+    Image: ripstop,
+    description: "WaterRepllent multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "2",
   },
 ];
 

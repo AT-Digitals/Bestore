@@ -8,17 +8,45 @@ import {
 
 import LinenProductsItems from "./LinenProductItems";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import ProductViewPage from "../../../ProductDetailPage/ProductView";
+
+interface Product {
+  id: string;
+  Image: string;
+  name: string;
+  producttype: string;
+}
 
 export default function LinenProducts() {
   const location = useLocation(); // Get the location object
-
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
+
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+  };
+  const relatedProducts = selectedProduct
+    ? LinenProductsItems.filter(
+        (item) =>
+          item.producttype === selectedProduct.producttype &&
+          item.id !== selectedProduct.id
+      )
+    : [];
 
   const isMediumScreen = useMediaQuery(
     "(min-width: 900px) and (max-width: 1519px)"
   );
   return (
     <>
+      {selectedProduct ? (
+        <ProductViewPage
+          product={selectedProduct}
+          handleGoBack={() => setSelectedProduct(null)}
+          relatedProducts={relatedProducts}
+        />
+      ) : (
+        <Box>
       <Breadcrumbs
         style={{
           padding: "30px 30px 0",
@@ -52,6 +80,7 @@ export default function LinenProducts() {
             style={{ display: "flex" }}
           >
             <Box
+              onClick={() => handleProductClick(item)}
               padding={"10px"}
               height={{ xs: 270, sm: 360, md: 400 }}
               mb={2}
@@ -84,7 +113,7 @@ export default function LinenProducts() {
                     objectFit: "cover",
                   } as any
                 }
-                src={item.image}
+                src={item.Image}
                 alt="products"
               />
               <Box
@@ -107,6 +136,8 @@ export default function LinenProducts() {
           </Grid>
         ))}
       </Grid>
+      </Box>
+      )}
     </>
   );
 }

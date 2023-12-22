@@ -17,57 +17,119 @@ import recycledcotton7 from "./RecycledCotton/7.jpg";
 import recycledcotton8 from "./RecycledCotton/BIG DESIGN.jpg";
 import recycledcotton9 from "./RecycledCotton/red shalimar 1 copy.jpg";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import ProductViewPage from "../../ProductDetailPage/ProductView";
 
-const LycocellProductImages = [
+interface Product {
+  id: string;
+  Image: string;
+  name: string;
+  producttype: string;
+}
+
+const RecycledCottonProductImages = [
   {
     name: "OC MUSLIN",
-    image: recycledcotton1,
+    Image: recycledcotton1,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "1",
   },
-  { name: "OC D.GAUZE", image: recycledcotton2 },
+  { name: "OC D.GAUZE", 
+    Image: recycledcotton2,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "2",
+},
   {
     name: "OC D.GAUZE",
-    image: recycledcotton3,
+    Image: recycledcotton3,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "3",
   },
   {
     name: "OC VOILE",
-    image: recycledcotton4,
+    Image: recycledcotton4,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "4",
   },
   {
     name: "OC CAMBRIC/BATISTE",
-    image: recycledcotton5,
+    Image: recycledcotton5,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "5",
   },
   {
     name: "OC POPLIN",
-    image: recycledcotton6,
+    Image: recycledcotton6,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "6",
   },
   {
     name: "OC POPLIN",
-    image: recycledcotton7,
+    Image: recycledcotton7,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "7",
   },
   {
     name: "OC CANVAS",
-    image: recycledcotton9,
+    Image: recycledcotton9,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "8",
   },
   {
     name: "OC DUCK/DRILL",
-    image: recycledcotton10,
+    Image: recycledcotton10,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "9",
   },
   {
     name: "OC SATEEN",
-    image: recycledcotton8,
+    Image: recycledcotton8,
+    description: "Recycled Cotton multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "10",
   },
 ];
 
 export default function RecycledCotton() {
   const location = useLocation(); // Get the location object
-
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
+
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+  };
+
+  const relatedProducts = selectedProduct
+    ? RecycledCottonProductImages.filter(
+        (item) =>
+          item.producttype === selectedProduct.producttype &&
+          item.id !== selectedProduct.id
+      )
+    : [];
+
 
   const isMediumScreen = useMediaQuery(
     "(min-width: 900px) and (max-width: 1519px)"
   );
   return (
     <>
+     {selectedProduct ? (
+        <ProductViewPage
+          product={selectedProduct}
+          handleGoBack={() => setSelectedProduct(null)}
+          relatedProducts={relatedProducts}
+        />
+      ) : (
+        <Box>
       <Breadcrumbs
         style={{
           padding: "30px 30px 0",
@@ -90,7 +152,7 @@ export default function RecycledCotton() {
         marginTop={"10px"}
         container
       >
-        {LycocellProductImages.map((item, index) => (
+        {RecycledCottonProductImages.map((item, index) => (
           <Grid
             columnSpacing={"2rem"}
             rowGap={"4rem"}
@@ -101,6 +163,7 @@ export default function RecycledCotton() {
             style={{ display: "flex" }}
           >
             <Box
+             onClick={() => handleProductClick(item)}
               padding={"10px"}
               height={{ xs: 270, sm: 360, md: 400, lg: 360 }}
               mb={2}
@@ -133,7 +196,7 @@ export default function RecycledCotton() {
                     objectFit: "cover",
                   } as any
                 }
-                src={item.image}
+                src={item.Image}
                 alt="products"
               />
               <Box
@@ -156,6 +219,8 @@ export default function RecycledCotton() {
           </Grid>
         ))}
       </Grid>
+      </Box>
+      )}
     </>
   );
 }

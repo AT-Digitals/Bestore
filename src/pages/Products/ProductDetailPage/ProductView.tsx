@@ -98,7 +98,7 @@ export default function ProductViewPage({
                 fontFamily={"Nunito Sans, sans-serif"}
                 color="black"
               >
-                Discription:{" "}
+                Description:{" "}
                 <span
                   style={{
                     color: "gray",
@@ -166,7 +166,7 @@ export default function ProductViewPage({
                         justifyContent={"flex-start"}
                       >
                         <Typography
-                          fontSize={"10px"}
+                          fontSize={"16px"}
                           padding={"5px"}
                           textAlign={"center"}
                           fontWeight={"bold"}

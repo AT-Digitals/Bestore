@@ -6,20 +6,32 @@ import Bindu2 from "../../../../../../assets/FloralAssets/bindu2.jpg";
 const FloralProductItems = [
   {
     name: "Bindu Flower",
-    image: Bindu,
+    Image: Bindu,
+    description: "FloralProduct multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Patterns",
+    id: "1",
   },
 
   {
     name: "Big Flower",
-    image: Big,
+    Image: Big,
+    description: "FloralProduct multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Patterns",
+    id: "2",
   },
   {
     name: "Pattern3",
-    image: Bindu2,
+    Image: Bindu2,
+    description: "FloralProduct multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Patterns",
+    id: "3",
   },
   {
     name: "Pattern4",
-    image: Big2,
+    Image: Big2,
+    description: "FloralProduct multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Patterns",
+    id: "4",
   },
 ];
 export default FloralProductItems;

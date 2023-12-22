@@ -10,29 +10,68 @@ import lycocell1 from "./Lycocell/FLOWER SHAL BLUE  CANVAS (1).jpg";
 import lycocell2 from "./Lycocell/hatcanvas blue shalimar.jpg";
 import lycocell3 from "./Lycocell/light blue shalimar.jpg";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import ProductViewPage from "../../ProductDetailPage/ProductView";
+
+interface Product {
+  id: string;
+  Image: string;
+  name: string;
+  producttype: string;
+}
 
 const LycocellProductImages = [
   {
     name: "MODAL",
-    image: lycocell1,
+    Image: lycocell1,
+    description: "Lycocell jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "1",
   },
-  { name: "OC-ECOVERA", image: lycocell2 },
+  { name: "OC-ECOVERA", 
+    Image: lycocell2,
+    description: "Lycocell jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "2", 
+  },
   {
     name: "TENSIL",
-    image: lycocell3,
+    Image: lycocell3,
+    description: "Lycocell jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "3",
   },
 ];
 
 export default function LycocellProduct() {
   const location = useLocation(); // Get the location object
-
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
+
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+  };
+  const relatedProducts = selectedProduct
+    ? LycocellProductImages.filter(
+        (item) =>
+          item.producttype === selectedProduct.producttype &&
+          item.id !== selectedProduct.id
+      )
+    : [];
 
   const isMediumScreen = useMediaQuery(
     "(min-width: 900px) and (max-width: 1519px)"
   );
   return (
     <>
+    {selectedProduct ? (
+        <ProductViewPage
+          product={selectedProduct}
+          handleGoBack={() => setSelectedProduct(null)}
+          relatedProducts={relatedProducts}
+        />
+      ) : (
+        <Box>
       <Breadcrumbs
         style={{
           padding: "30px 30px 0",
@@ -66,6 +105,7 @@ export default function LycocellProduct() {
             style={{ display: "flex" }}
           >
             <Box
+               onClick={() => handleProductClick(item)}
               padding={"10px"}
               height={{ xs: 270, sm: 360, md: 400, lg: 360 }}
               mb={2}
@@ -98,7 +138,7 @@ export default function LycocellProduct() {
                     objectFit: "cover",
                   } as any
                 }
-                src={item.image}
+                src={item.Image}
                 alt="products"
               />
               <Box
@@ -121,6 +161,8 @@ export default function LycocellProduct() {
           </Grid>
         ))}
       </Grid>
+      </Box>
+       )} 
     </>
   );
 }
