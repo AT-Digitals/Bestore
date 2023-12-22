@@ -111,12 +111,7 @@ export default function ProductsLeftSide() {
         borderBottom={"1px solid gray"}
       ></Box>
 
-      <Box
-        padding={2}
-        style={{ cursor: "pointer" }}
-        display="flex"
-        justifyContent="space-between"
-      >
+      <Box padding={2} display="flex" justifyContent="space-between">
         <Typography
           fontSize={"15px"}
           fontWeight={"bold"}
@@ -179,11 +174,7 @@ export default function ProductsLeftSide() {
           width={"90%"}
           borderBottom={"1px solid gray"}
         ></Box>
-        <Box
-          padding={2}
-          style={{ cursor: "pointer" }}
-          justifyContent="space-between"
-        >
+        <Box padding={2} justifyContent="space-between">
           <Typography
             fontSize={"16px"}
             fontWeight={"bold"}
