@@ -1,5 +1,5 @@
 import { Grid, IconButton, Stack } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
@@ -17,9 +17,15 @@ export default function ProductViewPage({
 }: ProductSelectProps) {
   const limitedRelatedProducts = relatedProducts.slice(0, 3);
 
+  const imageBoxRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    // Scroll to the top when the component mounts
-    window.scrollTo(0, 0);
+    if (imageBoxRef.current) {
+      imageBoxRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   }, []);
 
   return (
@@ -29,7 +35,7 @@ export default function ProductViewPage({
       maxWidth={1519}
       width={"100%"}
     >
-      <Stack pb={5}>
+      <Stack ref={imageBoxRef} pb={5}>
         <Box
           marginTop={{ xs: "23px", sm: "23px", md: "23px", lg: "23px" }}
           display={"flex"}

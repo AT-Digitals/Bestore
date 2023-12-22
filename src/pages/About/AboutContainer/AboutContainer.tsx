@@ -27,7 +27,7 @@ export default function AboutConainer() {
     <Box
       boxShadow="5px 5px 8px 5px rgba(0, 0, 0, 0.1)"
       flexDirection={{ xs: "column", sm: "row" }}
-      maxWidth={1200}
+      maxWidth={1300}
       width={"100%"}
       margin={"0 auto"}
       display={"flex"}
@@ -36,7 +36,7 @@ export default function AboutConainer() {
       gap={"3rem"}
     >
       <Box
-        padding={"30px"}
+        maxWidth={500}
         display={"flex"}
         justifyContent={"center"}
         margin={"0 auto"}
@@ -44,15 +44,15 @@ export default function AboutConainer() {
         <img
           src={images[currentImageIndex]}
           style={{
-            maxWidth: 800,
+            maxWidth: 400,
             width: "100%",
-            maxHeight: 600,
+            maxHeight: 400,
             height: "100%",
           }}
           alt="about"
         />
       </Box>
-      <Stack pb={4} spacing={3} margin={"auto"} width={"100%"} maxWidth={500}>
+      <Stack pb={4} spacing={3} margin={"auto"} width={"100%"} maxWidth={800}>
         <Typography
           paddingTop={"2rem"}
           lineHeight={1}
@@ -62,6 +62,7 @@ export default function AboutConainer() {
         >
           The story of AKKA CREATION in Mamallapuram
         </Typography>
+        <Box border={"2px solid black"} width={"80%"}></Box>
         <Typography fontSize={"15px"} fontFamily={"Nunito Sans, sans-serif"}>
           Akka! <br />
           The power of colors! <br /> India's fashion for women sure of them and
