@@ -38,7 +38,7 @@ const LYCOCELL_PRODUCT = "products/Products-categories/Fabric/lycocell";
 const PEACESILK_PRODUCT = "products/Products-categories/Fabric/peace-silk";
 
 const RECYCLED_COTTON = "products/Products-categories/Fabric/recycled-cotton";
-const SIGNATURE_PRODUCT = "products/Products-categories/Fabric/signature";
+const SIGNATURE_PRODUCT = `${PRODUCTS}/Products-categories/signature`;
 
 const routes = {
   ROOT,
