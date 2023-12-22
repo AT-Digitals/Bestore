@@ -132,7 +132,7 @@ export default function FabricProducts({ currentItems }: ProductProps) {
                   >
                     <Typography
                       textAlign={"center"}
-                      fontSize={"10px"}
+                      fontSize={"13px"}
                       fontWeight={"bold"}
                       mt={1}
                     >
