@@ -24,7 +24,7 @@ export default function AboutPage() {
           padding={{ sm: "40px 0 60px", md: "200px 0 190px" }}
           textAlign={"center"}
         >
-          <Typography color={"Black"} fontSize={"75px"} fontWeight={"bold"}>
+          <Typography color={"white"} fontSize={"75px"} fontWeight={"bold"}>
             {" "}
             {"About Us"}
           </Typography>
