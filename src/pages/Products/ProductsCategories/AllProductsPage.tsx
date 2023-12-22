@@ -1,24 +1,37 @@
 import { Box, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 
 import ProductsImage from "../ProductsItems";
-import Sign1 from "./sign1.webp";
-import Sign2 from "./sign2.webp";
-import Sign3 from "./sign3.webp";
 
-const signatureProducts = [
-  { name: "Robe Midi", image: Sign1 },
-  { name: "Kaftan Long Chudi", image: Sign2 },
-  { name: "Cotton skirt", image: Sign3 },
-];
+import { useState } from "react";
+import ProductViewPage from "../ProductDetailPage/ProductView";
+
+interface Product {
+  id: string;
+  Image: string;
+  name: string;
+  producttype: string;
+}
+
+
 
 export default function AllProductsPage() {
+
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const isMediumScreen = useMediaQuery(
     "(min-width: 900px) and (max-width: 1519px)"
   );
 
+
   const fabricProducts = ProductsImage.filter(
     (item) => item.producttype === "Fabric"
   );
+
+  const signatureProducts = ProductsImage.filter(
+    (item) => item.producttype === "Signature"
+  );
+
+  const SlicedSignature = signatureProducts.slice(0, 3);
+  
 
   const SlicedFabric = fabricProducts.slice(0, 3);
   const patternProducts = ProductsImage.filter(
@@ -27,8 +40,27 @@ export default function AllProductsPage() {
 
   const SlicedPatterns = patternProducts.slice(0, 3);
 
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+  };
+  const relatedProducts = selectedProduct
+    ? ProductsImage.filter(
+        (item) =>
+          item.producttype === selectedProduct.producttype &&
+          item.id !== selectedProduct.id
+      )
+    : [];
+    
+
   return (
     <Box mb={15}>
+       {selectedProduct ? (
+        <ProductViewPage
+          product={selectedProduct}
+          handleGoBack={() => setSelectedProduct(null)}
+          relatedProducts={relatedProducts}
+        />
+        ) : (
       <Box>
         <Typography
           pl={3}
@@ -38,6 +70,8 @@ export default function AllProductsPage() {
           Our Signature Products
         </Typography>
         <Box ml={3} width={"10%"} border={"2px solid red"}></Box>
+       
+      
         <Stack>
           <Grid
             mb={3}
@@ -46,7 +80,7 @@ export default function AllProductsPage() {
             marginTop={"10px"}
             container
           >
-            {signatureProducts.map((item, index) => (
+            {SlicedSignature.map((item, index) => (
               <Grid
                 columnSpacing={"2rem"}
                 rowGap={"4rem"}
@@ -57,6 +91,7 @@ export default function AllProductsPage() {
                 style={{ display: "flex" }}
               >
                 <Box
+                onClick={() => handleProductClick(item)}
                   padding={"10px"}
                   height={{ xs: 270, sm: 300, md: 360 }}
                   mb={2}
@@ -88,7 +123,7 @@ export default function AllProductsPage() {
                         objectFit: "cover",
                       } as any
                     }
-                    src={item.image}
+                    src={item.Image}
                     alt="products"
                   />
                   <Box
@@ -120,7 +155,9 @@ export default function AllProductsPage() {
           >
             <Button>show more</Button>
           </Link> */}
+          
         </Stack>
+     
         <Typography
           pl={3}
           fontFamily={"Nunito Sans, sans-serif"}
@@ -148,6 +185,7 @@ export default function AllProductsPage() {
                 style={{ display: "flex" }}
               >
                 <Box
+                  onClick={() => handleProductClick(item)}
                   padding={"10px"}
                   height={{ xs: 270, sm: 300, md: 360 }}
                   mb={2}
@@ -231,6 +269,7 @@ export default function AllProductsPage() {
                 style={{ display: "flex" }}
               >
                 <Box
+                 onClick={() => handleProductClick(item)}
                   padding={"10px"}
                   height={{ xs: 270, sm: 300, md: 360 }}
                   mb={2}
@@ -286,7 +325,7 @@ export default function AllProductsPage() {
           </Grid>
         </Stack>
       </Box>
-      {/* )} */}
+       )}
     </Box>
   );
 }

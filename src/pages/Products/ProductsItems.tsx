@@ -18,8 +18,28 @@ import Patterns3 from "../../assets/AviaryAssets/TOUCAN GREEN CANVAS.jpg";
 import Patterns4 from "../../assets/AviaryAssets/bird.jpg";
 import Patterns5 from "../../assets/ProductsImage/il_794xN.1131388500_qp84.avif";
 import Patterns6 from "../../assets/ProductsImage/il_794xN.5204058218_10nu.webp";
-
+import Sign1 from "../../assets/ProductsImage/sign1.webp";
+import Sign2 from "../../assets/ProductsImage/sign2.webp";
+import Sign3 from "../../assets/ProductsImage/sign3.webp";
 const ProductsImage = [
+  { name: "Robe Midi", 
+  Image: Sign1,
+  description: "Product multicolored Kimono jacket with large collar and one size animal design",
+  producttype: "Signature",
+  id: "14", 
+},
+{ name: "Kaftan Long Chudi", 
+  Image: Sign2,
+  description: "Product multicolored Kimono jacket with large collar and one size animal design",
+  producttype: "Signature",
+  id: "15",  
+},
+{ name: "Cotton skirt", 
+  Image: Sign3,
+  description: "Product multicolored Kimono jacket with large collar and one size animal design",
+  producttype: "Signature",
+  id: "16", 
+},
   {
     description: "Reversible multicolored Kimono jacket with large collar and one size animal design",
     name: "OC DENIM",
