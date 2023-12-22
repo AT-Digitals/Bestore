@@ -8,9 +8,30 @@ import {
 
 import RecycledKnitItems from "./RecycledKnitItems";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import ProductViewPage from "../../../ProductDetailPage/ProductView";
+
+interface Product {
+  id: string;
+  Image: string;
+  name: string;
+  producttype: string;
+}
 
 export default function RecycledKnitProducts() {
   const location = useLocation(); // Get the location object
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+  };
+  const relatedProducts = selectedProduct
+    ? RecycledKnitItems.filter(
+        (item) =>
+          item.producttype === selectedProduct.producttype &&
+          item.id !== selectedProduct.id
+      )
+    : [];
 
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
   const isMediumScreen = useMediaQuery(
@@ -19,6 +40,14 @@ export default function RecycledKnitProducts() {
 
   return (
     <>
+    {selectedProduct ? (
+        <ProductViewPage
+          product={selectedProduct}
+          handleGoBack={() => setSelectedProduct(null)}
+          relatedProducts={relatedProducts}
+        />
+      ) : (
+        <Box>
       <Breadcrumbs
         style={{
           padding: "30px 30px 0",
@@ -48,6 +77,7 @@ export default function RecycledKnitProducts() {
             style={{ display: "flex" }}
           >
             <Box
+              onClick={() => handleProductClick(item)}
               padding={"10px"}
               height={{ xs: 270, sm: 300, md: 400 }}
               mb={2}
@@ -81,7 +111,7 @@ export default function RecycledKnitProducts() {
                     objectFit: "cover",
                   } as any
                 }
-                src={item.image}
+                src={item.Image}
                 alt="products"
               />
               <Box
@@ -104,6 +134,8 @@ export default function RecycledKnitProducts() {
           </Grid>
         ))}
       </Grid>
+      </Box>
+      )}
     </>
   );
 }

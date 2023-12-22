@@ -6,19 +6,31 @@ import toucan from "../../../../../../assets/AviaryAssets/TOUCAN GREEN CANVAS.jp
 const AviaryProductItems = [
   {
     name: "Toucan",
-    image: toucan,
+    Image: toucan,
+    description: "AviaryProduct multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Patterns",
+    id: "1",
   },
   {
     name: "Mynah",
-    image: mynah,
+    Image: mynah,
+    description: "AviaryProduct multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Patterns",
+    id: "2",
   },
   {
     name: "Peacock",
-    image: Peacock,
+    Image: Peacock,
+    description: "AviaryProduct multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Patterns",
+    id: "3",
   },
   {
     name: "Flamingo",
-    image: flamngo,
+    Image: flamngo,
+    description: "AviaryProduct multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Patterns",
+    id: "4",
   },
 ];
 

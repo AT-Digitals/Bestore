@@ -8,17 +8,46 @@ import {
 
 import FloralProductItems from "./FloralProductItems";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import ProductViewPage from "../../../../ProductDetailPage/ProductView";
+
+interface Product {
+  id: string;
+  Image: string;
+  name: string;
+  producttype: string;
+}
 
 export default function FloralProducts() {
   const location = useLocation(); // Get the location object
-
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
+
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+  };
+  const relatedProducts = selectedProduct
+    ? FloralProductItems.filter(
+        (item) =>
+          item.producttype === selectedProduct.producttype &&
+          item.id !== selectedProduct.id
+      )
+    : [];
+
 
   const isMediumScreen = useMediaQuery(
     "(min-width: 900px) and (max-width: 1519px)"
   );
   return (
     <>
+     {selectedProduct ? (
+        <ProductViewPage
+          product={selectedProduct}
+          handleGoBack={() => setSelectedProduct(null)}
+          relatedProducts={relatedProducts}
+        />
+      ) : (
+        <Box>
       <Breadcrumbs
         style={{
           padding: "30px 30px 0",
@@ -52,6 +81,7 @@ export default function FloralProducts() {
             style={{ display: "flex" }}
           >
             <Box
+            onClick={() => handleProductClick(item)}
               padding={"10px"}
               height={{ xs: 270, sm: 360, md: 400 }}
               mb={2}
@@ -84,7 +114,7 @@ export default function FloralProducts() {
                     objectFit: "cover",
                   } as any
                 }
-                src={item.image}
+                src={item.Image}
                 alt="products"
               />
               <Box
@@ -107,6 +137,8 @@ export default function FloralProducts() {
           </Grid>
         ))}
       </Grid>
+      </Box>
+      )}
     </>
   );
 }

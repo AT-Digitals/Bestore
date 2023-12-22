@@ -10,17 +10,52 @@ import silk1 from "./poly1.jpeg";
 import silk2 from "./poly2.jpeg";
 import silk4 from "./poly2.jpeg";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import ProductViewPage from "../../ProductDetailPage/ProductView";
+
+interface Product {
+  id: string;
+  Image: string;
+  name: string;
+  producttype: string;
+}
 
 const PolysterProductsImages = [
-  { name: "Golikibar Polyster Blue", image: silk1 },
-  { name: "Cotton Polyster", image: silk2 },
-  { name: "Polyster Coloured", image: silk4 },
+  { name: "Golikibar Polyster Blue", 
+    Image: silk1,
+    description: "Polyster jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "1",
+},
+  { name: "Cotton Polyster", 
+    Image: silk2,
+    description: "Polyster jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "2",
+  },
+  { name: "Polyster Coloured", 
+    Image: silk4,
+    description: "Polyster jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "3",
+  },
 ];
 
 export default function PolysterProducts() {
   const location = useLocation(); // Get the location object
-
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
+
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+  };
+  const relatedProducts = selectedProduct
+    ? PolysterProductsImages.filter(
+        (item) =>
+          item.producttype === selectedProduct.producttype &&
+          item.id !== selectedProduct.id
+      )
+    : [];
 
   const isMediumScreen = useMediaQuery(
     "(min-width: 900px) and (max-width: 1519px)"
@@ -28,6 +63,14 @@ export default function PolysterProducts() {
 
   return (
     <>
+     {selectedProduct ? (
+        <ProductViewPage
+          product={selectedProduct}
+          handleGoBack={() => setSelectedProduct(null)}
+          relatedProducts={relatedProducts}
+        />
+      ) : (
+        <Box>
       <Breadcrumbs
         style={{
           padding: "30px 30px 0",
@@ -57,7 +100,7 @@ export default function PolysterProducts() {
             style={{ display: "flex" }}
           >
             <Box
-              // onClick={() => handleProductClick(item)}
+              onClick={() => handleProductClick(item)}
               padding={"10px"}
               height={{ xs: 270, sm: 300, md: 360 }}
               mb={2}
@@ -91,7 +134,7 @@ export default function PolysterProducts() {
                     objectFit: "cover",
                   } as any
                 }
-                src={item.image}
+                src={item.Image}
                 alt="products"
               />
               <Box
@@ -114,6 +157,8 @@ export default function PolysterProducts() {
           </Grid>
         ))}
       </Grid>
+      </Box>
+      )}
     </>
   );
 }

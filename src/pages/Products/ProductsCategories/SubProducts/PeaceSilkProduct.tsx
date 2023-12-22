@@ -11,33 +11,75 @@ import peacesilk2 from "./PeaceSilks/Screenshot 2023-12-20 165131.png";
 import peacesilk3 from "./PeaceSilks/Screenshot 2023-12-20 165154.png";
 import peacesilk4 from "./PeaceSilks/Screenshot 2023-12-20 165207.png";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import ProductViewPage from "../../ProductDetailPage/ProductView";
 
-const LycocellProductImages = [
+interface Product {
+  id: string;
+  Image: string;
+  name: string;
+  producttype: string;
+}
+
+const PeaceSilkProductImages = [
   {
     name: "PS HABOTAI",
-    image: peacesilk1,
+    Image: peacesilk1,
+    description: "PeaceSilk multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "1",
   },
-  { name: "PS CREPE", image: peacesilk2 },
+  { name: "PS CREPE", 
+   Image: peacesilk2,
+   description: "PeaceSilk multicolored Kimono jacket with large collar and one size animal design",
+   producttype: "Fabrics",
+   id: "2",
+  },
   {
     name: "PS CHARMEUSE/SATIN",
-    image: peacesilk3,
+    Image: peacesilk3,
+    description: "PeaceSilk multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "3",
   },
   {
     name: "OC PS",
-    image: peacesilk4,
+    Image: peacesilk4,
+    description: "PeaceSilk multicolored Kimono jacket with large collar and one size animal design",
+    producttype: "Fabrics",
+    id: "4",
   },
 ];
 
 export default function PeaceSilkProduct() {
   const location = useLocation(); // Get the location object
-
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const breadcrumbs = [location.pathname.split("/").pop() || ""];
+
+  const handleProductClick = (product: any) => {
+    setSelectedProduct(product);
+  };
+  const relatedProducts = selectedProduct
+    ? PeaceSilkProductImages.filter(
+        (item) =>
+          item.producttype === selectedProduct.producttype &&
+          item.id !== selectedProduct.id
+      )
+    : [];
 
   const isMediumScreen = useMediaQuery(
     "(min-width: 900px) and (max-width: 1519px)"
   );
   return (
     <>
+     {selectedProduct ? (
+        <ProductViewPage
+          product={selectedProduct}
+          handleGoBack={() => setSelectedProduct(null)}
+          relatedProducts={relatedProducts}
+        />
+      ) : (
+        <Box>
       <Breadcrumbs
         style={{
           padding: "30px 30px 0",
@@ -60,7 +102,7 @@ export default function PeaceSilkProduct() {
         marginTop={"10px"}
         container
       >
-        {LycocellProductImages.map((item, index) => (
+        {PeaceSilkProductImages.map((item, index) => (
           <Grid
             columnSpacing={"2rem"}
             rowGap={"4rem"}
@@ -71,6 +113,7 @@ export default function PeaceSilkProduct() {
             style={{ display: "flex" }}
           >
             <Box
+              onClick={() => handleProductClick(item)}
               padding={"10px"}
               height={{ xs: 270, sm: 360, md: 400, lg: 360 }}
               mb={2}
@@ -103,7 +146,7 @@ export default function PeaceSilkProduct() {
                     objectFit: "cover",
                   } as any
                 }
-                src={item.image}
+                src={item.Image}
                 alt="products"
               />
               <Box
@@ -126,6 +169,8 @@ export default function PeaceSilkProduct() {
           </Grid>
         ))}
       </Grid>
+      </Box>
+      )}
     </>
   );
 }
