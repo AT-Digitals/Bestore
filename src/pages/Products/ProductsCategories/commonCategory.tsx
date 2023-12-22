@@ -1,9 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ProductsNavigationItems from "../../../common-components/ProductNavigationItems";
-import RemoveCircleOutlinedIcon from "@mui/icons-material/RemoveCircleOutlined";
 import { Typography } from "@mui/material";
 
 export default function CommonCategory() {
@@ -92,11 +91,8 @@ export default function CommonCategory() {
             >
               {category.name}
               {selectedCategory === category.link &&
-              subcategoriesVisibility[category.link] ? (
-                <RemoveCircleOutlinedIcon />
-              ) : (
-                <AddCircleOutlineIcon />
-              )}
+                subcategoriesVisibility[category.link]}
+              <ArrowDropDownIcon />
             </Typography>
           </div>
 

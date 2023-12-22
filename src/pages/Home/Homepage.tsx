@@ -130,7 +130,7 @@ export default function Homepage() {
                 width: "100%",
                 overflow: "hidden",
                 cursor: "pointer",
-                height: 400,
+                height: 480,
                 "&:hover::before": {
                   position: "absolute",
                   top: 0,
