@@ -26,10 +26,9 @@ import RecycledCotton from "../pages/Products/ProductsCategories/SubProducts/Rec
 import RecycledKnitProducts from "../pages/Products/ProductsCategories/SubProducts/RecycledKnit/RecycledProducts";
 import RedProduct from "../pages/Products/ProductsCategories/SubProducts/RedProduct";
 import SignUpNewsLetter from "../pages/Home/Sign-Up/SignUpwithLetter";
+import SignatureProductsPAge from "../pages/Products/ProductsCategories/SignatureProductPage";
 import WaterRepllentRept from "../pages/Products/ProductsCategories/SubProducts/WaterRepllentRept/WaterRepllentRept";
 import routes from "./routes";
-import SignatureProduct from "../pages/Products/ProductsCategories/SignatureProduct";
-import SignatureProductsPAge from "../pages/Products/ProductsCategories/SignatureProductPage";
 
 export default function AppRouter() {
   return (
@@ -72,7 +71,7 @@ export default function AppRouter() {
               path={routes.FABRIC_PRODUCT_3}
               element={<PolysterProducts />}
             />
-             <Route
+            <Route
               path={routes.SIGNATURE_PRODUCT}
               element={<SignatureProductsPAge />}
             />
