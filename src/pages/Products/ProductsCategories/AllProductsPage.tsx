@@ -66,6 +66,7 @@ export default function AllProductsPage() {
           pl={3}
           fontFamily={"Nunito Sans, sans-serif"}
           fontSize={"30px"}
+          marginTop={"20px"}
         >
           Our Signature Products
         </Typography>
