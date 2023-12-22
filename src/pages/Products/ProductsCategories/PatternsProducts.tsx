@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function PatternsProducts() {
   const homeProducts = ProductsImage.filter(
-    (item) => item.producttype === "Colours"
+    (item) => item.producttype === "Patterns"
   );
 
   const itemsPerPage = 10;

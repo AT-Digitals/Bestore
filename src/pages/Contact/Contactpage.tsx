@@ -69,7 +69,7 @@ export default function ContactPage() {
                 textAlign={"start"}
                 fontWeight={"600"}
                 fontSize={{ xs: "17px", sm: "25px", md: "20px", lg: "25px" }}
-                color={"white"}
+                color={"black"}
                 paddingTop={"60px"}
                 fontFamily={"Nunito Sans, sans-serif"}
               >

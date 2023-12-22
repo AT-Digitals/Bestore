@@ -28,7 +28,7 @@ interface footerProps {
 const FooterNames = [
   { name: "Fabric", url: routes.FABRIC_PRODUCT },
   { name: "Patterns", url: routes.CLOTHING_PRODUCT },
-  { name: "Colours", url: routes.HOME_DECOR_PRODUCT },
+  { name: "Signature", url: routes.SIGNATURE_PRODUCT },
 ];
 
 const FooterPageNames = [

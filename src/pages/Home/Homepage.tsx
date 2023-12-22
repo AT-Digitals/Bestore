@@ -152,7 +152,6 @@ export default function Homepage() {
               }}
               className="hovered"
             >
-              {/* Image */}
               <img
                 style={{
                   opacity: 1,
@@ -172,7 +171,6 @@ export default function Homepage() {
                 alt=""
               />
 
-              {/* Content */}
               <Box
                 className="overlay"
                 sx={{

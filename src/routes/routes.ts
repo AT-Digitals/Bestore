@@ -9,8 +9,8 @@ const BLOG_ABOUT = "/blog-about";
 const PRODUCT_BAG = "/product-bag";
 const PRODUCT_SHOE = "/product-shoe";
 const CLOTHING_PRODUCT = `${PRODUCTS}/Products-categories/Patterns`;
-const HOME_DECOR_PRODUCT = `${PRODUCTS}/Products-categories/Colours`;
-const FABRIC_PRODUCT = `${PRODUCTS}/Products-categories/silk`;
+const HOME_DECOR_PRODUCT = `${PRODUCTS}/Products-categories/Patterns`;
+const FABRIC_PRODUCT = `${PRODUCTS}/Products-categories/fabric`;
 const FABRIC_PRODUCT_COTTON = "products/Products-categories/Fabric/Cotton";
 const FABRIC_PRODUCT_SILK = "products/Products-categories/Fabric/Silk";
 const FABRIC_PRODUCT_POLY = "products/Products-categories/Fabric/Polyster";
@@ -38,7 +38,7 @@ const LYCOCELL_PRODUCT = "products/Products-categories/Fabric/lycocell";
 const PEACESILK_PRODUCT = "products/Products-categories/Fabric/peace-silk";
 
 const RECYCLED_COTTON = "products/Products-categories/Fabric/recycled-cotton";
-
+const SIGNATURE_PRODUCT = "products/Products-categories/Fabric/signature";
 
 const routes = {
   ROOT,
@@ -72,5 +72,6 @@ const routes = {
   PATTERNS_PRODUCT_2,
   RECYCLED_COTTON,
   PATTERNS_PRODUCT_3,
+  SIGNATURE_PRODUCT,
 };
 export default routes;

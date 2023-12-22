@@ -1,7 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
-import About from "./Akka creartions horizontal 2-03-03.png";
 import Abt1 from "./sliderAssets/abt1.webp";
 import Abt2 from "./sliderAssets/abt2.avif";
 import Abt3 from "./sliderAssets/abt3.avif";
@@ -27,11 +26,11 @@ export default function AboutConainer() {
   return (
     <Box
       boxShadow="5px 5px 8px 5px rgba(0, 0, 0, 0.1)"
-      // flexDirection={{ xs: "column", sm: "row" }}
-      maxWidth={650}
+      flexDirection={{ xs: "column", sm: "row" }}
+      maxWidth={1200}
       width={"100%"}
-      // margin={"0 auto"}
-      // display={"flex"}
+      margin={"0 auto"}
+      display={"flex"}
       justifyContent={"space-between"}
       padding={{ xs: "30px" }}
       gap={"3rem"}
