@@ -146,6 +146,7 @@ export default function SliderImages() {
                     padding={"0px 15px"}
                     color={"black"}
                     fontSize={"15px"}
+                    pb={"50px"}
                   >
                     {item.name}
                   </Typography>
