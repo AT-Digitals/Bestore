@@ -17,7 +17,8 @@ figure.snip1390 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin-top: 150px;
-  height: 400px;
+  height: 450px;
+  border-radius: 20px;
 }
 figure.snip1390 *,
 figure.snip1390 *:before,
@@ -70,4 +71,43 @@ figure.snip1390 .profile {
   display: inline-block;
   margin-bottom: 10px;
   margin-top: -50px;
+}
+.text {
+    font-size: 50px;
+    color: #e53637;
+    margin-top: 0px;
+}
+.name {
+    color: #000000;
+    font-size: 18px;
+    font-family: "Nunito Sans", sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    width: 259px;
+}
+.yellow-star {
+    color: #faaf00;
+    font-size: 22px;
+}
+.vision {
+    font-size: 23px;
+    font-family: "Nunito Sans", sans-serif;
+   color: #e53637;
+   padding-top: 18px;
+   margin-bottom: 30px;
+}
+.happy {
+    color: #e53637;
+    padding-top: 217px;
+   margin-right: 207px;
+   padding-left: 150px;
+   font-family: "Nunito Sans", sans-serif;
+}
+.customer {
+    color: #000000;
+    margin-top: 5px;
+   margin-right: 207px;
+   padding-left: 150px;
+   font-family: "Nunito Sans", sans-serif;
+   font-weight: 600;
 }
