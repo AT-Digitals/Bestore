@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.about-section {
+  padding: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: white;
+  display: flex;
+  gap: 2rem;
+}
+
+.image-box {
+  max-width: 800px;
+}
+
+.image-box img {
+  width: 100%;
+}
+
+.text-box {
+  padding-top: 4px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.section-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 35px;
+}
+
+.section-content {
+  font-family: "Nunito Sans", sans-serif;
+  margin-top: 10px;
+}
+
+.quote-box {
+  border-left: 5px solid red;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 5px 0px;
+  position: relative;
+}
+
+.quote-symbol {
+  font-size: 68px;
+  color: #e53637;
+  width: 20px;
+  height: 20px;
+  margin-top: -28px;
+  position: absolute;
+}
+
+.quote-text {
+  margin-top: 14px;
+  margin-left: 32px;
+}
+
+.quote-author {
+  color: black;
+  font-weight: bold;
+}
+
+.read-more-button {
+  background: black;
+  color: white;
+  margin-top: 40px;
+  text-transform: none;
+  width: 300px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.read-more-button:hover {
+  color: white;
+  background-color: #e53637;
+}
