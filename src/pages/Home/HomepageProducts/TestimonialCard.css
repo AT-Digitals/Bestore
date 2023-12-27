@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 figure.snip1390 {
-  font-family: 'Roboto', Arial, sans-serif;
-  position: relative;
+  font-family: "Roboto", Arial, sans-serif;
+  /* position: relative; */
   overflow: hidden;
   margin: 10px;
   min-width: 230px;
@@ -56,7 +56,7 @@ figure.snip1390 blockquote {
   position: relative;
 }
 figure.snip1390 blockquote:before {
-  font-family: 'FontAwesome';
+  font-family: "FontAwesome";
   content: "\201C";
   position: absolute;
   font-size: 70px;
@@ -71,43 +71,44 @@ figure.snip1390 .profile {
   display: inline-block;
   margin-bottom: 10px;
   margin-top: -50px;
+  position: absolute;
 }
 .text {
-    font-size: 50px;
-    color: #e53637;
-    margin-top: 0px;
+  font-size: 50px;
+  color: #e53637;
+  margin-top: 0px;
 }
 .name {
-    color: #000000;
-    font-size: 18px;
-    font-family: "Nunito Sans", sans-serif;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    width: 259px;
+  color: #000000;
+  font-size: 18px;
+  font-family: "Nunito Sans", sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  width: 259px;
 }
 .yellow-star {
-    color: #faaf00;
-    font-size: 22px;
+  color: #faaf00;
+  font-size: 22px;
 }
 .vision {
-    font-size: 23px;
-    font-family: "Nunito Sans", sans-serif;
-   color: #e53637;
-   padding-top: 18px;
-   margin-bottom: 30px;
+  font-size: 23px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #e53637;
+  padding-top: 18px;
+  margin-bottom: 30px;
 }
 .happy {
-    color: #e53637;
-    padding-top: 217px;
-   margin-right: 207px;
-   padding-left: 150px;
-   font-family: "Nunito Sans", sans-serif;
+  color: #e53637;
+  padding-top: 217px;
+  margin-right: 207px;
+  padding-left: 150px;
+  font-family: "Nunito Sans", sans-serif;
 }
 .customer {
-    color: #000000;
-    margin-top: 5px;
-   margin-right: 207px;
-   padding-left: 150px;
-   font-family: "Nunito Sans", sans-serif;
-   font-weight: 600;
+  color: #000000;
+  margin-top: 5px;
+  margin-right: 207px;
+  padding-left: 150px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
 }
