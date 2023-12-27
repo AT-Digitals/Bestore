@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.contact-banner {
+  background-image: url("../pages/Contact/Organic-Cotton-Banner.jpg"); /* Replace with the path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+.contact-banner.scrolled {
+  background-color: white;
+}
+
+.contact-banner .content {
+  color: black;
+  margin: auto;
+}
+
+.contact-banner h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+.form-section {
+  padding: 0 50px;
+  margin-top: 70px;
+}
