@@ -12,75 +12,70 @@
     />
 
     <title>About Page</title>
-    <script>
-      const images = [
-        "../common-components/abt1.5f2f51799ea6752399cc.webp",
-        "../common-components/abt2.00ac5b14c8330f1c9113 (1).avif",
-        // Add other image paths or URLs here
-      ];
-      let currentImageIndex = 0;
-    
-      function updateImage() {
-        document.getElementById("aboutImage").src = images[currentImageIndex];
-      }
-    
-      function changeImage() {
-        currentImageIndex =
-          currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
-        updateImage();
-      }
-    
-      updateImage(); // Initial image update
-    
-      const intervalId = setInterval(changeImage, 3000); // Change image every 3 seconds
-    
-      // Cleanup the interval on page unload
-      window.addEventListener("beforeunload", () => {
-        clearInterval(intervalId);
-      });
-    </script>
   </head>
-  <header>
-    <div class="header">
-      <div class="logo">
-        <a href="routes.HOME" onclick="handleMenuClick(routes.HOME)">
-          <img
-            src="Akka creartions horizontal 2-03-03.png"
-            alt="alterknit logo"
-          />
-        </a>
-      </div>
-      <div class="nav">
-        <ul>
-          <li>
-            <a href="Homepage.html" onclick="handleMenuClick('Homepage.html')"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="AboutPage.html" onclick="handleMenuClick('AboutPage.html')"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="ProductPage.html"
-              onclick="handleMenuClick('ProductPage.html')"
-              >Products</a
-            >
-          </li>
-          <li>
-            <a
-              href="ContactPage.html"
-              onclick="handleMenuClick('ContactPage.html')"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
+
   <body style="background-color: white">
+    <header>
+      <div class="header">
+        <div class="logo">
+          <a href="routes.HOME" onclick="handleMenuClick(routes.HOME)">
+            <img
+              src="Akka creartions horizontal 2-03-03.png"
+              alt="alterknit logo"
+            />
+          </a>
+        </div>
+        <div class="nav">
+          <ul>
+            <li>
+              <a href="Homepage.html" onclick="handleMenuClick('Homepage.html')"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="AboutPage.html"
+                onclick="handleMenuClick('AboutPage.html')"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="ProductPage.html"
+                onclick="handleMenuClick('ProductPage.html')"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="ContactPage.html"
+                onclick="handleMenuClick('ContactPage.html')"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Check if the function is not already declared
+      if (typeof handleMenuClick !== "function") {
+        const handleMenuClick = (route) => {
+          console.log("Menu clicked:", route);
+        };
+      }
+      if (typeof header === "undefined") {
+        const header = document.querySelector(".header");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 0) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      }
+    </script>
     <div class="contact-banner">
       <div class="content">
         <h1 style="font-size: 80px">About Us</h1>
@@ -118,6 +113,49 @@
           Mamallapuram.
         </p>
       </div>
+      <script>
+        const ImagesAboutSection = [
+          "../common-components/abt1.5f2f51799ea6752399cc.webp",
+          "../common-components/abt2.00ac5b14c8330f1c9113 (1).avif",
+        ];
+        let currentImageIndex = 0;
+
+        function updateImage() {
+          document.getElementById("aboutImage").src =
+            ImagesAboutSection[currentImageIndex];
+        }
+
+        function changeImage() {
+          currentImageIndex =
+            currentImageIndex === ImagesAboutSection.length - 1
+              ? 0
+              : currentImageIndex + 1;
+          updateImage();
+        }
+
+        updateImage(); // Initial image update
+
+        const intervalId = setInterval(changeImage, 3000); // Change image every 3 seconds
+
+        // Cleanup the interval on page unload
+        window.addEventListener("beforeunload", () => {
+          clearInterval(intervalId);
+        });
+
+        const handleMenuClick = (route) => {
+          console.log("Menu clicked:", route);
+        };
+
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 0) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      </script>
     </div>
 
     <div

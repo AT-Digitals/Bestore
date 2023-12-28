@@ -10,47 +10,69 @@
     <title>Contact Page</title>
     <script src="ContactScript.js"></script>
   </head>
-  <header>
-    <div class="header">
-      <div class="logo">
-        <a href="routes.HOME" onclick="handleMenuClick(routes.HOME)">
-          <img
-            src="Akka creartions horizontal 2-03-03.png"
-            alt="alterknit logo"
-          />
-        </a>
-      </div>
-      <div class="nav">
-        <ul>
-          <li>
-            <a href="Homepage.html" onclick="handleMenuClick('Homepage.html')"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="AboutPage.html" onclick="handleMenuClick('AboutPage.html')"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="ProductPage.html"
-              onclick="handleMenuClick('ProductPage.html')"
-              >Products</a
-            >
-          </li>
-          <li>
-            <a
-              href="ContactPage.html"
-              onclick="handleMenuClick('ContactPage.html')"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
+
   <body style="background-color: white">
+    <header>
+      <div class="header">
+        <div class="logo">
+          <a href="routes.HOME" onclick="handleMenuClick(routes.HOME)">
+            <img
+              src="Akka creartions horizontal 2-03-03.png"
+              alt="alterknit logo"
+            />
+          </a>
+        </div>
+        <div class="nav">
+          <ul>
+            <li>
+              <a href="Homepage.html" onclick="handleMenuClick('Homepage.html')"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="AboutPage.html"
+                onclick="handleMenuClick('AboutPage.html')"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="ProductPage.html"
+                onclick="handleMenuClick('ProductPage.html')"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="ContactPage.html"
+                onclick="handleMenuClick('ContactPage.html')"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Check if the function is not already declared
+      if (typeof handleMenuClick !== "function") {
+        const handleMenuClick = (route) => {
+          console.log("Menu clicked:", route);
+        };
+      }
+      if (typeof header === "undefined") {
+        const header = document.querySelector(".header");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 0) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      }
+    </script>
     <div class="contact-banner" id="banner">
       <div class="content">
         <h1>Reach Us</h1>
