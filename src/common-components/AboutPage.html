@@ -13,23 +13,27 @@
 
     <title>About Page</title>
     <script>
-      const images = ["Abt1", "Abt2", "Abt3", "Abt4"];
+      const images = [
+        "../common-components/abt1.5f2f51799ea6752399cc.webp",
+        "../common-components/abt2.00ac5b14c8330f1c9113 (1).avif",
+        // Add other image paths or URLs here
+      ];
       let currentImageIndex = 0;
-
+    
       function updateImage() {
         document.getElementById("aboutImage").src = images[currentImageIndex];
       }
-
+    
       function changeImage() {
         currentImageIndex =
           currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
         updateImage();
       }
-
+    
       updateImage(); // Initial image update
-
+    
       const intervalId = setInterval(changeImage, 3000); // Change image every 3 seconds
-
+    
       // Cleanup the interval on page unload
       window.addEventListener("beforeunload", () => {
         clearInterval(intervalId);
@@ -82,10 +86,9 @@
         <h1 style="font-size: 80px">About Us</h1>
       </div>
     </div>
-
     <div class="about-container">
       <div class="image-container">
-        <h1 id="aboutImage" class="about-image" src="" alt="about"></h1>
+        <img id="aboutImage" class="about-image" src="images" alt="about" />
       </div>
 
       <div class="text-container">
