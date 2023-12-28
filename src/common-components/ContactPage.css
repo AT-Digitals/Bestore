@@ -36,3 +36,145 @@ body {
   padding: 0 50px;
   margin-top: 70px;
 }
+.container {
+  padding: 0 20px;
+}
+
+.working-hours {
+  padding: 0 40px;
+  margin-top: 70px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 auto;
+  width: 85%;
+  padding: 0px 50px;
+  margin-bottom: 40px;
+}
+
+.contact-box {
+  max-width: 1200px;
+  width: 100%;
+  background-color: white;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  font-size: 25px;
+  color: black;
+  gap: 0.5rem;
+}
+
+.title-divider {
+  width: 70%;
+  border-top: 1px solid rgba(0, 0, 0, 0.105);
+}
+
+.contact-details {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 7px;
+}
+
+.contact-details h5 {
+  color: black;
+  font-size: 16px;
+}
+
+.contact-details p {
+  max-width: 400px;
+  font-size: 15px;
+  color: grey;
+}
+
+.branch-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  font-size: 25px;
+  color: black;
+}
+
+.branch-divider {
+  margin-top: 53px;
+  width: 56%;
+  border-top: 1px solid rgba(0, 0, 0, 0.105);
+}
+
+.map-iframe {
+  display: flex;
+  margin-left: -14px;
+  margin-top: 20px;
+}
+
+.container {
+  max-width: 1450px;
+  width: 100%;
+  background-color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.105);
+}
+.container-1 {
+  max-width: 1450px;
+  width: 100%;
+  background-color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.105);
+}
+
+h3 {
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+form {
+  padding: 15px 21px;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 17px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 45px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-family: "Nunito Sans", sans-serif;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 120px;
+  padding-bottom: 120px;
+}
+
+button {
+  color: #fff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  text-transform: none;
+  width: 200px;
+  font-family: "Nunito Sans", sans-serif;
+  cursor: pointer;
+}
