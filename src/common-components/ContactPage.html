@@ -56,10 +56,107 @@
         <h1>Reach Us</h1>
       </div>
     </div>
-    <div class="form-section">
-      <div>
-        <p>Working Hourse</p>
-        <p>Monday – Saturday : 9.00 AM – 11.00 PM</p>
+    <div class="container">
+      <div class="working-hours">
+        <h3>Working Hours</h3>
+        <p>Monday – Saturday: 9.00 AM – 11.00 PM</p>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <div class="container">
+          <form>
+            <div class="section-title">
+              <h3 style="white-space: nowrap">SEND US AN EMAIL</h3>
+              <div class="title-divider"></div>
+            </div>
+            <label for="firstname">Your Name</label>
+            <input type="text" id="firstname" name="firstname" required />
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required />
+
+            <!-- Replace the CustomDropdown component with select elements -->
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <!-- Options for categories -->
+            </select>
+
+            <label for="subcategory">Subcategory</label>
+            <select id="subcategory" name="subcategory" required>
+              <!-- Options for subcategories -->
+            </select>
+
+            <label for="subproducts">Subproducts</label>
+            <select id="subproducts" name="subproducts" required>
+              <!-- Options for subproducts -->
+            </select>
+
+            <label for="yourMessage">Your Message</label>
+            <textarea id="yourMessage" name="yourMessage" required></textarea>
+
+            <button type="submit">Send the message</button>
+          </form>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-box">
+            <div class="section-title">
+              <h3>Contact Us</h3>
+              <div class="title-divider"></div>
+            </div>
+            <div class="contact-details">
+              <h5>Address:</h5>
+              <p>
+                Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
+                Mahabalipuram, Tamil Nadu-603104.
+              </p>
+            </div>
+            <div class="contact-details">
+              <h5>Phone:</h5>
+              <p>+91 97910 68220</p>
+            </div>
+            <div class="contact-details">
+              <h5>Email:</h5>
+              <p>contactat@akkacreation.com</p>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <div class="section-title">
+              <h3 style="white-space: nowrap">Our Branch Office</h3>
+              <div class="title-divider"></div>
+            </div>
+
+            <div class="contact-details">
+              <h5>Address:</h5>
+              <p>
+                Tina Blue View, 38/48, Othavadai St, Fisherman Colony,
+                Mahabalipuram, Tamil Nadu-603104.
+              </p>
+            </div>
+            <div class="contact-details">
+              <h5>Phone:</h5>
+              <p>+91 97910 68220</p>
+            </div>
+            <div class="contact-details">
+              <h5>Email:</h5>
+              <p>contactat@akkacreation.com</p>
+            </div>
+            <div class="map-iframe">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15573.737649706532!2d80.1963331!3d12.6194818!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53acac30ee8d5d%3A0xad2be778ecae5918!2sTina%20Blue%20View!5e0!3m2!1sen!2sin!4v1702554954296!5m2!1sen!2sin"
+                width="600"
+                height="350"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
@@ -111,25 +208,37 @@
         <div class="menu-container">
           <div class="menu-item">
             <span style="color: #ec4979">&#10148;</span>
-            <a href="Homepage.html" onclick="handleMenuClick(routes.HOME)"
+            <a
+              style="white-space: nowrap"
+              href="Homepage.html"
+              onclick="handleMenuClick('Homepage.html')"
               >Home</a
             >
           </div>
           <div class="menu-item">
             <span style="color: #ec4979">&#10148;</span>
-            <a href="routes.ABOUT" onclick="handleMenuClick(routes.ABOUT)"
+            <a
+              style="white-space: nowrap"
+              href="AboutPage.html"
+              onclick="handleMenuClick('AboutPage.html')"
               >About</a
             >
           </div>
           <div class="menu-item">
             <span style="color: #ec4979">&#10148;</span>
-            <a href="routes.PRODUCTS" onclick="handleMenuClick(routes.PRODUCTS)"
+            <a
+              style="white-space: nowrap"
+              href="ProductPage.html"
+              onclick="handleMenuClick('ProductPage.html')"
               >Products</a
             >
           </div>
           <div class="menu-item">
             <span style="color: #ec4979">&#10148;</span>
-            <a href="routes.CONTACT" onclick="handleMenuClick(routes.CONTACT)"
+            <a
+              style="white-space: nowrap"
+              href="ContactPage.html"
+              onclick="handleMenuClick('ContactPage.html')"
               >Contact Us</a
             >
           </div>
