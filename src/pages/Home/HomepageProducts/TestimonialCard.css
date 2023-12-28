@@ -17,7 +17,7 @@ figure.snip1390 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin-top: 150px;
-  height: 450px;
+  height: 420px;
   border-radius: 20px;
 }
 figure.snip1390 *,
@@ -96,6 +96,7 @@ figure.snip1390 .profile {
   color: #e53637;
   padding-top: 18px;
   margin-bottom: 30px;
+  font-weight: 600;
 }
 .happy {
   color: #e53637;
@@ -111,4 +112,5 @@ figure.snip1390 .profile {
   padding-left: 150px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
+  font-size: 18px;
 }
