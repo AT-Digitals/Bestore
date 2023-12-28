@@ -116,10 +116,7 @@ article {
     border-radius: 30px;
     background-color: black;
     color: white;
-    max-width: 224px;
-    width: 100%;
     font-size: 15px;
-    height: 52px;
     text-transform: capitalize;
     font-weight: bold;
     text-align: center;
@@ -130,6 +127,11 @@ article {
   .button:hover {
     color: white;
     background-color: #e53637;
+  }
+  .box {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
   
   
