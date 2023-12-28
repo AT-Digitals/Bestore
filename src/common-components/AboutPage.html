@@ -12,6 +12,29 @@
     />
 
     <title>About Page</title>
+    <script>
+      const images = ["Abt1", "Abt2", "Abt3", "Abt4"];
+      let currentImageIndex = 0;
+
+      function updateImage() {
+        document.getElementById("aboutImage").src = images[currentImageIndex];
+      }
+
+      function changeImage() {
+        currentImageIndex =
+          currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
+        updateImage();
+      }
+
+      updateImage(); // Initial image update
+
+      const intervalId = setInterval(changeImage, 3000); // Change image every 3 seconds
+
+      // Cleanup the interval on page unload
+      window.addEventListener("beforeunload", () => {
+        clearInterval(intervalId);
+      });
+    </script>
   </head>
   <header>
     <div class="header">
@@ -57,6 +80,40 @@
     <div class="contact-banner">
       <div class="content">
         <h1>About Us</h1>
+      </div>
+    </div>
+
+    <div class="about-container">
+      <div class="image-container">
+        <h1 id="aboutImage" class="about-image" src="" alt="about"></h1>
+      </div>
+
+      <div class="text-container">
+        <h1 class="title">The story of AKKA CREATION in Mamallapuram</h1>
+        <div class="divider"></div>
+        <p class="description">
+          Akka! <br />
+          The power of colors! <br />
+          India's fashion for women sure of them and full of joie de vivre.
+          <br />
+          Made by women for women up to size 54 or over ..... <br />
+          Sensual, colorful and of high quality. Each piece is unique and the
+          AKKA look is <br />
+          recognizable. <br />
+          Fashion Mamallapuram, a small town in the Bay of Bengal that belongs
+          to the world cultural heritage. <br />
+          In 2005, after the devastating tsunami, Véronique Thomassin had the
+          idea to make fashion and accessories there and thus provide training
+          for women and girls in the village, create jobs and allow better
+          living conditions <br />
+          An idea that has been successfully developed and which, thanks to the
+          commitment of women, spreads the beauty of the colors of India
+          everywhere in the world <br />
+          Immerse yourself in this world full of colors and joie de vivre.
+          <br />
+          We welcome you on our site, and also in our shop and our workshop in
+          Mamallapuram.
+        </p>
       </div>
     </div>
 
