@@ -1,9 +1,16 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Nunito Sans, sans-serif";
 }
 
+@font-face {
+  font-family: "Nunito Sans";
+  src: local("Nunito Sans"),
+    url("../assets/Nunito_Sans/static/NunitoSans_10pt_Condensed-Medium.ttf")
+      format("truetype");
+  font-weight: 300;
+}
 .contact-banner {
   background-image: url("../pages/Contact/Organic-Cotton-Banner.jpg"); /* Replace with the path to your image */
   background-size: cover;
@@ -48,7 +55,6 @@ body {
 .contact-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
   margin: 0 auto;
   width: 85%;
   padding: 0px 50px;
@@ -145,7 +151,7 @@ label {
   margin-bottom: 10px;
   color: black;
   font-size: 17px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans, sans-serif";
 }
 
 input,
@@ -157,7 +163,7 @@ textarea {
   border-radius: 30px;
   margin-bottom: 20px;
   padding: 10px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans, sans-serif";
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
@@ -175,6 +181,6 @@ button {
   padding: 10px 30px;
   text-transform: none;
   width: 200px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans, sans-serif";
   cursor: pointer;
 }

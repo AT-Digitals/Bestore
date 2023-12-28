@@ -8,12 +8,6 @@ import routes from "../../../routes/routes";
 import { useState } from "react";
 
 export default function ProductsLeftSide() {
-  // const [isDropdownOpen, setDropdownOpen] = useState(false);
-
-  // const handleToggleDropdown = () => {
-  //   setDropdownOpen(!isDropdownOpen);
-  // };
-
   const WidthmenuItems = ["Select all", "42", "44", "54", "56", "58"];
   const CompositionmenuItems = ["Select all", "100%", "50 - 55%", "97- 3%"];
   const GSMmenuItems = [
