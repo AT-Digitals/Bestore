@@ -169,3 +169,22 @@ body {
   color: #f6f6f6;
   left: 25px;
 }
+
+.category-section1 {
+  cursor: pointer;
+}
+.fabric-products {
+  display: flex;
+  flex-direction: column;
+  padding: 0 35px;
+  gap: 1rem;
+}
+.sub-products {
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.pattern-products {
+  padding: 0 35px;
+}

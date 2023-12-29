@@ -89,13 +89,112 @@
         <h3>CATEGORIES</h3>
         <div class="dropdown-icon">&#9660;</div>
       </div>
-      <div class="category-section1">
-        <h3>Fabric</h3>
-        <div class="dropdown-icon">&#9660;</div>
+      <div>
+        <div>
+          <div class="category-section1" onclick="toggleFabricProducts()">
+            <h3>Fabric</h3>
+            <div class="dropdown-icon">&#9660;</div>
+          </div>
+
+          <div class="fabric-products" id="fabricProductsContainer"></div>
+
+          <script>
+            // Define sub-products dynamically
+            let fabricProductsData = [
+              { name: "ORGANIC COTTONS WOVENS", link: "/" },
+              { name: "WOODPULP/LYCOCELL FABRIC", link: "/" },
+              { name: "KNITS-RFD GRADE B ONLY", link: "/" },
+              { name: "LINEN", link: "/" },
+              { name: "PEACE SILKS", link: "/" },
+              { name: "RECYCLED COTTON", link: "/" },
+              { name: "RECYCLED KNIT", link: "/" },
+              { name: "WATER REPLLENT REPT", link: "/" },
+
+              // Add more products as needed
+            ];
+
+            // Function to toggle the visibility of fabric products
+            function toggleFabricProducts() {
+              var fabricProductsContainer = document.getElementById(
+                "fabricProductsContainer"
+              );
+              fabricProductsContainer.style.display =
+                fabricProductsContainer.style.display === "none" ||
+                fabricProductsContainer.style.display === ""
+                  ? "block"
+                  : "none";
+
+              // Toggle the visibility of sub-products
+              var subProducts =
+                fabricProductsContainer.querySelectorAll(".sub-products");
+              subProducts.forEach(function (product) {
+                product.style.display = fabricProductsContainer.style.display;
+              });
+            }
+
+            // Create sub-product elements dynamically
+            let fabricProductsContainer = document.getElementById(
+              "fabricProductsContainer"
+            );
+            fabricProductsContainer.style.display = "none"; // Set initial display to none
+
+            fabricProductsData.map((product) => {
+              let subProduct = document.createElement("a");
+              subProduct.href = product.link;
+              subProduct.className = "sub-products";
+              subProduct.textContent = product.name;
+              fabricProductsContainer.appendChild(subProduct);
+            });
+          </script>
+        </div>
       </div>
-      <div class="category-section1">
-        <h3>Patterns</h3>
-        <div class="dropdown-icon">&#9660;</div>
+      <div>
+        <div>
+          <div class="category-section1" onclick="togglePatternProducts()">
+            <h3>Patters</h3>
+            <div class="dropdown-icon">&#9660;</div>
+          </div>
+
+          <div class="pattern-products" id="patternProductsContainer"></div>
+
+          <script>
+            let PattersProductsData = [
+              { name: "FLORAL", link: "Aboutpage.html" },
+              { name: "AVIARY", link: "/" },
+              { name: "ABSTRACT", link: "/" },
+            ];
+
+            function togglePatternProducts() {
+              var patternProductsContainer = document.getElementById(
+                "patternProductsContainer"
+              );
+              patternProductsContainer.style.display =
+                patternProductsContainer.style.display === "none" ||
+                patternProductsContainer.style.display === ""
+                  ? "block"
+                  : "none";
+
+              var subProducts =
+                patternProductsContainer.querySelectorAll(".sub-products");
+              subProducts.forEach(function (product) {
+                product.style.display = patternProductsContainer.style.display;
+              });
+            }
+
+            let patternProductsContainer = document.getElementById(
+              "patternProductsContainer"
+            );
+            patternProductsContainer.style.display = "none";
+
+            PattersProductsData.map((product) => {
+              let subProduct = document.createElement("a");
+              subProduct.href = product.link;
+              subProduct.className = "sub-products";
+              subProduct.textContent = product.name;
+              patternProductsContainer.appendChild(subProduct);
+            });
+          </script>
+        </div>
       </div>
 
       <div class="filter-section">
