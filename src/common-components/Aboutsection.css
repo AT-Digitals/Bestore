@@ -35,12 +35,12 @@ body {
 }
 
 .section-title {
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans";
   font-size: 35px;
 }
 
 .section-content {
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans";
   margin-top: 10px;
 }
 
@@ -59,12 +59,13 @@ body {
   height: 20px;
   margin-top: -28px;
   position: absolute;
+  font-family: "Nunito Sans";
 }
 
 .quote-text {
   margin-top: 14px;
   margin-left: 32px;
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans";
 }
 
 .quote-author {
@@ -80,6 +81,7 @@ body {
   width: 300px;
   cursor: pointer;
   height: 40px;
+  font-family: "Nunito Sans";
 }
 
 .read-more-button:hover {

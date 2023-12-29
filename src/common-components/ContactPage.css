@@ -50,6 +50,7 @@ body {
 .working-hours {
   padding: 0 40px;
   margin-top: 70px;
+  font-family: "Nunito Sans";
 }
 
 .contact-container {
@@ -59,6 +60,7 @@ body {
   width: 85%;
   padding: 0px 50px;
   margin-bottom: 40px;
+  font-family: "Nunito Sans";
 }
 
 .contact-box {
@@ -75,6 +77,7 @@ body {
   font-size: 25px;
   color: black;
   gap: 0.5rem;
+  font-family: "Nunito Sans";
 }
 
 .title-divider {
@@ -88,17 +91,20 @@ body {
   flex-direction: row;
   align-items: baseline;
   gap: 7px;
+  font-family: "Nunito Sans";
 }
 
 .contact-details h5 {
   color: black;
   font-size: 16px;
+  font-family: "Nunito Sans";
 }
 
 .contact-details p {
   max-width: 400px;
   font-size: 15px;
   color: grey;
+  font-family: "Nunito Sans";
 }
 
 .branch-title {
@@ -108,6 +114,7 @@ body {
   font-weight: 600;
   font-size: 25px;
   color: black;
+  font-family: "Nunito Sans";
 }
 
 .branch-divider {
@@ -139,11 +146,13 @@ h3 {
   color: black;
   font-weight: bold;
   font-size: 25px;
+  font-family: "Nunito Sans";
 }
 
 form {
   padding: 15px 21px;
   margin-bottom: 25px;
+  font-family: "Nunito Sans";
 }
 
 label {
@@ -151,7 +160,7 @@ label {
   margin-bottom: 10px;
   color: black;
   font-size: 17px;
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans";
 }
 
 input,
@@ -163,14 +172,14 @@ textarea {
   border-radius: 30px;
   margin-bottom: 20px;
   padding: 10px;
-  font-family: "Nunito Sans, sans-serif";
-  border: 1px solid #ccc;
+  font-family: "Nunito Sans";
   box-sizing: border-box;
 }
 
 textarea {
   height: 120px;
   padding-bottom: 120px;
+  font-family: "Nunito Sans";
 }
 
 button {
@@ -181,6 +190,6 @@ button {
   padding: 10px 30px;
   text-transform: none;
   width: 200px;
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans";
   cursor: pointer;
 }
