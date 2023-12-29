@@ -465,69 +465,73 @@
         margin-bottom: 10rem;
       "
     >
-      <img
-        style="width: 50px; height: 30px"
+      <div style="max-width: 880px; width: 100%; justify-content: space-between;display: flex;">
+        <img
+        style="width: 50px;height: 50px;"
+        class="carousel-arrow"
         src="../common-components/reshot-icon-bold-arrow-left-TS2DVUZ9WY.svg"
-        alt=""
-        onclick="moveCarousel('left')"
+        alt="Left Arrow"
       />
-      <div class="carousel-item" style="width: 200px; height: 190px; margin-top: 40px" class="box">
-        <img
-          style="
-            width: 199px;
-            height: 190px;
-            margin-top: -160px;
-            padding: 10px;
-            border-radius: 20px;
-          "
-          src="../common-components/1.56ee3f0b3f0dbfd40708.webp"
-          alt=""
-        />
-        <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
-          SANTE Midi
-        </h3>
-      </div>
-      <div class="carousel-item" style="width: 230px; height: 220px; margin-top: 50px" class="box">
-        <img
-          style="
-            width: 229px;
-            height: 250px;
-            margin-top: -210px;
-            padding: 10px;
-            border-radius: 20px;
-          "
-          src="../common-components/2.1fa24b3b2fcf58e592cc.avif"
-          alt=""
-          id="image-carousel"
-        />
-        <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
-          OU Midi
-        </h3>
-      </div>
-      <div class="carousel-item" style="width: 200px; height: 190px; margin-top: 40px" class="box">
-        <img
-          style="
-            width: 199px;
-            height: 190px;
-            margin-top: -160px;
-            padding: 10px;
-            border-radius: 20px;
-          "
-          src="../common-components/sign2.3f07aab39022c1986935.webp"
-          alt=""
-          id="image-carousel"
-        />
-        <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
-          OS Midi
-        </h3>
+      <div style="max-width: 580px;width: 100%; display: flex;gap: 1rem;">
+        <div class="carousel-item" style="width: 230px; height: 220px; margin-top: 50px;background-color: white;border-radius: 20px;" class="box">
+          <img
+            style="
+              width: 199px;
+              height: 190px;
+              margin-top: -160px;
+              padding: 10px;
+              border-radius: 20px;
+            "
+            src="../common-components/1.56ee3f0b3f0dbfd40708.webp"
+            alt=""
+          />
+          <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
+            SANTE Midi
+          </h3>
+        </div>
+        <div class="carousel-item" style="width: 230px; height: 220px; margin-top: 50px;background-color: white;border-radius: 20px;" class="box">
+          <img
+            style="
+              width: 229px;
+              height: 250px;
+              margin-top: -210px;
+              padding: 10px;
+              border-radius: 20px;
+            "
+            src="../common-components/2.1fa24b3b2fcf58e592cc.avif"
+            alt=""
+            id="image-carousel"
+          />
+          <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
+            OU Midi
+          </h3>
+        </div>
+        <div class="carousel-item" style="width: 230px; height: 220px; margin-top: 50px;background-color: white;border-radius: 20px;" class="box">
+          <img
+            style="
+              width: 199px;
+              height: 190px;
+              margin-top: -160px;
+              padding: 10px;
+              border-radius: 20px;
+            "
+            src="../common-components/sign2.3f07aab39022c1986935.webp"
+            alt=""
+            id="image-carousel"
+          />
+          <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
+            OS Midi
+          </h3>
+        </div>
       </div>
       <img
-        style="width: 50px; height: 30px"
-        src="../common-components//reshot-icon-bold-arrow-right-RB7XW6DC4Z.svg"
-        alt=""
-        onclick="moveCarousel('right')"
-        id="image-carousel"
-      />
+      style="width: 50px;height: 50px;"
+
+    class="carousel-arrow"
+    src="../common-components/reshot-icon-bold-arrow-right-RB7XW6DC4Z.svg"
+    alt="Right Arrow"
+  />
+      </div>
       <div style="display: flex; flex-direction: column">
         <h4
           style="
@@ -569,24 +573,7 @@
         </a>
       </div>
     </div>
-    <script>
-      let currentIndex = 0;
-      const totalItems = document.querySelectorAll('.carousel-item').length;
-      const itemWidth = 250; // Adjust this value based on your actual item width
-  
-      function moveCarousel(direction) {
-        const carousel = document.getElementById('image-carousel');
-  
-        if (direction === 'left' && currentIndex > 0) {
-          currentIndex--;
-        } else if (direction === 'right' && currentIndex < totalItems - 0) {
-          currentIndex++;
-        }
-  
-        const newPosition = -currentIndex * itemWidth;
-        carousel.style.transform = `translateX(${newPosition}px)`;
-      }
-    </script>
+   
   
   </body>
   <footer>
