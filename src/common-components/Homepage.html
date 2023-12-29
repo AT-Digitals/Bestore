@@ -13,12 +13,12 @@
       href="../pages/Home/HomepageProducts/TestimonialCard.css"
     />
     <link
-    rel="stylesheet"
-    href="../pages/Home/HomepageProducts/ProductCard.css"
-  />
+      rel="stylesheet"
+      href="../pages/Home/HomepageProducts/ProductCard.css"
+    />
     <title>Home Page</title>
   </head>
-  
+
   <header>
     <div class="header">
       <div class="logo">
@@ -37,9 +37,7 @@
             >
           </li>
           <li>
-            <a
-              href="AboutPage.html"
-              onclick="handleMenuClick('AboutPage.html')"
+            <a href="AboutPage.html" onclick="handleMenuClick('AboutPage.html')"
               >About</a
             >
           </li>
@@ -62,7 +60,6 @@
     </div>
   </header>
   <body>
-    
     <script>
       // Check if the function is not already declared
       if (typeof handleMenuClick !== "function") {
@@ -112,9 +109,12 @@
           are also known as artificial fabrics.
         </p>
         <div class="quote-box">
-        
           <p class="quote-text">
-            <span style="margin-top: -9px; margin-left: -24px;" class="quote-symbol">“</span>
+            <span
+              style="margin-top: -9px; margin-left: -24px"
+              class="quote-symbol"
+              >“</span
+            >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
             doeiusmod tempor incididunt ut labore et dolore magna aliqua.-
             <span class="quote-author">Akka creations</span>
@@ -126,100 +126,259 @@
 
     <div class="image-container">
       <!-- Repeat the following block for each image -->
-      <div class="image-box hovered">
+      <div class="image-box hovered" id="fabricImageContainer">
         <img src="../pages/Home/fabric.d.jpg" alt="" />
         <div class="overlay">
           <h2>Fabric</h2>
         </div>
       </div>
-      <!-- End of repeated block -->
 
-      <!-- Repeat the following block for each image -->
-      <div class="image-box hovered">
+      <div class="image-box hovered" id="patternImageContainer">
         <img src="../pages//Home/patterns.jpg" alt="" />
         <div class="overlay">
           <h2>Patterns</h2>
         </div>
       </div>
-      <!-- End of repeated block -->
 
-      <!-- Repeat the following block for each image -->
-      <div class="image-box hovered">
+      <div class="image-box hovered" id="coloursImageContainer">
         <img src="../pages/Home/colours.avif" alt="" />
         <div class="overlay">
           <h2>Colours</h2>
         </div>
       </div>
-      <!-- End of repeated block -->
     </div>
-    <div style="margin-top: 90px;">
+    <div style="margin-top: 90px">
       <h1>PRODUCTS ON SALE</h1>
-  </div>
-  <section class="articles">
-      <article>
-        <div class="article-wrapper">
-          <figure>
-            <img style="width: 844px; height: 260px;" src="../common-components/1.56ee3f0b3f0dbfd40708.webp" alt="" />
-          </figure>
-          <div class="article-body">
-            <h2>SANTE Midi</h2>
-          </div>
-        </div>
-      </article>
-      <article>
+    </div>
+
+ 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var fabricProductsSection = document.getElementById("fabricProductsSection");
+        var patternProductsSection = document.getElementById("patternProductsSection");
+        var coloursProductsSection = document.getElementById("coloursProductsSection");
+
+        
+        fabricProductsSection.style.display = "block";
+        patternProductsSection.style.display = "none";
+        coloursProductsSection.style.display = "none";
+
     
-        <div class="article-wrapper">
-          <figure>
-            <img style="width: 844px; height: 260px;" src="../common-components/2.1fa24b3b2fcf58e592cc.avif" alt="" />
-          </figure>
-          <div class="article-body">
-            <h2>OU Midi</h2>
-          </div>
-        </div>
-      </article>
-      <article>
+        var fabricImageContainer = document.getElementById("fabricImageContainer");
+        var patternImageContainer = document.getElementById("patternImageContainer");
+        var coloursImageContainer = document.getElementById("coloursImageContainer");
+
+        
+        fabricImageContainer.addEventListener("click", function () {
+          fabricProductsSection.style.display = "block";
+          patternProductsSection.style.display = "none";
+        });
     
-        <div class="article-wrapper">
-          <figure>
-            <img style="width: 844px; height: 260px;" src="../common-components/3.ace71b9fcd4c50364f93.avif" alt="" />
-          </figure>
-          <div class="article-body">
-            <h2>OS Midi</h2>
-          </div>
-        </div>
-      </article>
-      <article>
-    
+        patternImageContainer.addEventListener("click", function () {
+          patternProductsSection.style.display = "block";
+          fabricProductsSection.style.display = "none";
+        });
+        coloursImageContainer.addEventListener("click", function () {
+          coloursProductsSection.style.display = "block";
+          patternProductsSection.style.display = "none";
+          fabricProductsSection.style.display = "none";
+
+        });
+      });
+    </script>
+    <section class="articles" id="fabricProductsSection">
+      <div class="fabricProductsSection">
+        <article>
           <div class="article-wrapper">
             <figure>
-              <img style="width: 844px; height: 260px;" src="../common-components/sign1.83363a19fec4d94943cd.webp" alt="" />
+              <img style="width: 844px; height: 260px;" src="../common-components/1.56ee3f0b3f0dbfd40708.webp" alt="" />
             </figure>
             <div class="article-body">
-              <h2>Robe Midi</h2>
+              <h2>SANTE Midi</h2>
             </div>
           </div>
         </article>
         <article>
-    
+      
           <div class="article-wrapper">
             <figure>
-              <img style="width: 844px; height: 260px;" src="../common-components/sign2.3f07aab39022c1986935.webp" alt="" />
+              <img style="width: 844px; height: 260px;" src="../common-components/2.1fa24b3b2fcf58e592cc.avif" alt="" />
             </figure>
             <div class="article-body">
-              <h2>Kaftan Long Chudi</h2>
+              <h2>OU Midi</h2>
             </div>
           </div>
         </article>
-      </article> 
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+              <img style="width: 844px; height: 260px;" src="../common-components/3.ace71b9fcd4c50364f93.avif" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>OS Midi</h2>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img style="width: 844px; height: 260px;" src="../common-components/sign1.83363a19fec4d94943cd.webp" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Robe Midi</h2>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img style="width: 844px; height: 260px;" src="../common-components/sign2.3f07aab39022c1986935.webp" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Kaftan Long Chudi</h2>
+              </div>
+            </div>
+          </article>
+        </article> 
+      </div>
+    </section> 
+
+    <section class="articles" id="patternProductsSection">
+      <div class="patternProductsSection">
+        <article>
+          <div class="article-wrapper">
+            <figure>
+              <img style="width: 844px; height: 260px;" src="../assets/FloralAssets/big.jpg" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>SANTE Midi</h2>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+              <img style="width: 844px; height: 260px;" src="../assets/AbstractAssets/light blue shalimar.jpg" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>OU Midi</h2>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+              <img style="width: 844px; height: 260px;" src="../assets/FloralAssets/BINDU FLOWER.jpg" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>OS Midi</h2>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img style="width: 844px; height: 260px;" src="../assets/AviaryAssets/FLOWER SHAL PINK CANVAS (4).jpg" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Robe Midi</h2>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img style="width: 844px; height: 260px;" src="../assets/FloralAssets/bindu2.jpg" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Kaftan Long Chudi</h2>
+              </div>
+            </div>
+          </article>
+        </article> 
+      </div>
     </section>
-    <div style="display: flex; justify-content: center; margin-top: 55px;">
-      <a style="text-decoration: none;" href="your-products-page.html" class="button">More Products</a>
-  </div>
+    <section class="articles" id="coloursProductsSection">
+      <div class="coloursProductsSection">
+        <article>
+          <div class="article-wrapper">
+            <figure>
+              <img style="width: 844px; height: 260px;" src="../assets/BlueProducts/2.jpg" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>SANTE Midi</h2>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+              <img style="width: 844px; height: 260px;" src="../assets/BlueProducts/4.jpg" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>OU Midi</h2>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+              <img style="width: 844px; height: 260px;" src="../assets/GreenProducts/6.jpg" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>OS Midi</h2>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img style="width: 844px; height: 260px;" src="../assets/GreenProducts/6.jpg" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Robe Midi</h2>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img style="width: 844px; height: 260px;" src="../assets/RedProducts/11.jpg" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Kaftan Long Chudi</h2>
+              </div>
+            </div>
+          </article>
+        </article> 
+      </div>
+    </section>
+    <div style="display: flex; justify-content: center; margin-top: 55px">
+      <a style="text-decoration: none" href="ProductPage.html" class="button">
+        More Products
+      </a>
+    </div>
 
     <div
-      style="display: flex; background-color: whitesmoke; margin-top: 60px; margin-bottom: 50px;"
+      style="
+        display: flex;
+        background-color: whitesmoke;
+        margin-top: 60px;
+        margin-bottom: 50px;
+      "
     >
-      <div style="display: flex; flex-direction: column; margin-top: -87px;">
+      <div style="display: flex; flex-direction: column; margin-top: -87px">
         <h2 class="happy">Happy Clients</h2>
         <p class="customer">
           We Care About Our Customers <br />
@@ -245,7 +404,14 @@
           />
         </div>
       </div>
-      <div style="display: flex; gap: 3rem; padding-bottom: 40px; margin-top: -97px;">
+      <div
+        style="
+          display: flex;
+          gap: 3rem;
+          padding-bottom: 40px;
+          margin-top: -97px;
+        "
+      >
         <figure class="snip1390">
           <div style="display: flex; justify-content: center">
             <img
@@ -286,36 +452,113 @@
         </figure>
       </div>
     </div>
-    <div style="display: flex; flex-direction: row; gap: 2rem; margin-top: 10rem; margin-bottom: 10rem;">
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+      "
+    >
       <img
-      style="width: 50px; height: 30px"
-      src="../common-components/reshot-icon-bold-arrow-left-TS2DVUZ9WY.svg"
-      alt=""
-    />
-     <div style="width: 200px; height: 190px; margin-top: 40px;" class="box">
-      <img style="width: 199px; height: 190px; margin-top: -160px; padding: 10px; border-radius: 20px;" src="../common-components/1.56ee3f0b3f0dbfd40708.webp" alt="" />
-      <h3 style="font-size: 15px; text-align: center; padding-top: 25px;">SANTE Midi</h3>  
+        style="width: 50px; height: 30px"
+        src="../common-components/reshot-icon-bold-arrow-left-TS2DVUZ9WY.svg"
+        alt=""
+      />
+      <div style="width: 200px; height: 190px; margin-top: 40px" class="box">
+        <img
+          style="
+            width: 199px;
+            height: 190px;
+            margin-top: -160px;
+            padding: 10px;
+            border-radius: 20px;
+          "
+          src="../common-components/1.56ee3f0b3f0dbfd40708.webp"
+          alt=""
+        />
+        <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
+          SANTE Midi
+        </h3>
+      </div>
+      <div style="width: 230px; height: 220px; margin-top: 50px" class="box">
+        <img
+          style="
+            width: 229px;
+            height: 250px;
+            margin-top: -210px;
+            padding: 10px;
+            border-radius: 20px;
+          "
+          src="../common-components/2.1fa24b3b2fcf58e592cc.avif"
+          alt=""
+        />
+        <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
+          OU Midi
+        </h3>
+      </div>
+      <div style="width: 200px; height: 190px; margin-top: 40px" class="box">
+        <img
+          style="
+            width: 199px;
+            height: 190px;
+            margin-top: -160px;
+            padding: 10px;
+            border-radius: 20px;
+          "
+          src="../common-components/sign2.3f07aab39022c1986935.webp"
+          alt=""
+        />
+        <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
+          OS Midi
+        </h3>
+      </div>
+      <img
+        style="width: 50px; height: 30px"
+        src="../common-components//reshot-icon-bold-arrow-right-RB7XW6DC4Z.svg"
+        alt=""
+      />
+      <div style="display: flex; flex-direction: column">
+        <h4
+          style="
+            font-size: 23px;
+            color: #e53637;
+            margin-top: -50px;
+            margin-left: 70px;
+          "
+        >
+          Our Signature Products
+        </h4>
+        <h5
+          style="
+            font-size: 15px;
+            color: black;
+            margin-left: 70px;
+            width: 500px;
+            margin-top: 0px;
+          "
+        >
+          Style encompasses personal expression, reflecting taste in aesthetics,
+          fashion, and design, conveying individuality through choices in
+          appearance and presentation.
+        </h5>
+        <a href="ProductPage.html">
+          <button
+            style="
+              background-color: black;
+              color: white;
+              width: 400px;
+              height: 40px;
+              border-radius: 5px;
+              margin-left: 75px;
+            "
+          >
+            Click to show more
+          </button>
+        </a>
+      </div>
     </div>
-     <div style="width: 230px; height: 220px; margin-top: 50px;" class="box">
-      <img style="width: 229px; height: 250px; margin-top: -210px; padding: 10px; border-radius: 20px;" src="../common-components/2.1fa24b3b2fcf58e592cc.avif" alt="" />
-      <h3 style="font-size: 15px; text-align: center; padding-top: 25px;">OU Midi</h3>  
-    </div>
-     <div style="width: 200px; height: 190px; margin-top: 40px;" class="box">
-      <img style="width: 199px; height: 190px; margin-top: -160px; padding: 10px; border-radius: 20px;" src="../common-components/sign2.3f07aab39022c1986935.webp" alt="" />
-    <h3 style="font-size: 15px; text-align: center; padding-top: 25px;">OS Midi</h3> 
-    
-    </div>
-    <img
-    style="width: 50px; height: 30px"
-    src="../common-components//reshot-icon-bold-arrow-right-RB7XW6DC4Z.svg"
-    alt=""
-  />
-  <div style="display: flex; flex-direction: column;">
-  <h4 style="font-size: 23px; color: #e53637; margin-top: -50px; margin-left: 70px;">Our Signature Products</h4>
-  <h5 style="font-size: 15px; color: black; margin-left: 70px; width: 500px; margin-top: 0px;">Style encompasses personal expression, reflecting taste in aesthetics, fashion, and design, conveying individuality through choices in appearance and presentation.</h5>
-<button style="background-color: black; color: white; width: 400px; height: 40px; border-radius: 5px; margin-left: 75px;">Click to show more</button>
-</div>  
-</div>
   </body>
   <footer>
     <div class="app-footer">
