@@ -77,202 +77,356 @@
         <h1>Products</h1>
       </div>
     </div>
-    <div class="products-left-side">
-      <div class="filter-header">
-        <h2>FILTER</h2>
-        <a style="color: black" href="#">Clear all</a>
-      </div>
+    <div style="display: flex">
+      <div class="products-left-side">
+        <div class="filter-header">
+          <h2>FILTER</h2>
+          <a style="color: black" href="#">Clear all</a>
+        </div>
 
-      <div class="divider"></div>
+        <div class="divider"></div>
 
-      <div class="category-section">
-        <h3>CATEGORIES</h3>
-        <div class="dropdown-icon">&#9660;</div>
-      </div>
-      <div>
+        <div class="category-section">
+          <h3>CATEGORIES</h3>
+          <div class="dropdown-icon">&#9660;</div>
+        </div>
         <div>
-          <div class="category-section1" onclick="toggleFabricProducts()">
-            <h3>Fabric</h3>
-            <div class="dropdown-icon">&#9660;</div>
-          </div>
+          <div>
+            <div class="category-section1" onclick="toggleFabricProducts()">
+              <h3>Fabric</h3>
+              <div class="dropdown-icon">&#9660;</div>
+            </div>
 
-          <div class="fabric-products" id="fabricProductsContainer"></div>
+            <div class="fabric-products" id="fabricProductsContainer"></div>
 
-          <script>
-            // Define sub-products dynamically
-            let fabricProductsData = [
-              { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
-              { name: "WOODPULP/LYCOCELL FABRIC", link: "/" },
-              { name: "KNITS-RFD GRADE B ONLY", link: "/" },
-              { name: "LINEN", link: "/" },
-              { name: "PEACE SILKS", link: "/" },
-              { name: "RECYCLED COTTON", link: "/" },
-              { name: "RECYCLED KNIT", link: "/" },
-              { name: "WATER REPLLENT REPT", link: "/" },
+            <script>
+              // Define sub-products dynamically
+              let fabricProductsData = [
+                { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
+                { name: "WOODPULP/LYCOCELL FABRIC", link: "/" },
+                { name: "KNITS-RFD GRADE B ONLY", link: "/" },
+                { name: "LINEN", link: "/" },
+                { name: "PEACE SILKS", link: "/" },
+                { name: "RECYCLED COTTON", link: "/" },
+                { name: "RECYCLED KNIT", link: "/" },
+                { name: "WATER REPLLENT REPT", link: "/" },
 
-              // Add more products as needed
-            ];
+                // Add more products as needed
+              ];
 
-            // Function to toggle the visibility of fabric products
-            function toggleFabricProducts() {
-              var fabricProductsContainer = document.getElementById(
+              // Function to toggle the visibility of fabric products
+              function toggleFabricProducts() {
+                var fabricProductsContainer = document.getElementById(
+                  "fabricProductsContainer"
+                );
+                fabricProductsContainer.style.display =
+                  fabricProductsContainer.style.display === "none" ||
+                  fabricProductsContainer.style.display === ""
+                    ? "block"
+                    : "none";
+
+                // Toggle the visibility of sub-products
+                var subProducts =
+                  fabricProductsContainer.querySelectorAll(".sub-products");
+                subProducts.forEach(function (product) {
+                  product.style.display = fabricProductsContainer.style.display;
+                });
+              }
+
+              // Create sub-product elements dynamically
+              let fabricProductsContainer = document.getElementById(
                 "fabricProductsContainer"
               );
-              fabricProductsContainer.style.display =
-                fabricProductsContainer.style.display === "none" ||
-                fabricProductsContainer.style.display === ""
-                  ? "block"
-                  : "none";
+              fabricProductsContainer.style.display = "none"; // Set initial display to none
 
-              // Toggle the visibility of sub-products
-              var subProducts =
-                fabricProductsContainer.querySelectorAll(".sub-products");
-              subProducts.forEach(function (product) {
-                product.style.display = fabricProductsContainer.style.display;
+              fabricProductsData.map((product) => {
+                let subProduct = document.createElement("a");
+                subProduct.href = product.link;
+                subProduct.className = "sub-products";
+                subProduct.textContent = product.name;
+                fabricProductsContainer.appendChild(subProduct);
               });
-            }
-
-            // Create sub-product elements dynamically
-            let fabricProductsContainer = document.getElementById(
-              "fabricProductsContainer"
-            );
-            fabricProductsContainer.style.display = "none"; // Set initial display to none
-
-            fabricProductsData.map((product) => {
-              let subProduct = document.createElement("a");
-              subProduct.href = product.link;
-              subProduct.className = "sub-products";
-              subProduct.textContent = product.name;
-              fabricProductsContainer.appendChild(subProduct);
-            });
-          </script>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div class="category-section1" onclick="togglePatternProducts()">
-            <h3>Patters</h3>
-            <div class="dropdown-icon">&#9660;</div>
+            </script>
           </div>
+        </div>
+        <div>
+          <div>
+            <div class="category-section1" onclick="togglePatternProducts()">
+              <h3>Patters</h3>
+              <div class="dropdown-icon">&#9660;</div>
+            </div>
 
-          <div class="pattern-products" id="patternProductsContainer"></div>
+            <div class="pattern-products" id="patternProductsContainer"></div>
 
-          <script>
-            let PattersProductsData = [
-              { name: "FLORAL", link: "Aboutpage.html" },
-              { name: "AVIARY", link: "/" },
-              { name: "ABSTRACT", link: "/" },
-            ];
+            <script>
+              let PattersProductsData = [
+                { name: "FLORAL", link: "Aboutpage.html" },
+                { name: "AVIARY", link: "/" },
+                { name: "ABSTRACT", link: "/" },
+              ];
 
-            function togglePatternProducts() {
-              var patternProductsContainer = document.getElementById(
+              function togglePatternProducts() {
+                var patternProductsContainer = document.getElementById(
+                  "patternProductsContainer"
+                );
+                patternProductsContainer.style.display =
+                  patternProductsContainer.style.display === "none" ||
+                  patternProductsContainer.style.display === ""
+                    ? "block"
+                    : "none";
+
+                var subProducts =
+                  patternProductsContainer.querySelectorAll(".sub-products");
+                subProducts.forEach(function (product) {
+                  product.style.display =
+                    patternProductsContainer.style.display;
+                });
+              }
+
+              let patternProductsContainer = document.getElementById(
                 "patternProductsContainer"
               );
-              patternProductsContainer.style.display =
-                patternProductsContainer.style.display === "none" ||
-                patternProductsContainer.style.display === ""
-                  ? "block"
-                  : "none";
+              patternProductsContainer.style.display = "none";
 
-              var subProducts =
-                patternProductsContainer.querySelectorAll(".sub-products");
-              subProducts.forEach(function (product) {
-                product.style.display = patternProductsContainer.style.display;
+              PattersProductsData.map((product) => {
+                let subProduct = document.createElement("a");
+                subProduct.href = product.link;
+                subProduct.className = "sub-products";
+                subProduct.textContent = product.name;
+                patternProductsContainer.appendChild(subProduct);
               });
-            }
+            </script>
+          </div>
+        </div>
 
-            let patternProductsContainer = document.getElementById(
-              "patternProductsContainer"
-            );
-            patternProductsContainer.style.display = "none";
+        <div class="filter-section">
+          <h3>Filter By Width</h3>
+          <select>
+            <option>Select all</option>
+            <!-- Add other options dynamically based on your data -->
+          </select>
+        </div>
 
-            PattersProductsData.map((product) => {
-              let subProduct = document.createElement("a");
-              subProduct.href = product.link;
-              subProduct.className = "sub-products";
-              subProduct.textContent = product.name;
-              patternProductsContainer.appendChild(subProduct);
+        <div class="divider"></div>
+
+        <div class="filter-section">
+          <h3>Filter By Composition</h3>
+          <select>
+            <option>Select all</option>
+            <!-- Add other options dynamically based on your data -->
+          </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="filter-section">
+          <h3>Filter By GSM</h3>
+          <select>
+            <option>Select all</option>
+            <!-- Add other options dynamically based on your data -->
+          </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="color-filter-section">
+          <h3>Filter By Colors</h3>
+          <div class="color-stack" id="colorStack">
+            <!-- Colors will be dynamically added here -->
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              // Array of colors
+              const colors = [
+                { name: "Red", code: "red" },
+                { name: "Blue", code: "Blue" },
+                { name: "Green", code: "Green" },
+                { name: "Beige", code: "Beige" },
+                { name: "Black", code: "Black" },
+                { name: "Brown", code: "Brown" },
+                { name: "Maroon", code: "Maroon" },
+                { name: "Orange", code: "Orange" },
+                { name: "White", code: "White" },
+                { name: "Pink", code: "Pink" },
+                { name: "Violet", code: "Violet" },
+                { name: "Yellow", code: "Yellow" },
+                // Add more colors as needed
+              ];
+
+              // Get the color stack container
+              const colorStack = document.getElementById("colorStack");
+
+              // Dynamically generate color items
+              colors.forEach((color) => {
+                const colorItem = document.createElement("a");
+                colorItem.href = "#";
+                colorItem.className = "color-item";
+
+                const colorCircle = document.createElement("div");
+                colorCircle.className = "color-circle";
+                colorCircle.style.backgroundColor = color.code;
+
+                const checkIcon = document.createElement("div");
+                checkIcon.className = "check-icon";
+                checkIcon.innerHTML = "&#10003;";
+
+                const colorName = document.createElement("span");
+                colorName.className = "color-name";
+                colorName.textContent = color.name;
+
+                colorItem.appendChild(colorCircle);
+                colorItem.appendChild(checkIcon);
+                colorItem.appendChild(colorName);
+
+                // Add the color item to the color stack
+                colorStack.appendChild(colorItem);
+              });
             });
           </script>
         </div>
       </div>
+      <div class="product-right-side">
+        <div class="container">
+          <div class="section">
+            <h2>Our Signature Products</h2>
+            <div class="divider1"></div>
+            <div class="product-grid">
+              <div class="product-grid">
+                <!-- Sample Product Cards -->
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/ProductsImage/sign1.webp"
+                    alt="Product 1"
+                  />
+                  <div class="product-details">
+                    <h3>Product 1</h3>
+                  </div>
+                </div>
 
-      <div class="filter-section">
-        <h3>Filter By Width</h3>
-        <select>
-          <option>Select all</option>
-          <!-- Add other options dynamically based on your data -->
-        </select>
-      </div>
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/ProductsImage/sign2.webp"
+                    alt="Product 2"
+                  />
+                  <div class="product-details">
+                    <h3>Product 2</h3>
+                  </div>
+                </div>
 
-      <div class="divider"></div>
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/ProductsImage/sign2.webp"
+                    alt="Product 3"
+                  />
+                  <div class="product-details">
+                    <h3>Product 3</h3>
+                  </div>
+                </div>
 
-      <div class="filter-section">
-        <h3>Filter By Composition</h3>
-        <select>
-          <option>Select all</option>
-          <!-- Add other options dynamically based on your data -->
-        </select>
-      </div>
+                <!-- Add more product cards as needed -->
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <a href="#" class="show-more-btn">Show more</a>
+            </div>
+          </div>
 
-      <div class="divider"></div>
+          <div class="section">
+            <h2>Fabric Products</h2>
+            <div class="divider1"></div>
+            <div class="product-grid">
+              <div class="product-grid">
+                <!-- Sample Product Cards -->
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/LinenAssets/LINE/LINE.jpg"
+                    alt="Product 1"
+                  />
+                  <div class="product-details">
+                    <h3>Product 1</h3>
+                  </div>
+                </div>
 
-      <div class="filter-section">
-        <h3>Filter By GSM</h3>
-        <select>
-          <option>Select all</option>
-          <!-- Add other options dynamically based on your data -->
-        </select>
-      </div>
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/OCassets/all shalimar canvas.jpg"
+                    alt="Product 2"
+                  />
+                  <div class="product-details">
+                    <h3>Product 2</h3>
+                  </div>
+                </div>
 
-      <div class="divider"></div>
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/OCassets/FLOWER SHAL BEIGE CANVAS.jpg"
+                    alt="Product 3"
+                  />
+                  <div class="product-details">
+                    <h3>Product 3</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <a href="#" class="show-more-btn">Show more</a>
+            </div>
+          </div>
 
-      <div class="color-filter-section">
-        <h3>Filter By Colors</h3>
-        <div class="color-stack" id="colorStack">
-          <!-- Colors will be dynamically added here -->
+          <div class="section">
+            <h2>Patterns Products</h2>
+            <div class="divider1"></div>
+            <div class="product-grid">
+              <div class="product-grid">
+                <!-- Sample Product Cards -->
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/FloralAssets/BINDU FLOWER.jpg"
+                    alt="Product 1"
+                  />
+                  <div class="product-details">
+                    <h3>Product 1</h3>
+                  </div>
+                </div>
+
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/AbstractAssets/cushiion pink shalimar.jpg"
+                    alt="Product 2"
+                  />
+                  <div class="product-details">
+                    <h3>Product 2</h3>
+                  </div>
+                </div>
+
+                <div class="product-card">
+                  <img
+                    style="max-width: 300px; width: 100%"
+                    src="../assets/AviaryAssets/FLOWER SHAL PINK CANVAS (4).jpg"
+                    alt="Product 3"
+                  />
+                  <div class="product-details">
+                    <h3>Product 3</h3>
+                  </div>
+                </div>
+
+                <!-- Add more product cards as needed -->
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <a href="#" class="show-more-btn">Show more</a>
+            </div>
+          </div>
         </div>
-
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            // Array of colors
-            const colors = [
-              { name: "Red", code: "#FF0000" },
-              { name: "Green", code: "#00FF00" },
-              { name: "Black", code: "#000000" },
-              // Add more colors as needed
-            ];
-
-            // Get the color stack container
-            const colorStack = document.getElementById("colorStack");
-
-            // Dynamically generate color items
-            colors.forEach((color) => {
-              const colorItem = document.createElement("a");
-              colorItem.href = "#";
-              colorItem.className = "color-item";
-
-              const colorCircle = document.createElement("div");
-              colorCircle.className = "color-circle";
-              colorCircle.style.backgroundColor = color.code;
-
-              const checkIcon = document.createElement("div");
-              checkIcon.className = "check-icon";
-              checkIcon.innerHTML = "&#10003;";
-
-              const colorName = document.createElement("span");
-              colorName.className = "color-name";
-              colorName.textContent = color.name;
-
-              colorItem.appendChild(colorCircle);
-              colorItem.appendChild(checkIcon);
-              colorItem.appendChild(colorName);
-
-              // Add the color item to the color stack
-              colorStack.appendChild(colorItem);
-            });
-          });
-        </script>
       </div>
     </div>
   </body>
