@@ -121,34 +121,35 @@
               onchange="updateFields()"
               required
             >
-              <option value="">Select a category</option>
+              <option value="">Select Category</option>
               <option value="fabric">Fabric</option>
               <option value="patterns">Patterns</option>
             </select>
 
-            <label
-              for="subcategory"
-              id="subcategoryLabel"
-              style="display: none"
+            <label id="subcategoryLabel" for="subcategory" style="display: none"
+              >Subcategory</label
             >
-              Subcategory
-            </label>
-            <select id="subcategory" name="subcategory" style="display: none">
-              <!-- Options for subcategories will be dynamically added here -->
+            <select
+              id="subcategory"
+              name="subcategory"
+              style="display: none"
+              onchange="updateSubproducts()"
+            >
+              <option value="">Select Subcategory</option>
             </select>
 
-            <label
-              for="subproducts"
-              id="subproductsLabel"
-              style="display: none"
+            <label id="subproductsLabel" for="subproducts" style="display: none"
+              >Subproducts</label
             >
-              Subproducts
-            </label>
             <select id="subproducts" name="subproducts" style="display: none">
-              <!-- Options for subproducts -->
+              <option value="">Select Subproduct</option>
             </select>
 
-            <script>
+            <div id="selectedSubproductsContainer" style="display: none">
+              <ul id="selectedSubproductsList"></ul>
+            </div>
+
+            <script defer>
               const categoryOptions = {
                 fabric: [
                   { name: "ORGANIC COTTONS WOVENS", link: "/" },
@@ -167,6 +168,74 @@
                 ],
               };
 
+              const fabricSubproducts = {
+                "ORGANIC COTTONS WOVENS": [
+                  { name: "OV DOBBY WAFFLE", link: "/" },
+                  { name: "OC MUSLIN", link: "/" },
+                  { name: "OC D.GAUZE", link: "/" },
+                  { name: "OC VOILET", link: "/" },
+                ],
+                "WOODPULP/LYCOCELL FABRIC": [
+                  { name: "MODAL", link: "/" },
+                  { name: "OC-ECOVERA", link: "/" },
+                  { name: "TENSIL", link: "/" },
+                ],
+                "KNITS-RFD GRADE B ONLY": [
+                  { name: "GOLIIKIBAR POLYSTER BLUE", link: "/" },
+                  { name: "COTTON POLYSTER", link: "/" },
+                  { name: "POLYSTER COLOURED", link: "/" },
+                ],
+                LINEN: [
+                  { name: "OL PURE", link: "/" },
+                  { name: "OL-OC", link: "/" },
+                  { name: "OL-HEMP", link: "/" },
+                  { name: "OL-OL", link: "/" },
+                  { name: "OL-ELCOVERO", link: "/" },
+                ],
+                "PEACE SILKS": [
+                  { name: "PS HABOTAI", link: "/" },
+                  { name: "PS CREPE", link: "/" },
+                  { name: "PS CHARMEUSSE/STAIN", link: "/" },
+                  { name: "OC PS", link: "/" },
+                ],
+                "RECYCLED COTTON": [
+                  { name: "OC MUSLIN", link: "/" },
+                  { name: "OC D.GAUZE", link: "/" },
+                  { name: "OC VOILE", link: "/" },
+                  { name: "OC CAMBERIC/BATISTE", link: "/" },
+                  { name: "OC POPLIN", link: "/" },
+                  { name: "OC CANVAS", link: "/" },
+                  { name: "OC DUCK/DRILL", link: "/" },
+                  { name: "OC SATEEN", link: "/" },
+                ],
+                "RECYCLED KNIT": [
+                  { name: "REPT SWIM/ATELIETIC", link: "/" },
+                  { name: "RPET", link: "/" },
+                ],
+                "WATER REPELLENT RPET": [
+                  { name: "CANVAS REPT", link: "/" },
+                  { name: "RIPSTOP", link: "/" },
+                ],
+              };
+
+              const patternsProducts = {
+                FLORAL: [
+                  { name: "Product 1", link: "/" },
+                  { name: "Product 2", link: "/" },
+                  { name: "Product 3", link: "/" },
+                ],
+                AVIARY: [
+                  { name: "Product A", link: "/" },
+                  { name: "Product B", link: "/" },
+                  { name: "Product C", link: "/" },
+                ],
+                ABSTRACT: [
+                  { name: "Abstract Product X", link: "/" },
+                  { name: "Abstract Product Y", link: "/" },
+                  { name: "Abstract Product Z", link: "/" },
+                ],
+              };
+
               function updateFields() {
                 const categorySelect = document.getElementById("category");
                 const subcategorySelect =
@@ -177,15 +246,15 @@
                   document.getElementById("subproducts");
                 const subproductsLabel =
                   document.getElementById("subproductsLabel");
+                const selectedSubproductsContainer = document.getElementById(
+                  "selectedSubproductsContainer"
+                );
+                const selectedSubproductsList = document.getElementById(
+                  "selectedSubproductsList"
+                );
 
-                // Clear existing subcategories and subproducts
-                subcategorySelect.innerHTML = "";
-                subproductsSelect.innerHTML = "";
-
-                // Get the selected category
                 const selectedCategory = categorySelect.value;
 
-                // Show/hide subcategory and subproducts based on the selected category
                 if (
                   selectedCategory &&
                   (selectedCategory === "fabric" ||
@@ -194,16 +263,19 @@
                   subcategoryLabel.style.display = "block";
                   subcategorySelect.style.display = "block";
 
-                  // Get the subcategories based on the selected category
+                  // Clear previous options
+                  subcategorySelect.innerHTML =
+                    "<option value=''>Select Subcategory</option>";
+
                   const selectedSubcategories =
                     categoryOptions[selectedCategory];
 
-                  // Add subcategories to the subcategorySelect
                   selectedSubcategories.forEach((subcategory) => {
-                    const subcategoryOption = document.createElement("option");
-                    subcategoryOption.value = subcategory.link;
-                    subcategoryOption.textContent = subcategory.name;
-                    subcategorySelect.appendChild(subcategoryOption);
+                    const subcategoryOption = new Option(
+                      subcategory.name,
+                      subcategory.name
+                    );
+                    subcategorySelect.add(subcategoryOption);
                   });
 
                   // Initial update when the page loads
@@ -223,22 +295,60 @@
                   document.getElementById("subproducts");
                 const subproductsLabel =
                   document.getElementById("subproductsLabel");
+                const selectedSubproductsContainer = document.getElementById(
+                  "selectedSubproductsContainer"
+                );
+                const selectedSubproductsList = document.getElementById(
+                  "selectedSubproductsList"
+                );
 
-                // Clear existing subproducts
-                subproductsSelect.innerHTML = "";
-
-                // Get the selected subcategory
                 const selectedSubcategory = subcategorySelect.value;
 
-                // Show/hide subproducts based on the selected subcategory
                 if (selectedSubcategory) {
                   subproductsLabel.style.display = "block";
                   subproductsSelect.style.display = "block";
+                  selectedSubproductsContainer.style.display = "none";
 
-                  // Your logic to get subproducts based on the selected subcategory
+                  // Clear previous options
+                  subproductsSelect.innerHTML =
+                    "<option value=''>Select Subproduct</option>";
+
+                  let selectedSubproducts;
+
+                  if (
+                    categoryOptions["fabric"].some(
+                      (subcategory) => subcategory.name === selectedSubcategory
+                    )
+                  ) {
+                    // Fabric subcategory selected
+                    selectedSubproducts =
+                      fabricSubproducts[selectedSubcategory];
+                  } else if (
+                    categoryOptions["patterns"].some(
+                      (subcategory) => subcategory.name === selectedSubcategory
+                    )
+                  ) {
+                    // Patterns subcategory selected
+                    selectedSubproducts = patternsProducts[selectedSubcategory];
+                  }
+
+                  selectedSubproducts.forEach((subproduct) => {
+                    const subproductOption = new Option(
+                      subproduct.name,
+                      subproduct.name
+                    );
+                    subproductsSelect.add(subproductOption);
+
+                    // Add selected subproducts to the display
+                    const listItem = document.createElement("li");
+                    listItem.textContent = subproduct.name;
+                    selectedSubproductsList.appendChild(listItem);
+                  });
                 } else {
                   subproductsLabel.style.display = "none";
                   subproductsSelect.style.display = "none";
+                  selectedSubproductsContainer.style.display = "block";
+                  selectedSubproductsList.innerHTML = ""; // Clear the selected subproducts list
                 }
               }
             </script>

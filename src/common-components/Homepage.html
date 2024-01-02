@@ -17,6 +17,29 @@
       href="../pages/Home/HomepageProducts/ProductCard.css"
     />
     <title>Home Page</title>
+    <style>
+      .carousel-item {
+        width: 200px; /* Set the desired fixed width */
+        height: 220px;
+        margin-top: 50px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;
+        overflow: hidden; /* Ensure the content doesn't overflow */
+      }
+    
+      .carousel-item img {
+        width: 100%; /* Make the image fill the container */
+        height: auto;
+        border-radius: 20px;
+      }
+    
+      .carousel-item h3 {
+        font-size: 15px;
+        text-align: center;
+        padding-top: 25px;
+      }
+    </style>
   </head>
 
   <header>
@@ -120,7 +143,10 @@
             <span class="quote-author">Akka creations</span>
           </p>
         </div>
-        <button class="read-more-button">Read more</button>
+        <a href="AboutPage.html">
+          <button class="read-more-button">Read more</button>
+
+        </a>
       </div>
     </div>
 
@@ -553,75 +579,82 @@
         gap: 2rem;
         margin-top: 10rem;
         margin-bottom: 10rem;
+        align-items: center;
       "
     >
-      <div style="max-width: 880px; width: 100%; justify-content: space-between;display: flex;">
-        <img
-        style="width: 50px;height: 50px;"
-        class="carousel-arrow"
-        src="../common-components/reshot-icon-bold-arrow-left-TS2DVUZ9WY.svg"
-        alt="Left Arrow"
-      />
-      <div style="max-width: 580px;width: 100%; display: flex;gap: 1rem;">
-        <div class="carousel-item" style="width: 230px; height: 220px; margin-top: 50px;background-color: white;border-radius: 20px;box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;" class="box">
-          <img
-            style="
-              width: 199px;
-              height: 190px;
-              margin-top: -160px;
-              padding: 10px;
-              border-radius: 20px;
-            "
-            src="../common-components/1.56ee3f0b3f0dbfd40708.webp"
-            alt=""
-          />
-          <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
-            SANTE Midi
-          </h3>
+    <div style="max-width: 880px; width: 100%; justify-content: space-between; display: flex;">
+      <div class="carousel-container" id="carousel-items" style="max-width: 800px; width: 100%; display: flex; gap: 1rem;align-items: center;">
+        <img style="width: 50px; height: 50px; cursor: pointer;" class="carousel-arrow carousel-arrow-left" src="../common-components/reshot-icon-bold-arrow-left-TS2DVUZ9WY.svg" alt="Left Arrow" />
+    
+        <div class="carousel-items" style="display: flex; transition: transform 0.5s ease-in-out; gap: 2rem; max-width: 800px;">
+          <div class="carousel-item" style="width: 230px; height: 320px; margin-top: 50px; background-color: white; border-radius: 20px; box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;" class="box">
+            <img style="width: 229px; height: 200px;  padding: 10px; border-radius: 20px;" src="../common-components/2.1fa24b3b2fcf58e592cc.avif" alt="" id="image-carousel" />
+            <h3 style="font-size: 15px; text-align: center; padding-top: 25px">OU Midi</h3>
+          </div>
+          <div class="carousel-item" style="width: 230px; height: 320px; margin-top: 50px; background-color: white; border-radius: 20px; box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;" class="box">
+            <img style="width: 199px; height: 190px;  padding: 10px; border-radius: 20px;" src="../common-components/1.56ee3f0b3f0dbfd40708.webp" alt="" />
+            <h3 style="font-size: 15px; text-align: center; padding-top: 25px">SANTE Midi</h3>
+          </div>
+          <div class="carousel-item" style="width: 230px; height: 320px; margin-top: 50px; background-color: white; border-radius: 20px; box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;" class="box">
+            <img style="width: 229px; height: 200px;  padding: 10px; border-radius: 20px;" src="../common-components/2.1fa24b3b2fcf58e592cc.avif" alt="" id="image-carousel" />
+            <h3 style="font-size: 15px; text-align: center; padding-top: 25px">OU Midi</h3>
+          </div>
+          <div class="carousel-item" style="width: 230px; height: 320px; margin-top: 50px; background-color: white; border-radius: 20px; box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;" class="box">
+            <img style="width: 199px; height: 200px;  padding: 10px; border-radius: 20px;" src="../common-components/sign2.3f07aab39022c1986935.webp" alt="" id="image-carousel" />
+            <h3 style="font-size: 15px; text-align: center; padding-top: 25px">OS Midi</h3>
+          </div>
+          <div class="carousel-item" style="width: 230px; height: 320px; margin-top: 50px; background-color: white; border-radius: 20px; box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;" class="box">
+            <img style="width: 229px; height: 200px;  padding: 10px; border-radius: 20px;" src="../common-components/2.1fa24b3b2fcf58e592cc.avif" alt="" id="image-carousel" />
+            <h3 style="font-size: 15px; text-align: center; padding-top: 25px">OU Midi</h3>
+          </div>
         </div>
-        <div class="carousel-item" style="width: 230px; height: 220px; margin-top: 50px;background-color: white;border-radius: 20px;box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;" class="box">
-          <img
-            style="
-              width: 229px;
-              height: 250px;
-              margin-top: -210px;
-              padding: 10px;
-              border-radius: 20px;
-            "
-            src="../common-components/2.1fa24b3b2fcf58e592cc.avif"
-            alt=""
-            id="image-carousel"
-          />
-          <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
-            OU Midi
-          </h3>
-        </div>
-        <div class="carousel-item" style="width: 230px; height: 220px; margin-top: 50px;background-color: white;border-radius: 20px;box-shadow: rgb(197, 184, 184) 0px 0px 7px 0px;" class="box">
-          <img
-            style="
-              width: 199px;
-              height: 190px;
-              margin-top: -160px;
-              padding: 10px;
-              border-radius: 20px;
-            "
-            src="../common-components/sign2.3f07aab39022c1986935.webp"
-            alt=""
-            id="image-carousel"
-          />
-          <h3 style="font-size: 15px; text-align: center; padding-top: 25px">
-            OS Midi
-          </h3>
-        </div>
+    
+        <img style="width: 50px; height: 50px;cursor: pointer;" class="carousel-arrow carousel-arrow-right" src="../common-components/reshot-icon-bold-arrow-right-RB7XW6DC4Z.svg" alt="Right Arrow" />
       </div>
-      <img
-      style="width: 50px;height: 50px;"
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const carousel = document.getElementById("carousel-items");
+          const figures = carousel.querySelectorAll(".carousel-item");
+          let currentIndex = 0;
+      
+          function showFigures() {
+            figures.forEach((figure, i) => {
+              const isVisible = i >= currentIndex && i < currentIndex + 3;
+              figure.style.display = isVisible ? "block" : "none";
+      
+              if (isVisible) {
+                // Apply shadow to the centered item
+                const isCenterItem = i === currentIndex + 1;
+                figure.style.boxShadow = isCenterItem ? "0px 0px 10px 0px rgba(0, 0, 0, 0.75)" : "none";
+                figure.style.opacity = isCenterItem ? "1" : "0.3";
 
-    class="carousel-arrow"
-    src="../common-components/reshot-icon-bold-arrow-right-RB7XW6DC4Z.svg"
-    alt="Right Arrow"
-  />
-      </div>
+              }
+            });
+          }
+      
+          function nextFigure() {
+            currentIndex = (currentIndex + 1) % (figures.length - 2);
+            showFigures();
+          }
+      
+          function prevFigure() {
+            currentIndex = (currentIndex - 1 + figures.length) % (figures.length - 2);
+            showFigures();
+          }
+      
+          // Initial display
+          showFigures();
+      
+          // Event listeners for arrow clicks
+          const nextArrow = carousel.querySelector(".carousel-arrow-right");
+          const prevArrow = carousel.querySelector(".carousel-arrow-left");
+      
+          nextArrow.addEventListener("click", nextFigure);
+          prevArrow.addEventListener("click", prevFigure);
+        });
+      </script>
+    </div>
       <div style="display: flex; flex-direction: column">
         <h4
           style="
