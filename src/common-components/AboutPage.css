@@ -74,7 +74,7 @@ body {
   line-height: 1;
   font-weight: 600;
   font-size: 22px;
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans";
 }
 
 .divider {
@@ -84,7 +84,7 @@ body {
 
 .description {
   font-size: 15px;
-  font-family: "Nunito Sans, sans-serif";
+  font-family: "Nunito Sans";
 }
 .image-container {
   max-width: 500px;
@@ -103,5 +103,41 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .h1 {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans";
+}
+@media (max-width: 767px) {
+  #clientCarousel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #clientCarousel > div {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  #clientCarousel img {
+    margin: 10px 0;
+  }
+
+  .snip1390 {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .snip1390 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .snip1390 img {
+    margin: 10px 0;
+  }
+
+  .snip1390 h1,
+  .snip1390 p,
+  .snip1390 .yellow-star,
+  .snip1390 .vision {
+    text-align: center;
+  }
 }
