@@ -107,14 +107,16 @@
               // Define sub-products dynamically
               let fabricProductsData = [
                 { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
-                { name: "WOODPULP/LYCOCELL FABRIC", link: "WoodpulpProduct.html" },
+                {
+                  name: "WOODPULP/LYCOCELL FABRIC",
+                  link: "WoodpulpProduct.html",
+                },
                 { name: "KNITS-RFD GRADE B ONLY", link: "KnitsProduct.html" },
                 { name: "LINEN", link: "LinenProduct.html" },
                 { name: "PEACE SILKS", link: "PeaceProduct.html" },
                 { name: "RECYCLED COTTON", link: "RecycledProduct.html" },
                 { name: "RECYCLED KNIT", link: "RecycledKnit.html" },
                 { name: "WATER REPLLENT REPT", link: "WaterProduct.html" },
-                // Add more products as needed
               ];
 
               // Function to toggle the visibility of fabric products
@@ -160,11 +162,7 @@
                     ? "block"
                     : "none";
 
-                  // If "ORGANIC COTTONS WOVENS" checkbox is checked, redirect to the specified link
-                  if (
-                    product.name === "ORGANIC COTTONS WOVENS" &&
-                    subProductCheckbox.checked
-                  ) {
+                  if (subProductCheckbox.checked && product.link) {
                     window.location.href = product.link;
                   }
                 });
