@@ -92,9 +92,13 @@
         </div>
         <div>
           <div>
-            <div class="category-section1" onclick="toggleFabricProducts()">
+            <div class="category-section1">
               <h3>Fabric</h3>
-              <div class="dropdown-icon">&#9660;</div>
+              <input
+                type="checkbox"
+                id="fabricCheckbox"
+                onchange="toggleFabricProducts()"
+              />
             </div>
 
             <div class="fabric-products" id="fabricProductsContainer"></div>
@@ -110,26 +114,26 @@
                 { name: "RECYCLED COTTON", link: "/" },
                 { name: "RECYCLED KNIT", link: "/" },
                 { name: "WATER REPLLENT REPT", link: "/" },
-
                 // Add more products as needed
               ];
 
               // Function to toggle the visibility of fabric products
               function toggleFabricProducts() {
+                var fabricCheckbox = document.getElementById("fabricCheckbox");
                 var fabricProductsContainer = document.getElementById(
                   "fabricProductsContainer"
                 );
-                fabricProductsContainer.style.display =
-                  fabricProductsContainer.style.display === "none" ||
-                  fabricProductsContainer.style.display === ""
-                    ? "block"
-                    : "none";
+                fabricProductsContainer.style.display = fabricCheckbox.checked
+                  ? "block"
+                  : "none";
 
-                // Toggle the visibility of sub-products
+                // Toggle the visibility of sub-products based on main checkbox state
                 var subProducts =
                   fabricProductsContainer.querySelectorAll(".sub-products");
                 subProducts.forEach(function (product) {
-                  product.style.display = fabricProductsContainer.style.display;
+                  product.style.display = fabricCheckbox.checked
+                    ? "block"
+                    : "none";
                 });
               }
 
@@ -140,26 +144,60 @@
               fabricProductsContainer.style.display = "none"; // Set initial display to none
 
               fabricProductsData.map((product) => {
-                let subProduct = document.createElement("a");
-                subProduct.href = product.link;
-                subProduct.className = "sub-products";
-                subProduct.textContent = product.name;
-                fabricProductsContainer.appendChild(subProduct);
+                let subProductContainer = document.createElement("div");
+                subProductContainer.className = "sub-products";
+
+                let subProductCheckbox = document.createElement("input");
+                subProductCheckbox.type = "checkbox";
+                subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
+                subProductCheckbox.className = "fabric-checkbox";
+                subProductCheckbox.addEventListener("change", function () {
+                  // Handle sub-product page visibility based on checkbox state
+                  var subProductPage = document.getElementById(
+                    product.name.replace(/\s+/g, "") + "-page"
+                  );
+                  subProductPage.style.display = subProductCheckbox.checked
+                    ? "block"
+                    : "none";
+
+                  // If "ORGANIC COTTONS WOVENS" checkbox is checked, redirect to the specified link
+                  if (
+                    product.name === "ORGANIC COTTONS WOVENS" &&
+                    subProductCheckbox.checked
+                  ) {
+                    window.location.href = product.link;
+                  }
+                });
+
+                let subProductLabel = document.createElement("label");
+                subProductLabel.setAttribute("for", subProductCheckbox.id);
+                subProductLabel.textContent = product.name;
+
+                subProductContainer.appendChild(subProductCheckbox);
+                subProductContainer.appendChild(subProductLabel);
+
+                // Create sub-product pages dynamically
+                let subProductPage = document.createElement("div");
+                subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
+                subProductPage.style.display = "none"; // Set initial display to none
+
+                fabricProductsContainer.appendChild(subProductContainer);
+                fabricProductsContainer.appendChild(subProductPage);
               });
             </script>
           </div>
         </div>
         <div>
           <div>
-            <div class="category-section1" onclick="togglePatternProducts()">
-              <h3>Patters</h3>
-              <div class="dropdown-icon">&#9660;</div>
+            <div class="category-section1" onchange="togglePatternProducts()">
+              <h3>Patterns</h3>
+              <input type="checkbox" id="fabricCheckbox" />
             </div>
 
             <div class="pattern-products" id="patternProductsContainer"></div>
 
             <script>
-              let PattersProductsData = [
+              let PatternsProductsData = [
                 { name: "FLORAL", link: "/" },
                 { name: "AVIARY", link: "/" },
                 { name: "ABSTRACT", link: "/" },
@@ -188,12 +226,23 @@
               );
               patternProductsContainer.style.display = "none";
 
-              PattersProductsData.map((product) => {
-                let subProduct = document.createElement("a");
-                subProduct.href = product.link;
-                subProduct.className = "sub-products";
-                subProduct.textContent = product.name;
-                patternProductsContainer.appendChild(subProduct);
+              PatternsProductsData.map((product) => {
+                let subProductContainer = document.createElement("div");
+                subProductContainer.className = "sub-products";
+
+                let subProductCheckbox = document.createElement("input");
+                subProductCheckbox.type = "checkbox";
+                subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
+                subProductCheckbox.className = "pattern-checkbox";
+
+                let subProductLabel = document.createElement("label");
+                subProductLabel.setAttribute("for", subProductCheckbox.id);
+                subProductLabel.textContent = product.name;
+
+                subProductContainer.appendChild(subProductCheckbox);
+                subProductContainer.appendChild(subProductLabel);
+
+                patternProductsContainer.appendChild(subProductContainer);
               });
             </script>
           </div>
@@ -270,6 +319,8 @@
                 const checkIcon = document.createElement("div");
                 checkIcon.className = "check-icon";
                 checkIcon.innerHTML = "&#10003;";
+                // Initially hide the check icon
+                checkIcon.style.display = "none";
 
                 const colorName = document.createElement("span");
                 colorName.className = "color-name";
@@ -278,6 +329,16 @@
                 colorItem.appendChild(colorCircle);
                 colorItem.appendChild(checkIcon);
                 colorItem.appendChild(colorName);
+
+                // Add click event listener to show/hide check icon
+                colorItem.addEventListener("click", function () {
+                  // Toggle the check icon visibility
+                  checkIcon.style.display =
+                    checkIcon.style.display === "none" ? "block" : "none";
+
+                  // Prevent the default link behavior
+                  return false;
+                });
 
                 // Add the color item to the color stack
                 colorStack.appendChild(colorItem);
