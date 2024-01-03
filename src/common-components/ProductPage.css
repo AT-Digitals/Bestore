@@ -141,13 +141,14 @@ body {
 }
 
 .products-left-side .color-filter-section .color-item .color-circle {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
+  border: 1px solid black;
 }
 
 .products-left-side
@@ -156,7 +157,7 @@ body {
   .color-circle
   .check-icon {
   color: white;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .products-left-side .color-filter-section .color-item .color-name {
@@ -167,7 +168,8 @@ body {
 .check-icon {
   position: absolute;
   color: #f6f6f6;
-  left: 25px;
+  left: 24px;
+  font-size: 15px;
 }
 
 .category-section1 {
