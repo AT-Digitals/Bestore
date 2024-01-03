@@ -429,20 +429,20 @@
           document.addEventListener("DOMContentLoaded", function () {
             // Array of colors
             const colors = [
-                { name: "Red", code: "red" },
-                { name: "Blue", code: "Blue" },
-                { name: "Green", code: "Green" },
-                { name: "Beige", code: "Beige" },
-                { name: "Black", code: "Black" },
-                { name: "Brown", code: "Brown" },
-                { name: "Maroon", code: "Maroon" },
-                { name: "Orange", code: "Orange" },
-                { name: "White", code: "White" },
-                { name: "Pink", code: "Pink" },
-                { name: "Violet", code: "Violet" },
-                { name: "Yellow", code: "Yellow" },
-                // Add more colors as needed
-              ];
+              { name: "Red", code: "red" },
+              { name: "Blue", code: "Blue" },
+              { name: "Green", code: "Green" },
+              { name: "Beige", code: "Beige" },
+              { name: "Black", code: "Black" },
+              { name: "Brown", code: "Brown" },
+              { name: "Maroon", code: "Maroon" },
+              { name: "Orange", code: "Orange" },
+              { name: "White", code: "White" },
+              { name: "Pink", code: "Pink" },
+              { name: "Violet", code: "Violet" },
+              { name: "Yellow", code: "Yellow" },
+              // Add more colors as needed
+            ];
 
             // Get the color stack container
             const colorStack = document.getElementById("colorStack");
@@ -460,6 +460,8 @@
               const checkIcon = document.createElement("div");
               checkIcon.className = "check-icon";
               checkIcon.innerHTML = "&#10003;";
+              // Initially hide the check icon
+              checkIcon.style.display = "none";
 
               const colorName = document.createElement("span");
               colorName.className = "color-name";
@@ -468,6 +470,16 @@
               colorItem.appendChild(colorCircle);
               colorItem.appendChild(checkIcon);
               colorItem.appendChild(colorName);
+
+              // Add click event listener to show/hide check icon
+              colorItem.addEventListener("click", function () {
+                // Toggle the check icon visibility
+                checkIcon.style.display =
+                  checkIcon.style.display === "none" ? "block" : "none";
+
+                // Prevent the default link behavior
+                return false;
+              });
 
               // Add the color item to the color stack
               colorStack.appendChild(colorItem);

@@ -90,7 +90,10 @@
     >
       <div style="display: flex; flex-direction: column; gap: 3rem">
         <div class="box-shadow">
-          <div class="product-card" style="display: flex; flex-direction: column">
+          <div
+            class="product-card"
+            style="display: flex; flex-direction: column"
+          >
             <img
               class="image1"
               src="../common-components/red shalimar 1 copy.a28f76620f1553331771.jpg"
@@ -99,7 +102,10 @@
           </div>
         </div>
         <div class="box-shadow">
-          <div  class="product-card" style="display: flex; flex-direction: column">
+          <div
+            class="product-card"
+            style="display: flex; flex-direction: column"
+          >
             <img
               class="image1"
               src="../common-components/FLOWER SHAL BEIGE CANVAS.3df5386f789c0b50aede.jpg"
@@ -109,7 +115,7 @@
         </div>
       </div>
       <div class="box-shadow">
-        <div  class="product-card" style="display: flex; flex-direction: column">
+        <div class="product-card" style="display: flex; flex-direction: column">
           <img
             class="image1"
             src="../common-components/light blue shalimar.ad115f0a606403db93bb.jpg"
@@ -118,7 +124,7 @@
         </div>
       </div>
       <div class="box-shadow">
-        <div  class="product-card" style="display: flex; flex-direction: column">
+        <div class="product-card" style="display: flex; flex-direction: column">
           <img
             class="image1"
             src="../common-components/hatcanvas blue shalimar.c41ccc88e14a48e316a0.jpg"
@@ -127,28 +133,28 @@
         </div>
       </div>
     </div>
-      <div class="products-left-side" style="margin-top: -1033px;">
-        <div class="filter-header">
-          <h2>FILTER</h2>
-          <a style="color: black" href="#">Clear all</a>
-        </div>
+    <div class="products-left-side" style="margin-top: -1033px">
+      <div class="filter-header">
+        <h2>FILTER</h2>
+        <a style="color: black" href="#">Clear all</a>
+      </div>
 
-        <div class="divider"></div>
+      <div class="divider"></div>
 
-        <div class="category-section">
-          <h3>CATEGORIES</h3>
-          <div class="dropdown-icon">&#9660;</div>
-        </div>
+      <div class="category-section">
+        <h3>CATEGORIES</h3>
+        <div class="dropdown-icon">&#9660;</div>
+      </div>
+      <div>
         <div>
-          <div>
-            <div class="category-section1">
-              <h3>Fabric</h3>
-              <input
-                type="checkbox"
-                id="fabricCheckbox"
-                onchange="toggleFabricProducts()"
-              />
-            </div>
+          <div class="category-section1">
+            <h3>Fabric</h3>
+            <input
+              type="checkbox"
+              id="fabricCheckbox"
+              onchange="toggleFabricProducts()"
+            />
+          </div>
 
           <div class="fabric-products" id="fabricProductsContainer"></div>
 
@@ -156,7 +162,10 @@
             // Define sub-products dynamically
             let fabricProductsData = [
               { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
-              { name: "WOODPULP/LYCOCELL FABRIC", link: "WoodpulpProduct.html" },
+              {
+                name: "WOODPULP/LYCOCELL FABRIC",
+                link: "WoodpulpProduct.html",
+              },
               { name: "KNITS-RFD GRADE B ONLY", link: "KnitsProduct.html" },
               { name: "LINEN", link: "LinenProduct.html" },
               { name: "PEACE SILKS", link: "PeaceProduct.html" },
@@ -169,67 +178,67 @@
 
             // Function to toggle the visibility of fabric products
             function toggleFabricProducts() {
-                var fabricCheckbox = document.getElementById("fabricCheckbox");
-                var fabricProductsContainer = document.getElementById(
-                  "fabricProductsContainer"
-                );
-                fabricProductsContainer.style.display = fabricCheckbox.checked
+              var fabricCheckbox = document.getElementById("fabricCheckbox");
+              var fabricProductsContainer = document.getElementById(
+                "fabricProductsContainer"
+              );
+              fabricProductsContainer.style.display = fabricCheckbox.checked
+                ? "block"
+                : "none";
+
+              // Toggle the visibility of sub-products based on main checkbox state
+              var subProducts =
+                fabricProductsContainer.querySelectorAll(".sub-products");
+              subProducts.forEach(function (product) {
+                product.style.display = fabricCheckbox.checked
                   ? "block"
                   : "none";
-
-                // Toggle the visibility of sub-products based on main checkbox state
-                var subProducts =
-                  fabricProductsContainer.querySelectorAll(".sub-products");
-                subProducts.forEach(function (product) {
-                  product.style.display = fabricCheckbox.checked
-                    ? "block"
-                    : "none";
-                });
-              }
+              });
+            }
             // Create sub-product elements dynamically
             // Create sub-product elements dynamically
             let fabricProductsContainer = document.getElementById(
-                "fabricProductsContainer"
-              );
-              fabricProductsContainer.style.display = "none"; // Set initial display to none
+              "fabricProductsContainer"
+            );
+            fabricProductsContainer.style.display = "none"; // Set initial display to none
 
-              fabricProductsData.map((product) => {
-                let subProductContainer = document.createElement("div");
-                subProductContainer.className = "sub-products";
+            fabricProductsData.map((product) => {
+              let subProductContainer = document.createElement("div");
+              subProductContainer.className = "sub-products";
 
-                let subProductCheckbox = document.createElement("input");
-                subProductCheckbox.type = "checkbox";
-                subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
-                subProductCheckbox.className = "fabric-checkbox";
-                subProductCheckbox.addEventListener("change", function () {
-                  // Handle sub-product page visibility based on checkbox state
-                  var subProductPage = document.getElementById(
-                    product.name.replace(/\s+/g, "") + "-page"
-                  );
-                  subProductPage.style.display = subProductCheckbox.checked
-                    ? "block"
-                    : "none";
+              let subProductCheckbox = document.createElement("input");
+              subProductCheckbox.type = "checkbox";
+              subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
+              subProductCheckbox.className = "fabric-checkbox";
+              subProductCheckbox.addEventListener("change", function () {
+                // Handle sub-product page visibility based on checkbox state
+                var subProductPage = document.getElementById(
+                  product.name.replace(/\s+/g, "") + "-page"
+                );
+                subProductPage.style.display = subProductCheckbox.checked
+                  ? "block"
+                  : "none";
 
-                  if (subProductCheckbox.checked && product.link) {
-                    window.location.href = product.link;
-                  }
-                });
-
-                let subProductLabel = document.createElement("label");
-                subProductLabel.setAttribute("for", subProductCheckbox.id);
-                subProductLabel.textContent = product.name;
-
-                subProductContainer.appendChild(subProductCheckbox);
-                subProductContainer.appendChild(subProductLabel);
-
-                // Create sub-product pages dynamically
-                let subProductPage = document.createElement("div");
-                subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
-                subProductPage.style.display = "none"; // Set initial display to none
-
-                fabricProductsContainer.appendChild(subProductContainer);
-                fabricProductsContainer.appendChild(subProductPage);
+                if (subProductCheckbox.checked && product.link) {
+                  window.location.href = product.link;
+                }
               });
+
+              let subProductLabel = document.createElement("label");
+              subProductLabel.setAttribute("for", subProductCheckbox.id);
+              subProductLabel.textContent = product.name;
+
+              subProductContainer.appendChild(subProductCheckbox);
+              subProductContainer.appendChild(subProductLabel);
+
+              // Create sub-product pages dynamically
+              let subProductPage = document.createElement("div");
+              subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
+              subProductPage.style.display = "none"; // Set initial display to none
+
+              fabricProductsContainer.appendChild(subProductContainer);
+              fabricProductsContainer.appendChild(subProductPage);
+            });
           </script>
         </div>
       </div>
@@ -261,8 +270,7 @@
               var subProducts =
                 patternProductsContainer.querySelectorAll(".sub-products");
               subProducts.forEach(function (product) {
-                product.style.display =
-                  patternProductsContainer.style.display;
+                product.style.display = patternProductsContainer.style.display;
               });
             }
 
@@ -333,20 +341,20 @@
           document.addEventListener("DOMContentLoaded", function () {
             // Array of colors
             const colors = [
-                { name: "Red", code: "red" },
-                { name: "Blue", code: "Blue" },
-                { name: "Green", code: "Green" },
-                { name: "Beige", code: "Beige" },
-                { name: "Black", code: "Black" },
-                { name: "Brown", code: "Brown" },
-                { name: "Maroon", code: "Maroon" },
-                { name: "Orange", code: "Orange" },
-                { name: "White", code: "White" },
-                { name: "Pink", code: "Pink" },
-                { name: "Violet", code: "Violet" },
-                { name: "Yellow", code: "Yellow" },
-                // Add more colors as needed
-              ];
+              { name: "Red", code: "red" },
+              { name: "Blue", code: "Blue" },
+              { name: "Green", code: "Green" },
+              { name: "Beige", code: "Beige" },
+              { name: "Black", code: "Black" },
+              { name: "Brown", code: "Brown" },
+              { name: "Maroon", code: "Maroon" },
+              { name: "Orange", code: "Orange" },
+              { name: "White", code: "White" },
+              { name: "Pink", code: "Pink" },
+              { name: "Violet", code: "Violet" },
+              { name: "Yellow", code: "Yellow" },
+              // Add more colors as needed
+            ];
 
             // Get the color stack container
             const colorStack = document.getElementById("colorStack");
@@ -364,6 +372,8 @@
               const checkIcon = document.createElement("div");
               checkIcon.className = "check-icon";
               checkIcon.innerHTML = "&#10003;";
+              // Initially hide the check icon
+              checkIcon.style.display = "none";
 
               const colorName = document.createElement("span");
               colorName.className = "color-name";
@@ -372,6 +382,16 @@
               colorItem.appendChild(colorCircle);
               colorItem.appendChild(checkIcon);
               colorItem.appendChild(colorName);
+
+              // Add click event listener to show/hide check icon
+              colorItem.addEventListener("click", function () {
+                // Toggle the check icon visibility
+                checkIcon.style.display =
+                  checkIcon.style.display === "none" ? "block" : "none";
+
+                // Prevent the default link behavior
+                return false;
+              });
 
               // Add the color item to the color stack
               colorStack.appendChild(colorItem);
