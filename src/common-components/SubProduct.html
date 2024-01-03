@@ -90,7 +90,7 @@
     >
       <div style="display: flex; flex-direction: column; gap: 3rem">
         <div class="box-shadow">
-          <div style="display: flex; flex-direction: column">
+          <div class="product-card" style="display: flex; flex-direction: column">
             <img
               class="image1"
               src="../common-components/red shalimar 1 copy.a28f76620f1553331771.jpg"
@@ -99,7 +99,7 @@
           </div>
         </div>
         <div class="box-shadow">
-          <div style="display: flex; flex-direction: column">
+          <div  class="product-card" style="display: flex; flex-direction: column">
             <img
               class="image1"
               src="../common-components/FLOWER SHAL BEIGE CANVAS.3df5386f789c0b50aede.jpg"
@@ -109,7 +109,7 @@
         </div>
       </div>
       <div class="box-shadow">
-        <div style="display: flex; flex-direction: column">
+        <div  class="product-card" style="display: flex; flex-direction: column">
           <img
             class="image1"
             src="../common-components/light blue shalimar.ad115f0a606403db93bb.jpg"
@@ -118,7 +118,7 @@
         </div>
       </div>
       <div class="box-shadow">
-        <div style="display: flex; flex-direction: column">
+        <div  class="product-card" style="display: flex; flex-direction: column">
           <img
             class="image1"
             src="../common-components/hatcanvas blue shalimar.c41ccc88e14a48e316a0.jpg"
@@ -152,13 +152,13 @@
             // Define sub-products dynamically
             let fabricProductsData = [
               { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
-              { name: "WOODPULP/LYCOCELL FABRIC", link: "/" },
-              { name: "KNITS-RFD GRADE B ONLY", link: "/" },
-              { name: "LINEN", link: "/" },
-              { name: "PEACE SILKS", link: "/" },
-              { name: "RECYCLED COTTON", link: "/" },
-              { name: "RECYCLED KNIT", link: "/" },
-              { name: "WATER REPLLENT REPT", link: "/" },
+              { name: "WOODPULP/LYCOCELL FABRIC", link: "WoodpulpProduct.html" },
+              { name: "KNITS-RFD GRADE B ONLY", link: "KnitsProduct.html" },
+              { name: "LINEN", link: "LinenProduct.html" },
+              { name: "PEACE SILKS", link: "PeaceProduct.html" },
+              { name: "RECYCLED COTTON", link: "RecycledProduct.html" },
+              { name: "RECYCLED KNIT", link: "RecycledKnit.html" },
+              { name: "WATER REPLLENT REPT", link: "WaterProduct.html" },
 
               // Add more products as needed
             ];
@@ -287,11 +287,20 @@
           document.addEventListener("DOMContentLoaded", function () {
             // Array of colors
             const colors = [
-              { name: "Red", code: "#FF0000" },
-              { name: "Green", code: "#00FF00" },
-              { name: "Black", code: "#000000" },
-              // Add more colors as needed
-            ];
+                { name: "Red", code: "red" },
+                { name: "Blue", code: "Blue" },
+                { name: "Green", code: "Green" },
+                { name: "Beige", code: "Beige" },
+                { name: "Black", code: "Black" },
+                { name: "Brown", code: "Brown" },
+                { name: "Maroon", code: "Maroon" },
+                { name: "Orange", code: "Orange" },
+                { name: "White", code: "White" },
+                { name: "Pink", code: "Pink" },
+                { name: "Violet", code: "Violet" },
+                { name: "Yellow", code: "Yellow" },
+                // Add more colors as needed
+              ];
 
             // Get the color stack container
             const colorStack = document.getElementById("colorStack");

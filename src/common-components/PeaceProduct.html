@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="AppHeader.css" />
+    <link rel="stylesheet" href="AppFooter.css" />
+    <link rel="stylesheet" href="ProductPage.css" />
+    <link rel="stylesheet" href="../common-components/PeaceProduct.css" />
+
+    <title>Product Page</title>
+  </head>
+
+  <body style="background-color: white">
+    <header>
+      <div class="header">
+        <div class="logo">
+          <a href="routes.HOME" onclick="handleMenuClick(routes.HOME)">
+            <img
+              src="Akka creartions horizontal 2-03-03.png"
+              alt="alterknit logo"
+            />
+          </a>
+        </div>
+        <div class="nav">
+          <ul>
+            <li>
+              <a href="Homepage.html" onclick="handleMenuClick('Homepage.html')"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="AboutPage.html"
+                onclick="handleMenuClick('AboutPage.html')"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="ProductPage.html"
+                onclick="handleMenuClick('ProductPage.html')"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="ContactPage.html"
+                onclick="handleMenuClick('ContactPage.html')"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <script>
+      // Check if the function is not already declared
+      if (typeof handleMenuClick !== "function") {
+        const handleMenuClick = (route) => {
+          console.log("Menu clicked:", route);
+        };
+      }
+      if (typeof header === "undefined") {
+        const header = document.querySelector(".header");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 0) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      }
+    </script>
+    <div class="contact-banner">
+      <div class="content">
+        <h1>Products</h1>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 97px;
+        gap: 3rem;
+        margin-left: 330px;
+      "
+    >
+      <div style="display: flex; flex-direction: column; gap: 3rem">
+        <div class="box-shadow">
+          <div class="product-card" style="display: flex; flex-direction: column">
+            <img
+              class="image1"
+              src="../common-components/PeaceImages/Screenshot 2023-12-20 165042.90429c4cae818f89b055.png"
+            />
+            <h4 class="h4">PS HABOTAI</h4>
+          </div>
+        </div>
+        <div class="box-shadow">
+          <div  class="product-card" style="display: flex; flex-direction: column">
+            <img
+              class="image1"
+              src="../common-components/PeaceImages/Screenshot 2023-12-20 165131.7cac6e8fa1a9e7fb7611.png"
+            />
+            <h4 class="h4">PS CREPE</h4>
+          </div>
+        </div>
+      </div>
+      <div class="box-shadow">
+        <div  class="product-card" style="display: flex; flex-direction: column">
+          <img
+            class="image1"
+            src="../common-components/PeaceImages/Screenshot 2023-12-20 165154.93a609651ef5f0e5b525.png"
+          />
+          <h4 class="h4">PS CHARMEUSE/SATIN</h4>
+        </div>
+      </div>
+      <div class="box-shadow">
+        <div  class="product-card" style="display: flex; flex-direction: column">
+          <img
+            class="image1"
+            src="../common-components/PeaceImages/Screenshot 2023-12-20 165207.34f5bbd040d3f004f273.png"
+          />
+          <h4 class="h4">OC PS</h4>
+        </div>
+      </div>
+    </div>
+    <div class="products-left-side" style="margin-top: -1030px">
+      <div class="filter-header">
+        <h2>FILTER</h2>
+        <a style="color: black" href="#">Clear all</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="category-section">
+        <h3>CATEGORIES</h3>
+        <div class="dropdown-icon">&#9660;</div>
+      </div>
+      <div>
+        <div>
+          <div class="category-section1" onclick="toggleFabricProducts()">
+            <h3>Fabric</h3>
+            <div class="dropdown-icon">&#9660;</div>
+          </div>
+
+          <div class="fabric-products" id="fabricProductsContainer"></div>
+
+          <script>
+            // Define sub-products dynamically
+            let fabricProductsData = [
+              { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
+              { name: "WOODPULP/LYCOCELL FABRIC", link: "WoodpulpProduct.html" },
+              { name: "KNITS-RFD GRADE B ONLY", link: "KnitsProduct.html" },
+              { name: "LINEN", link: "LinenProduct.html" },
+              { name: "PEACE SILKS", link: "PeaceProduct.html" },
+              { name: "RECYCLED COTTON", link: "RecycledProduct.html" },
+              { name: "RECYCLED KNIT", link: "RecycledKnit.html" },
+              { name: "WATER REPLLENT REPT", link: "WaterProduct.html" },
+
+              // Add more products as needed
+            ];
+
+            // Function to toggle the visibility of fabric products
+            function toggleFabricProducts() {
+              var fabricProductsContainer = document.getElementById(
+                "fabricProductsContainer"
+              );
+              fabricProductsContainer.style.display =
+                fabricProductsContainer.style.display === "none" ||
+                fabricProductsContainer.style.display === ""
+                  ? "block"
+                  : "none";
+
+              // Toggle the visibility of sub-products
+              var subProducts =
+                fabricProductsContainer.querySelectorAll(".sub-products");
+              subProducts.forEach(function (product) {
+                product.style.display = fabricProductsContainer.style.display;
+              });
+            }
+
+            // Create sub-product elements dynamically
+            let fabricProductsContainer = document.getElementById(
+              "fabricProductsContainer"
+            );
+            fabricProductsContainer.style.display = "none"; // Set initial display to none
+
+            fabricProductsData.map((product) => {
+              let subProduct = document.createElement("a");
+              subProduct.href = product.link;
+              subProduct.className = "sub-products";
+              subProduct.textContent = product.name;
+              fabricProductsContainer.appendChild(subProduct);
+            });
+          </script>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="category-section1" onclick="togglePatternProducts()">
+            <h3>Patters</h3>
+            <div class="dropdown-icon">&#9660;</div>
+          </div>
+
+          <div class="pattern-products" id="patternProductsContainer"></div>
+
+          <script>
+            let PattersProductsData = [
+              { name: "FLORAL", link: "Aboutpage.html" },
+              { name: "AVIARY", link: "/" },
+              { name: "ABSTRACT", link: "/" },
+            ];
+
+            function togglePatternProducts() {
+              var patternProductsContainer = document.getElementById(
+                "patternProductsContainer"
+              );
+              patternProductsContainer.style.display =
+                patternProductsContainer.style.display === "none" ||
+                patternProductsContainer.style.display === ""
+                  ? "block"
+                  : "none";
+
+              var subProducts =
+                patternProductsContainer.querySelectorAll(".sub-products");
+              subProducts.forEach(function (product) {
+                product.style.display = patternProductsContainer.style.display;
+              });
+            }
+
+            let patternProductsContainer = document.getElementById(
+              "patternProductsContainer"
+            );
+            patternProductsContainer.style.display = "none";
+
+            PattersProductsData.map((product) => {
+              let subProduct = document.createElement("a");
+              subProduct.href = product.link;
+              subProduct.className = "sub-products";
+              subProduct.textContent = product.name;
+              patternProductsContainer.appendChild(subProduct);
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h3>Filter By Width</h3>
+        <select>
+          <option>Select all</option>
+          <!-- Add other options dynamically based on your data -->
+        </select>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="filter-section">
+        <h3>Filter By Composition</h3>
+        <select>
+          <option>Select all</option>
+          <!-- Add other options dynamically based on your data -->
+        </select>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="filter-section">
+        <h3>Filter By GSM</h3>
+        <select>
+          <option>Select all</option>
+          <!-- Add other options dynamically based on your data -->
+        </select>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="color-filter-section">
+        <h3>Filter By Colors</h3>
+        <div class="color-stack" id="colorStack">
+          <!-- Colors will be dynamically added here -->
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            // Array of colors
+            const colors = [
+                { name: "Red", code: "red" },
+                { name: "Blue", code: "Blue" },
+                { name: "Green", code: "Green" },
+                { name: "Beige", code: "Beige" },
+                { name: "Black", code: "Black" },
+                { name: "Brown", code: "Brown" },
+                { name: "Maroon", code: "Maroon" },
+                { name: "Orange", code: "Orange" },
+                { name: "White", code: "White" },
+                { name: "Pink", code: "Pink" },
+                { name: "Violet", code: "Violet" },
+                { name: "Yellow", code: "Yellow" },
+                // Add more colors as needed
+              ];
+
+            // Get the color stack container
+            const colorStack = document.getElementById("colorStack");
+
+            // Dynamically generate color items
+            colors.forEach((color) => {
+              const colorItem = document.createElement("a");
+              colorItem.href = "#";
+              colorItem.className = "color-item";
+
+              const colorCircle = document.createElement("div");
+              colorCircle.className = "color-circle";
+              colorCircle.style.backgroundColor = color.code;
+
+              const checkIcon = document.createElement("div");
+              checkIcon.className = "check-icon";
+              checkIcon.innerHTML = "&#10003;";
+
+              const colorName = document.createElement("span");
+              colorName.className = "color-name";
+              colorName.textContent = color.name;
+
+              colorItem.appendChild(colorCircle);
+              colorItem.appendChild(checkIcon);
+              colorItem.appendChild(colorName);
+
+              // Add the color item to the color stack
+              colorStack.appendChild(colorItem);
+            });
+          });
+        </script>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div class="app-footer" style="margin-top: 200px">
+      <div class="footer-container">
+        <div class="logo-container">
+          <a href="routes.HOME" onclick="handleMenuClick(routes.HOME)">
+            <img
+              src="Akka creartions horizontal 2-03-03.png"
+              alt="alterknit logo"
+            />
+          </a>
+          <p class="description">
+            <span style="color: black; font-weight: bold">AKKA CREATION</span>
+            in Mamallapuram. <br />
+            The power of colors! Fashion Mamallapuram, a small town in the Bay
+            of Bengal that belongs to the world cultural heritage
+          </p>
+        </div>
+
+        <div class="menu-container">
+          <div class="menu-item">
+            <span style="color: #ec4979">&#10148;</span>
+            <a
+              href="routes.FABRIC_PRODUCT"
+              onclick="handleMenuClick(routes.FABRIC_PRODUCT)"
+              >Fabric</a
+            >
+          </div>
+          <div class="menu-item">
+            <span style="color: #ec4979">&#10148;</span>
+            <a
+              href="routes.CLOTHING_PRODUCT"
+              onclick="handleMenuClick(routes.CLOTHING_PRODUCT)"
+              >Patterns</a
+            >
+          </div>
+          <div class="menu-item">
+            <span style="color: #ec4979">&#10148;</span>
+            <a
+              href="routes.SIGNATURE_PRODUCT"
+              onclick="handleMenuClick(routes.SIGNATURE_PRODUCT)"
+              >Signature</a
+            >
+          </div>
+        </div>
+
+        <div class="menu-container">
+          <div class="menu-item">
+            <span style="color: #ec4979">&#10148;</span>
+            <a
+              style="white-space: nowrap"
+              href="Homepage.html"
+              onclick="handleMenuClick('Homepage.html')"
+              >Home</a
+            >
+          </div>
+          <div class="menu-item">
+            <span style="color: #ec4979">&#10148;</span>
+            <a
+              style="white-space: nowrap"
+              href="AboutPage.html"
+              onclick="handleMenuClick('AboutPage.html')"
+              >About</a
+            >
+          </div>
+          <div class="menu-item">
+            <span style="color: #ec4979">&#10148;</span>
+            <a
+              style="white-space: nowrap"
+              href="ProductPage.html"
+              onclick="handleMenuClick('ProductPage.html')"
+              >Products</a
+            >
+          </div>
+          <div class="menu-item">
+            <span style="color: #ec4979">&#10148;</span>
+            <a
+              style="white-space: nowrap"
+              href="ContactPage.html"
+              onclick="handleMenuClick('ContactPage.html')"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+
+        <div class="contact-container">
+          <p class="contact-item">contactat@akkacreation.com</p>
+          <p class="contact-item">Phone: +91 97910 68220</p>
+          <div style="border: 1px solid gray"></div>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/login.php/" target="_blank"
+              ><span>&#xf09a;</span></a
+            >
+            <a href="https://www.instagram.com/akka_creation/" target="_blank"
+              ><span>&#xf16d;</span></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>copyright@2023 | All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+</html>
