@@ -1,3 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans";
+  }
+  @font-face {
+    font-family: "Nunito Sans";
+    src: local("Nunito Sans"),
+      url("../assets/Nunito_Sans/static/NunitoSans_10pt_Condensed-Medium.ttf")
+        format("truetype");
+    font-weight: 300;
+  }
+
 .image1 {
     width: 330px;
     height: 289px;
