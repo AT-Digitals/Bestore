@@ -215,7 +215,7 @@ h2 {
 .product-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 42px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
