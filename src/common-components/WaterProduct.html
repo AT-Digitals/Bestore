@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="AppHeader.css" />
     <link rel="stylesheet" href="AppFooter.css" />
     <link rel="stylesheet" href="ProductPage.css" />
-    <link rel="stylesheet" href="../common-components/WaterProduct.css" />
+    <link rel="stylesheet" href="../common-components/SubProduct.css" />
 
     <title>Product Page</title>
   </head>
@@ -89,7 +89,10 @@
     >
       <div style="display: flex; gap: 3rem">
         <div class="box-shadow">
-          <div class="product-card" style="display: flex; flex-direction: column">
+          <div
+            class="product-card"
+            style="display: flex; flex-direction: column"
+          >
             <img
               class="image1"
               src="../common-components/FLOWER SHAL BEIGE CANVAS.3df5386f789c0b50aede.jpg"
@@ -98,7 +101,10 @@
           </div>
         </div>
         <div class="box-shadow">
-          <div  class="product-card" style="display: flex; flex-direction: column">
+          <div
+            class="product-card"
+            style="display: flex; flex-direction: column"
+          >
             <img
               class="image1"
               src="../common-components/FLOWER SHAL GREEN CANVAS (3).aa01793c3fa20659a002.jpg"
@@ -108,7 +114,7 @@
         </div>
       </div>
     </div>
-    <div class="products-left-side" style="margin-top: -533px;">
+    <div class="products-left-side" style="margin-top: -533px">
       <div class="filter-header">
         <h2>FILTER</h2>
         <a style="color: black" href="#">Clear all</a>
@@ -137,7 +143,10 @@
             // Define sub-products dynamically
             let fabricProductsData = [
               { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
-              { name: "WOODPULP/LYCOCELL FABRIC", link: "WoodpulpProduct.html" },
+              {
+                name: "WOODPULP/LYCOCELL FABRIC",
+                link: "WoodpulpProduct.html",
+              },
               { name: "KNITS-RFD GRADE B ONLY", link: "KnitsProduct.html" },
               { name: "LINEN", link: "LinenProduct.html" },
               { name: "PEACE SILKS", link: "PeaceProduct.html" },
@@ -150,67 +159,67 @@
 
             // Function to toggle the visibility of fabric products
             function toggleFabricProducts() {
-                var fabricCheckbox = document.getElementById("fabricCheckbox");
-                var fabricProductsContainer = document.getElementById(
-                  "fabricProductsContainer"
-                );
-                fabricProductsContainer.style.display = fabricCheckbox.checked
+              var fabricCheckbox = document.getElementById("fabricCheckbox");
+              var fabricProductsContainer = document.getElementById(
+                "fabricProductsContainer"
+              );
+              fabricProductsContainer.style.display = fabricCheckbox.checked
+                ? "block"
+                : "none";
+
+              // Toggle the visibility of sub-products based on main checkbox state
+              var subProducts =
+                fabricProductsContainer.querySelectorAll(".sub-products");
+              subProducts.forEach(function (product) {
+                product.style.display = fabricCheckbox.checked
                   ? "block"
                   : "none";
-
-                // Toggle the visibility of sub-products based on main checkbox state
-                var subProducts =
-                  fabricProductsContainer.querySelectorAll(".sub-products");
-                subProducts.forEach(function (product) {
-                  product.style.display = fabricCheckbox.checked
-                    ? "block"
-                    : "none";
-                });
-              }
+              });
+            }
             // Create sub-product elements dynamically
             // Create sub-product elements dynamically
             let fabricProductsContainer = document.getElementById(
-                "fabricProductsContainer"
-              );
-              fabricProductsContainer.style.display = "none"; // Set initial display to none
+              "fabricProductsContainer"
+            );
+            fabricProductsContainer.style.display = "none"; // Set initial display to none
 
-              fabricProductsData.map((product) => {
-                let subProductContainer = document.createElement("div");
-                subProductContainer.className = "sub-products";
+            fabricProductsData.map((product) => {
+              let subProductContainer = document.createElement("div");
+              subProductContainer.className = "sub-products";
 
-                let subProductCheckbox = document.createElement("input");
-                subProductCheckbox.type = "checkbox";
-                subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
-                subProductCheckbox.className = "fabric-checkbox";
-                subProductCheckbox.addEventListener("change", function () {
-                  // Handle sub-product page visibility based on checkbox state
-                  var subProductPage = document.getElementById(
-                    product.name.replace(/\s+/g, "") + "-page"
-                  );
-                  subProductPage.style.display = subProductCheckbox.checked
-                    ? "block"
-                    : "none";
+              let subProductCheckbox = document.createElement("input");
+              subProductCheckbox.type = "checkbox";
+              subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
+              subProductCheckbox.className = "fabric-checkbox";
+              subProductCheckbox.addEventListener("change", function () {
+                // Handle sub-product page visibility based on checkbox state
+                var subProductPage = document.getElementById(
+                  product.name.replace(/\s+/g, "") + "-page"
+                );
+                subProductPage.style.display = subProductCheckbox.checked
+                  ? "block"
+                  : "none";
 
-                  if (subProductCheckbox.checked && product.link) {
-                    window.location.href = product.link;
-                  }
-                });
-
-                let subProductLabel = document.createElement("label");
-                subProductLabel.setAttribute("for", subProductCheckbox.id);
-                subProductLabel.textContent = product.name;
-
-                subProductContainer.appendChild(subProductCheckbox);
-                subProductContainer.appendChild(subProductLabel);
-
-                // Create sub-product pages dynamically
-                let subProductPage = document.createElement("div");
-                subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
-                subProductPage.style.display = "none"; // Set initial display to none
-
-                fabricProductsContainer.appendChild(subProductContainer);
-                fabricProductsContainer.appendChild(subProductPage);
+                if (subProductCheckbox.checked && product.link) {
+                  window.location.href = product.link;
+                }
               });
+
+              let subProductLabel = document.createElement("label");
+              subProductLabel.setAttribute("for", subProductCheckbox.id);
+              subProductLabel.textContent = product.name;
+
+              subProductContainer.appendChild(subProductCheckbox);
+              subProductContainer.appendChild(subProductLabel);
+
+              // Create sub-product pages dynamically
+              let subProductPage = document.createElement("div");
+              subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
+              subProductPage.style.display = "none"; // Set initial display to none
+
+              fabricProductsContainer.appendChild(subProductContainer);
+              fabricProductsContainer.appendChild(subProductPage);
+            });
           </script>
         </div>
       </div>
@@ -243,8 +252,7 @@
               var subProducts =
                 patternProductsContainer.querySelectorAll(".sub-products");
               subProducts.forEach(function (product) {
-                product.style.display =
-                  patternProductsContainer.style.display;
+                product.style.display = patternProductsContainer.style.display;
               });
             }
 
