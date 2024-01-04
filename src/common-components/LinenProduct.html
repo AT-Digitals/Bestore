@@ -198,9 +198,9 @@
 
             <script>
               let PatternsProductsData = [
-                { name: "FLORAL", link: "/" },
-                { name: "AVIARY", link: "/" },
-                { name: "ABSTRACT", link: "/" },
+                { name: "FLORAL", link: "FloralProducts.html" },
+                { name: "AVIARY", link: "AviaryProducts.html" },
+                { name: "ABSTRACT", link: "FloralProducts.html" },
               ];
 
               function togglePatternProducts() {
@@ -238,6 +238,13 @@
                 let subProductLabel = document.createElement("label");
                 subProductLabel.setAttribute("for", subProductCheckbox.id);
                 subProductLabel.textContent = product.name;
+
+                // Add click event to navigate to the specified link when the checkbox is checked
+                subProductCheckbox.addEventListener("change", function () {
+                  if (subProductCheckbox.checked) {
+                    window.location.href = product.link;
+                  }
+                });
 
                 subProductContainer.appendChild(subProductCheckbox);
                 subProductContainer.appendChild(subProductLabel);
