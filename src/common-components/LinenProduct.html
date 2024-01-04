@@ -78,192 +78,51 @@
         <h1>Products</h1>
       </div>
     </div>
-    <div
-      style="
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin-top: 97px;
-        gap: 3rem;
-        margin-left: 330px;
-      "
-    >
-      <div style="display: flex; flex-direction: row; gap: 3rem">
-        <div class="box-shadow">
-          <div class="product-card">
-            <img
-              class="image1"
-              src="../common-components/LinenImages/7.6d2d286999939bf6a109 (1).jpg"
-            />
-            <h4 class="h4">OL PURE</h4>
-          </div>
+
+    <div style="display: flex">
+      <div class="products-left-side">
+        <div class="filter-header">
+          <h2>FILTER</h2>
+          <a style="color: black" href="#">Clear all</a>
         </div>
-        <div class="box-shadow">
-          <div  class="product-card">
-            <img
-              class="image1"
-              src="../common-components//LinenImages/7.6d2d286999939bf6a109.jpg"
-            />
-            <h4 class="h4">OL PURE</h4>
-          </div>
+
+        <div class="divider"></div>
+
+        <div class="category-section">
+          <h3>CATEGORIES</h3>
+          <div class="dropdown-icon">&#9660;</div>
         </div>
-      </div>
-      <div class="box-shadow">
-        <div  class="product-card" style="display: flex; flex-direction: column">
-          <img
-            class="image1"
-            src="../common-components/LinenImages/LINE.d1ee68dc3e45482f730d (1).jpg"
-          />
-          <h4 class="h4">OL PURE</h4>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div
-    style="
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-      margin-top: 40px;
-      gap: 3rem;
-      margin-left: 330px;
-    "
-  >
-    <div style="display: flex; flex-direction: row; gap: 3rem">
-      <div class="box-shadow">
-        <div class="product-card">
-          <img
-            class="image1"
-            src="../common-components/LinenImages/LINE.d1ee68dc3e45482f730d.jpg"
-          />
-          <h4 class="h4">OL PURE</h4>
-        </div>
-      </div>
-      <div class="box-shadow">
-        <div  class="product-card">
-          <img
-            class="image1"
-            src="../common-components/LinenImages/olpure2.6241a19bc6d5696cd6c4.jpg"
-          />
-          <h4 class="h4">OL OC</h4>
-        </div>
-      </div>
-    </div>
-    <div class="box-shadow">
-      <div  class="product-card" style="display: flex; flex-direction: column">
-        <img
-          class="image1"
-          src="../common-components/LinenImages/olpure3.6e32dc489571e74bf545 (1).jpg"
-        />
-        <h4 class="h4">OL OC</h4>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div
-  style="
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 40px;
-    gap: 3rem;
-    margin-left: 330px;
-  "
->
-  <div style="display: flex; flex-direction: row; gap: 3rem">
-    <div class="box-shadow">
-      <div class="product-card">
-        <img
-          class="image1"
-          src="../common-components/LinenImages/olpure3.6e32dc489571e74bf545.jpg"
-        />
-        <h4 class="h4">OL HEMP</h4>
-      </div>
-    </div>
-    <div class="box-shadow">
-      <div  class="product-card">
-        <img
-          class="image1"
-          src="../common-components/LinenImages/olpure4.a99aad2683a4e2922fde.jpg"
-        />
-        <h4 class="h4">OL HEMP</h4>
-      </div>
-    </div>
-  </div>
-  <div class="box-shadow">
-    <div  class="product-card" style="display: flex; flex-direction: column">
-      <img
-        class="image1"
-        src="../common-components/LinenImages/olpure5.c109dcd0e2abbd5fd0ea.jpg"
-      />
-      <h4 class="h4">OL OC</h4>
-    </div>
-  </div>
-</div>
-</div>
-<div
-  style="
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
-    gap: 3rem;
-    margin-left: 355px;
-  "
->
-  <div style="display: flex; flex-direction: row; gap: 3rem">
-    <div class="box-shadow">
-      <div class="product-card">
-        <img
-          class="image1"
-          src="../common-components/LinenImages/olpure6.147eed08afa41b8acd65.jpg"
-        />
-        <h4 class="h4">OL ECOVERA</h4>
-      </div>
-    </div>
-</div>
-</div>
-<div class="products-left-side" style="margin-top: -2005px;">
-  <div class="filter-header">
-    <h2>FILTER</h2>
-    <a style="color: black" href="#">Clear all</a>
-  </div>
+        <div>
+          <div>
+            <div class="category-section1">
+              <h3>Fabric</h3>
+              <input
+                type="checkbox"
+                id="fabricCheckbox"
+                onchange="toggleFabricProducts()"
+              />
+            </div>
 
-  <div class="divider"></div>
+            <div class="fabric-products" id="fabricProductsContainer"></div>
 
-  <div class="category-section">
-    <h3>CATEGORIES</h3>
-    <div class="dropdown-icon">&#9660;</div>
-  </div>
-  <div>
-    <div>
-      <div class="category-section1">
-        <h3>Fabric</h3>
-        <input
-          type="checkbox"
-          id="fabricCheckbox"
-          onchange="toggleFabricProducts()"
-        />
-      </div>
+            <script>
+              // Define sub-products dynamically
+              let fabricProductsData = [
+                { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
+                {
+                  name: "WOODPULP/LYCOCELL FABRIC",
+                  link: "WoodpulpProduct.html",
+                },
+                { name: "KNITS-RFD GRADE B ONLY", link: "KnitsProduct.html" },
+                { name: "LINEN", link: "LinenProduct.html" },
+                { name: "PEACE SILKS", link: "PeaceProduct.html" },
+                { name: "RECYCLED COTTON", link: "RecycledProduct.html" },
+                { name: "RECYCLED KNIT", link: "RecycledKnit.html" },
+                { name: "WATER REPLLENT REPT", link: "WaterProduct.html" },
+              ];
 
-          <div class="fabric-products" id="fabricProductsContainer"></div>
-
-          <script>
-            // Define sub-products dynamically
-            let fabricProductsData = [
-              { name: "ORGANIC COTTONS WOVENS", link: "SubProduct.html" },
-              { name: "WOODPULP/LYCOCELL FABRIC", link: "WoodpulpProduct.html" },
-              { name: "KNITS-RFD GRADE B ONLY", link: "KnitsProduct.html" },
-              { name: "LINEN", link: "LinenProduct.html" },
-              { name: "PEACE SILKS", link: "PeaceProduct.html" },
-              { name: "RECYCLED COTTON", link: "RecycledProduct.html" },
-              { name: "RECYCLED KNIT", link: "RecycledKnit.html" },
-              { name: "WATER REPLLENT REPT", link: "WaterProduct.html" },
-
-              // Add more products as needed
-            ];
-
-            // Function to toggle the visibility of fabric products
-            function toggleFabricProducts() {
+              // Function to toggle the visibility of fabric products
+              function toggleFabricProducts() {
                 var fabricCheckbox = document.getElementById("fabricCheckbox");
                 var fabricProductsContainer = document.getElementById(
                   "fabricProductsContainer"
@@ -281,9 +140,9 @@
                     : "none";
                 });
               }
-            // Create sub-product elements dynamically
-            // Create sub-product elements dynamically
-            let fabricProductsContainer = document.getElementById(
+
+              // Create sub-product elements dynamically
+              let fabricProductsContainer = document.getElementById(
                 "fabricProductsContainer"
               );
               fabricProductsContainer.style.display = "none"; // Set initial display to none
@@ -325,172 +184,238 @@
                 fabricProductsContainer.appendChild(subProductContainer);
                 fabricProductsContainer.appendChild(subProductPage);
               });
-          </script>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div class="category-section1" onchange="togglePatternProducts()">
-            <h3>Patterns</h3>
-            <input type="checkbox" id="fabricCheckbox" />
+            </script>
           </div>
+        </div>
+        <div>
+          <div>
+            <div class="category-section1" onchange="togglePatternProducts()">
+              <h3>Patterns</h3>
+              <input type="checkbox" id="fabricCheckbox" />
+            </div>
 
-          <div class="pattern-products" id="patternProductsContainer"></div>
+            <div class="pattern-products" id="patternProductsContainer"></div>
 
-          <script>
-            let PatternsProductsData = [
-              { name: "FLORAL", link: "/" },
-              { name: "AVIARY", link: "/" },
-              { name: "ABSTRACT", link: "/" },
-            ];
+            <script>
+              let PatternsProductsData = [
+                { name: "FLORAL", link: "/" },
+                { name: "AVIARY", link: "/" },
+                { name: "ABSTRACT", link: "/" },
+              ];
 
-            function togglePatternProducts() {
-              var patternProductsContainer = document.getElementById(
+              function togglePatternProducts() {
+                var patternProductsContainer = document.getElementById(
+                  "patternProductsContainer"
+                );
+                patternProductsContainer.style.display =
+                  patternProductsContainer.style.display === "none" ||
+                  patternProductsContainer.style.display === ""
+                    ? "block"
+                    : "none";
+
+                var subProducts =
+                  patternProductsContainer.querySelectorAll(".sub-products");
+                subProducts.forEach(function (product) {
+                  product.style.display =
+                    patternProductsContainer.style.display;
+                });
+              }
+
+              let patternProductsContainer = document.getElementById(
                 "patternProductsContainer"
               );
-              patternProductsContainer.style.display =
-                patternProductsContainer.style.display === "none" ||
-                patternProductsContainer.style.display === ""
-                  ? "block"
-                  : "none";
+              patternProductsContainer.style.display = "none";
 
-              var subProducts =
-                patternProductsContainer.querySelectorAll(".sub-products");
-              subProducts.forEach(function (product) {
-                product.style.display =
-                  patternProductsContainer.style.display;
+              PatternsProductsData.map((product) => {
+                let subProductContainer = document.createElement("div");
+                subProductContainer.className = "sub-products";
+
+                let subProductCheckbox = document.createElement("input");
+                subProductCheckbox.type = "checkbox";
+                subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
+                subProductCheckbox.className = "pattern-checkbox";
+
+                let subProductLabel = document.createElement("label");
+                subProductLabel.setAttribute("for", subProductCheckbox.id);
+                subProductLabel.textContent = product.name;
+
+                subProductContainer.appendChild(subProductCheckbox);
+                subProductContainer.appendChild(subProductLabel);
+
+                patternProductsContainer.appendChild(subProductContainer);
               });
-            }
+            </script>
+          </div>
+        </div>
 
-            let patternProductsContainer = document.getElementById(
-              "patternProductsContainer"
-            );
-            patternProductsContainer.style.display = "none";
+        <div class="filter-section">
+          <h3>Filter By Width</h3>
+          <select>
+            <option>Select all</option>
+            <!-- Add other options dynamically based on your data -->
+          </select>
+        </div>
 
-            PatternsProductsData.map((product) => {
-              let subProductContainer = document.createElement("div");
-              subProductContainer.className = "sub-products";
+        <div class="divider"></div>
 
-              let subProductCheckbox = document.createElement("input");
-              subProductCheckbox.type = "checkbox";
-              subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
-              subProductCheckbox.className = "pattern-checkbox";
+        <div class="filter-section">
+          <h3>Filter By Composition</h3>
+          <select>
+            <option>Select all</option>
+            <!-- Add other options dynamically based on your data -->
+          </select>
+        </div>
 
-              let subProductLabel = document.createElement("label");
-              subProductLabel.setAttribute("for", subProductCheckbox.id);
-              subProductLabel.textContent = product.name;
+        <div class="divider"></div>
 
-              subProductContainer.appendChild(subProductCheckbox);
-              subProductContainer.appendChild(subProductLabel);
+        <div class="filter-section">
+          <h3>Filter By GSM</h3>
+          <select>
+            <option>Select all</option>
+            <!-- Add other options dynamically based on your data -->
+          </select>
+        </div>
 
-              patternProductsContainer.appendChild(subProductContainer);
+        <div class="divider"></div>
+
+        <div class="color-filter-section">
+          <h3>Filter By Colors</h3>
+          <div class="color-stack" id="colorStack">
+            <!-- Colors will be dynamically added here -->
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              // Array of colors
+              const colors = [
+                { name: "Red", code: "red" },
+                { name: "Blue", code: "Blue" },
+                { name: "Green", code: "Green" },
+                { name: "Beige", code: "Beige" },
+                { name: "Black", code: "Black" },
+                { name: "Brown", code: "Brown" },
+                { name: "Maroon", code: "Maroon" },
+                { name: "Orange", code: "Orange" },
+                { name: "White", code: "White" },
+                { name: "Pink", code: "Pink" },
+                { name: "Violet", code: "Violet" },
+                { name: "Yellow", code: "Yellow" },
+                // Add more colors as needed
+              ];
+
+              // Get the color stack container
+              const colorStack = document.getElementById("colorStack");
+
+              // Dynamically generate color items
+              colors.forEach((color) => {
+                const colorItem = document.createElement("a");
+                colorItem.href = "#";
+                colorItem.className = "color-item";
+
+                const colorCircle = document.createElement("div");
+                colorCircle.className = "color-circle";
+                colorCircle.style.backgroundColor = color.code;
+
+                const checkIcon = document.createElement("div");
+                checkIcon.className = "check-icon";
+                checkIcon.innerHTML = "&#10003;";
+                // Initially hide the check icon
+                checkIcon.style.display = "none";
+
+                const colorName = document.createElement("span");
+                colorName.className = "color-name";
+                colorName.textContent = color.name;
+
+                colorItem.appendChild(colorCircle);
+                colorItem.appendChild(checkIcon);
+                colorItem.appendChild(colorName);
+
+                // Add click event listener to show/hide check icon
+                colorItem.addEventListener("click", function () {
+                  // Toggle the check icon visibility
+                  checkIcon.style.display =
+                    checkIcon.style.display === "none" ? "block" : "none";
+
+                  // Prevent the default link behavior
+                  return false;
+                });
+
+                // Add the color item to the color stack
+                colorStack.appendChild(colorItem);
+              });
             });
           </script>
         </div>
       </div>
+      <div class="product-right-side">
+        <div class="container">
+          <div class="section">
+            <div class="product-grid">
+              <!-- Sample Product Cards -->
+              <div class="product-card">
+                <img
+                  class="image1"
+                  src="../common-components/LinenImages/olpure3.6e32dc489571e74bf545.jpg"
+                />
+                <h4 class="h4">OL HEMP</h4>
+              </div>
 
-      <div class="filter-section">
-        <h3>Filter By Width</h3>
-        <select>
-          <option>Select all</option>
-          <!-- Add other options dynamically based on your data -->
-        </select>
-      </div>
+              <div class="product-card">
+                <img
+                  class="image1"
+                  src="../common-components/LinenImages/olpure5.c109dcd0e2abbd5fd0ea.jpg"
+                />
+                <h4 class="h4">OL OC</h4>
+              </div>
 
-      <div class="divider"></div>
+              <div class="product-card">
+                <img
+                  class="image1"
+                  src="../common-components/LinenImages/olpure6.147eed08afa41b8acd65.jpg"
+                />
+                <h4 class="h4">OL ECOVERA</h4>
+              </div>
+              <div class="product-card">
+                <img
+                  class="image1"
+                  src="../common-components/LinenImages/7.6d2d286999939bf6a109.jpg"
+                />
+                <h4 class="h4">OL PURE</h4>
+              </div>
+              <div class="product-card">
+                <img
+                  class="image1"
+                  src="../common-components/LinenImages/LINE.d1ee68dc3e45482f730d (1).jpg"
+                />
+                <h4 class="h4">OL PURE</h4>
+              </div>
+              <div class="product-card">
+                <img
+                  class="image1"
+                  src="../common-components/LinenImages/olpure2.6241a19bc6d5696cd6c4.jpg"
+                />
+                <h4 class="h4">OL OC</h4>
+              </div>
+              <div
+                class="product-card"
+                style="display: flex; flex-direction: column"
+              >
+                <img
+                  class="image1"
+                  src="../common-components/LinenImages/olpure3.6e32dc489571e74bf545 (1).jpg"
+                />
+                <h4 class="h4">OL OC</h4>
+              </div>
 
-      <div class="filter-section">
-        <h3>Filter By Composition</h3>
-        <select>
-          <option>Select all</option>
-          <!-- Add other options dynamically based on your data -->
-        </select>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="filter-section">
-        <h3>Filter By GSM</h3>
-        <select>
-          <option>Select all</option>
-          <!-- Add other options dynamically based on your data -->
-        </select>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="color-filter-section">
-        <h3>Filter By Colors</h3>
-        <div class="color-stack" id="colorStack">
-          <!-- Colors will be dynamically added here -->
+              <!-- Add more product cards as needed -->
+            </div>
+          </div>
         </div>
-
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            // Array of colors
-            const colors = [
-              { name: "Red", code: "red" },
-              { name: "Blue", code: "Blue" },
-              { name: "Green", code: "Green" },
-              { name: "Beige", code: "Beige" },
-              { name: "Black", code: "Black" },
-              { name: "Brown", code: "Brown" },
-              { name: "Maroon", code: "Maroon" },
-              { name: "Orange", code: "Orange" },
-              { name: "White", code: "White" },
-              { name: "Pink", code: "Pink" },
-              { name: "Violet", code: "Violet" },
-              { name: "Yellow", code: "Yellow" },
-              // Add more colors as needed
-            ];
-
-            // Get the color stack container
-            const colorStack = document.getElementById("colorStack");
-
-            // Dynamically generate color items
-            colors.forEach((color) => {
-              const colorItem = document.createElement("a");
-              colorItem.href = "#";
-              colorItem.className = "color-item";
-
-              const colorCircle = document.createElement("div");
-              colorCircle.className = "color-circle";
-              colorCircle.style.backgroundColor = color.code;
-
-              const checkIcon = document.createElement("div");
-              checkIcon.className = "check-icon";
-              checkIcon.innerHTML = "&#10003;";
-              // Initially hide the check icon
-              checkIcon.style.display = "none";
-
-              const colorName = document.createElement("span");
-              colorName.className = "color-name";
-              colorName.textContent = color.name;
-
-              colorItem.appendChild(colorCircle);
-              colorItem.appendChild(checkIcon);
-              colorItem.appendChild(colorName);
-
-              // Add click event listener to show/hide check icon
-              colorItem.addEventListener("click", function () {
-                // Toggle the check icon visibility
-                checkIcon.style.display =
-                  checkIcon.style.display === "none" ? "block" : "none";
-
-                // Prevent the default link behavior
-                return false;
-              });
-
-              // Add the color item to the color stack
-              colorStack.appendChild(colorItem);
-            });
-          });
-        </script>
       </div>
     </div>
   </body>
   <footer>
-    <div class="app-footer" style="margin-top: 1000px">
+    <div class="app-footer">
       <div class="footer-container">
         <div class="logo-container">
           <a href="routes.HOME" onclick="handleMenuClick(routes.HOME)">
@@ -578,12 +503,36 @@
           <p class="contact-item">Phone: +91 97910 68220</p>
           <div style="border: 1px solid gray"></div>
           <div class="social-icons">
-            <a href="https://www.facebook.com/login.php/" target="_blank"
-              ><span>&#xf09a;</span></a
-            >
-            <a href="https://www.instagram.com/akka_creation/" target="_blank"
-              ><span>&#xf16d;</span></a
-            >
+            <a href="https://www.facebook.com/login.php/" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                class="bi bi-facebook"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/akka_creation/" target="_blank">
+              <svg
+                style="color: rgb(184, 183, 178)"
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                class="bi bi-instagram"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  fill="#b8b7b2"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
