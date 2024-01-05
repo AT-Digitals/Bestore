@@ -123,65 +123,78 @@
 
               // Function to toggle the visibility of fabric products
               function toggleFabricProducts() {
-    var fabricCheckbox = document.getElementById("fabricCheckbox");
-    var fabricProductsContainer = document.getElementById("fabricProductsContainer");
-    fabricProductsContainer.style.display = fabricCheckbox.checked ? "block" : "none";
+                var fabricCheckbox = document.getElementById("fabricCheckbox");
+                var fabricProductsContainer = document.getElementById(
+                  "fabricProductsContainer"
+                );
+                fabricProductsContainer.style.display = fabricCheckbox.checked
+                  ? "block"
+                  : "none";
 
-    // Toggle the visibility of sub-products based on the main checkbox state
-    var subProducts = fabricProductsContainer.querySelectorAll(".sub-products");
-    subProducts.forEach(function (product) {
-        product.style.display = fabricCheckbox.checked ? "block" : "none";
-    });
-}
+                // Toggle the visibility of sub-products based on the main checkbox state
+                var subProducts =
+                  fabricProductsContainer.querySelectorAll(".sub-products");
+                subProducts.forEach(function (product) {
+                  product.style.display = fabricCheckbox.checked
+                    ? "block"
+                    : "none";
+                });
+              }
 
-// Create sub-product elements dynamically
-let fabricProductsContainer = document.getElementById("fabricProductsContainer");
-fabricProductsContainer.style.display = "block"; // Set initial display to block
+              // Create sub-product elements dynamically
+              let fabricProductsContainer = document.getElementById(
+                "fabricProductsContainer"
+              );
+              fabricProductsContainer.style.display = "block"; // Set initial display to block
 
-// Replace fabricProductsData with your actual data
-fabricProductsData.map((product) => {
-    let subProductContainer = document.createElement("div");
-    subProductContainer.className = "sub-products";
+              // Replace fabricProductsData with your actual data
+              fabricProductsData.map((product) => {
+                let subProductContainer = document.createElement("div");
+                subProductContainer.className = "sub-products";
 
-    let subProductCheckbox = document.createElement("input");
-    subProductCheckbox.type = "checkbox";
-    subProductCheckbox.id = product.name.replace(/\s+/g, "");
-    subProductCheckbox.className = "fabric-checkbox";
+                let subProductCheckbox = document.createElement("input");
+                subProductCheckbox.type = "checkbox";
+                subProductCheckbox.id = product.name.replace(/\s+/g, "");
+                subProductCheckbox.className = "fabric-checkbox";
 
-    // Set checkbox initially checked for "ORGANIC COTTONS WOVENS"
-    if (product.name === "KNITS-RFD GRADE B ONLY") {
-        subProductCheckbox.checked = true;
-    } else {
-        subProductCheckbox.checked = false;
-    }
+                // Set checkbox initially checked for "ORGANIC COTTONS WOVENS"
+                if (product.name === "KNITS-RFD GRADE B ONLY") {
+                  subProductCheckbox.checked = true;
+                } else {
+                  subProductCheckbox.checked = false;
+                }
 
-    subProductCheckbox.addEventListener("change", function () {
-        // Handle sub-product page visibility based on checkbox state
-        var subProductPage = document.getElementById(
-            product.name.replace(/\s+/g, "") + "-page"
-        );
-        subProductPage.style.display = subProductCheckbox.checked ? "block" : "none";
+                subProductCheckbox.addEventListener("change", function () {
+                  // Handle sub-product page visibility based on checkbox state
+                  var subProductPage = document.getElementById(
+                    product.name.replace(/\s+/g, "") + "-page"
+                  );
+                  subProductPage.style.display = subProductCheckbox.checked
+                    ? "block"
+                    : "none";
 
-        if (subProductCheckbox.checked && product.link) {
-            window.location.href = product.link;
-        }
-    });
+                  if (subProductCheckbox.checked && product.link) {
+                    window.location.href = product.link;
+                  }
+                });
 
-    let subProductLabel = document.createElement("label");
-    subProductLabel.setAttribute("for", subProductCheckbox.id);
-    subProductLabel.textContent = product.name;
+                let subProductLabel = document.createElement("label");
+                subProductLabel.setAttribute("for", subProductCheckbox.id);
+                subProductLabel.textContent = product.name;
 
-    subProductContainer.appendChild(subProductCheckbox);
-    subProductContainer.appendChild(subProductLabel);
+                subProductContainer.appendChild(subProductCheckbox);
+                subProductContainer.appendChild(subProductLabel);
 
-    // Create sub-product pages dynamically
-    let subProductPage = document.createElement("div");
-    subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
-    subProductPage.style.display = subProductCheckbox.checked ? "block" : "none";
+                // Create sub-product pages dynamically
+                let subProductPage = document.createElement("div");
+                subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
+                subProductPage.style.display = subProductCheckbox.checked
+                  ? "block"
+                  : "none";
 
-    fabricProductsContainer.appendChild(subProductContainer);
-    fabricProductsContainer.appendChild(subProductPage);
-});
+                fabricProductsContainer.appendChild(subProductContainer);
+                fabricProductsContainer.appendChild(subProductPage);
+              });
             </script>
           </div>
         </div>
@@ -359,6 +372,7 @@ fabricProductsData.map((product) => {
               <!-- Sample Product Cards -->
               <div
                 class="product-card"
+                id="product1"
                 style="display: flex; flex-direction: column"
               >
                 <img class="image1" src="../common-components/download.jpg" />
@@ -367,6 +381,7 @@ fabricProductsData.map((product) => {
 
               <div
                 class="product-card"
+                id="product2"
                 style="display: flex; flex-direction: column"
               >
                 <img
@@ -378,6 +393,7 @@ fabricProductsData.map((product) => {
 
               <div
                 class="product-card"
+                id="product3"
                 style="display: flex; flex-direction: column"
               >
                 <img
@@ -391,6 +407,138 @@ fabricProductsData.map((product) => {
             </div>
           </div>
         </div>
+        <div id="productViewContainer" class="product-view-container"></div>
+        <script>
+          // Function to dynamically create and display related products
+          function showRelatedProducts(relatedProducts) {
+            var relatedProductsContainer = document.getElementById(
+              "relatedProductsContainer"
+            );
+            relatedProductsContainer.innerHTML = ""; // Clear previous content
+
+            relatedProducts.slice(0, 3).forEach(function (relatedProduct) {
+              var relatedProductCard = document.createElement("div");
+              relatedProductCard.className = "related-product-card";
+              relatedProductCard.innerHTML = `
+                <img src="${relatedProduct.image}" alt="${relatedProduct.name}" />
+                <h3>${relatedProduct.name}</h3>
+              `;
+
+              relatedProductsContainer.appendChild(relatedProductCard);
+            });
+          }
+
+          // Function to close the product view
+          function closeProductView() {
+            var productViewContainer = document.getElementById(
+              "productViewContainer"
+            );
+            productViewContainer.style.display = "none"; // Hide the product view container
+          }
+
+          // Function to dynamically create and display the product view page
+          function showProductViewPage(product) {
+            // Hide any existing product view pages
+            var productViewContainers =
+              document.getElementsByClassName("product-view");
+            for (var i = 0; i < productViewContainers.length; i++) {
+              productViewContainers[i].style.display = "none";
+            }
+
+            // Create product view container
+            var productViewContainer = document.getElementById(
+              "productViewContainer"
+            );
+            productViewContainer.innerHTML = ""; // Clear previous content
+
+            // Create product view
+            var productView = document.createElement("div");
+            productView.className = "product-view";
+
+            // Add product details to the product view
+            productView.innerHTML = `
+              <div style='display:flex;flex-direction:column;'>
+                  <div style='display:flex;flex-direction:row;justify-content: space-evenly;'>
+                      <img src="${product.image}" alt="${product.name}" />
+                      <div class="product-details">
+                          <h3>Product Name: ${product.name}</h3>
+                          <h3>Category: Fabric, ORGANIC COTTONS WOVENS </h3>
+                          <button onclick="closeProductView()">Close</button>
+                      </div>
+                  </div>
+      
+                  <div class="related-section">
+                      <h2>Related Products</h2>
+                      <div class="related-divider"></div>
+                  </div>
+      
+                  <div id="relatedProductsContainer" class="related-products-container">
+                      <!-- Related products will be dynamically added here -->
+                  </div>
+              </div>
+            `;
+
+            // Append product view to container
+            productViewContainer.appendChild(productView);
+            productViewContainer.style.display = "flex"; // Display the product view container
+
+            // Call showRelatedProducts function with sample related products
+            showRelatedProducts([
+              {
+                name: "Related Product 1",
+                image:
+                  "../common-components/hatcanvas blue shalimar.c41ccc88e14a48e316a0.jpg",
+              },
+              {
+                name: "Related Product 2",
+                image:
+                  "../common-components/FLOWER SHAL BEIGE CANVAS.3df5386f789c0b50aede.jpg",
+              },
+              {
+                name: "Related Product 3",
+                image:
+                  "../common-components/FLOWER SHAL BEIGE CANVAS.3df5386f789c0b50aede.jpg",
+              },
+              // Add more related products as needed
+            ]);
+          }
+
+          // Add event listeners to each product card
+          document
+            .getElementById("product1")
+            .addEventListener("click", function () {
+              var productData1 = {
+                name: "OC VOILET",
+                image: "../common-components/download.jpg",
+                // Add other product details as needed
+              };
+              showProductViewPage(productData1);
+            });
+
+          document
+            .getElementById("product2")
+            .addEventListener("click", function () {
+              var productData2 = {
+                name: "OC MUSLIN",
+                image: "../common-components/download (1).jpg",
+                // Add other product details as needed
+              };
+              showProductViewPage(productData2);
+            });
+
+          document
+            .getElementById("product3")
+            .addEventListener("click", function () {
+              var productData3 = {
+                name: "OC DABBY WAFFLE",
+                image: "../common-components/poly1.2470ebb1a6b6ef1b8fa6.jpeg",
+                // Add other product details as needed
+              };
+              showProductViewPage(productData3);
+            });
+
+          // Repeat for other product cards...
+        </script>
       </div>
     </div>
   </body>
