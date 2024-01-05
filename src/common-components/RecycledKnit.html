@@ -123,67 +123,65 @@
 
               // Function to toggle the visibility of fabric products
               function toggleFabricProducts() {
-                var fabricCheckbox = document.getElementById("fabricCheckbox");
-                var fabricProductsContainer = document.getElementById(
-                  "fabricProductsContainer"
-                );
-                fabricProductsContainer.style.display = fabricCheckbox.checked
-                  ? "block"
-                  : "none";
+    var fabricCheckbox = document.getElementById("fabricCheckbox");
+    var fabricProductsContainer = document.getElementById("fabricProductsContainer");
+    fabricProductsContainer.style.display = fabricCheckbox.checked ? "block" : "none";
 
-                // Toggle the visibility of sub-products based on main checkbox state
-                var subProducts =
-                  fabricProductsContainer.querySelectorAll(".sub-products");
-                subProducts.forEach(function (product) {
-                  product.style.display = fabricCheckbox.checked
-                    ? "block"
-                    : "none";
-                });
-              }
+    // Toggle the visibility of sub-products based on the main checkbox state
+    var subProducts = fabricProductsContainer.querySelectorAll(".sub-products");
+    subProducts.forEach(function (product) {
+        product.style.display = fabricCheckbox.checked ? "block" : "none";
+    });
+}
 
-              // Create sub-product elements dynamically
-              let fabricProductsContainer = document.getElementById(
-                "fabricProductsContainer"
-              );
-              fabricProductsContainer.style.display = "none"; // Set initial display to none
+// Create sub-product elements dynamically
+let fabricProductsContainer = document.getElementById("fabricProductsContainer");
+fabricProductsContainer.style.display = "block"; // Set initial display to block
 
-              fabricProductsData.map((product) => {
-                let subProductContainer = document.createElement("div");
-                subProductContainer.className = "sub-products";
+// Replace fabricProductsData with your actual data
+fabricProductsData.map((product) => {
+    let subProductContainer = document.createElement("div");
+    subProductContainer.className = "sub-products";
 
-                let subProductCheckbox = document.createElement("input");
-                subProductCheckbox.type = "checkbox";
-                subProductCheckbox.id = product.name.replace(/\s+/g, ""); // Remove spaces for checkbox IDs
-                subProductCheckbox.className = "fabric-checkbox";
-                subProductCheckbox.addEventListener("change", function () {
-                  // Handle sub-product page visibility based on checkbox state
-                  var subProductPage = document.getElementById(
-                    product.name.replace(/\s+/g, "") + "-page"
-                  );
-                  subProductPage.style.display = subProductCheckbox.checked
-                    ? "block"
-                    : "none";
+    let subProductCheckbox = document.createElement("input");
+    subProductCheckbox.type = "checkbox";
+    subProductCheckbox.id = product.name.replace(/\s+/g, "");
+    subProductCheckbox.className = "fabric-checkbox";
 
-                  if (subProductCheckbox.checked && product.link) {
-                    window.location.href = product.link;
-                  }
-                });
+    // Set checkbox initially checked for "ORGANIC COTTONS WOVENS"
+    if (product.name === "RECYCLED KNIT") {
+        subProductCheckbox.checked = true;
+    } else {
+        subProductCheckbox.checked = false;
+    }
 
-                let subProductLabel = document.createElement("label");
-                subProductLabel.setAttribute("for", subProductCheckbox.id);
-                subProductLabel.textContent = product.name;
+    subProductCheckbox.addEventListener("change", function () {
+        // Handle sub-product page visibility based on checkbox state
+        var subProductPage = document.getElementById(
+            product.name.replace(/\s+/g, "") + "-page"
+        );
+        subProductPage.style.display = subProductCheckbox.checked ? "block" : "none";
 
-                subProductContainer.appendChild(subProductCheckbox);
-                subProductContainer.appendChild(subProductLabel);
+        if (subProductCheckbox.checked && product.link) {
+            window.location.href = product.link;
+        }
+    });
 
-                // Create sub-product pages dynamically
-                let subProductPage = document.createElement("div");
-                subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
-                subProductPage.style.display = "none"; // Set initial display to none
+    let subProductLabel = document.createElement("label");
+    subProductLabel.setAttribute("for", subProductCheckbox.id);
+    subProductLabel.textContent = product.name;
 
-                fabricProductsContainer.appendChild(subProductContainer);
-                fabricProductsContainer.appendChild(subProductPage);
-              });
+    subProductContainer.appendChild(subProductCheckbox);
+    subProductContainer.appendChild(subProductLabel);
+
+    // Create sub-product pages dynamically
+    let subProductPage = document.createElement("div");
+    subProductPage.id = product.name.replace(/\s+/g, "") + "-page";
+    subProductPage.style.display = subProductCheckbox.checked ? "block" : "none";
+
+    fabricProductsContainer.appendChild(subProductContainer);
+    fabricProductsContainer.appendChild(subProductPage);
+});
             </script>
           </div>
         </div>
