@@ -8,6 +8,78 @@
     <link rel="stylesheet" href="ProductPage.css" />
 
     <title>Product Page</title>
+    <style>
+      .product-view-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .product-view {
+        display: flex;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .product-view img {
+        max-width: 180px;
+        height: auto;
+        margin-right: 20px;
+      }
+
+      .product-details {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 20px;
+      }
+
+      .product-details h3 {
+        margin-bottom: 10px;
+      }
+      .related-products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .related-product-card {
+        max-width: 30%;
+        margin: 10px;
+        text-align: center;
+      }
+
+      .related-product-card img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .related-products-container {
+        display: flex;
+      }
+      .related-divider {
+        width: 37%;
+        height: 2px;
+        background-color: red;
+      }
+      .related-section {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
   </head>
 
   <body style="background-color: white">
@@ -358,7 +430,7 @@
             <div class="divider1"></div>
             <div class="product-grid-all">
               <!-- Sample Product Cards -->
-              <div class="product-card">
+              <div class="product-card" id="product1">
                 <img
                   style="width: 100%"
                   src="../assets/ProductsImage/sign1.webp"
@@ -369,7 +441,7 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="product-card" id="product2">
                 <img
                   style="width: 100%"
                   src="../assets/ProductsImage/sign2.webp"
@@ -380,7 +452,7 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="product-card" id="product3">
                 <img
                   style="width: 100%"
                   src="../assets/ProductsImage/sign2.webp"
@@ -393,17 +465,186 @@
 
               <!-- Add more product cards as needed -->
             </div>
+
             <div style="display: flex; justify-content: center">
               <a href="#" class="show-more-btn">Show more</a>
             </div>
           </div>
+          <div id="productViewContainer" class="product-view-container"></div>
 
+          <script>
+            // Function to dynamically create and display related products
+            function showRelatedProducts(relatedProducts) {
+              var relatedProductsContainer = document.getElementById(
+                "relatedProductsContainer"
+              );
+              relatedProductsContainer.innerHTML = ""; // Clear previous content
+
+              relatedProducts.slice(0, 3).forEach(function (relatedProduct) {
+                var relatedProductCard = document.createElement("div");
+                relatedProductCard.className = "related-product-card";
+                relatedProductCard.innerHTML = `
+            <img src="${relatedProduct.image}" alt="${relatedProduct.name}" />
+            <h3>${relatedProduct.name}</h3>
+        `;
+
+                relatedProductsContainer.appendChild(relatedProductCard);
+              });
+            }
+
+            const productData1 = {
+              name: "OC VOILET",
+              image:
+                "../common-components/red shalimar 1 copy.a28f76620f1553331771.jpg",
+              // Add other product details as needed
+            };
+
+            const productData2 = {
+              name: "OC MUSLIN",
+              image:
+                "../common-components/FLOWER SHAL BEIGE CANVAS.3df5386f789c0b50aede.jpg",
+              // Add other product details as needed
+            };
+            const fab1 = {
+              name: "OC MUSLIN",
+              image: "../assets/LinenAssets/LINE/LINE.jpg",
+              // Add other product details as needed
+            };
+            const fab2 = {
+              name: "OC MUSLIN",
+              image: "../assets/OCassets/all shalimar canvas.jpg",
+              // Add other product details as needed
+            };
+            const fab3 = {
+              name: "OC MUSLIN",
+              image: "../assets/OCassets/FLOWER SHAL BEIGE CANVAS.jpg",
+              // Add other product details as needed
+            };
+
+            // Add event listeners to each product card
+            document
+              .getElementById("product1")
+              .addEventListener("click", function () {
+                showProductViewPage(productData1);
+              });
+
+            document
+              .getElementById("product2")
+              .addEventListener("click", function () {
+                showProductViewPage(productData2);
+              });
+            document
+              .getElementById("product3")
+              .addEventListener("click", function () {
+                showProductViewPage(productData2);
+              });
+            document
+              .getElementById("productfab1")
+              .addEventListener("click", function () {
+                showProductViewPage(fab1);
+              });
+            document
+              .getElementById("productfab2")
+              .addEventListener("click", function () {
+                showProductViewPage(fab2);
+              });
+            document
+              .getElementById("productfab3")
+              .addEventListener("click", function () {
+                showProductViewPage(fab3);
+              });
+            document
+              .getElementById("productpattern1")
+              .addEventListener("click", function () {
+                showProductViewPage(productData2);
+              });
+            document
+              .getElementById("productpattern2")
+              .addEventListener("click", function () {
+                showProductViewPage(productData2);
+              });
+            document
+              .getElementById("productpattern2")
+              .addEventListener("click", function () {
+                showProductViewPage(productData2);
+              });
+
+            // Repeat for other product cards...
+
+            // Function to dynamically create and display the product view page
+            function showProductViewPage(product) {
+              // Create product view container
+              var productViewContainer = document.getElementById(
+                "productViewContainer"
+              );
+              productViewContainer.innerHTML = ""; // Clear previous content
+
+              // Create product view
+              var productView = document.createElement("div");
+              productView.className = "product-view";
+
+              // Add product details to the product view
+              productView.innerHTML = `
+          <div style='display:flex;flex-direction:column;'>
+              <div style='display:flex;flex-direction:row;justify-content: space-evenly;'>
+                  <img src="${product.image}" alt="${product.name}" />
+                  <div class="product-details">
+                      <h3>Product Name: ${product.name}</h3>
+                      <h3>Category: Fabric, ORGANIC COTTONS WOVENS </h3>
+                      <button onclick="closeProductView()">Close</button>
+                  </div>
+              </div>
+
+              <div class="related-section">
+                  <h2>Related Products</h2>
+                  <div class="related-divider"></div>
+              </div>
+
+              <div id="relatedProductsContainer" class="related-products-container">
+                  <!-- Related products will be dynamically added here -->
+              </div>
+          </div>
+      `;
+
+              // Append product view to container
+              productViewContainer.appendChild(productView);
+              productViewContainer.style.display = "flex"; // Display the product view container
+
+              // Call showRelatedProducts function with sample related products
+              showRelatedProducts([
+                {
+                  name: "Related Product 1",
+                  image: "path/to/related-product-1.jpg",
+                },
+                {
+                  name: "Related Product 2",
+                  image: "path/to/related-product-2.jpg",
+                },
+                {
+                  name: "Related Product 3",
+                  image: "path/to/related-product-3.jpg",
+                },
+                // Add more related products as needed
+              ]);
+            }
+
+            // Function to close the product view
+            function closeProductView() {
+              var productViewContainer = document.getElementById(
+                "productViewContainer"
+              );
+              productViewContainer.style.display = "none"; // Hide the product view container
+            }
+
+            // Call the showProductViewPage function with sample product data
+            showProductViewPage(productData1);
+          </script>
           <div class="section">
             <h2>Fabric Products</h2>
             <div class="divider1"></div>
             <div class="product-grid-all">
               <!-- Sample Product Cards -->
-              <div class="product-card">
+              <div class="product-card" id="productfab1">
                 <img
                   style="width: 100%"
                   src="../assets/LinenAssets/LINE/LINE.jpg"
@@ -414,7 +655,7 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="product-card" id="productfab2">
                 <img
                   style="width: 100%"
                   src="../assets/OCassets/all shalimar canvas.jpg"
@@ -425,7 +666,7 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="product-card" id="productfab3">
                 <img
                   style="width: 100%"
                   src="../assets/OCassets/FLOWER SHAL BEIGE CANVAS.jpg"
@@ -439,6 +680,144 @@
             <div style="display: flex; justify-content: center">
               <a href="#" class="show-more-btn">Show more</a>
             </div>
+            <script>
+              // Function to dynamically create and display related products
+              function showRelatedProducts(relatedProducts) {
+                var relatedProductsContainer = document.getElementById(
+                  "relatedProductsContainer"
+                );
+                relatedProductsContainer.innerHTML = ""; // Clear previous content
+
+                relatedProducts.slice(0, 3).forEach(function (relatedProduct) {
+                  var relatedProductCard = document.createElement("div");
+                  relatedProductCard.className = "related-product-card";
+                  relatedProductCard.innerHTML = `
+              <img src="${relatedProduct.image}" alt="${relatedProduct.name}" />
+              <h3>${relatedProduct.name}</h3>
+          `;
+
+                  relatedProductsContainer.appendChild(relatedProductCard);
+                });
+              }
+
+              // Add event listeners to each product card
+              document
+                .getElementById("product1")
+                .addEventListener("click", function () {
+                  showProductViewPage(productData1);
+                });
+
+              document
+                .getElementById("product2")
+                .addEventListener("click", function () {
+                  showProductViewPage(productData2);
+                });
+              document
+                .getElementById("product3")
+                .addEventListener("click", function () {
+                  showProductViewPage(productData2);
+                });
+              document
+                .getElementById("productfab1")
+                .addEventListener("click", function () {
+                  showProductViewPage(fab1);
+                });
+              document
+                .getElementById("productfab2")
+                .addEventListener("click", function () {
+                  showProductViewPage(fab2);
+                });
+              document
+                .getElementById("productfab3")
+                .addEventListener("click", function () {
+                  showProductViewPage(fab3);
+                });
+              document
+                .getElementById("productpattern1")
+                .addEventListener("click", function () {
+                  showProductViewPage(productData2);
+                });
+              document
+                .getElementById("productpattern2")
+                .addEventListener("click", function () {
+                  showProductViewPage(productData2);
+                });
+              document
+                .getElementById("productpattern2")
+                .addEventListener("click", function () {
+                  showProductViewPage(productData2);
+                });
+
+              // Repeat for other product cards...
+
+              // Function to dynamically create and display the product view page
+              function showProductViewPage(product) {
+                // Create product view container
+                var productViewContainer = document.getElementById(
+                  "productViewContainer"
+                );
+                productViewContainer.innerHTML = ""; // Clear previous content
+
+                // Create product view
+                var productView = document.createElement("div");
+                productView.className = "product-view";
+
+                // Add product details to the product view
+                productView.innerHTML = `
+            <div style='display:flex;flex-direction:column;'>
+                <div style='display:flex;flex-direction:row;justify-content: space-evenly;'>
+                    <img src="${product.image}" alt="${product.name}" />
+                    <div class="product-details">
+                        <h3>Product Name: ${product.name}</h3>
+                        <h3>Category: Fabric, ORGANIC COTTONS WOVENS </h3>
+                        <button onclick="closeProductView()">Close</button>
+                    </div>
+                </div>
+  
+                <div class="related-section">
+                    <h2>Related Products</h2>
+                    <div class="related-divider"></div>
+                </div>
+  
+                <div id="relatedProductsContainer" class="related-products-container">
+                    <!-- Related products will be dynamically added here -->
+                </div>
+            </div>
+        `;
+
+                // Append product view to container
+                productViewContainer.appendChild(productView);
+                productViewContainer.style.display = "flex"; // Display the product view container
+
+                // Call showRelatedProducts function with sample related products
+                showRelatedProducts([
+                  {
+                    name: "Related Product 1",
+                    image: "path/to/related-product-1.jpg",
+                  },
+                  {
+                    name: "Related Product 2",
+                    image: "path/to/related-product-2.jpg",
+                  },
+                  {
+                    name: "Related Product 3",
+                    image: "path/to/related-product-3.jpg",
+                  },
+                  // Add more related products as needed
+                ]);
+              }
+
+              // Function to close the product view
+              function closeProductView() {
+                var productViewContainer = document.getElementById(
+                  "productViewContainer"
+                );
+                productViewContainer.style.display = "none"; // Hide the product view container
+              }
+
+              // Call the showProductViewPage function with sample product data
+              showProductViewPage(productData1);
+            </script>
           </div>
 
           <div class="section">
@@ -452,12 +831,12 @@
                   src="../assets/FloralAssets/BINDU FLOWER.jpg"
                   alt="Product 1"
                 />
-                <div class="product-details">
+                <div class="product-details" id="productpattern1">
                   <h3>Product 1</h3>
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="product-card" id="productpattern2">
                 <img
                   style="width: 100%"
                   src="../assets/AbstractAssets/cushiion pink shalimar.jpg"
@@ -468,7 +847,7 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="product-card" id="productpattern3">
                 <img
                   style="width: 100%"
                   src="../assets/AviaryAssets/FLOWER SHAL PINK CANVAS (4).jpg"

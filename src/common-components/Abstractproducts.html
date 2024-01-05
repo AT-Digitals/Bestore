@@ -362,6 +362,7 @@
               <div
                 class="product-card"
                 style="display: flex; flex-direction: column"
+                id="product1"
               >
                 <img
                   class="image1"
@@ -372,6 +373,7 @@
 
               <div
                 class="product-card"
+                id="product2"
                 style="display: flex; flex-direction: column"
               >
                 <img
@@ -382,6 +384,7 @@
               </div>
 
               <div
+                id="product3"
                 class="product-card"
                 style="display: flex; flex-direction: column"
               >
@@ -393,6 +396,7 @@
               </div>
               <div
                 class="product-card"
+                id="product4"
                 style="display: flex; flex-direction: column"
               >
                 <img
@@ -406,6 +410,152 @@
             </div>
           </div>
         </div>
+        <div id="productViewContainer" class="product-view-container"></div>
+        <script>
+          // Function to dynamically create and display related products
+          function showRelatedProducts(relatedProducts) {
+            var relatedProductsContainer = document.getElementById(
+              "relatedProductsContainer"
+            );
+            relatedProductsContainer.innerHTML = ""; // Clear previous content
+
+            relatedProducts.slice(0, 3).forEach(function (relatedProduct) {
+              var relatedProductCard = document.createElement("div");
+              relatedProductCard.className = "related-product-card";
+              relatedProductCard.innerHTML = `
+                <img src="${relatedProduct.image}" alt="${relatedProduct.name}" />
+                <h3>${relatedProduct.name}</h3>
+              `;
+
+              relatedProductsContainer.appendChild(relatedProductCard);
+            });
+          }
+
+          // Function to close the product view
+          function closeProductView() {
+            var productViewContainer = document.getElementById(
+              "productViewContainer"
+            );
+            productViewContainer.style.display = "none"; // Hide the product view container
+          }
+
+          // Function to dynamically create and display the product view page
+          function showProductViewPage(product) {
+            // Hide any existing product view pages
+            var productViewContainers =
+              document.getElementsByClassName("product-view");
+            for (var i = 0; i < productViewContainers.length; i++) {
+              productViewContainers[i].style.display = "none";
+            }
+
+            // Create product view container
+            var productViewContainer = document.getElementById(
+              "productViewContainer"
+            );
+            productViewContainer.innerHTML = ""; // Clear previous content
+
+            // Create product view
+            var productView = document.createElement("div");
+            productView.className = "product-view";
+
+            // Add product details to the product view
+            productView.innerHTML = `
+              <div style='display:flex;flex-direction:column;'>
+                  <div style='display:flex;flex-direction:row;justify-content: space-evenly;'>
+                      <img src="${product.image}" alt="${product.name}" />
+                      <div class="product-details">
+                          <h3>Product Name: ${product.name}</h3>
+                          <h3>Category: Fabric, ORGANIC COTTONS WOVENS </h3>
+                          <button onclick="closeProductView()">Close</button>
+                      </div>
+                  </div>
+      
+                  <div class="related-section">
+                      <h2>Related Products</h2>
+                      <div class="related-divider"></div>
+                  </div>
+      
+                  <div id="relatedProductsContainer" class="related-products-container">
+                      <!-- Related products will be dynamically added here -->
+                  </div>
+              </div>
+            `;
+
+            // Append product view to container
+            productViewContainer.appendChild(productView);
+            productViewContainer.style.display = "flex"; // Display the product view container
+
+            // Call showRelatedProducts function with sample related products
+            showRelatedProducts([
+              {
+                name: "Related Product 1",
+                image:
+                  "../common-components/AbstractImages/red shalimar 1 copy.a28f76620f1553331771 (2).jpg",
+              },
+              {
+                name: "Related Product 2",
+                image:
+                  "../common-components/AbstractImages/red shalimar 1 copy.a28f76620f1553331771 (2).jpg",
+              },
+              {
+                name: "Related Product 3",
+                image:
+                  "../common-components/AbstractImages/red shalimar 1 copy.a28f76620f1553331771 (2).jpg",
+              },
+              // Add more related products as needed
+            ]);
+          }
+
+          // Add event listeners to each product card
+          document
+            .getElementById("product1")
+            .addEventListener("click", function () {
+              var productData1 = {
+                name: "OC VOILET",
+                image:
+                  "../common-components/FloralImages/big.4e71dab25971f4216a8a.jpg",
+                // Add other product details as needed
+              };
+              showProductViewPage(productData1);
+            });
+
+          document
+            .getElementById("product2")
+            .addEventListener("click", function () {
+              var productData2 = {
+                name: "OC MUSLIN",
+                image:
+                  "../common-components/FloralImages/big2.3b3323dde601dfe1b63a.jpg",
+                // Add other product details as needed
+              };
+              showProductViewPage(productData2);
+            });
+
+          document
+            .getElementById("product3")
+            .addEventListener("click", function () {
+              var productData3 = {
+                name: "OC DABBY WAFFLE",
+                image:
+                  "../common-components/FloralImages/BINDU FLOWER.7a3b1393d6c7565a56d0.jpg",
+                // Add other product details as needed
+              };
+              showProductViewPage(productData3);
+            });
+
+          document
+            .getElementById("product4")
+            .addEventListener("click", function () {
+              var productData4 = {
+                name: "OC DABBY WAFFLE",
+                image:
+                  "../common-components/hatcanvas blue shalimar.c41ccc88e14a48e316a0.jpg",
+                // Add other product details as needed
+              };
+              showProductViewPage(productData4);
+            });
+          // Repeat for other product cards...
+        </script>
       </div>
     </div>
   </body>
